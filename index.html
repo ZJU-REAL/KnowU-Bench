@@ -151,10 +151,7 @@
         <section id="leaderboard" class="section">
             <h2 class="title is-3 has-text-centered">Leaderboard</h2>
             <div class="content has-text-justified">
-                <p>Success rate (%) on KnowU-Bench. We report overall SR together with per-type SR on 42
-                    general tasks, 86 personalized tasks, and 64 proactive tasks. <strong>All results use max steps =
-                        50.</strong> Please <a href="mailto:chentongbo33@gmail.com"><strong>contact
-                            us</strong></a> to submit results.</p>
+                <p>Success rate (%) on KnowU-Bench across 42 general, 86 personalized, and 64 proactive tasks. All results use max steps = 50. Higher is better. Please <a href="mailto:chentongbo33@gmail.com"><strong>contact us</strong></a> to submit your results.</p>
             </div>
 
             <!-- Filters -->
@@ -263,12 +260,26 @@
             <h2 class="title is-3">Overview</h2>
 
             <div class="content has-text-justified">
-                <p><strong>KnowU-Bench</strong> is an online, interactive personalization benchmark for
-                    mobile agents built on a reproducible Android emulation environment. It contains <strong>192
-                        tasks</strong> over <strong>23 apps</strong>: 42 general, 86 personalized, and 64 proactive.</p>
+                <p>Personalized mobile agents that infer user preferences and calibrate proactive assistance hold great
+                promise as everyday digital assistants, yet existing benchmarks fail to evaluate what this actually
+                requires. Prior work evaluates preference recovery from static histories or intent prediction from
+                fixed contexts — neither tests whether an agent can elicit missing preferences through interaction,
+                nor whether it can decide when to intervene, seek consent, or remain silent in a live GUI environment.</p>
 
-                <p>It evaluates whether agents can complete grounded GUI tasks, acquire missing preferences through
-                    clarification, and decide when to act, ask, or remain silent.</p>
+                <p><strong>KnowU-Bench</strong> is an online, interactive benchmark for personalized mobile agents built
+                on a reproducible Android emulation environment, covering <strong>192 tasks</strong> across
+                <strong>23 apps</strong>: 42 general, 86 personalized, and 64 proactive. Unlike prior work that
+                treats user preferences as static context, KnowU-Bench hides the user profile from the agent and
+                exposes only behavioral logs, forcing genuine preference inference rather than context lookup. An
+                LLM-driven user simulator grounded in structured profiles supports multi-turn clarification and
+                proactive consent handling. Evaluation covers the complete proactive decision chain through a hybrid
+                protocol combining programmatic verification with LLM-as-Judge scoring.</p>
+
+                <p>Our evaluation reveals that agents excelling at explicit GUI execution degrade substantially once
+                success depends on knowing the user or deciding whether to act at all. The core bottlenecks are not
+                GUI navigation but <strong>preference acquisition</strong> and <strong>intervention
+                calibration</strong> — exposing a fundamental gap between competent interface operation and
+                trustworthy personal assistance.</p>
             </div>
 
         </section>
@@ -350,61 +361,73 @@
                 <article class="insight-card insight-card-cyan">
                     <p class="insight-rq">RQ1</p>
                     <h3 class="insight-title">How much harder are personalized and proactive tasks?</h3>
-                    <ul class="insight-points">
-                        <li><span class="insight-highlight">General execution is no longer the main bottleneck.</span>
-                            MAI-UI-8B and Seed 2.0 Pro both reach <span class="insight-metric">100.0%</span> success
-                            rate on general tasks.</li>
-                        <li>Performance drops sharply once agents must infer preferences or calibrate initiative.</li>
-                        <li>Claude Sonnet 4.6 achieves the best overall success rate at
-                            <span class="insight-metric">60.4%</span>, while all open-source models stay below
-                            <span class="insight-metric">12%</span> on the hard personalized split.
-                        </li>
-                    </ul>
+                        <ul class="insight-points">
+                            <li><span class="insight-highlight">General execution is no longer the bottleneck.</span>
+                                MAI-UI-8B and Seed 2.0 Pro both reach <span class="insight-metric">100.0%</span> on
+                                general tasks, confirming that following explicit instructions is a solved problem for
+                                strong models.</li>
+                            <li>Performance drops sharply once agents must infer preferences or calibrate proactive
+                                initiative. Claude Sonnet 4.6 achieves the best overall success rate at
+                                <span class="insight-metric">60.4%</span>, while all open-source models remain below
+                                <span class="insight-metric">12%</span> on the hard personalized split.</li>
+                            <li>The average score on personalized tasks is consistently much higher than strict success
+                                rate, indicating that agents can partially align with user preferences yet still fail to
+                                compose them into fully correct end-to-end behavior.</li>
+                        </ul>
                 </article>
 
                 <article class="insight-card insight-card-pink">
                     <p class="insight-rq">RQ2</p>
                     <h3 class="insight-title">Does asking more questions improve personalization?</h3>
-                    <ul class="insight-points">
-                        <li><span class="insight-highlight">No. Asking more is not the same as asking better.</span>
-                        </li>
-                        <li>Claude Sonnet 4.6 reaches <span class="insight-metric">44.2%</span> success rate and
-                            <span class="insight-metric">78.9%</span> average score while asking only
-                            <span class="insight-metric">0.4</span> questions per task on average.
-                        </li>
-                        <li>Seed 2.0 Pro asks about twice as many questions yet still trails behind, so the real
-                            bottleneck is converting user feedback into correct downstream actions.</li>
-                    </ul>
+                        <ul class="insight-points">
+                            <li><span class="insight-highlight">Asking more is not the same as asking better.</span>
+                                The real bottleneck is converting user feedback into correct downstream actions,
+                                not the quantity of clarification queries.</li>
+                            <li>Claude Sonnet 4.6 reaches <span class="insight-metric">44.2%</span> success rate and
+                                <span class="insight-metric">78.9%</span> average score while asking only
+                                <span class="insight-metric">0.4</span> questions per task on average — the most
+                                efficient profile among all evaluated models.</li>
+                            <li>Seed 2.0 Pro asks roughly twice as many questions yet still trails behind.
+                                Similarly, two Qwen models with near-identical query rates achieve noticeably
+                                different scores, confirming that interaction quality dominates over quantity.</li>
+                        </ul>
                 </article>
 
                 <article class="insight-card insight-card-amber">
                     <p class="insight-rq">RQ3</p>
                     <h3 class="insight-title">What makes proactive service difficult?</h3>
-                    <ul class="insight-points">
-                        <li><span class="insight-highlight">Proactivity is fundamentally a calibration problem.</span>
-                        </li>
-                        <li>Claude Sonnet 4.6 is the most balanced model, with the best Act score at
-                            <span class="insight-metric">70.8%</span>.
-                        </li>
-                        <li>Qwen3.5-397B-A17B leads on Silent at <span class="insight-metric">73.7%</span> and reaches
-                            <span class="insight-metric">75.0%</span> on Stop, but falls to
-                            <span class="insight-metric">31.8%</span> on Act.
-                        </li>
-                    </ul>
+                        <ul class="insight-points">
+                            <li><span class="insight-highlight">Proactivity is a calibration problem, not an
+                                execution problem.</span> A deployable assistant must know when to act, when to
+                                ask, and when to stay silent — and no single model excels at all three.</li>
+                            <li>Claude Sonnet 4.6 is the most balanced, achieving the best Act score at
+                                <span class="insight-metric">70.8%</span> while remaining competitive on
+                                Silent and Stop.</li>
+                            <li>Qwen3.5-397B-A17B leads on Silent at <span class="insight-metric">73.7%</span>
+                                and Stop at <span class="insight-metric">75.0%</span>, but falls to
+                                <span class="insight-metric">31.8%</span> on Act — showing that restraint
+                                and initiative are not jointly optimized by current models.</li>
+                        </ul>
                 </article>
 
                 <article class="insight-card insight-card-purple">
                     <p class="insight-rq">RQ4</p>
                     <h3 class="insight-title">Where do current agents fail?</h3>
-                    <ul class="insight-points">
-                        <li><span class="insight-highlight">Personalization and proactivity fail for different
-                                reasons.</span></li>
-                        <li>On personalized tasks, Clarify errors dominate at <span class="insight-metric">66.7%</span>,
-                            followed by Partial failures at <span class="insight-metric">27.1%</span>.</li>
-                        <li>On proactive tasks, Intervention errors account for <span class="insight-metric">60.0%</span>
-                            and Passive errors add another <span class="insight-metric">20.0%</span>, making initiative
-                            calibration the dominant failure mode.</li>
-                    </ul>
+                        <ul class="insight-points">
+                            <li><span class="insight-highlight">Personalized and proactive tasks fail for
+                                fundamentally different reasons.</span> Improving one setting does not
+                                automatically transfer to the other.</li>
+                            <li>On personalized tasks, Clarify errors dominate at
+                                <span class="insight-metric">66.7%</span> — agents commit to decisions
+                                without asking the right follow-up questions. Partial failures add another
+                                <span class="insight-metric">27.1%</span>, showing that even correct
+                                preference identification often fails at multi-constraint composition.</li>
+                            <li>On proactive tasks, Intervention errors account for
+                                <span class="insight-metric">60.0%</span> and Passive errors for
+                                <span class="insight-metric">20.0%</span> — agents are more prone to
+                                unwarranted action than to missing warranted ones, making initiative
+                                over-trigger the dominant failure mode.</li>
+                        </ul>
                 </article>
 
             </div>
