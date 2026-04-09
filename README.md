@@ -1,6 +1,18 @@
-# KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation
 
-`KnowU-Bench` is a benchmark and runtime for evaluating autonomous mobile agents in profile-conditioned and agent-user interactive Android environments.
+<div align="center">
+
+<h1>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</h1>
+
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Stars](https://img.shields.io/github/stars/ZJU-REAL/KnowU-Bench?style=social)](https://github.com/ZJU-REAL/KnowU-Bench/stargazers)
+[![arXiv](https://img.shields.io/badge/arXiv-xxx.xxxx-b31b1b.svg)](https://arxiv.org/abs/xxx.xxxx)
+
+**KnowU-Bench** is an online, interactive benchmark for evaluating personalized and proactive mobile agents in reproducible Android environments.
+
+
+</div>
+
 
 <p align="center">
   <img src="./assets/intro.png" alt="KnowU-Bench overview" width="1000">
@@ -8,15 +20,23 @@
 
 ## Overview
 
+Mobile GUI agents have made rapid progress on explicit task execution, yet a deeper challenge remains: can an agent act on your behalf as if it truly understands you? **KnowU-Bench** is designed to measure exactly this. It goes beyond standard GUI benchmarks by evaluating three capabilities that existing work leaves unaddressed — inferring user preferences from behavioral history, eliciting missing preferences through multi-turn interaction, and deciding when to intervene, seek consent, or remain silent in proactive settings.
+
 <p align="center">
   <img src="./assets/method.png" alt="KnowU-Bench environment, agent, and user-profile overview" width="1000">
 </p>
 
-KnowU-Bench targets mobile-agent evaluation beyond short GUI-only traces. It focuses on long-horizon, cross-app Android workflows, user-profile grounding, agent-user interaction, and hybrid verification. The runtime packages Android emulators, app backends, the API server, and the evaluator inside Dockerized environments so tasks can be replayed and scored reproducibly.
+**Key design principles:**
+
+- **Hidden profiles, exposed logs.** The user profile is kept hidden from the agent; only timestamped behavioral logs are provided. This forces genuine preference inference rather than context lookup.
+- **Online user simulator.** An LLM-driven user simulator grounded in structured personas supports multi-turn clarification dialogues and proactive consent handling, enabling realistic agent-user interaction.
+- **Full proactive decision chain.** Tasks require agents to decide whether to act, seek confirmation, or remain silent — and to respect user rejection — under programmatic verification and LLM-as-Judge scoring.
+
+**Main findings from our paper:** Agents that excel at explicit GUI execution degrade substantially once success depends on knowing the user or deciding whether to act at all. Personalized failures are dominated by weak preference acquisition, and proactive failures by miscalibrated intervention, revealing a fundamental gap between competent interface operation and trustworthy personal assistance.
 
 ## 📰 News
 
-- `2026-04-07`: We release the code for `KnowU-Bench`.
+- [ 2026-04-07 ] We release the code for KnowU-Bench.
 
 ## 📊 Benchmark Snapshot
 
@@ -76,8 +96,8 @@ Source directory: `src/mobile_world/tasks/definitions/routine`
 
 - Linux host with Docker
 - KVM acceleration for the Android emulator
-- Python `3.12`
-- `uv`
+- Python 3.12
+- uv
 
 If your Docker setup requires root permissions, prepend `sudo` to the `mw env ...` commands below.
 
