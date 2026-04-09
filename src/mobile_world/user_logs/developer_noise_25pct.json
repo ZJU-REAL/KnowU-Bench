@@ -1,0 +1,1290 @@
+[
+  {
+    "time": "2026-01-01T10:45:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 10:45, he opened Chrome, navigated to IMDB, searched for a 90s sci-fi movie cast member, scrolled for two minutes, and closed the tab.",
+    "label": "noise",
+    "category": "entertainment_idle"
+  },
+  {
+    "time": "2026-01-01T11:20:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 11:20, a push notification from a music app displayed 'New Year Party Playlist'. He swiped it away and disabled background battery usage for the app in Settings.",
+    "label": "noise",
+    "category": "notification_spam"
+  },
+  {
+    "time": "2026-01-01T13:05:10+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 13:05, he opened the Tuantuan app, ordered a vanilla Soylent liquid meal, appended the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-01T15:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 15:30, he opened the jingdian app, searched for 'Logitech wired mouse', viewed the Logitech MX518 Legendary listing, checked the specifications, and added it to cart.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-01T16:45:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:45, he opened Chrome, navigated to Reddit r/selfhosted, and scrolled through a discussion thread on self-hosted networking tools.",
+    "label": "signal",
+    "category": "preference_reading"
+  },
+  {
+    "time": "2026-01-02T08:20:15+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:20, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and then opened the Mastodon app to scroll through the infosec feed.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-02T11:15:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:15, he received a direct Mattermost message: 'Do you have a sec?'. He replied with a single Markdown link to the Confluence wiki.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-02T12:30:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:30, he opened the Tuantuan app, ordered a Japanese Onigiri set, applied the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-02T14:00:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:00, he opened the jingdian app, completed the purchase of the Logitech MX518 Legendary wired mouse, selected SF Express for shipping, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-02T15:22:10+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:22, an SMS arrived from an unknown number containing loan offers. He marked the message as spam and blocked the number.",
+    "label": "noise",
+    "category": "spam_sms"
+  },
+  {
+    "time": "2026-01-02T18:00:05+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:00, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Termux.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-03T08:50:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:50, he opened the Alipay app and scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-03T09:05:12+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:05, a P3 PagerDuty warning notification arrived. Two minutes later, an auto-resolve notification appeared. He swiped to archive the push notification.",
+    "label": "signal",
+    "category": "incident_response"
+  },
+  {
+    "time": "2026-01-03T10:45:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:45, he opened Termux, attached to a tmux session, established an SSH connection to a web server, and executed a tail command on the logs.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-01-03T13:10:20+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:10, a weather app push notification displayed a heavy rain alert. He swiped to dismiss it.",
+    "label": "noise",
+    "category": "weather_alert"
+  },
+  {
+    "time": "2026-01-03T14:30:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:30, he opened Chrome, navigated to the ServeTheHome forums, and read a thread on homelab networking.",
+    "label": "signal",
+    "category": "preference_reading"
+  },
+  {
+    "time": "2026-01-03T18:45:30+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:45, he opened the Alipay app to scan out of the subway station, then opened Mastodon.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-04T02:15:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:15, a P0 PagerDuty alert bypassed DND and triggered audio. He unlocked the device and enabled system Dark Mode in Settings.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-04T02:16:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:16, he opened the Mattermost app, navigated to the 'DevOps' channel, and posted: 'Ack, investigating'.",
+    "label": "signal",
+    "category": "habit_communication"
+  },
+  {
+    "time": "2026-01-04T02:25:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:25, he opened Chrome, accessed a Grafana dashboard URL, and filtered the view by database replica nodes.",
+    "label": "signal",
+    "category": "incident_response"
+  },
+  {
+    "time": "2026-01-04T03:40:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 03:40, he opened the Tuantuan app, ordered protein bars and a Monster Ultra White energy drink, and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-04T12:30:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 12:30, he opened the Tuantuan app, selected a Burrito wrap, checked the ingredient list, appended the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the order via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-04T14:20:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:20, an SF Express delivery confirmation SMS arrived for the Logitech mouse. He picked up the package from the door.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-04T19:35:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 19:35, he opened the Photos app from the home screen, scrolled through a few recent screenshots of terminal output, then locked the phone without saving or sharing anything.",
+    "label": "noise",
+    "category": "utility_usage"
+  },
+  {
+    "time": "2026-01-05T08:20:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:20, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Termux to check the overnight deployment status.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-05T09:45:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 09:45, the digital assistant was triggered via Bluetooth input. He tapped 'Cancel' and closed the overlay.",
+    "label": "noise",
+    "category": "accidental_activation"
+  },
+  {
+    "time": "2026-01-05T10:15:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:15, an incoming call from 'CTO' appeared. He answered the call and disconnected after 4 minutes.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-05T13:45:12+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:45, he opened the Settings app, navigated to Battery Usage, and checked the screen brightness level.",
+    "label": "noise",
+    "category": "system_maintenance"
+  },
+  {
+    "time": "2026-01-05T15:05:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:05, the Bluetooth audio device disconnected. Tasker executed a profile setting media volume to 0.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-05T18:00:01+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened the Mattermost app, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-05T18:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-06T08:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:30, he opened the Alipay app, scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-06T12:15:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:15, a Calendar meeting reminder notification appeared. He swiped to dismiss it.",
+    "label": "noise",
+    "category": "calendar_spam"
+  },
+  {
+    "time": "2026-01-06T14:30:20+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:30, the battery level reached 15%. A system prompt for power saving mode appeared. He tapped 'Enable'.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-06T18:00:03+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, navigated to devops, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-06T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Mastodon to browse the infosec feed.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-07T09:00:00+08:00",
+    "location": "High-Speed Rail (Business Trip Commute)",
+    "action": "At 09:00, he opened Termux and ran a ping test to an AWS endpoint, verifying latency was under 50ms.",
+    "label": "signal",
+    "category": "preference_travel"
+  },
+  {
+    "time": "2026-01-07T10:30:22+08:00",
+    "location": "High-Speed Rail (Business Trip Commute)",
+    "action": "At 10:30, an SMS regarding a package delivery arrived. He swiped the lock screen notification to delete the message.",
+    "label": "noise",
+    "category": "spam_sms"
+  },
+  {
+    "time": "2026-01-07T12:30:00+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 12:30, he opened the Taodian app, searched for 'SuperMicro 2U server rail kit', found a niche vendor listing not available on jingdian, and placed the order via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-07T14:15:30+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 14:15, a captive portal Wi-Fi login prompt appeared. He dismissed the prompt and disabled the device's Wi-Fi.",
+    "label": "signal",
+    "category": "preference_travel"
+  },
+  {
+    "time": "2026-01-07T16:05:12+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 16:05, an SMS confirming an Amex charge was received. He opened the linked receipt in Chrome and used the 'Print to PDF' function.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-07T19:30:00+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 19:30, he opened Tuantuan, ordered a protein bowl, added the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-07T21:10:45+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 21:10, a Calendar notification for an old cancelled flight appeared. He swiped to dismiss it.",
+    "label": "noise",
+    "category": "calendar_spam"
+  },
+  {
+    "time": "2026-01-08T08:30:00+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 08:30, he opened the Mastodon app, scrolled through the infosec timeline, and read text-based posts for 10 minutes.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-08T10:15:00+08:00",
+    "location": "Aloft Hotel, Remote Region",
+    "action": "At 10:15, he opened the jingdian app and the homepage displayed a Huawei MateBook X Pro banner ad. He scrolled past the ad and typed 'ThinkPad T14s' into the search bar instead.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-08T13:10:05+08:00",
+    "location": "Branch Datacenter, Remote Region",
+    "action": "At 13:10, a system popup appeared prompting an app update. He tapped 'Cancel'.",
+    "label": "noise",
+    "category": "system_prompt"
+  },
+  {
+    "time": "2026-01-08T15:20:10+08:00",
+    "location": "Branch Datacenter, Remote Region",
+    "action": "At 15:20, a banking app push notification requested a rating. He swiped to dismiss it.",
+    "label": "noise",
+    "category": "notification_spam"
+  },
+  {
+    "time": "2026-01-08T18:00:05+08:00",
+    "location": "Branch Datacenter, Remote Region",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-09T13:40:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 13:40, he opened Tuantuan, ordered a ramen lunch to Yihe Villa, appended the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-09T14:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:30, an SF Express delivery notification SMS arrived for the Taodian server rail kit order. He opened the package and verified the contents against the order.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-09T16:25:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:25, he opened Termux, initiated an SSH session to a local home server, and checked the status of his Docker containers.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-01-09T18:00:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 18:00, the Chilemei app was launched. He accessed the recent apps menu and force-closed it three seconds later.",
+    "label": "noise",
+    "category": "accidental_click"
+  },
+  {
+    "time": "2026-01-09T20:10:40+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 20:10, a gaming app pushed a 'We miss you!' notification. He long-pressed the notification, selected 'App Info', and tapped 'Uninstall'.",
+    "label": "noise",
+    "category": "notification_spam"
+  },
+  {
+    "time": "2026-01-10T10:05:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 10:05, an automated SMS arrived confirming a Soylent subscription auto-reorder.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-10T14:50:22+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:50, he opened Termux, initiated an SSH session to a local server, and executed commands to view NVMe thermal logs.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-01-10T18:30:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 18:30, he opened Mastodon, typed a post regarding a CVE patch, set the visibility toggle to 'followers-only', and published it.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-10T21:05:10+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 21:05, he opened Chrome, tapped a bookmark for a recipe site, stopped the page load, and selected the router admin bookmark instead.",
+    "label": "noise",
+    "category": "accidental_click"
+  },
+  {
+    "time": "2026-01-11T09:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 09:30, he opened Tuantuan, searched for a breakfast sandwich, appended the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', checked the ingredient list, and placed the order.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-11T13:15:45+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 13:15, he opened Chrome, navigated to Hacker News, and scrolled through a discussion thread comparing systemd and OpenRC for 20 minutes.",
+    "label": "signal",
+    "category": "preference_reading"
+  },
+  {
+    "time": "2026-01-11T15:05:40+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 15:05, a long press on the power button activated the digital assistant. He dismissed the overlay 2 seconds later.",
+    "label": "noise",
+    "category": "accidental_activation"
+  },
+  {
+    "time": "2026-01-11T16:40:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:40, he opened a local supermarket app. A full-screen promotional popup appeared on launch. He tapped 'Skip' to close it.",
+    "label": "noise",
+    "category": "app_popup_spam"
+  },
+  {
+    "time": "2026-01-11T23:55:10+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 23:55, he opened Settings and manually enabled Dark Mode.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-12T08:15:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:15, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Chrome to read a Hacker News thread on container runtime benchmarks.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-12T11:30:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:30, he opened Mattermost and replied to a direct message with a bulleted markdown list explaining a memory leak.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-12T12:45:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:45, he opened Tuantuan, ordered a Japanese Ramen bowl, appended the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-12T15:10:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:10, an incoming call from an unsaved number appeared. He pressed the volume down button to silence it, then tapped 'Decline'.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-12T18:00:02+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-12T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-13T08:33:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:33, he opened the Alipay app, scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-13T10:20:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:20, the Bluetooth audio connection dropped. Tasker executed a profile setting media volume to 0.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-13T16:15:20+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 16:15, he opened the Play Store, navigated to 'Manage apps & device', and manually uninstall an app.",
+    "label": "noise",
+    "category": "system_maintenance"
+  },
+  {
+    "time": "2026-01-13T18:00:08+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-13T18:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Termux to check a cron job execution result.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-14T01:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 01:30, a P1 PagerDuty alert triggered. He unlocked the phone, enabled Dark Mode in Settings, and opened Chrome to view AWS CloudWatch.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-14T01:32:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 01:32, he opened the Mattermost app, navigated to the 'DevOps' channel, and sent: 'Ack, checking now'.",
+    "label": "signal",
+    "category": "habit_communication"
+  },
+  {
+    "time": "2026-01-14T02:45:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:45, he opened Tuantuan, ordered Japanese instant ramen and a Monster Ultra White energy drink, appended the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-14T03:10:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 03:10, the battery level reached 15%. He tapped 'Enable' on the system Power Saving Mode prompt.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-14T11:00:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 11:00, he opened Chrome, tapped a news article link on the home page, and closed the tab before the page fully loaded.",
+    "label": "noise",
+    "category": "accidental_click"
+  },
+  {
+    "time": "2026-01-14T12:20:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 12:20, he opened the Alipay app and scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-14T17:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 17:30, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-15T08:25:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:25, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Mastodon to browse the SRE community feed.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-15T12:15:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:15, he opened Tuantuan, ordered a sandwich meal set, appended the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-15T15:25:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:25, an email notification from a hardware vendor appeared. He swiped the notification to delete the email.",
+    "label": "noise",
+    "category": "email_spam"
+  },
+  {
+    "time": "2026-01-15T17:30:10+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 17:30, an incoming call from an unsaved number appeared. He tapped 'Decline' after one ring.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-15T18:00:04+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-15T18:25:00+08:00",
+    "location": "DiDi Premium (Commute)",
+    "action": "At 18:25, he opened the DiDi app, selected Premium, set the destination to Yihe Villa, and confirmed the ride.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-16T09:00:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:00, he opened the Alipay app and scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-16T10:20:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:20, a WeChat notification from a college alumni group appeared with 47 unread messages. He long-pressed the notification and selected 'Mute this conversation'.",
+    "label": "noise",
+    "category": "notification_spam"
+  },
+  {
+    "time": "2026-01-16T13:30:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:30, he opened Tuantuan, ordered a burrito, applied the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-16T16:05:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 16:05, a Calendar invite for an HR session arrived. He opened the invite and selected 'Decline'.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-16T18:00:12+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-16T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Chrome to read a Reddit r/selfhosted thread.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-17T11:15:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 11:15, an SMS stating a 'package was delayed' arrived. He deleted the message and blocked the sender's number.",
+    "label": "noise",
+    "category": "spam_sms"
+  },
+  {
+    "time": "2026-01-17T14:40:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:40, he opened Mastodon, searched for posts on BGP hijacking, and read a thread for 15 minutes.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-17T19:20:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 19:20, he opened Tuantuan, ordered a protein bowl, added a 'no peanuts' dietary note and the delivery remark 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-17T21:15:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 21:15, he opened the YouTube app, tapped a 5-minute video about restoring a cast-iron skillet, and closed the app after the video ended.",
+    "label": "noise",
+    "category": "entertainment_idle"
+  },
+  {
+    "time": "2026-01-18T15:15:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 15:15, he opened the built-in Clock app, navigated to the UTC time zone display, and closed the app.",
+    "label": "noise",
+    "category": "utility_usage"
+  },
+  {
+    "time": "2026-01-18T16:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:30, he opened the jingdian app, browsed the ThinkPad X1 Carbon Gen 12 listing, verified the 'Fedora certified' badge in the product description, compared the 32GB and 64GB RAM configurations, and noted the 11999 CNY price.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-18T22:45:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 22:45, he opened Settings, navigated to Display, and verified the Dark Mode toggle was enabled.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-19T08:20:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:20, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Termux to tail the nginx access logs on the staging server.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-19T11:10:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:10, a Mattermost direct message arrived: 'Hey, just checking in on that deployment'. He replied with a markdown link to the CI/CD pipeline logs.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-19T14:30:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:30, a local weather alert notification warned of a sudden temperature drop. He swiped to dismiss it.",
+    "label": "noise",
+    "category": "weather_alert"
+  },
+  {
+    "time": "2026-01-19T18:00:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-19T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-20T08:45:00+08:00",
+    "location": "DiDi Premium (Commute)",
+    "action": "At 08:45, the DiDi app displayed an in-app coupon modal. He tapped the 'X' to close the modal.",
+    "label": "noise",
+    "category": "app_popup_spam"
+  },
+  {
+    "time": "2026-01-20T10:20:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:20, the battery level reached 15%. He tapped 'Enable' on the Power Saving Mode prompt and set screen brightness to 10%.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-20T13:15:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:15, he opened Tuantuan, ordered a Japanese ramen bowl, added the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-20T15:00:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:00, the jingdian app pushed a promotional notification: 'Smart Speaker Festival - 50% Off Top Brands'. He long-pressed the notification, selected 'Turn off promotional notifications' for jingdian, and returned to Termux.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-20T16:50:10+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 16:50, he opened the Settings app, navigated to Storage, and tapped 'Free up space' to clear cached data from system apps.",
+    "label": "noise",
+    "category": "system_maintenance"
+  },
+  {
+    "time": "2026-01-20T18:00:02+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-20T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Mastodon.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-21T01:10:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 01:10, a P0 PagerDuty alert bypassed DND. He unlocked the device, confirmed Dark Mode was enabled in Settings, and opened Chrome to view payment-gateway metrics.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-21T01:11:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 01:11, he opened the Mattermost app, navigated to the 'DevOps' channel, and sent: 'Ack, investigating'.",
+    "label": "signal",
+    "category": "habit_communication"
+  },
+  {
+    "time": "2026-01-21T02:30:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:30, he opened Tuantuan, ordered instant ramen and beef jerky, added the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-21T03:45:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 03:45, an email from a SaaS marketing domain arrived. He opened the Mail app, selected 5 emails, and tapped 'Delete'.",
+    "label": "noise",
+    "category": "email_spam"
+  },
+  {
+    "time": "2026-01-21T12:10:00+08:00",
+    "location": "DiDi Premium (Commute)",
+    "action": "At 12:10, he opened the DiDi app, selected Premium, set the destination to the Data Center, and confirmed the ride.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-21T12:50:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:50, he opened a Sudoku app. He closed the app 2 minutes later without inputting any numbers.",
+    "label": "noise",
+    "category": "entertainment_idle"
+  },
+  {
+    "time": "2026-01-21T17:15:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 17:15, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-22T08:20:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:20, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Chrome to browse a ServeTheHome forum post on 10GbE switches.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-22T10:15:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:15, he opened Mastodon and read a thread regarding an open-source monitoring tool.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-22T12:40:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:40, he opened Tuantuan, ordered a protein bowl, appended the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-22T13:30:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:30, he opened the Taodian app, searched for 'IPMI serial-to-USB debug cable', found a listing from a niche hardware vendor not available on jingdian, selected SF Express shipping at checkout, and placed the order via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-22T14:50:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:50, the Bluetooth earbuds disconnected. Tasker executed a profile setting media volume to 0.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-22T17:15:08+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 17:15, while pulling the phone from his pocket, the screen registered a touch that opened the Camera app. He pressed back to return to the home screen.",
+    "label": "noise",
+    "category": "accidental_click"
+  },
+  {
+    "time": "2026-01-22T18:00:05+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-22T18:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-23T09:00:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:00, he opened the Alipay app and scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-23T09:10:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:10, a P3 PagerDuty notification displaying an 'auto-resolved' status appeared. He swiped to clear the notification.",
+    "label": "signal",
+    "category": "incident_response"
+  },
+  {
+    "time": "2026-01-23T11:20:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:20, a Mattermost direct message arrived: 'Do you have a sec?'. He replied with a markdown bullet point requesting the error logs.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-23T15:05:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:05, he tapped a web ad link. He closed the resulting tab within 2 seconds and enabled the uBlock Origin extension in the browser settings.",
+    "label": "noise",
+    "category": "accidental_click"
+  },
+  {
+    "time": "2026-01-23T18:00:03+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-23T18:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Mastodon to browse the infosec timeline.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-24T12:30:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 12:30, he opened Tuantuan, ordered a chicken wrap, appended a 'no peanuts' dietary note and the delivery remark 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-24T13:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 13:30, an SF Express delivery SMS arrived for the Taodian IPMI cable order. He opened the package and tested the cable with a local server.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-24T15:15:45+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 15:15, he opened Mastodon, typed an incident post-mortem, set visibility to 'followers-only', and published the post.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-24T16:10:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:10, he opened the Calculator app, entered '450 / 25.4', viewed the result, and closed the app.",
+    "label": "noise",
+    "category": "utility_usage"
+  },
+  {
+    "time": "2026-01-24T20:15:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 20:15, he opened the system File Manager, navigated to the Downloads directory, opened a PDF manual, and closed the app.",
+    "label": "noise",
+    "category": "utility_usage"
+  },
+  {
+    "time": "2026-01-25T09:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 09:30, he opened Termux, established an SSH connection to a local IP, and executed a command to check the Syncthing status.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-01-25T13:10:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 13:10, he opened Tuantuan, ordered a Japanese Onigiri lunch set, added the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-25T14:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:30, he opened the jingdian app, searched for 'Logitech mechanical keyboard', viewed the Logitech G413 SE wired mechanical keyboard listing, and added it to the wishlist.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-25T20:50:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 20:50, he opened Bilibili, watched about 40 seconds of a mechanical keyboard sound test video in the recommendations, then swiped the app away from the recent apps list.",
+    "label": "noise",
+    "category": "entertainment_idle"
+  },
+  {
+    "time": "2026-01-26T08:15:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:15, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Termux to check the status of an overnight backup job.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-26T11:15:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:15, an incoming call from 'CTO' appeared. He answered the call and disconnected after 3 minutes.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-26T12:05:12+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:05, a Calendar notification for a 'Wellness Webinar' arrived. He swiped to dismiss the notification.",
+    "label": "noise",
+    "category": "calendar_spam"
+  },
+  {
+    "time": "2026-01-26T13:40:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:40, he opened Tuantuan, ordered a burrito, applied the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-26T14:15:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:15, a jingdian product recommendation email displayed an Apple Magic Mouse listing. He deleted the email and opened the jingdian app to search for 'Logitech wired keyboard' instead.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-26T15:50:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:50, the battery level dropped to 15%. He tapped 'Enable' on the Power Saving Mode system prompt.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-26T18:00:05+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-26T18:30:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-27T09:05:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:05, he opened the Alipay app and scanned the transit QR code at the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-27T10:30:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 10:30, the Bluetooth audio device disconnected. Tasker executed a profile setting media volume to 0.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-27T12:45:45+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:45, a Mattermost group channel message asked about lunch plans. He replied: 'Having Soylent today, monitoring a deployment'.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-27T14:20:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 14:20, a system dialog warned that device storage space was running low. He dismissed the prompt.",
+    "label": "noise",
+    "category": "system_prompt"
+  },
+  {
+    "time": "2026-01-27T18:00:03+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-27T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Chrome to read Hacker News.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-28T09:05:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 09:05, he opened the Alipay app and scanned the transit QR code at the subway turnstile.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-28T10:15:30+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 10:15, the Taodian app launched after he accidentally tapped its icon while rearranging home screen widgets. A full-screen promotion loaded before he could close it. He force-stopped the app via Settings.",
+    "label": "noise",
+    "category": "app_popup_spam"
+  },
+  {
+    "time": "2026-01-28T11:40:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:40, a P3 PagerDuty warning arrived. He tapped 'Ack' in the app. Five minutes later, an auto-resolve notification appeared.",
+    "label": "signal",
+    "category": "incident_response"
+  },
+  {
+    "time": "2026-01-28T13:25:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:25, he opened Tuantuan, ordered a protein bowl, reviewed the ingredients list, appended the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-28T16:05:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 16:05, a promotional email from a lifestyle blog was received in the primary inbox. He swiped to delete it.",
+    "label": "noise",
+    "category": "email_spam"
+  },
+  {
+    "time": "2026-01-28T18:00:10+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-28T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-29T02:15:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:15, his alarm went off. He unlocked the device, opened the Dark Mode in Settings, and opened Termux.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-29T02:17:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 02:17, he opened Mattermost, navigated to the 'devops' channel, and sent: 'Starting scheduled database migration now'.",
+    "label": "signal",
+    "category": "habit_communication"
+  },
+  {
+    "time": "2026-01-29T03:40:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 03:40, he opened Tuantuan, ordered protein bars and a Monster Ultra White energy drink, added the note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-29T04:10:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 04:10, the battery level reached 15%. He tapped 'Enable' on the Power Saving Mode system prompt.",
+    "label": "signal",
+    "category": "habit_system_setting"
+  },
+  {
+    "time": "2026-01-29T10:30:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 10:30, he opened the jingdian app, purchased the Logitech G413 SE wired mechanical keyboard from the wishlist, selected SF Express for shipping, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-29T12:00:20+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 12:00, the Maps app pushed a 'Yellow Fog Warning' alert. He cleared the notification.",
+    "label": "noise",
+    "category": "weather_alert"
+  },
+  {
+    "time": "2026-01-29T14:20:45+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:20, he triggered the flashlight shortcut on the lock screen and tapped again to disable it.",
+    "label": "noise",
+    "category": "accidental_activation"
+  },
+  {
+    "time": "2026-01-30T08:20:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 08:20, he opened the Alipay app, scanned the transit QR code at the subway turnstile, and opened Mastodon to scroll through the morning infosec timeline.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-30T11:25:30+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:25, he opened Termux and updated the local Python script used for log rotation, verifying it with a test run.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-01-30T13:10:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 13:10, he opened Tuantuan, ordered a burrito, applied the delivery note 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and paid.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-30T15:40:00+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 15:40, an incoming call from an unsaved number appeared. He tapped 'Decline' and reopened Termux.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-30T18:00:05+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 18:00, he opened Mattermost, selected the devops channel, and posted: 'Clocking out, see you tomorrow'.",
+    "label": "signal",
+    "category": "routine_work"
+  },
+  {
+    "time": "2026-01-30T18:35:00+08:00",
+    "location": "北京地铁16号线西北旺站 (Commute)",
+    "action": "At 18:35, he opened the Alipay app and scanned the transit QR code to exit the subway station, then opened Termux.",
+    "label": "signal",
+    "category": "commute_routine"
+  },
+  {
+    "time": "2026-01-31T11:30:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 11:30, a persistent notification indicated that a system security patch was available. He expanded the notification, read the patch notes briefly, and tapped 'Remind me later'.",
+    "label": "noise",
+    "category": "system_prompt"
+  },
+  {
+    "time": "2026-01-31T12:30:15+08:00",
+    "location": "北京市海淀区苏州街3号阶跃星辰",
+    "action": "At 12:30, he opened Tuantuan, ordered a Japanese Ramen bowl, added a 'no peanuts' dietary note and the delivery remark 'DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only.', and completed the payment.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-31T14:00:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:00, an SF Express delivery SMS arrived for the Logitech keyboard. He opened the package, connected the keyboard to his ThinkPad via USB, and confirmed it was recognized under Linux without additional drivers.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-31T15:20:45+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 15:20, he opened Mastodon, drafted a post detailing a hardware upgrade, set visibility to 'followers-only', and published it.",
+    "label": "signal",
+    "category": "preference_social"
+  },
+  {
+    "time": "2026-01-31T18:10:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 18:10, upon opening a video player app, an unskippable 5-second ad popup appeared. He closed the app.",
+    "label": "noise",
+    "category": "app_popup_spam"
+  },
+  {
+    "time": "2026-02-01T09:00:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 09:00, he opened Termux, attached to a tmux session, established an SSH connection to a local server, and executed a database backup script.",
+    "label": "signal",
+    "category": "preference_tech"
+  },
+  {
+    "time": "2026-02-01T11:45:30+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 11:45, an SMS confirming a Soylent subscription auto-reorder arrived. He dismissed the notification.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-02-01T14:20:15+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 14:20, he opened Chrome, navigated to Hacker News, and scrolled through a discussion thread on ZFS performance tuning.",
+    "label": "signal",
+    "category": "preference_reading"
+  },
+  {
+    "time": "2026-02-01T16:55:00+08:00",
+    "location": "北京市海淀区颐和山庄紫宵园公寓",
+    "action": "At 16:55, a system prompt requesting location permissions for background services appeared. He tapped 'Deny'.",
+    "label": "noise",
+    "category": "system_prompt"
+  }
+]

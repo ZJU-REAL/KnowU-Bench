@@ -1,0 +1,1570 @@
+[
+  {
+    "time": "2026-01-01T06:00:42+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 06:00, the Wake Up & Cook alarm rang in Clock; she tapped Dismiss, checked the lock-screen date in large text, and turned the screen off.",
+    "label": "signal",
+    "category": "wakeup_alarm"
+  },
+  {
+    "time": "2026-01-01T08:00:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-01T08:17:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:17, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-01T12:32:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:32, a full-screen \"Phone Cleaner\" popup claimed the device was optimized, and she swiped it away.",
+    "label": "noise",
+    "category": "push_popup"
+  },
+  {
+    "time": "2026-01-01T19:06:18+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:06, she opened Messages, checked Sister Li's latest square-dance update, and kept the conversation open for several seconds.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-01T19:34:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:34, she opened Mattermost and sent Son (Qiang) a short voice message asking if he had eaten and reminding him to keep warm.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-01T21:05:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, an unknown 400-number robocall came in; she declined it immediately.",
+    "label": "noise",
+    "category": "robocall_hangup"
+  },
+  {
+    "time": "2026-01-02T06:46:20+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:46, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-02T07:24:12+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:24, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-02T08:00:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she opened the BP Medicine reminder in Clock, marked it done, and turned the screen off.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-02T08:18:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-02T12:18:36+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:18, she opened Taodian to price-check tissues, sorted by Price Ascending, compared three listings with photo reviews, clipped a coupon, saved one listing to favorites, and closed the app without checking out.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-02T15:40:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:40, a promotional SMS about discounted health supplements arrived; she read one line and ignored it.",
+    "label": "noise",
+    "category": "promo_sms_ignored"
+  },
+  {
+    "time": "2026-01-02T19:06:32+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:06, she checked Sister Li's latest practice note in Messages, recorded a 20-second square-dance clip with the phone camera, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-02T19:41:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:41, she opened Mattermost and sent Son (Qiang) a short voice message saying she had finished square-dance practice and asking if he had eaten.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-03T08:00:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-03T08:19:48+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:19, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-03T12:06:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:06, an ad page opened unexpectedly in Chrome after she tapped a small banner; she hit Back right away.",
+    "label": "noise",
+    "category": "ad_page_back"
+  },
+  {
+    "time": "2026-01-03T18:26:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 18:26, Sister Li sent a Messages reminder about tomorrow's practice time; she replied by voice message and confirmed she would bring the red dance shoes.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-03T19:36:44+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:36, she opened Contacts, called Son (Qiang), kept the call open briefly, and then ended it.",
+    "label": "signal",
+    "category": "family_call"
+  },
+  {
+    "time": "2026-01-03T21:12:44+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:12, a short video started autoplaying from a notification preview; she closed it right away.",
+    "label": "noise",
+    "category": "short_video_autoplay"
+  },
+  {
+    "time": "2026-01-04T06:48:20+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:48, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-04T07:26:34+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:26, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-04T08:00:09+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she opened the BP Medicine reminder in Clock, marked it done, and turned the screen off.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-04T08:21:32+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:21, she opened Chrome, searched Baidu for Beijing air quality and evening weather, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-04T10:12:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 10:12, she opened Calendar, reviewed this week's market and dance events, and added a Saturday reminder to visit her grandson.",
+    "label": "signal",
+    "category": "calendar_planning"
+  },
+  {
+    "time": "2026-01-04T15:22:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:22, a health-supplement promo popup appeared on the screen; she closed it without opening the details.",
+    "label": "noise",
+    "category": "health_ad_popup"
+  },
+  {
+    "time": "2026-01-04T19:04:26+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:04, she opened Messages, reviewed the plaza practice update from Sister Li, and locked the screen at the plaza.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-04T19:35:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:35, she opened Mattermost and sent Son (Qiang) a short voice message asking if he got home safely and reminding him to keep warm.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-05T08:00:15+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Done and returned to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-05T08:17:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:17, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-05T09:42:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 09:42, she opened Mastodon, read two health-tip posts from @HealthDaily, and bookmarked one low-salt recipe.",
+    "label": "signal",
+    "category": "mastodon_health_browse"
+  },
+  {
+    "time": "2026-01-05T12:05:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:05, Android showed a \"System update available\" prompt; she tapped Later.",
+    "label": "noise",
+    "category": "system_update_later"
+  },
+  {
+    "time": "2026-01-05T19:05:28+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:05, she used the phone camera to record a short square-dance clip and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-05T19:38:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:38, she opened Mattermost, forwarded the low-salt recipe link to Son (Qiang), and added a short text message telling him to rest early.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-05T21:03:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:03, a \"Wi-Fi disconnected\" toast appeared; she tapped the alert and the connection restored.",
+    "label": "noise",
+    "category": "wifi_reconnect_prompt"
+  },
+  {
+    "time": "2026-01-06T08:00:11+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine reminder popped up in Clock; she tapped Dismiss, opened Settings > Display, and verified the font size was still set to Largest.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-06T08:21:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:21, she opened Chrome at 150% zoom, searched Baidu for Beijing weather, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-06T11:18:46+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 11:18, an unfamiliar app requested Contacts permission; she tapped Deny and returned to the home screen.",
+    "label": "noise",
+    "category": "app_permission_denied"
+  },
+  {
+    "time": "2026-01-06T14:15:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:15, she opened Gallery > Screenshots, sorted by oldest first, deleted screenshots older than 30 days, and kept a few recent medicine reminders.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-06T19:05:18+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:05, she opened Camera, recorded a short square-dance clip, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-06T19:33:56+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:33, she opened Mattermost and sent Son (Qiang) a short message that she had cleaned old screenshots from the phone today.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-06T20:55:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 20:55, a 15% battery warning appeared; the status-bar battery icon switched to Charging, and she dismissed the alert.",
+    "label": "noise",
+    "category": "low_battery_plugged"
+  },
+  {
+    "time": "2026-01-07T06:49:34+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:49, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-07T07:28:44+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:28, she opened WeChat, scanned the rice stall QR code, confirmed the delivery order total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-07T08:00:17+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Done and returned to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-07T08:16:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:16, she opened Chrome, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-07T12:08:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:08, the voice assistant opened; she tapped Cancel.",
+    "label": "noise",
+    "category": "voice_assistant_open_close"
+  },
+  {
+    "time": "2026-01-07T19:42:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:42, she opened Mattermost and sent Son (Qiang) a short voice message saying the rice delivery from the market was still on the way.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-07T21:10:54+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:10, she pulled down Quick Settings, turned on the flashlight, and then turned it off.",
+    "label": "noise",
+    "category": "flashlight_toggle"
+  },
+  {
+    "time": "2026-01-08T08:00:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder sounded in Clock; she marked it done, opened Quick Settings, and set brightness to maximum.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-08T08:18:54+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing air quality and evening weather, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-08T12:50:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:50, a screenshot thumbnail appeared; she opened Gallery > Screenshots and deleted it.",
+    "label": "noise",
+    "category": "screenshot_delete"
+  },
+  {
+    "time": "2026-01-08T18:47:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 18:47, she read Sister Li's playlist update in Messages and replied that she preferred a slower warm-up song, sending her response in two short bursts.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-08T19:35:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:35, she opened Mattermost and sent Son (Qiang) a short voice message that Sister Li had changed the dance playlist again.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-08T21:08:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:08, Taodian sent a \"coupon expiring soon\" push; she swiped it away.",
+    "label": "noise",
+    "category": "coupon_push_dismissed"
+  },
+  {
+    "time": "2026-01-09T06:47:22+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:47, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-09T07:25:30+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:25, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-09T08:00:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-09T08:18:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-09T12:12:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:12, a breaking-news push about celebrity gossip popped up; she dismissed it.",
+    "label": "noise",
+    "category": "news_push_swipe"
+  },
+  {
+    "time": "2026-01-09T19:09:18+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:09, she used the phone camera to record a short clip of the new square-dance steps and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-09T19:40:04+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:40, she opened Mattermost and sent Son (Qiang) a short voice message saying she was back from dance practice and would send a clip next.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-10T08:00:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-10T08:16:24+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:16, she opened Chrome, searched Baidu for Beijing weather and evening temperature, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-10T09:31:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 09:31, she opened Taodian, set sorting to Price Ascending, filtered for free shipping, compared three tissue bundles with photo reviews, and saved the cheapest one to favorites.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-10T11:46:52+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 11:46, she reopened Taodian favorites, compared coupon conditions across two tissue bundles, and kept the free-shipping option saved in favorites.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-10T12:58:16+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:58, a Bluetooth pairing request (\"BT-Speaker\") popped up; she tapped Cancel.",
+    "label": "noise",
+    "category": "bluetooth_pair_prompt"
+  },
+  {
+    "time": "2026-01-10T16:12:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 16:12, she opened Calendar, opened today's reminder to visit her grandson, moved it to tomorrow morning, and saved the change.",
+    "label": "signal",
+    "category": "calendar_planning"
+  },
+  {
+    "time": "2026-01-10T19:05:30+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:05, she opened Messages, checked the plaza-dance update from Sister Li, and locked the phone screen at the plaza.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-10T19:37:52+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:37, she opened Contacts, called Son (Qiang), kept the call open briefly, and then ended it.",
+    "label": "signal",
+    "category": "family_call"
+  },
+  {
+    "time": "2026-01-10T21:06:50+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:06, she opened an unfamiliar app from the home screen and returned to the home screen 2 seconds later.",
+    "label": "noise",
+    "category": "app_open_back"
+  },
+  {
+    "time": "2026-01-11T08:00:16+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-11T08:23:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:23, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-11T08:54:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:54, she opened Map, set destination to her son's home in Wanliu, selected Route 52 plus a short walk, and enabled voice navigation.",
+    "label": "signal",
+    "category": "map_route_planning"
+  },
+  {
+    "time": "2026-01-11T10:40:18+08:00",
+    "location": "海淀区万柳小区6号楼",
+    "action": "At 10:40, she opened Camera, captured 3 photos, then opened Taodian, compared snack prices, added a small cola pack under 30 yuan to the cart, applied a coupon, and completed the payment.",
+    "label": "signal",
+    "category": "grandson_visit"
+  },
+  {
+    "time": "2026-01-11T12:20:14+08:00",
+    "location": "海淀区万柳小区6号楼",
+    "action": "At 12:20, an in-app \"Rate us\" dialog appeared; she chose Not now.",
+    "label": "noise",
+    "category": "app_rate_prompt_dismissed"
+  },
+  {
+    "time": "2026-01-11T19:38:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:38, she opened Mattermost and sent Son (Qiang) a short voice message asking whether the grandson had finished dinner and telling them to rest early.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-11T21:09:32+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:09, a floating \"Tap to speed up\" widget appeared over the home screen, and she dismissed it.",
+    "label": "noise",
+    "category": "push_popup"
+  },
+  {
+    "time": "2026-01-12T08:00:13+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Done and returned to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-12T08:18:32+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-12T12:14:16+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:14, she opened Tuantuan, scrolled through two menu pages, closed the app, opened Chilemei, added a congee-and-bun set to the cart, completed the payment, and bookmarked a steamed-fish shop.",
+    "label": "signal",
+    "category": "food_delivery_compare"
+  },
+  {
+    "time": "2026-01-12T14:55:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:55, a recorded telemarketing call started playing; she hung up after a second.",
+    "label": "noise",
+    "category": "robocall_hangup"
+  },
+  {
+    "time": "2026-01-12T17:42:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 17:42, she chose Chilemei instead of Tuantuan, ordered fish for dinner, added the remark 'less oil, less salt, no spicy flavors,' and paid via WeChat Pay.",
+    "label": "signal",
+    "category": "chilemei_fish_dinner"
+  },
+  {
+    "time": "2026-01-12T19:06:14+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:06, she opened Camera, recorded a short square-dance clip, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-12T19:39:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:39, she opened Mattermost and sent Son (Qiang) a short voice message saying she ordered fish with a low-salt note and asking about his dinner.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-12T21:04:48+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:04, an SMS claiming a \"limited-time gift\" came in; she swiped the notification away without opening the link.",
+    "label": "noise",
+    "category": "promo_sms_ignored"
+  },
+  {
+    "time": "2026-01-13T06:46:42+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:46, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-13T07:24:18+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:24, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-13T08:00:19+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Dismiss, checked the reminder label on screen, and locked the phone.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-13T08:18:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-13T10:24:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 10:24, she opened Mastodon, scrolled neighborhood health posts for several minutes, and followed a thread on winter blood-pressure management.",
+    "label": "signal",
+    "category": "mastodon_health_browse"
+  },
+  {
+    "time": "2026-01-13T12:40:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:40, a sponsored link took over the Chrome tab; she closed it immediately.",
+    "label": "noise",
+    "category": "ad_page_back"
+  },
+  {
+    "time": "2026-01-13T14:14:48+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:14, she went into Gallery > Screenshots, deleted screenshots taken before December 14, and left only recent ones.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-13T17:02:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 17:02, she received a Messages reminder about Friday formation practice, opened the thread, sent a short voice reply, and returned to the conversation list.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-13T19:34:42+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:34, she opened Mattermost and sent Son (Qiang) a short voice message saying she would arrive early for Friday's formation practice.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-14T08:00:07+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine reminder popped up in Clock; she tapped Dismiss, checked the ringer volume setting, and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-14T08:16:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:16, she received a suspicious SMS promising free eggs with a link, then blocked and reported the sender in Messages.",
+    "label": "signal",
+    "category": "scam_sms_intercept"
+  },
+  {
+    "time": "2026-01-14T08:24:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:24, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-14T12:35:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:35, she opened Settings > Display, verified font size was still Largest and brightness stayed at 100%, then returned to the home screen.",
+    "label": "signal",
+    "category": "settings_accessibility_check"
+  },
+  {
+    "time": "2026-01-14T15:22:36+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:22, a short-video feed popped up unexpectedly; she muted it and exited.",
+    "label": "noise",
+    "category": "short_video_autoplay"
+  },
+  {
+    "time": "2026-01-14T19:05:24+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:05, she opened Messages, checked the latest square-dance update from Sister Li, and kept the conversation open for several seconds.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-14T19:41:16+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:41, she opened Mattermost and sent Son (Qiang) a short message that she had blocked a suspicious 'free eggs' SMS and wanted him to check similar messages for her.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-14T21:05:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, a health-product promo card appeared in notifications; she dismissed it.",
+    "label": "noise",
+    "category": "health_ad_popup"
+  },
+  {
+    "time": "2026-01-15T06:44:56+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:44, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-15T07:22:36+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:22, she opened WeChat, scanned the rice stall QR code, confirmed the delivery order total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-15T08:00:05+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-15T08:17:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:17, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-15T12:06:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:06, a security patch update reminder popped up; she chose Remind me later.",
+    "label": "noise",
+    "category": "system_update_later"
+  },
+  {
+    "time": "2026-01-15T19:36:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:36, she opened Mattermost and sent Son (Qiang) a short message about the rice order and delivery option.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-15T21:02:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:02, pages stopped loading briefly; she toggled Wi-Fi in Quick Settings and it came back.",
+    "label": "noise",
+    "category": "wifi_reconnect_prompt"
+  },
+  {
+    "time": "2026-01-16T06:00:05+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 06:00, the Clock alarm rang; she tapped Dismiss, checked the lock-screen weather icon, and returned to the home screen.",
+    "label": "signal",
+    "category": "wakeup_alarm"
+  },
+  {
+    "time": "2026-01-16T08:00:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder sounded in Clock; she tapped Dismiss, opened Clock, and reviewed the reminder list.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-16T12:30:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:30, a pop-up requested Camera permission from a random app; she tapped Deny and returned to the home screen.",
+    "label": "noise",
+    "category": "app_permission_denied"
+  },
+  {
+    "time": "2026-01-16T18:34:42+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 18:34, she opened Messages, read that dance would start 10 minutes late, replied 'Okay,' and then checked the Clock time.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-16T19:38:46+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:38, she opened Mattermost and sent Son (Qiang) a short voice message saying dance started late today and asking about his dinner.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-16T21:11:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:11, the voice assistant opened; she pressed Back and returned to the previous screen.",
+    "label": "noise",
+    "category": "voice_assistant_open_close"
+  },
+  {
+    "time": "2026-01-17T08:00:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-17T08:18:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-17T12:08:44+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:08, the flashlight tile was on; she toggled it off and locked the screen.",
+    "label": "noise",
+    "category": "flashlight_toggle"
+  },
+  {
+    "time": "2026-01-17T14:41:32+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:41, she compared three snack bundles under 30 yuan for her grandson on Taodian, checked sales volume and photo reviews, and saved a cola-and-biscuit combo to favorites.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-17T19:33:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:33, she opened Contacts, called Son (Qiang), kept the call open briefly, and then ended it.",
+    "label": "signal",
+    "category": "family_call"
+  },
+  {
+    "time": "2026-01-17T21:00:36+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:00, a screenshot thumbnail appeared; she tapped Delete on the preview.",
+    "label": "noise",
+    "category": "screenshot_delete"
+  },
+  {
+    "time": "2026-01-18T06:46:10+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:46, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-18T07:23:52+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:23, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-18T08:00:09+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she opened the BP Medicine reminder in Clock, marked it done, and turned the screen off.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-18T08:20:44+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:20, she opened Chrome at 150% zoom, searched Baidu for Beijing weather, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-18T11:14:52+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 11:14, she saw a Mastodon post about low-salt soup, copied the link, and forwarded it to Son (Qiang) in Mattermost with a short note.",
+    "label": "signal",
+    "category": "health_article_forward"
+  },
+  {
+    "time": "2026-01-18T13:40:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 13:40, a delivery discount banner popped up in notifications; she dismissed it without ordering.",
+    "label": "noise",
+    "category": "coupon_push_dismissed"
+  },
+  {
+    "time": "2026-01-18T16:25:40+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 16:25, she opened Camera, captured 4 photos, opened Mattermost, and sent 4 image attachments one by one to Son (Qiang).",
+    "label": "signal",
+    "category": "flower_photo_share"
+  },
+  {
+    "time": "2026-01-18T19:06:42+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:06, she opened Camera, recorded a short square-dance clip, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-18T19:52:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:52, she opened Mattermost and sent Son (Qiang) a short voice message asking if he had seen the image attachments and asking about dinner.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-19T08:00:15+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she dismissed the BP Medicine alarm in Clock and opened Calendar to review tomorrow's clinic visit note.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-19T08:19:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:19, she opened Chrome at 150% zoom, searched Baidu for Beijing weather, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-19T11:30:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 11:30, a news alert headline flashed on the lock screen; she swiped it away.",
+    "label": "noise",
+    "category": "news_push_swipe"
+  },
+  {
+    "time": "2026-01-19T15:18:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:18, she opened Calendar and set a reminder for tomorrow's community clinic follow-up visit with an 08:30 departure alert.",
+    "label": "signal",
+    "category": "calendar_planning"
+  },
+  {
+    "time": "2026-01-19T19:42:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:42, she opened Mattermost and sent Son (Qiang) a short message that tomorrow's community-clinic blood-pressure follow-up was on her calendar.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-19T21:05:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, Android asked to pair with an unknown device; she rejected the request.",
+    "label": "noise",
+    "category": "bluetooth_pair_prompt"
+  },
+  {
+    "time": "2026-01-20T08:00:11+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder sounded in Clock; she acknowledged it, opened Calendar, and checked the clinic reminder before returning to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-20T08:18:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and air quality, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-20T09:18:42+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 09:18, she opened Map, set destination to Heping Street Community Clinic, selected a bus route with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "health_center_navigation"
+  },
+  {
+    "time": "2026-01-20T10:05:32+08:00",
+    "location": "和平里社区诊所",
+    "action": "At 10:05, she opened Calendar at the community clinic and saved a return reminder for the blood-pressure follow-up.",
+    "label": "noise",
+    "category": "health_center_visit"
+  },
+  {
+    "time": "2026-01-20T12:46:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:46, she opened Docreader and reread blood-pressure guidance pages.",
+    "label": "noise",
+    "category": "clinic_followup_review"
+  },
+  {
+    "time": "2026-01-20T14:16:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:16, she opened Gallery > Screenshots, removed older-than-30-day screenshots, and kept a couple from today's clinic visit.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-20T16:40:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 16:40, she opened an unfamiliar app from the home screen and pressed Home 2 seconds later.",
+    "label": "noise",
+    "category": "app_open_back"
+  },
+  {
+    "time": "2026-01-20T19:35:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:35, she opened Mattermost and sent Son (Qiang) a short message summarizing the clinic note about keeping meals low-salt and reminding him to help with the refill date.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-20T21:03:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:03, the low-battery notification popped up; the status-bar battery icon switched to Charging, and she dismissed the alert.",
+    "label": "noise",
+    "category": "low_battery_plugged"
+  },
+  {
+    "time": "2026-01-21T06:45:38+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:45, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-21T07:24:10+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:24, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-21T08:00:17+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-21T08:19:52+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:19, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-21T12:12:54+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:12, a rating pop-up blocked the screen for a moment; she tapped Later.",
+    "label": "noise",
+    "category": "app_rate_prompt_dismissed"
+  },
+  {
+    "time": "2026-01-21T14:50:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:50, she opened Taodian, compared three household cleaner listings by price, checked photo reviews, and saved the cheapest free-shipping option.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-21T19:06:20+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:06, she opened Messages, checked Sister Li's latest square-dance update, and kept the conversation open for several seconds.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-21T19:40:36+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:40, she opened Mattermost and sent Son (Qiang) a short message that she had saved a low-price cleaner listing on Taodian.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-22T08:00:08+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-22T08:22:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:22, she opened Chrome, searched Baidu for Beijing air quality and evening weather, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-22T12:45:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:45, a utility-app popup about \"cleaning complete\" appeared, and she closed it.",
+    "label": "noise",
+    "category": "push_popup"
+  },
+  {
+    "time": "2026-01-22T19:37:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:37, she opened Mattermost and sent Son (Qiang) a short voice message asking whether he had eaten and reminding him to keep warm.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-22T21:05:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, a stranger number kept ringing; she tapped Decline.",
+    "label": "noise",
+    "category": "robocall_hangup"
+  },
+  {
+    "time": "2026-01-23T08:00:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-23T08:28:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:28, she opened Chrome, searched Baidu for Beijing air quality and evening weather, checked the result card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-23T12:15:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:15, a spammy text about \"free prizes\" appeared; she left it unread and dismissed the banner.",
+    "label": "noise",
+    "category": "promo_sms_ignored"
+  },
+  {
+    "time": "2026-01-23T19:08:26+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:08, she opened Messages to check the latest practice note from Sister Li, recorded a short square-dance clip, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-23T19:39:54+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:39, she opened Mattermost and sent Son (Qiang) a short voice message saying she had finished dance practice and would send a quick follow-up message.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-23T21:08:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:08, Chrome jumped to a pop-up ad site; she returned to the previous page.",
+    "label": "noise",
+    "category": "ad_page_back"
+  },
+  {
+    "time": "2026-01-24T06:46:28+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:46, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-24T07:23:18+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:23, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-24T08:00:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Done and returned to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-24T08:18:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:18, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-24T09:36:50+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 09:36, she searched Taodian for black shoes (EU size 40), filtered out white options and anything over her budget, and kept two soft-sole pairs in favorites.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-24T12:52:34+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:52, an autoplaying clip launched from a recommended card; she backed out immediately.",
+    "label": "noise",
+    "category": "short_video_autoplay"
+  },
+  {
+    "time": "2026-01-24T19:03:22+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:03, she opened Messages, checked the plaza-dance update, and locked the phone screen at the plaza.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-24T19:34:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:34, she opened Contacts, called Son (Qiang), kept the call open briefly, and then ended it.",
+    "label": "signal",
+    "category": "family_call"
+  },
+  {
+    "time": "2026-01-25T08:00:16+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-25T09:42:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 09:42, she opened Map, set destination to Wanliu Residential Area, selected the fewest-transfer bus route, and enabled voice navigation.",
+    "label": "signal",
+    "category": "map_route_planning"
+  },
+  {
+    "time": "2026-01-25T10:36:54+08:00",
+    "location": "海淀区万柳小区6号楼",
+    "action": "At 10:36, she opened Camera, captured several photos, opened Gallery, and moved the new files to the Grandson album.",
+    "label": "signal",
+    "category": "grandson_visit"
+  },
+  {
+    "time": "2026-01-25T14:23:16+08:00",
+    "location": "海淀区万柳小区6号楼",
+    "action": "At 14:23, she compared three snack packs under 30 yuan for her grandson in Taodian, applied a coupon, selected Zhongtong Express for delivery, and paid with WeChat Pay.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-25T19:36:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:36, she opened Mattermost and sent Son (Qiang) a short message about the weekend visit and the grandson's snack list.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-25T21:01:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:01, a discount banner for wellness products appeared in notifications; she cleared it.",
+    "label": "noise",
+    "category": "health_ad_popup"
+  },
+  {
+    "time": "2026-01-26T08:00:13+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-26T08:23:34+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:23, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-26T12:08:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:08, the system update banner appeared; she dismissed it.",
+    "label": "noise",
+    "category": "system_update_later"
+  },
+  {
+    "time": "2026-01-26T17:39:46+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 17:39, she chose Chilemei instead of Tuantuan, ordered fish for dinner, added the remark 'less oil, less salt, no spicy flavors,' and paid via WeChat Pay.",
+    "label": "signal",
+    "category": "chilemei_fish_dinner"
+  },
+  {
+    "time": "2026-01-26T19:41:32+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:41, she opened Mattermost and sent Son (Qiang) a short voice message saying the wind was strong and that she had ordered fish for dinner.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-26T21:06:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:06, a Wi-Fi sign-in prompt flashed unexpectedly; she dismissed it and the network returned.",
+    "label": "noise",
+    "category": "wifi_reconnect_prompt"
+  },
+  {
+    "time": "2026-01-27T08:00:19+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the 08:00 BP Medicine alert popped up in Clock; she acknowledged it and closed the reminder.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-27T08:19:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:19, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-27T12:41:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:41, she reopened Taodian to price-check black shoes (EU size 40) again, filtered out white colors, and bookmarked one low-price pair.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-27T14:13:54+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:13, she cleaned the Gallery screenshots album, deleting screenshots taken before December 28, and keeping only recent medicine and dance-related screenshots.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-27T19:34:58+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:34, she opened Mattermost and sent Son (Qiang) a short voice message asking about the grandson's homework and asking them to message her early if they needed market items.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-27T21:05:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, a permission dialog for Microphone appeared unexpectedly; she tapped Deny and closed the app.",
+    "label": "noise",
+    "category": "app_permission_denied"
+  },
+  {
+    "time": "2026-01-28T08:00:07+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-28T08:17:42+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:17, she opened Chrome at 150% zoom, searched Baidu for Beijing wind and temperature, checked the forecast card, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-28T12:06:50+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:06, a voice assistant listening screen popped up; she tapped the X to close it.",
+    "label": "noise",
+    "category": "voice_assistant_open_close"
+  },
+  {
+    "time": "2026-01-28T15:10:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:10, she opened Calendar and added a reminder for the first-week February market trip and medicine refill check.",
+    "label": "signal",
+    "category": "calendar_planning"
+  },
+  {
+    "time": "2026-01-28T19:36:24+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:36, she opened Mattermost and sent Son (Qiang) a short message that she had added reminders for the next market trip and the medicine refill.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-28T21:09:24+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:09, she opened Quick Settings, saw the flashlight tile was on, and switched it off.",
+    "label": "noise",
+    "category": "flashlight_toggle"
+  },
+  {
+    "time": "2026-01-29T06:47:18+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:47, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-29T07:30:08+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:30, she opened WeChat, scanned the vendor QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-29T08:00:05+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she opened the BP Medicine reminder in Clock, marked it done, and turned the screen off.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-29T12:31:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:31, she opened Mattermost and sent Son (Qiang) a short message asking whether he needed extra eggs from today's market trip.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-29T15:40:26+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 15:40, a screenshot thumbnail appeared; she opened Gallery > Screenshots and deleted it.",
+    "label": "noise",
+    "category": "screenshot_delete"
+  },
+  {
+    "time": "2026-01-29T18:06:52+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 18:06, she opened Chilemei, reordered steamed fish with the remark 'less oil, less salt, no spicy flavors,' and paid with WeChat Pay.",
+    "label": "signal",
+    "category": "chilemei_fish_dinner"
+  },
+  {
+    "time": "2026-01-29T19:07:26+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:07, she opened Camera, recorded a short square-dance clip, and saved it to Gallery.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-30T08:00:12+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, the BP Medicine reminder appeared in Clock; she tapped Dismiss and cleared the reminder banner.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-30T08:13:24+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:13, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-30T12:30:44+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:30, a shopping coupon reminder appeared; she cleared it from notifications.",
+    "label": "noise",
+    "category": "coupon_push_dismissed"
+  },
+  {
+    "time": "2026-01-30T14:46:14+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:46, she opened Taodian, compared rice and tissue bundle prices across three stores, checked photo reviews, and saved the lowest-price option to favorites.",
+    "label": "signal",
+    "category": "taodian_price_compare"
+  },
+  {
+    "time": "2026-01-30T19:38:58+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:38, she opened Mattermost and sent Son (Qiang) a short message that she had compared rice and tissue bundle prices on Taodian.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-01-30T21:05:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:05, a sensational news notification arrived; she cleared it without reading.",
+    "label": "noise",
+    "category": "news_push_swipe"
+  },
+  {
+    "time": "2026-01-31T06:45:54+08:00",
+    "location": "和平里老小区东门公交站",
+    "action": "At 06:45, she opened Map, selected Route 52 to Chaowai Farmers Market with the fewest transfers, and enabled voice navigation.",
+    "label": "signal",
+    "category": "market_navigation"
+  },
+  {
+    "time": "2026-01-31T07:27:42+08:00",
+    "location": "北京市朝阳区朝外农贸市场",
+    "action": "At 07:27, she opened WeChat, scanned the egg stall QR code, confirmed the total, and completed the payment.",
+    "label": "signal",
+    "category": "market_shopping"
+  },
+  {
+    "time": "2026-01-31T08:00:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, she opened the BP Medicine reminder in Clock, marked it done, and turned the screen off.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-01-31T08:25:18+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:25, she opened Chrome, searched Baidu for Beijing weather and temperature, viewed the forecast summary, and closed the tab.",
+    "label": "signal",
+    "category": "morning_weather"
+  },
+  {
+    "time": "2026-01-31T12:06:30+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:06, a nearby Bluetooth device prompt appeared; she closed it.",
+    "label": "noise",
+    "category": "bluetooth_pair_prompt"
+  },
+  {
+    "time": "2026-01-31T19:03:40+08:00",
+    "location": "北京市东城区地坛公园南门广场",
+    "action": "At 19:03, she opened Messages to check the plaza-dance update and then locked the phone screen at the plaza.",
+    "label": "signal",
+    "category": "square_dance"
+  },
+  {
+    "time": "2026-01-31T19:32:10+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:32, she opened Contacts, called Son (Qiang), kept the call open briefly, and then ended it.",
+    "label": "signal",
+    "category": "family_call"
+  },
+  {
+    "time": "2026-02-01T08:00:09+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 08:00, Clock chimed for BP Medicine; she tapped Done and returned to the home screen.",
+    "label": "signal",
+    "category": "medicine_routine"
+  },
+  {
+    "time": "2026-02-01T09:18:22+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 09:18, she opened Calendar and checked February reminders, then added a note to refill blood-pressure medicine next clinic day.",
+    "label": "signal",
+    "category": "calendar_planning"
+  },
+  {
+    "time": "2026-02-01T12:04:20+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 12:04, an app opened from the home screen; she backed out to the home screen.",
+    "label": "noise",
+    "category": "app_open_back"
+  },
+  {
+    "time": "2026-02-01T14:15:06+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 14:15, a \"Storage Almost Full\" system notification appeared; she tapped it, opened Gallery > Screenshots, deleted older duplicate files, and exited Gallery.",
+    "label": "noise",
+    "category": "storage_cleanup"
+  },
+  {
+    "time": "2026-02-01T19:40:28+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 19:40, she opened Mattermost and sent Son (Qiang) a short message that she had cleared duplicate screenshots and added a refill reminder.",
+    "label": "signal",
+    "category": "family_group_message"
+  },
+  {
+    "time": "2026-02-01T21:02:40+08:00",
+    "location": "北京市东城区和平里中街17号院2单元301室",
+    "action": "At 21:02, an app asked for a review; she closed the dialog.",
+    "label": "noise",
+    "category": "app_rate_prompt_dismissed"
+  }
+]

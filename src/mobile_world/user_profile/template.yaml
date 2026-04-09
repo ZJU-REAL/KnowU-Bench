@@ -1,0 +1,95 @@
+version: "2.0"
+description: "Scenario description here"
+created_at: "ISO8601 Date"
+
+# =============================================================================
+# SECTION 1: USER PROFILING
+# Rule: Keep the primary keys (identity, locations, etc.), but feel free to 
+# add sub-keys that fit the specific persona.
+# =============================================================================
+user_profile:
+  identity:
+    # Essential fields (Required)
+    full_name: ""
+    age: 0
+    occupation: ""
+    employer: ""
+    # Optional fields (Model can generate relevant auth docs based on scenario)
+    auth_documents: {} 
+    contact_info: {}
+
+  locations:
+    # Required: Home and Work/School. 
+    # Optional: Gym, Favorite Cafe, etc.
+    home: { address: "", label: "Home" }
+    work: { address: "", label: "Work" }
+
+  digital_context:
+    devices: [] # List of strings
+    system_settings: {} # Key-value pairs (e.g., Language, Theme)
+    
+  habits:
+    # Core behavioral categories. 
+    # The structure inside can varies based on the persona's complexity.
+    information_intake: {} 
+    file_management: {}
+    communication_style: {}
+    scheduling: {}
+
+  preferences:
+    # Static preferences (Travel, Food, Brands)
+    travel: {}
+    lifestyle: {}
+
+  decision_criteria:
+    # Psychological drivers for the agent
+    priorities: [] # List of strings
+    trade_offs: [] # List of strings (e.g., "Time > Money")
+    pain_points: []
+
+  social_graph:
+    # Relationships categorized by priority
+    high_priority: [] # List of objects {name, role, instruction}
+    routine: []
+    personal: []
+
+# =============================================================================
+# SECTION 2: ENVIRONMENT STATE
+# Rule: Only generate Apps relevant to the scenario. 
+# You MUST include at least 1 Conflict, 1 Task, and 1 Distraction.
+# =============================================================================
+environment_init_state:
+  
+  # Dynamic App States. 
+  # Use standard app_ids: app_mattermost, app_mail, app_calendar, app_map, etc.
+  
+  app_mattermost: # (or app_wechat / app_slack)
+    status: ""
+    # Structure: Teams -> Channels -> Messages
+    # Structure: Direct Messages
+    teams: [] 
+    direct_messages: []
+
+  app_mail:
+    account: ""
+    inbox: [] # List of email objects {sender, subject, snippet, read, flagged}
+
+  app_messages:
+    threads: [] # SMS/OTP threads
+
+  app_calendar:
+    current_date: ""
+    events: [] # List of {time, title, location, priority}
+
+  app_files:
+    # Logical file structure relevant to the persona's job/study
+    structure: [] 
+
+  app_browser: # (Chrome/Safari)
+    tabs: [] # Open tabs showing what the user was doing
+
+  # Optional Apps (Include only if relevant to the story)
+  # e.g., app_bank, app_shopping, app_music, app_gallery
+  app_shopping: {}
+  app_gallery: {}
+  app_map: {}

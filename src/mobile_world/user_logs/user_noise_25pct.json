@@ -1,0 +1,1486 @@
+[
+  {
+    "time": "2026-01-01T08:31:32+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:31, after unlocking his device, he opened AlphaXiv and filtered for GUI agent papers, saving 2 new works on web-based UI grounding; then checked HuggingFace Papers and wrote brief notes for a personalized agent paper exploring user preference modeling (title, key experiments, reproducibility links).",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-01T14:00:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:00, he opened the Tuantuan app and ordered an iced Americano (no sugar, extra shot), then kept reading a cached paper in OpenDocument while waiting for delivery.",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-01T15:40:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 15:40, he opened the Chrome app and navigated to Bilibili, watched a 12-minute video essay on 'Top AI Moments of 2025', liked it, then closed the tab.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-01T20:05:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:05, he received a call from an unknown number claiming to be a bank fraud prevention hotline. He declined the call after one ring and ignored it.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-02T08:22:33+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:22, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-02T08:35:44+08:00",
+    "location": "Haidian District - subway Line 10",
+    "action": "At 08:35, on the subway, he quickly scanned AlphaXiv and HuggingFace Papers on his phone, filtered for personalized agent and user-adaptive systems, and forwarded one paper on preference-aware task planning to the lab Mattermost #general channel.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-02T09:05:10+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:05, he enabled Do Not Disturb on his phone and auto-declined a calendar notification, then opened OpenDocument to re-read the latest benchmark progress summary and student task allocation notes.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-02T12:20:44+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:20, he took a photo with the Camera of the dish (braised tofu set) and posted it in a college friend group chat on the Mattermost app with 'cafeteria is actually decent today'.",
+    "label": "noise",
+    "category": "life_errands"
+  },
+  {
+    "time": "2026-01-02T16:58:22+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:58, he opened the Mail app on his phone and sent Weekly_Report.pdf to dean@pku.edu.cn with 'Weekly Report' in the subject line, attaching the PDF he had exported earlier on his laptop.",
+    "label": "signal",
+    "category": "weekly_report"
+  },
+  {
+    "time": "2026-01-02T17:11:09+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 17:11, he received the Dean's follow-up email notification on his phone, replied in the Mail app confirming he would fill in the experiment table by next Wednesday, and sent a Mattermost message to Alice Wang asking her to help collect the required student data.",
+    "label": "signal",
+    "category": "social_graph_alice"
+  },
+  {
+    "time": "2026-01-02T17:30:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:30, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-02T20:15:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:15, he received a call from an unknown number (real estate agent); he declined the call after two rings and blocked the number.",
+    "label": "noise",
+    "category": "spam"
+  },
+  {
+    "time": "2026-01-02T23:05:41+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 23:05, he opened Clock and disabled the 07:30 alarm for Saturday morning.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-03T08:25:12+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:25, he browsed new AlphaXiv papers, focusing on GUI agent interaction with mobile and desktop interfaces, then saved two papers on HuggingFace Papers about screen-level action grounding.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-03T10:15:28+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:15, he started drafting an email in the Mail app to an old PhD advisor to wish him Happy New Year, typed three sentences, then saved it as a draft.",
+    "label": "noise",
+    "category": "interruption_failure"
+  },
+  {
+    "time": "2026-01-03T13:25:15+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 13:25, he saw an interesting Mastodon post about a new GUI grounding method for mobile agents, copied the link, and shared it to the Mattermost AI-Research channel with a note: 'Worth reading — novel approach to element detection on mobile screens.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-03T16:45:11+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 16:45, his phone displayed a Taodian push notification: 'New Year Mega Sale — Up to 50% Off Electronics!' He swiped it away without opening.",
+    "label": "noise",
+    "category": "push_promo"
+  },
+  {
+    "time": "2026-01-03T20:20:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:20, he opened Mastodon on his phone, liked and bookmarked a post by a CMU researcher sharing a new GUI agent evaluation framework with reproducible benchmarks.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-04T11:05:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 11:05, a student sent him a message in the Mattermost app asking how to configure a VPN to access Google Scholar from off-campus. He replied in the Mattermost app with a link to the campus IT FAQ page.",
+    "label": "noise",
+    "category": "work_noncritical"
+  },
+  {
+    "time": "2026-01-04T14:10:06+08:00",
+    "location": "Neighborhood park near Jinqiu International Building",
+    "action": "At 14:10, he pulled out his phone and checked his step count in the Fitness app (4,382 steps so far).",
+    "label": "noise",
+    "category": "health_fitness"
+  },
+  {
+    "time": "2026-01-04T19:35:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:35, while pulling his phone from his pocket, he accidentally triggered the voice assistant. He tapped 'Cancel' immediately and locked the screen.",
+    "label": "noise",
+    "category": "accidental_tap"
+  },
+  {
+    "time": "2026-01-04T22:14:26+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:14, he opened Gallery -> Screenshots, deleted all screenshots dated on or before Dec 05, 2025, kept newer captures, and emptied Recently Deleted.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-05T08:20:15+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:20, he opened the Maps app to check for service disruptions on Line 10 — all clear.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-05T08:26:44+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:26, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-05T08:34:06+08:00",
+    "location": "Haidian District - subway Line 10",
+    "action": "At 08:34, he opened AlphaXiv in low-bandwidth mode, skimmed titles on personalized agent memory and long-term user modeling, and marked three papers to read later.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-05T09:00:00+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:00, he enabled Do Not Disturb on his phone and set meeting invites to auto-decline; one ad-hoc admin meeting notification was declined automatically.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-05T11:50:22+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 11:50, he ordered a Beijing-style shredded pork in bean sauce (京酱肉丝) with thin pancake wraps and a sugar-free Coca-Cola. He confirmed the dish used no peanut oil, then paid via Alipay QR code at the counter.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-05T13:15:08+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 13:15, his phone displayed a notification: 'Bluetooth device \"Unknown Earbuds\" is requesting to pair.' He dismissed the notification.",
+    "label": "noise",
+    "category": "system_alert"
+  },
+  {
+    "time": "2026-01-05T17:25:33+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:25, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-06T08:25:44+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:25, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-06T12:10:55+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:10, he opened the Chrome app to the PKU OA page, found a campus lecture event listing on quantum computing, glanced at the abstract, and closed the page.",
+    "label": "noise",
+    "category": "work_noncritical"
+  },
+  {
+    "time": "2026-01-06T14:00:03+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:00, he opened the Tuantuan app and ordered an iced Americano (no sugar, extra shot), then sent a Mattermost message to two students confirming the afternoon seminar presentation order.",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-06T15:10:12+08:00",
+    "location": "Lab Conference Room, Science Building 1",
+    "action": "At 15:10, he attended the group seminar on multimodal agents, took notes on his phone, and posted in Mattermost #experiments-gpu to standardize everyone on the same evaluation script version.",
+    "label": "signal",
+    "category": "team_communication"
+  },
+  {
+    "time": "2026-01-06T16:45:33+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:45, he forwarded a Mastodon thread by a UC Berkeley group on LLM-based UI automation to the Mattermost AI-Research channel, adding: 'Their action grounding setup is similar to ours — check the ablation in Table 3.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-06T18:40:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:40, after the seminar, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-06T19:50:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:50, he scrolled through Mastodon during a break, liked a post by an Oxford ML group on LLM-driven UI automation for accessibility, and bookmarked a thread discussing open-source mobile agent toolkits.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-06T20:30:17+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:30, he received a message from a college friend in the Mattermost app: 'Dude, check this out' with a link to a viral AI-generated video. He watched the 30-second clip in the Chrome app and replied in the Mattermost app '哈哈 insane'.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-07T08:15:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:15, he checked the Maps app and saw a rain alert with slippery road warnings. He opened the Didi app, ordered a Didi Premier (礼橙专车) with the destination set to Science Building 1 at PKU, and paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-07T09:15:34+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:15, after a Mattermost mention about an H800 cluster crash during LLaMA-3 fine-tuning, he replied in Mattermost with 'Received, checking now,' then messaged Bob Li to switch to a backup node while he investigated from his workstation.",
+    "label": "signal",
+    "category": "social_graph_bob"
+  },
+  {
+    "time": "2026-01-07T10:32:20+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 10:32, after reviewing Bob Li's training script on his workstation, he sent Bob a detailed Mattermost message flagging issues around data-loader seeding, gradient accumulation, and logging paths, and requested a minimal reproducible example for future debugging.",
+    "label": "signal",
+    "category": "social_graph_bob"
+  },
+  {
+    "time": "2026-01-07T12:10:33+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 12:10, he received a text message from an unknown number: 'Hi, when are you coming to pick up the cake order?' He replied 'Wrong number' and deleted the conversation.",
+    "label": "noise",
+    "category": "wrong_number"
+  },
+  {
+    "time": "2026-01-07T14:20:33+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:20, a collaborator sent a lengthy 800-word email proposing a joint benchmark study. He replied in the Mail app with a concise 3-sentence response: confirmed interest, proposed a 30-min call next week, and asked for a one-page summary instead of the full proposal.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-07T17:50:03+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 17:50, his phone battery dropped to 14%. A prompt in the Settings app appeared: 'Enable Power Saving Mode?' He tapped Yes, reducing background sync and screen brightness.",
+    "label": "signal",
+    "category": "low_battery_saver"
+  },
+  {
+    "time": "2026-01-07T18:30:12+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 18:30, with the rain still coming down, he opened the Didi app and ordered a Didi Premier (礼橙专车) with the destination set to home, and paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-07T19:30:15+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:30, he opened the Tuantuan app and ordered a Kung Pao chicken set (no peanuts) for dinner. He added 'please add extra rice' in the delivery notes, applied his Tuantuan membership discount, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-07T21:08:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:08, Sarah Lin called via Messages video call. They chatted for 12 minutes about Mom's upcoming birthday plans — she suggested a restaurant in Xicheng and he agreed to book it.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-08T08:22:44+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:22, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-08T09:12:02+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:12, he enabled Do Not Disturb on his phone and auto-declined a 09:30 calendar invite; his phone stayed silent during the morning block.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-08T12:05:33+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:05, he ordered a plate of jiang bao ji ding (酱爆鸡丁) with steamed rice. He confirmed with the server that the dish used no peanut oil, and paid via Alipay QR code.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-08T15:22:14+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 15:22, he noticed an SMS from an unknown number: 'Hi Professor Lin, this is Mingyu from Prof. Chen's lab.' He opened Contacts, saved the number under 'Mingyu (Chen Lab)', and replied briefly to confirm receipt.",
+    "label": "signal",
+    "category": "contact_saver"
+  },
+  {
+    "time": "2026-01-08T18:15:33+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:15, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-08T21:10:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:10, he received a Bilibili push notification: 'Hot topic: 2025 Year-End Tech Awards Results.' He swiped it away without opening the app.",
+    "label": "noise",
+    "category": "junk_notification"
+  },
+  {
+    "time": "2026-01-09T08:32:19+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:32, he skimmed AlphaXiv and HuggingFace Papers in dark mode, queued a GUI agent paper on cross-app navigation for an evening deep read, and drafted a short Mastodon comment about its novel UI element detection approach.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-09T08:50:06+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:50, after finishing his morning paper scan, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-09T16:59:47+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:59, he opened the Mail app and sent Weekly_Report.pdf summarizing the week's cluster-crash handling, experiment progress, and storage I/O risks to dean@pku.edu.cn.",
+    "label": "signal",
+    "category": "weekly_report"
+  },
+  {
+    "time": "2026-01-09T17:10:44+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:10, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-09T18:05:13+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 18:05, he planned a Shanghai academic trip on his phone: booked round-trip Air China morning flights with an aisle seat via the Air China app, shortlisted quiet high-floor hotels with a work desk and strong Wi-Fi on the Ctrip app, and arranged Didi Premier for ground transport. He paid via Alipay.",
+    "label": "signal",
+    "category": "preference_travel"
+  },
+  {
+    "time": "2026-01-09T19:25:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:25,he opened the Tuantuan app and ordered a Kung Pao chicken set (no peanuts) for dinner. He wrote 'please add extra rice' in the delivery notes, applied his Tuantuan membership discount, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-09T20:15:08+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:15, he shared a Mastodon post about context-aware personal assistant agents to the Mattermost AI-Research channel, noting: 'Relevant to our preference modeling module — they use a similar user history embedding.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-09T20:45:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:45, he opened Mastodon and liked a post about a new personalized recommendation agent that adapts to implicit user preferences, then bookmarked the linked preprint for later reading.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-09T23:07:31+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 23:07, after wrapping up reading notes, he opened Clock and disabled the 07:30 alarm for Saturday morning.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-10T09:25:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 09:25, he received an SMS from a delivery service: 'Your Zhongtong Express parcel (pickup code 5-2-8) is at the Cainiao station, Building 3 entrance.' It was addressed to a previous tenant — he deleted the SMS.",
+    "label": "noise",
+    "category": "misdelivered_sms"
+  },
+  {
+    "time": "2026-01-10T11:00:26+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 11:00, he confirmed the trip bookings on his phone and added them to the Calendar app (Beijing → Shanghai and return), syncing Air China flight numbers, gate reminders, and the meeting schedule.",
+    "label": "signal",
+    "category": "preference_travel"
+  },
+  {
+    "time": "2026-01-10T14:00:07+08:00",
+    "location": "Neighborhood café near Jinqiu International Building",
+    "action": "At 14:00, he ordered a to-go iced Americano (no sugar, extra shot) and paid via Alipay QR code.",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-10T14:15:33+08:00",
+    "location": "Haidian District",
+    "action": "At 14:15, he opened the Taodian app and ordered a Logitech mouse pad with express shipping. He selected the fapiao (invoice) option and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-11T10:20:17+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:20, the Maps app pushed a 'Yellow Haze Warning for Beijing' alert. He glanced at it, confirmed it wouldn't affect his indoor plans, and dismissed the notification.",
+    "label": "noise",
+    "category": "weather_alert"
+  },
+  {
+    "time": "2026-01-11T10:30:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:30, he opened the Jingdian app to search for a replacement Apple MagSafe charger — picked the official Apple-certified listing, selected next-day delivery, and placed the order. He selected the fapiao (invoice) option and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-11T14:35:50+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:35, he played two rounds of a puzzle game (2048) in Chrome, then closed it.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-11T22:16:02+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:16, he opened Gallery -> Screenshots, deleted all screenshots dated on or before Dec 12, 2025, kept newer captures, and emptied Recently Deleted.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-12T06:20:14+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 06:20, Bob Li sent a Mattermost message saying overnight training jobs were stuck with repeated CUDA OOM on node H800-03. He replied within minutes with 'Received, checking now,' and sent Bob step-by-step fix instructions via Mattermost: reduce per-device batch size, enable checkpointing, and relaunch with the patched config.",
+    "label": "signal",
+    "category": "social_graph_bob"
+  },
+  {
+    "time": "2026-01-12T07:10:00+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 07:10, he opened the Didi app and ordered a Didi Premier (礼橙专车) to Beijing Capital International Airport (PEK). He paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-12T08:30:03+08:00",
+    "location": "Beijing Capital International Airport (PEK)",
+    "action": "At 08:30, he checked AlphaXiv and HuggingFace Papers for tool-using agent work and downloaded one PDF.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-12T14:15:00+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 14:15, he reviewed Mattermost messages from Alice Wang about the morning training dashboard, replied to two student questions about experiment queue priority, and adjusted the run schedule via Mattermost to avoid overlap before the next day's seminar.",
+    "label": "signal",
+    "category": "social_graph_alice"
+  },
+  {
+    "time": "2026-01-12T15:45:22+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 15:45, during a conference break, he opened Mastodon and liked a post by a Google DeepMind researcher discussing challenges in mobile agent benchmarks, and bookmarked a related demo video.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-12T16:30:22+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 16:30, he sent a Mattermost note in #experiments-gpu reminding students of the naming convention for reproducible run folders, and asked Alice to consolidate completed experiment runs and archive finalized checkpoints.",
+    "label": "signal",
+    "category": "team_communication"
+  },
+  {
+    "time": "2026-01-13T08:00:45+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 08:00, he skipped the milk-based yogurt and cereal station, grabbed a black coffee and asked the waiter to swap regular milk for oat milk. He chose a plate of toast, smoked salmon, and fruit.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-13T09:00:00+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 09:00, he enabled Do Not Disturb on his phone.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-13T10:10:22+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 10:10, he received a call from an unknown Shanghai local number. After one ring, he declined it — likely insurance or real estate marketing.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-13T13:40:22+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 13:40, he forwarded a Mastodon post about a newly released tool-augmented agent benchmark to the Mattermost AI-Research channel with the note: 'New benchmark just dropped — includes mobile and desktop tasks, could be a good comparison target.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-13T14:00:11+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 14:00, he checked Mattermost for student ablation progress updates, answered follow-up questions about evaluation protocol via voice messages, and assigned Alice to standardize figure captions before the weekly sync.",
+    "label": "signal",
+    "category": "social_graph_alice"
+  },
+  {
+    "time": "2026-01-13T14:30:08+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 14:30, he opened the Calendar app and reviewed tomorrow's convention schedule, then opened OpenDocument to re-read the keynote speaker's recent paper abstract to prepare for the session.",
+    "label": "signal",
+    "category": "pre_meeting_prep"
+  },
+  {
+    "time": "2026-01-14T07:50:09+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 07:50, he received a Ctrip push notification: 'Shanghai nearby attractions — book now at 30% off!' He swiped it away without opening.",
+    "label": "noise",
+    "category": "push_promo"
+  },
+  {
+    "time": "2026-01-14T14:30:09+08:00",
+    "location": "Shanghai Convention Center",
+    "action": "At 14:30, during a break between sessions, he received a Mattermost alert that inference API latency had jumped above 5 seconds during a student demo. He acknowledged immediately in Mattermost with 'Ack, checking now,' messaged Alice to restart the degraded model-serving pod and enable request batching limits, then posted 'Mitigation in place, monitoring closely' once Alice confirmed.",
+    "label": "signal",
+    "category": "on_call_response"
+  },
+  {
+    "time": "2026-01-14T18:35:20+08:00",
+    "location": "Jing'an District, Shanghai",
+    "action": "At 18:35, he ordered grilled mackerel and edamame, skipped the peanut appetizer plate. He used WeChat Pay to settle the bill.",
+    "label": "signal",
+    "category": "preference_payment"
+  },
+  {
+    "time": "2026-01-15T08:40:22+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 08:40, he checked HuggingFace Papers for tool-using agent updates and added one experimental setup to his benchmark backlog.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-15T10:18:33+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 10:18, he received an SMS from a researcher he met at the convention: 'Hi, this is Wei Zhang from SJTU, we talked about benchmark design yesterday.' He saved the number to Contacts as 'Wei Zhang (SJTU)' and noted down the follow-up discussion topic.",
+    "label": "signal",
+    "category": "contact_saver"
+  },
+  {
+    "time": "2026-01-15T11:20:15+08:00",
+    "location": "PKU-Partner Hotel, Jing'an District, Shanghai",
+    "action": "At 11:20, he opened the Didi app and ordered a Didi Premier (礼橙专车) to Shanghai Pudong International Airport (PVG) for his return flight to Beijing. He paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-15T13:10:15+08:00",
+    "location": "Shanghai Pudong International Airport (PVG)",
+    "action": "At 13:10, while waiting at the boarding gate, his phone popped up a Wi-Fi login prompt: 'Connect to AIRPORT_FREE_WIFI?' He dismissed the prompt and continued using mobile data.",
+    "label": "noise",
+    "category": "system_alert"
+  },
+  {
+    "time": "2026-01-15T16:05:33+08:00",
+    "location": "Beijing Capital International Airport (PEK) - Airport Express Line",
+    "action": "At 16:05, after landing at PEK, he opened the Alipay app and scanned the transit QR code (乘车码) at the airport express subway turnstile to head home.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-15T17:45:00+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 17:45, just before evening break, he was asked in Mattermost about repeated pod restarts in the evaluation service. He replied within minutes with 'Ack, checking now,' then coordinated the fix via Mattermost — asking Bob to inspect crash logs and roll back the bad dependency image — and confirmed service health returned to green.",
+    "label": "signal",
+    "category": "team_communication"
+  },
+  {
+    "time": "2026-01-15T20:30:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:30, he browsed Mastodon on his phone, liked two posts on user preference modeling in conversational agents, and bookmarked a survey paper link shared by a Stanford NLP researcher.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-16T08:15:18+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:15, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-16T09:05:07+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:05, he enabled Do Not Disturb on his phone and auto-declined a 09:30 meeting invitation.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-16T13:50:22+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 13:50, he shared a Mastodon post by an NVIDIA researcher on efficient agent inference to the Mattermost AI-Research channel, commenting: 'Their latency optimization tricks could help our demo pipeline.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-16T16:57:33+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:57, he opened the Mail app and sent Weekly_Report.pdf with new collaboration leads and reproducibility suggestions from Shanghai to dean@pku.edu.cn, flagging the need to prioritize stabilizing cluster I/O next week.",
+    "label": "signal",
+    "category": "weekly_report"
+  },
+  {
+    "time": "2026-01-16T17:03:58+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 17:03, he replied to a Grant Committee email in the Mail app, committed to sending an updated experiment summary and spending explanation within 48 hours, and sent Mattermost messages to Alice (receipts collection) and Bob (experiment table) to delegate the prep work.",
+    "label": "signal",
+    "category": "social_graph_alice"
+  },
+  {
+    "time": "2026-01-16T17:20:33+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:20, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-16T19:20:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:20, he opened the Tuantuan app and ordered a Kung Pao chicken set (no peanuts, extra spicy). He added 'please add extra rice' in the delivery remarks, used his Tuantuan membership coupon, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-16T23:06:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 23:06, he opened Clock and disabled the recurring 07:30 alarm for Saturday morning.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-17T10:55:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:55, he received a Mastodon notification from a bot account promoting a crypto trading tool. He blocked the account and cleared the notification.",
+    "label": "noise",
+    "category": "bot_spam"
+  },
+  {
+    "time": "2026-01-17T19:30:50+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:30, he watched an episode of a sci-fi series via a streaming site in Chrome (about 45 minutes), pausing once to reply to a friend's message in Messages asking for restaurant recs in Haidian.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-17T20:25:10+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:25, he noticed a Douyin push notification ('Trending: AI explains quantum physics') and swiped it away without opening.",
+    "label": "noise",
+    "category": "system_passive"
+  },
+  {
+    "time": "2026-01-18T14:20:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:20, he opened Taodian on his phone to look for a new pair of casual sneakers. He filtered by white color and EU size 41, browsed through a dozen listings, and favorited (收藏) three pairs with good sole-cushioning specs and real user photos, skipping KOL-promoted listings.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-18T16:40:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 16:40, his phone displayed a push notification from a news app: 'Breaking: Celebrity couple announces divorce.' He swiped it away without reading.",
+    "label": "noise",
+    "category": "junk_notification"
+  },
+  {
+    "time": "2026-01-18T22:13:41+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:13, he opened Gallery -> Screenshots, deleted all screenshots dated on or before Dec 19, 2025, kept newer captures, and emptied Recently Deleted.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-19T08:25:33+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:25, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-19T09:00:00+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:00, he received a notification on his phone about a developer beta update available for his workstation. He noted it down to install after hours, then resumed his morning reading in OpenDocument.",
+    "label": "signal",
+    "category": "preference_beta_software"
+  },
+  {
+    "time": "2026-01-19T15:30:44+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 15:30, he forwarded a Mastodon discussion on agent safety and user privacy in personal assistants to the Mattermost AI-Research channel, adding: 'Important topic — we should address this in our related work section.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-19T16:45:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 16:45, he opened Maps to check the fastest route to the Xicheng District restaurant, then opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-19T17:30:22+08:00",
+    "location": "Restaurant in Xicheng District",
+    "action": "At 17:30, he took several family photos with Camera, shared one to a family group on Mattermost with '生日快乐妈妈❤️'.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-19T20:30:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:30, he revisited the three pairs of white sneakers he had favorited on Taodian yesterday. After reading detailed user reviews, he unfavorited two. He added the remaining pair (¥79, 800+ positive reviews) to his cart and selected SF Express for shipping.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-19T20:45:12+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:45, he opened Mastodon and liked a post by an ETH Zurich group about agent memory architectures for long-horizon task planning.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-20T07:40:08+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 07:40, he noticed in a group on the Mattermost app that the community group-buy had a deal on imported avocados. He ordered a box of 6 (¥29.9) via the Tuantuan app and set the pickup time for after work.",
+    "label": "noise",
+    "category": "life_errands"
+  },
+  {
+    "time": "2026-01-20T09:15:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 09:15, he checked Maps and saw a heavy rain warning with flooding risk near Zhichun Road. He opened the Didi app, ordered a Didi Premier (礼橙专车) to Science Building 1 at PKU, and paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-20T10:15:42+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 10:15, after a 1:1 with Bob Li at the lab whiteboard, he took a photo of the troubleshooting tree they drew, sent it to Bob via Mattermost with three concrete milestones and a reminder to start with a minimal repro.",
+    "label": "signal",
+    "category": "social_graph_bob"
+  },
+  {
+    "time": "2026-01-20T11:45:30+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 11:45, he noticed a Mattermost message from a student sent at 10:00 asking about dataset preprocessing steps. He replied with a two-sentence answer and a link to the lab wiki.",
+    "label": "signal",
+    "category": "preference_communication"
+  },
+  {
+    "time": "2026-01-20T12:10:44+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:10, he ordered a bowl of da lu mian (打卤面) with extra egg and mushroom topping at the noodle counter. He paid via Alipay QR code.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-20T15:50:18+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 15:50, while adjusting his phone on the desk, he accidentally opened the Calculator app. He closed it immediately.",
+    "label": "noise",
+    "category": "accidental_tap"
+  },
+  {
+    "time": "2026-01-20T18:35:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:35, with the rain having stopped, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-20T20:00:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:00, he browsed Taodian for a new hoodie. The recommendation feed kept pushing black hoodies and one-piece jumpsuits — he skipped all of them. He filtered for light-colored zip-ups, found a grey one at ¥89 and a beige one at ¥139. He favorited the ¥89 grey one but passed on the ¥139 option.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-21T08:15:15+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:15, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-21T08:33:05+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 08:33, he quickly skimmed AlphaXiv on his phone and shared a new GUI agent benchmark paper on mobile task automation with the team via Mattermost.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-21T12:05:19+08:00",
+    "location": "Science Building 1 front desk",
+    "action": "At 12:05, he verified the tracking number and pickup code on his phone, collected a Logitech mouse pad, signed for it, and saved a photo of the invoice to his reimbursement folder.",
+    "label": "signal",
+    "category": "preference_brand"
+  },
+  {
+    "time": "2026-01-21T13:20:44+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 13:20, he received a phone call from an unfamiliar number. After answering, the caller asked for 'Manager Li from the purchasing department.' He said 'wrong number' and hung up.",
+    "label": "noise",
+    "category": "wrong_number"
+  },
+  {
+    "time": "2026-01-21T18:10:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:10, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-21T19:15:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:15, he opened the Tuantuan app and ordered a Kung Pao chicken set (no peanuts) with a side of sugar-free Coca-Cola for dinner. He noted 'please add extra rice' in the delivery remarks, applied his Tuantuan membership discount, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-21T20:45:50+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:45, he opened a music streaming site in Chrome and played a jazz playlist, then switched to reading about 30 pages of a nonfiction book on the history of computing in OpenDocument.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-22T08:18:05+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:18, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-22T09:10:08+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:10, he enabled Do Not Disturb on his phone and set meeting invites to auto-decline for the morning block.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-22T11:30:18+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 11:30, he received a Mail notification from the PKU finance office asking for corrected line items on his travel reimbursement. He forwarded the email to Alice Wang on Mattermost with 'Alice, can you fix and resubmit? I marked the corrections in red. Thanks.'",
+    "label": "signal",
+    "category": "preference_delegation"
+  },
+  {
+    "time": "2026-01-22T14:35:46+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:35, Bob Li asked in Mattermost why two GPU jobs suddenly failed with NCCL timeout errors. He acknowledged immediately in Mattermost with 'Received, checking,' then messaged Bob with a safer communication timeout profile to apply before retrying the jobs.",
+    "label": "signal",
+    "category": "on_call_response"
+  },
+  {
+    "time": "2026-01-22T15:05:33+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 15:05, his phone displayed a Jingdian push notification: 'Limited Time Flash Sale — AirPods Pro at ¥200 Off!' He swiped it away without tapping.",
+    "label": "noise",
+    "category": "push_promo"
+  },
+  {
+    "time": "2026-01-22T23:40:08+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 23:40, He opened the Didi app, ordered a Didi Premier home to Jinqiu International Building, and paid via Alipay.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-22T23:45:30+08:00",
+    "location": "In a Didi Premier car, heading from Peking University to Jinqiu International Building",
+    "action": "At 23:45, while riding in the Didi car home, he opened Mastodon and scrolled trending topics for a few minutes (#AIRegulation was trending). He read two posts, didn't interact, and switched to reading a cached paper in OpenDocument.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-23T08:22:10+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:22, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-23T10:15:22+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 10:15, his phone showed a system notification: 'Phone storage almost full (92% used). Tap to free up space.' He dismissed it without taking action.",
+    "label": "noise",
+    "category": "system_alert"
+  },
+  {
+    "time": "2026-01-23T16:56:10+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:56, he opened the Mail app and sent Weekly_Report.pdf — compiled with GPU crash frequency, the mitigation plan, and student milestones — to dean@pku.edu.cn with improved reproducibility metrics highlighted.",
+    "label": "signal",
+    "category": "weekly_report"
+  },
+  {
+    "time": "2026-01-23T17:20:44+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 17:20, he opened the Mail app, attached the merged Q1 reimbursement packet with receipts as a single PDF, and emailed it to finance@pku.edu.cn, noting that the trip rides used Didi Premier and all fapiao invoices were attached.",
+    "label": "signal",
+    "category": "preference_transport"
+  },
+  {
+    "time": "2026-01-23T18:00:33+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:00, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-23T19:20:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:20,he opened the Tuantuan app and ordered a lu zhu huo shao set (卤煮火烧) with extra tofu puffs and a side of sugar-free Coca-Cola. He used his Tuantuan membership discount, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-23T23:11:42+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 23:11, after finishing email follow-ups, he checked Clock and turned off the 07:30 alarm.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-24T08:05:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:05, he received an SMS from a logistics company: 'Your YTO Express parcel (pickup code 3-7-1) is at the Cainiao station, Gate B.' It was addressed to a former neighbor — he deleted the SMS.",
+    "label": "noise",
+    "category": "misdelivered_sms"
+  },
+  {
+    "time": "2026-01-24T10:30:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:30, he opened Taodian and checked his shopping cart. He removed a ¥55 phone case he had added weeks ago from the cart. The white sneakers (¥79) were still there; he kept them.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-24T15:20:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 15:20, he received an SMS from '10086' promoting a new data plan upgrade. He glanced at it and swiped to delete.",
+    "label": "noise",
+    "category": "spam"
+  },
+  {
+    "time": "2026-01-24T20:45:11+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:45, he opened Taodian and placed an order for the white sneakers (¥79, EU 41) from his cart, selecting SF Express for shipping and paying via Alipay. He also moved the ¥89 grey hoodie from favorites into the same order.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-24T21:00:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:00, a college friend group in Mattermost started planning a Spring Festival reunion dinner. He read through 30+ messages, voted for a hotpot restaurant, and offered two available dates.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-25T10:40:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:40, he checked the Fitness app and saw 2,100 steps, then received a Mattermost notification and spent 10 minutes replying to messages.",
+    "label": "noise",
+    "category": "health_fitness"
+  },
+  {
+    "time": "2026-01-25T11:30:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 11:30, he forwarded a Mastodon thread about a new open-source mobile agent framework to the Mattermost AI-Research channel with the comment: 'They open-sourced the full pipeline — might be useful as a baseline.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-25T14:30:09+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:30, he got a Taodian delivery notification — the white sneakers (EU 41) arrived via SF Express. He then opened Taodian and searched for a Logitech C920s webcam for the lab's video-call setup — he selected the fapiao (invoice) option, and ordered it at ¥329 via Alipay without browsing alternatives.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-25T16:50:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 16:50, he opened Mastodon and bookmarked a post by a KAIST researcher about cross-app agent navigation with pixel-level grounding, and liked a follow-up discussion thread about evaluation metrics.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-25T19:15:10+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:15, the Maps app pushed a 'Cold Wave Blue Warning for Beijing — temperatures dropping to -12°C overnight.' He glanced at it and dismissed it.",
+    "label": "noise",
+    "category": "weather_alert"
+  },
+  {
+    "time": "2026-01-25T22:15:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:15, he opened Gallery -> Screenshots, deleted all screenshots dated on or before Dec 26, 2025, kept newer captures, and emptied Recently Deleted.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-26T08:38:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:38, he opened AlphaXiv on his phone, skimmed three new papers on personalized agent adaptation and user habit learning, and saved one on implicit preference extraction to read after lunch.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-26T10:30:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:30, he checked his Mail and found the ICLR 2026 acceptance notification for their paper on personalized mobile agent benchmarks. He immediately opened Mastodon and published a public post celebrating the acceptance — including the paper title, a brief summary of contributions, and a link to the ArXiv preprint, with hashtags #ICLR2026 #MobileAgents #PersonalizedAI.",
+    "label": "signal",
+    "category": "mastodon_posting"
+  },
+  {
+    "time": "2026-01-26T11:15:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 11:15, he posted a follow-up thread on Mastodon with a screenshot of the paper's main results table and a short commentary highlighting the key finding on user-adaptive task completion rates, thanked his co-authors and lab members by name, and set visibility to public for maximum academic reach.",
+    "label": "signal",
+    "category": "mastodon_posting"
+  },
+  {
+    "time": "2026-01-26T12:15:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 12:15, he opened the Tuantuan app to order lunch delivery — browsed the Japanese section, picked a salmon sashimi bowl (oat milk miso soup on the side), confirmed no peanut-based sauces, applied his Tuantuan membership discount, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-26T13:30:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 13:30, he checked Mastodon notifications and liked several congratulatory replies and boosts from peers on his ICLR acceptance posts from earlier that morning.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-26T14:15:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:15, he browsed Taodian for a lightweight spring jacket. He filtered for light colors and checked five listings across three stores — a beige one at ¥95, a light grey one at ¥108, and a cream one at ¥125. He read 20+ reviews on each, compared fabric weight and return-rate data, favorited the ¥95 beige one but decided to wait and check again later before buying.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-26T15:40:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 15:40, he shared a Mastodon post from an Allen AI researcher comparing different agent evaluation methodologies to the Mattermost AI-Research channel, noting: 'Good overview of metrics — let's discuss at next week's lab meeting.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-26T16:30:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 16:30, he scrolled through Mastodon for about 10 minutes, read a thread by a UC Berkeley researcher on benchmark contamination, boosted it, and drafted a reply linking his own team's findings before saving it as a draft.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-26T20:10:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:10, he received a follow request on Mastodon from a suspicious account with zero posts and a generic avatar. He declined the request and blocked the account.",
+    "label": "noise",
+    "category": "bot_spam"
+  },
+  {
+    "time": "2026-01-27T08:16:22+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:16, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-27T08:28:15+08:00",
+    "location": "Haidian District - subway Line 10",
+    "action": "At 08:28, he opened AlphaXiv and HuggingFace Papers, skimmed four new papers on GUI agent grounding and pixel-level action prediction, and forwarded one on vision-language models for UI understanding to the lab Mattermost #general channel with a brief note.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-27T09:02:00+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:02, he enabled Do Not Disturb on his phone and auto-declined a 09:30 departmental tea-chat invite..",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-27T11:50:08+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 11:50, he ordered a portion of jiang niu rou (酱牛肉) with shao bing (烧饼) and a bowl of egg-drop soup. He paid via Alipay QR code.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-27T14:00:55+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:00, he opened the Tuantuan app and ordered his usual iced Americano (no sugar, extra shot).",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-27T15:30:10+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 15:30, Bob Li asked for help debugging a tokenizer mismatch via Mattermost. After a 25-minute screen-share session at Bob's desk, he sent Bob a Mattermost message with detailed notes on the fix and told Bob to push a corrected version by end of day.",
+    "label": "signal",
+    "category": "social_graph_bob"
+  },
+  {
+    "time": "2026-01-27T17:15:44+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 17:15, Alice Wang pinged him on Mattermost asking whether to accept a 30-minute meeting request from the CS department for next Tuesday at 10:00. He replied 'Move it to 14:00 — mornings are deep work, no meetings before 11:30' and delegated the rescheduling to Alice.",
+    "label": "signal",
+    "category": "preference_meeting"
+  },
+  {
+    "time": "2026-01-27T17:40:18+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:40, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-27T19:15:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:15, he opened the Tuantuan app to order a Kung Pao chicken set (no peanuts) for dinner. He wrote 'please add extra rice' in the delivery remarks, used his Tuantuan membership coupon, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-27T20:30:07+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:30, Sarah Lin sent a Mattermost message with a photo of leftover birthday cake: 'Still have two slices, want some?' He replied 'Thanks but I'll pass — lactose intolerant lol'.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-28T08:35:42+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:35, he skimmed AlphaXiv and HuggingFace Papers in dark mode, flagged a new paper on LLM-as-judge evaluation methods, and shared the link to the lab Mattermost #experiments-gpu channel.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-28T08:45:33+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:45, after his morning paper scan, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-28T09:15:00+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:15, he enabled Do Not Disturb on his phone, auto-declined two non-essential calendar invites, and put his phone aside for the morning deep work block.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-28T12:35:44+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:35, while eating lunch, he received a call from an unknown number (home renovation ad). He declined the call after one ring and continued eating.",
+    "label": "noise",
+    "category": "spam_call"
+  },
+  {
+    "time": "2026-01-28T13:20:22+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 13:20, he shared a Mastodon post on multimodal action prediction for screen agents to the Mattermost AI-Research channel, commenting: 'The visual grounding results are impressive — @Bob take a look at their training setup.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-28T14:05:22+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:05, he opened the Tuantuan app and ordered an iced Americano (no sugar, extra shot) with oat milk instead of regular milk.",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-28T16:40:28+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:40, he opened Taodian on his phone, found a 5-pack of USB-C adapters for ¥89, selected the fapiao option, paid via Alipay, and forwarded the order confirmation to Alice Wang on Mattermost for inventory tracking.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-28T18:30:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:30, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-28T20:20:15+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:20, he scrolled through Mastodon and liked a post by a Meta AI researcher on tool-use evaluation for autonomous agents, then bookmarked a shared benchmark leaderboard link.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-28T21:05:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:05, he received an automated Google Scholar alert email in the Mail app: '3 new citations to your papers.' He opened it, checked which papers were cited, and forwarded the alert to Alice via Mail with 'Look, people are reading our work!'",
+    "label": "noise",
+    "category": "work_noncritical"
+  },
+  {
+    "time": "2026-01-29T08:20:08+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:30, he quickly checked AlphaXiv and HuggingFace Papers while eating breakfast, found a new personalized agent survey paper on context-aware recommendation, bookmarked it, and closed the browser tabs.",
+    "label": "signal",
+    "category": "morning_routine"
+  },
+  {
+    "time": "2026-01-29T08:30:33+08:00",
+    "location": "Xitucheng Subway Station (西土城站), Haidian District",
+    "action": "At 08:20, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-29T09:00:00+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 09:00, he enabled Do Not Disturb on his phone. An admin assistant had scheduled a 'quick 15-min chat' at 09:15 which was auto-declined. His phone stayed silent for the morning deep work block.",
+    "label": "signal",
+    "category": "deep_work_block"
+  },
+  {
+    "time": "2026-01-29T11:45:18+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 11:45, he ordered a bowl of zhajiang noodles (炸酱面) with extra cucumber strips. He asked the server to confirm no peanut-based ingredients, grabbed a sugar-free Coca-Cola, and paid via Alipay QR code.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-29T12:30:18+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:30, he got a Taodian push notification: 'Flash Sale: Top Smartwatches up to 40% off!' He swiped it away without opening. He then opened Taodian and browsed casual T-shirts — filtered for light colors, found a white cotton one at ¥49, a light blue blended one at ¥69, and a striped one at ¥89. He compared fabric composition details and sizing reviews across all three, favorited the ¥49 and ¥69 ones to decide later, and skipped the ¥89 one.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-29T14:00:10+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:00, he opened the Tuantuan app and ordered his iced Americano (no sugar, extra shot), then used the 5-minute wait to check Maps for the fastest route to Zhongguancun on Feb 8 for the reunion dinner.",
+    "label": "signal",
+    "category": "preference_coffee"
+  },
+  {
+    "time": "2026-01-29T14:55:15+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 14:55, five minutes before the 15:00 lab meeting, he opened OpenDocument on his phone and quickly re-read the key experiment results table to prepare his update points.",
+    "label": "signal",
+    "category": "pre_meeting_prep"
+  },
+  {
+    "time": "2026-01-29T15:00:15+08:00",
+    "location": "Lab Conference Room, Science Building 1",
+    "action": "At 15:00, he joined a 25-minute lab meeting. He gave concise updates and asked Alice to handle the follow-up action items.",
+    "label": "signal",
+    "category": "preference_meeting"
+  },
+  {
+    "time": "2026-01-29T16:10:12+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:10, he received an SMS from a delivery company: 'Your STO Express package is at the campus pickup point, code 9-4-6.' He checked the tracking number — it was not his order. He deleted the SMS.",
+    "label": "noise",
+    "category": "misdelivered_sms"
+  },
+  {
+    "time": "2026-01-29T17:35:22+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 17:35, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-29T17:50:14+08:00",
+    "location": "Haidian District - subway Line 10",
+    "action": "At 17:50, he opened OpenDocument and continued reading a cached PDF on modular agent architectures, annotating two key sections.",
+    "label": "signal",
+    "category": "preference_app_usage"
+  },
+  {
+    "time": "2026-01-29T19:30:40+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 19:30, he ordered dinner on the Tuantuan app — a Japanese teriyaki salmon set with miso soup (oat milk option selected), confirmed no peanuts, used his Tuantuan membership coupon for free delivery, and paid via Alipay.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-29T21:20:05+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:20, he opened Chrome and browsed Bilibili for 8 minutes, watching a tech review of the new Apple MacBook Air M4. He bookmarked the video.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-30T08:18:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 08:18, he opened Maps to check for any transit delays on Line 10 — service normal. Then he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-30T12:25:09+08:00",
+    "location": "PKU campus cafeteria",
+    "action": "At 12:25, he received a push notification from a shopping app about a flash sale. He glanced at it and swiped it away.",
+    "label": "noise",
+    "category": "system_passive"
+  },
+  {
+    "time": "2026-01-30T16:55:49+08:00",
+    "location": "Room 405, Science Building 1, Peking University",
+    "action": "At 16:55, he opened the Mail app and sent Weekly_Report.pdf with a section summarizing each student's deliverables and next goals, then @mentioned the relevant students on Mattermost to confirm they had read the assignments.",
+    "label": "signal",
+    "category": "weekly_report"
+  },
+  {
+    "time": "2026-01-30T18:20:15+08:00",
+    "location": "PKU East Gate Subway Station (北大东门站)",
+    "action": "At 18:20, he opened the Alipay app and scanned the transit QR code (乘车码) at the subway turnstile.",
+    "label": "signal",
+    "category": "daily_commute"
+  },
+  {
+    "time": "2026-01-30T20:30:44+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:30, he opened Taodian and revisited his clothing favorites. The ¥95 beige spring jacket he saved on Jan 26 had mixed new reviews — several mentioned it ran small. He unfavorited it. He then compared the two T-shirts saved on Jan 29: the ¥69 light blue one had complaints about color fading after washing, so he unfavorited it too. He kept the ¥49 white cotton T-shirt but still did not buy it, deciding to wait for a better deal.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-30T23:08:55+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 23:08, he switched off the 07:30 weekend alarm in Clock and set his phone to charge.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-31T09:30:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 09:30, the Alipay app pushed a notification: 'Spring Festival Red Envelope Rain — tap to claim!' He swiped it away without opening.",
+    "label": "noise",
+    "category": "junk_notification"
+  },
+  {
+    "time": "2026-01-31T10:45:15+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 10:45, he forwarded a Mastodon post about a comprehensive survey on personalized agent systems to the Mattermost AI-Research channel, noting: 'Comprehensive survey just posted — good reference for our camera-ready revision.'",
+    "label": "signal",
+    "category": "mastodon_share"
+  },
+  {
+    "time": "2026-01-31T11:00:25+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 11:00, he opened Settings and installed the system update. He left the phone plugged in while it updated for 15 minutes.",
+    "label": "noise",
+    "category": "system_passive"
+  },
+  {
+    "time": "2026-01-31T14:30:08+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 14:30, he opened Mastodon and liked a post about implicit user modeling through behavioral traces, bookmarked the preprint, and replied with a brief comment connecting it to his own work on personalized agents.",
+    "label": "signal",
+    "category": "mastodon_engagement"
+  },
+  {
+    "time": "2026-01-31T15:45:33+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 15:45, he received a Mattermost group notification about the college reunion dinner being confirmed for Feb 8 at a hotpot place in Zhongguancun. He replied '收到!' and added the event to Calendar.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-01-31T16:20:45+08:00",
+    "location": "Café near Jinqiu International Building",
+    "action": "At 16:20, he received a notification while reading a paper on his phone. He opened Chrome and watched three short video clips (total 4 minutes), then closed the browser.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-01-31T20:15:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 20:15, he opened Chrome and watched YouTube for a while. He didn't like, comment, or subscribe, then closed the tab.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-02-01T13:10:22+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 13:10, he checked the Cainiao tracking page in Chrome for the Jingdian MagSafe charger he ordered — delivery was delayed by one day. He closed the tab.",
+    "label": "noise",
+    "category": "life_errands"
+  },
+  {
+    "time": "2026-02-01T21:12:18+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:12, while taking a break, he opened the Mattermost app and checked a college friend group chat, read several off-topic messages, replied with a sticker, and then muted the thread for the night.",
+    "label": "noise",
+    "category": "social_personal"
+  },
+  {
+    "time": "2026-02-01T21:42:09+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 21:42, he opened the Chrome app and browsed two short lifestyle posts on Xiaohongshu for about three minutes, then closed the tab.",
+    "label": "noise",
+    "category": "entertainment"
+  },
+  {
+    "time": "2026-02-01T22:14:11+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:14, he opened Gallery -> Screenshots, deleted all screenshots dated on or before Jan 02, 2026, kept newer captures, and emptied Recently Deleted.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-02-01T22:15:02+08:00",
+    "location": "Room 1202, Jinqiu International Building, Zhichun Road, Haidian District",
+    "action": "At 22:15, a student pinged him on Mattermost that the shared storage mount became read-only during an evening run. He replied within minutes with 'Received, checking now,' then coordinated the fix via Mattermost — asking Bob to remount the volume with corrected flags and free inode pressure — and posted a recovery update once confirmed.",
+    "label": "signal",
+    "category": "team_communication"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "task_name": "MattermostLeaveNoticeTask@developer",
+  "class_name": "MattermostLeaveNoticeTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "MattermostLeaveNoticeTask@developer",
+    "class_name": "MattermostLeaveNoticeTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference",
+      "social"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "我今天身体不舒服，帮我跟组里说一声请个假。",
+    "profile_id": "developer",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/mobile_world/user_profile/developer.yaml"
+  }
+}

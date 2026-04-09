@@ -1,0 +1,25 @@
+{
+  "task_name": "MastodonPrivacyDefaultTestTask@user",
+  "class_name": "MastodonPrivacyDefaultTestTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "MastodonPrivacyDefaultTestTask@user",
+    "class_name": "MastodonPrivacyDefaultTestTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "帮我发一条动态：'帮我在Mastodon上发一条动态'",
+    "profile_id": "user",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/mobile_world/user_profile/user.yaml"
+  }
+}

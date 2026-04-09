@@ -1,0 +1,25 @@
+{
+  "task_name": "HighlightImportantSmsSenderPreferenceAskUserTask@grandma",
+  "class_name": "HighlightImportantSmsSenderPreferenceAskUserTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "HighlightImportantSmsSenderPreferenceAskUserTask@grandma",
+    "class_name": "HighlightImportantSmsSenderPreferenceAskUserTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "检查短信来信，判断短信内容是否对自己重要；如果重要，则将短信发信人加入 Contacts 软件联系人并按我的习惯进行备注，并在 Contacts 软件中将该短信发信人加入 highlight 名单。",
+    "profile_id": "grandma",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/mobile_world/user_profile/grandma.yaml"
+  }
+}

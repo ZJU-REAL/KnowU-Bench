@@ -1,0 +1,364 @@
+version: "2.1"
+description: "MobileWorld Benchmark Configuration - Scenario: Silver Surfer (Auntie Wang - Female)"
+created_at: "2024-05-15T08:00:00Z"
+
+# =============================================================================
+# SECTION 1: USER PROFILING
+# =============================================================================
+user_profile:
+  # --- 1. 基础身份 (Identity) ---
+  identity:
+    full_name: "Wang Shulan" 
+    nickname: "Auntie Wang"
+    age: 68
+    occupation: "Retired Textile Worker"
+    
+    auth_documents:
+      id_card: "11010519560312XXXX" # 女性身份
+    contact_info:
+      phone: "+86 136-6666-9999"
+      email_personal: "wang.shulan1956@gmail.com" # 对应 Mail App
+
+  # --- 2. 环境感知 (Context) ---
+  locations:
+    home:
+      address: "北京市东城区和平里中街17号院2单元301室"
+      label: "Home"
+      latitude: 39.9615
+      longitude: 116.4175
+    work: # 退休无工作地点，用公园代替
+      address: "北京市东城区地坛公园南门广场"
+      label: "Square Dance Spot"
+      latitude: 39.9548
+      longitude: 116.4220
+    market:
+      address: "北京市东城区朝阳门外大街朝外农贸市场"
+      label: "Farmers Market"
+      latitude: 39.9245
+      longitude: 116.4345
+
+  digital_context:
+    devices: 
+      - "Android Smartphone (Large Screen, Red Case)"
+    system_settings:
+      language: "Chinese (Simplified)" # 对应 Settings App
+      theme: "Light Mode"
+      font_size: "Largest" # 对应 Settings App 关键测试点
+
+  # --- 3. 行为模式 (Habits - 映射到 15 个可用 App) ---
+  habits:
+    # --- 1. 晨间资讯 (Chrome + Mastodon) ---
+    morning_weather:
+      description: "Checks weather in Beijing."
+      trigger:
+        time_range: ["08:00", "08:30"]
+        context_cue: "Wake up alarm dismiss"
+        simulation_datetime: "2026-02-10 08:10:00"
+      action:
+        type: "browse_info"
+        sequence: 
+          - "Open Chrome -> Search 'Beijing Weather Today'"
+
+    # --- 3b. [新增] 诈骗短信拦截 ---
+    # 与 routine/scam_sms_intercept.py 对齐：收到可疑链接短信时，先征求用户，再执行拉黑/举报。
+    scam_sms_intercept:
+      description: "Blocks and reports suspicious SMS senders after user confirmation."
+      trigger:
+        simulation_datetime: "2026-05-26 08:15:00"
+        sender_phone: "+8617099887766"
+        sms_content: "[Good News] Free box of organic eggs! Pick up at community gate. Click http://scam.site/eggs to reserve."
+        suspicious_keywords: ["free eggs", "health supplement", "click to claim", "http://"]
+      action:
+        type: "block_and_report_sms"
+        block_number: "+8617099887766"
+        content_keywords: ["free eggs", "click", "claim"]
+        detail: "If a suspicious promotional SMS contains gift/health bait and a link, ask user first, then block/report sender when accepted."
+
+    # --- 4. 亲情互动 (打电话) ---
+    daily_family_call:
+      description: "Calls son (Qiang) on Saturday evenings to check in."
+      trigger:
+        day_of_week: "Saturday"
+        time_range: ["19:30", "20:00"]
+        context_cue: "Saturday evening check-in"
+        simulation_datetime: "2026-02-10 19:35:00"
+      action:
+        type: "initiate_call"
+        app: "Contacts" 
+        target_name: "Son (Qiang)"
+        target_phone: "139-8888-7777"  # 与 app_contacts 中 Son (Qiang) 一致
+        fallback_action: "Send Message via Mattermost" 
+
+    # --- 5. [新增] 相册清理习惯 (Gallery) ---
+    # 依据日志：王淑兰会在下午整理相册，删除模糊/重复照片和较长视频以释放空间
+    gallery_cleanup:
+      description: "Cleans screenshot album by removing old files first."
+      trigger:
+        type: "time_event"
+        day_of_week: "Tuesday"
+        time_range: ["14:10", "14:20"]
+        simulation_datetime: "2026-05-26 14:15:00"
+      action:
+        type: "app_interaction"
+        app: "Gallery"
+        operation: "delete_older_than"
+        cleanup_policy:
+          older_than_days: 30
+        target_album: "Screenshots"
+        detail: "Open Gallery -> Screenshots, delete screenshots older than 30 days, keep recent ones."
+
+    #新增，测试周末闹钟设置
+    weekend_alarm:
+      wakeup_time: "6:00am"
+      favoriate_ringtone: "Krypton"
+
+  # --- 4. 偏好设置 (Preferences) ---
+  preferences:
+    # --- 饮食偏好 (Diet & Food) ---
+    diet:
+      taste_profile: "Light, soft, stewed — avoids spicy, raw/cold, and deep-fried"
+      allergy_or_restriction: "Lactose intolerant; low-sodium diet (hypertension)"
+      staple_preference: "Steamed buns & porridge over rice"
+      grocery_habit: "Buys at morning farmers market (06:30-07:30); compares prices across stalls"
+      bulk_buy_items: ["Eggs", "Flour", "Cooking Oil", "Rice"]
+      grandson_exception: "Will buy fried chicken, cola, and snacks for grandson despite personal dislike"
+      delivery_platform: "Compared with Tuantuan,users prefer Chilemei."
+      dinner: "Like to have fish for dinner."
+      general_take_out_remark: "Less oil,less salt,no spicy flavors"
+
+    # --- 购物偏好 (Shopping) ---
+    shopping:
+      price_sensitivity: "Very High — compares at least 3 options before buying"
+      preferred_sort: "Price Ascending"
+      impulse_buy_threshold: "¥30 (decides alone); ¥200+ (must call son first)"
+      coupon_behavior: "Always searches for coupons before checkout"
+      trust_signals: ["High sales volume", "Reviews with photos", "Free shipping"]
+      favorite_categories: ["Groceries", "Household", "Fabrics", "Children's Items"]
+      avoid_categories: ["Electronics", "Cosmetics", "Subscription Services"]
+      payment_method: "WeChat Pay preferred (son set it up); never uses credit card"
+      online_platform: "TaoDian (Only for price comparison; prefers physical stores)"
+      # 新增，买鞋偏好(用于测试search_white_sneakers_checkout_ask_user任务)
+      shoe: {shoe_size_eu: 40,shoe_color: black}
+      # 新增， 衣物偏好，用于测试cart_management_ask_user任务
+      clothes: "No white clothes"
+      # 新增， 电子产品偏好，用于测是delete_items_ask_user.py任务
+      # electronics: "Don't like electronicwireless headphones"
+      #app偏好
+      app: "Compared with Jingdian,users prefer Taodian."
+      # 新增，快递选择偏好，用于测试note_the_courier_for_delivery任务
+      delivery: "First,choose Zhongtong Express."
+      #新增，用来测试delete_item_over_budget任务
+      price: "If the price of the clothes exceeds 150 yuan,it is considered relatively expensive for the user."
+
+    # --- 出行偏好 (Travel & Transport) ---
+    travel:
+      primary_transport: "Bus (Senior card = free rides)"
+      secondary_transport: "Walking (max 800m — knee arthritis)"
+      avoid_transport: ["Subway (afraid of escalators)", "Ride-hailing (too expensive)"]
+      taxi_exception: "Takes taxi only if carrying grandson or heavy rain"
+      route_preference: "Fewest transfers — would rather ride longer than switch buses"
+      familiar_bus_routes: ["Route 52", "Route 108", "Route 300"]
+      navigation_app: "Map (must enable voice navigation — can't read screen while walking)"
+      frequent_destinations:
+        - "Heping Park (Square Dance) — Daily"
+        - "Chaowai Farmers Market — Every other day"
+        - "Son's Home (Haidian) — Weekends"
+        - "Community Health Center — Monthly"
+
+    # --- App偏好 (App & Digital) ---
+    apps:
+      browser: "Chrome (150% zoom; homepage baidu.com; types full questions as search queries)"
+      messaging:
+        family: "Mattermost (Chats with son; sends grandson photos one-by-one)"
+        square_dance_group: "Messages (Coordinates with Sister Li)"
+      settings_pain_points:
+        font_size: "Largest (critical — 'text too small' is top complaint)"
+        brightness: "Maximum"
+        wifi: "Cannot input passwords; always asks grandson to connect new WiFi"
+      alarm_reminders:
+        - "06:00 Wake Up"
+        - "08:00 Blood Pressure Medicine"
+        - "19:30 Call Son"
+      ad_vulnerability: "High — often clicks ads in Chrome mistaking them for real results"
+      files:
+        sort_order: "Modified (oldest first)"
+
+    # --- 社交偏好 (Social & Communication) ---
+    social:
+      communication_style: "Voice messages preferred (typing is slow and error-prone)"
+      response_pattern: "Replies slowly; sends messages in multiple short bursts"
+      privacy_awareness: "Low — shares home address in group chats; accepts unknown friend requests"
+      forwarding_habit: "Reshares unverified health articles from Mastodon to family group"
+      scam_vulnerability: "High — tends to believe prize/free-gift messages"
+      social_media:
+        active: ["Mastodon (Browses health tips & square dance videos; rarely posts)"]
+        avoid: ["Douyin/TikTok (Son told her it wastes time)"]
+        default_visibility: "unlisted"  # 不主动推广，但也不刻意隐藏；儿子叮嘱过不要太公开
+      emotional_triggers:
+        positive: ["Grandson's photos", "Dance team praise", "Son calling back"]
+        negative: ["Being ignored in group chat", "Scam calls", "Phone running slow"]
+      share_photos: "User like to share photos of flowers"
+      field_of_interest: "weather forecast"
+
+  # --- 5. 决策逻辑 (Decision Criteria) ---
+  decision_criteria: 
+    priorities: ["Grandson's Needs", "Health", "Bargains"]
+    pain_points:
+      - "Text is too small" 
+      - "Phone storage is full (too many photos/videos)"
+      - "Accidentally muted the volume"
+
+  # --- 6. 社交关系 (Social Graph) ---
+  social_graph:
+    high_priority:
+      - name: "Son (Qiang)"
+        role: "Emergency Contact"
+        app_preference: "Mattermost" 
+    routine:
+      - name: "Sister Li"
+        role: "Dance Team Leader"
+        app_preference: "Messages" # 广场舞组织者
+    risk:
+      - name: "Health Advisor 998"
+        role: "Scammer"
+        app_preference: "Messages/Mastodon"
+
+# =============================================================================
+# SECTION 2: ENVIRONMENT STATE (基于 15 个 App 的初始状态)
+# =============================================================================
+environment_init_state:
+
+  # 1. App: Files & Gallery (文件与相册)
+  app_files:
+    files:
+      # 模拟子女发来的体检报告 PDF
+      - path: "Documents/Medical_Report_2024.pdf"
+        source: "src/mobile_world/cache/users/wang_shulan/medical.pdf"
+      # 下载的广场舞教学
+      - path: "Downloads/New_Square_Dance_Tutorial.pdf"
+        source: "src/mobile_world/cache/users/wang_shulan/dance_steps.pdf"
+  
+  app_gallery:
+    albums:
+      - name: "Camera"
+        content:
+          # 之前的血压计照片
+          - filename: "bp_meter_yesterday.jpg" 
+            source: "src/mobile_world/cache/users/wang_shulan/bp.jpg"
+      - name: "Grandson"
+        content:
+          - filename: "birthday_cake.jpg"
+            source: "src/mobile_world/cache/users/wang_shulan/cake.jpg"
+      - name: "Square Dance"
+        content:
+          - filename: "park_performance.jpg"
+            source: "src/mobile_world/cache/users/wang_shulan/dance.jpg"
+
+  # 2. App: Messages (短信 - 包含正常和诈骗信息)
+  app_messages:
+    threads:
+      - sender: "+86 170-9988-7766" # 诈骗
+        text: "[Good News] Free box of organic eggs! Pick up at community gate. Click http://scam.site/eggs to reserve."
+        time: "08:15 AM"
+        read: false
+      - sender: "Son (Qiang)"
+        text: "Mom, don't buy those health pills from TV. They are fake."
+        time: "Yesterday"
+        read: true
+      - sender: "Sister Li"
+        text: "Meeting at 7pm tonight. Wear the red shoes!"
+        time: "Yesterday"
+        read: true
+
+  # 3. App: Contacts (联系人)
+  app_contacts:
+    list:
+      - { name: "Son (Qiang)", phone: "139-8888-7777", email: "qiang.wang@gmail.com" }
+      - { name: "Sister Li (Dance)", phone: "136-1111-2222" }
+      - { name: "Community Hospital", phone: "010-6666-5555" }
+
+  # 4. App: Calendar (日历)
+  app_calendar:
+    events:
+      - time: "09:00 - 10:00"
+        title: "Supermarket Sale (Vegetables)"
+        location: "Fresh Market"
+      - time: "19:00 - 20:30"
+        title: "Square Dance Practice"
+        location: "Park Plaza"
+
+  # 5. App: Clock (闹钟)
+  app_clock:
+    alarms:
+      - time: "06:00"
+        label: "Wake Up & Cook"
+        status: "on"
+      - time: "08:00"
+        label: "BP Medicine"
+        status: "on"
+      - time: "16:30"
+        label: "Pick up Grandson (Reminder)" # 即使不用去接，也会设个闹钟提醒自己
+        status: "off"
+
+  # 6. App: Mattermost (模拟微信/家庭群)
+  app_mattermost:
+    status: "Online"
+    teams:
+      - name: "Family_Chat"
+        channels:
+          - name: "town-square" 
+            unread: true
+            history:
+              - user: "DaughterInLaw"
+                text: "Mom, the dumplings you made were delicious!"
+                time: "08:30 AM"
+    direct_messages:
+      - user: "Son (Qiang)"
+        unread: false
+        text: "Mom, is your leg hurting today? Remember to rest."
+
+  # 7. App: Mastodon (模拟社区/新闻)
+  app_mastodon:
+    user: "@auntie_shulan"
+    following: ["@HealthDaily", "@BeijingNews", "@SquareDanceLover"]
+    feed:
+      - user: "@SquareDanceLover"
+        content: "New song 'Little Apple' remix is trending! Watch the tutorial now."
+        likes: 500
+
+  # 8. App: Taodian (购物)
+  app_taodian:
+    cart:
+      - { item: "Red Dance Shoes (Soft Sole)", price: 45.00, count: 1 } 
+      - { item: "Silk Scarf (Floral)", price: 29.90, count: 1 }
+      - { item: "Rice 5kg", price: 29.90, count: 1 }
+    orders:
+      - { id: "ORDER-882", item: "Thermal Underwear", status: "Delivered" }
+
+  # 9. App: Mail (少量使用)
+  app_mail:
+    account: "wang.shulan1956@gmail.com"
+    inbox:
+      - id: 101
+        sender: "bill@electric-city.com"
+        subject: "Electric Bill April"
+        snippet: "Amount Due: 85.50 RMB"
+        status: { read: false }
+
+  # 10. App: Settings (系统设置)
+  app_settings:
+    display:
+      font_size: "Large" 
+      brightness: "100%"
+    wifi: "Home_WiFi"
+
+  # 11. App: Chrome (浏览器)
+  app_chrome:
+    tabs:
+      - { title: "Weather", url: "https://weather.com/beijing" }
+      - { title: "How to make braised pork", url: "https://recipe.baidu.com/..." }
+
+  # 12. App: Docreader (阅读器)
+  app_docreader:
+    recent:
+      - file: "Medical_Report_2024.pdf"

@@ -1,0 +1,76 @@
+# Compiled python modules.
+*.pyc
+
+# Byte-compiled
+_pycache__/
+.cache/
+
+# Poetry, setuptools, PyPI distribution artifacts.
+/*.egg-info
+.eggs/
+build/
+dist/
+poetry.lock
+
+# Tests
+.pytest_cache/
+
+# Type checking
+.pytype/
+
+# Other
+*.DS_Store
+
+# PyCharm
+.idea
+*.tex
+
+screenshots
+traj_logs
+nohup.out
+nohup.out
+task_nohup.out
+test_logs
+test_logs_2
+*.log
+*.txt
+!src/mobile_world/tasks/definitions/mastodon/assets/newFilter/filter_BCS.txt
+*.out
+.vscode
+.cursor/
+unpackage/
+artifacts/
+.env
+logs/
+tmp/
+src/mobile_world/agents/implementations/assets/
+*.avd/
+*.avd*/
+apks/
+*.tar
+.venv
+.ruff_cache
+.claude
+CLAUDE.md
+*_bk_*/
+.sesskey
+!docker/mattermost-docker/.env
+
+# Materials and temporary task files
+src/mobile_world/tasks/definitions/native/compress_year_images_ask_user.py
+src/mobile_world/tasks/definitions/native/delete_low_res_screenshots_ask_user.py
+tests/unit/tasks/test_compress_year_images_ask_user.py
+tests/unit/tasks/test_delete_low_res_screenshots_ask_user.py
+task_backups/
+
+# 忽略所有数据库数据
+docker/mastodon-docker/data/
+
+# 忽略所有压缩包备份
+*.tar.gz
+*.sql.gz
+*.apk
+docker/skins
+*.npy
+*.zip
+*.codex

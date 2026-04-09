@@ -1,0 +1,674 @@
+[
+  {
+    "time": "2026-01-01T11:12:14+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 11:12, he opened Taodian, tapped 'Daily Check-in' to collect coins, and sorted items by 'Price: Low to High' with the Free Shipping filter on to look for cheap snacks.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-01T15:10:33+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:10, his Bluetooth earbuds disconnected in the quiet zone while NetEase Cloud Music was still playing an ACG playlist; he immediately set media volume to 0 in Settings before any sound leaked out.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-01T23:05:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:05, while reading OS_Project_Assignment.pdf, he navigated to the system Settings and toggled the Display mode to Dark Theme.",
+    "label": "signal",
+    "category": "night_eye_care"
+  },
+  {
+    "time": "2026-01-02T09:08:40+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:08, he opened Taodian on his phone, checked a deal for a 24-pack of Coca-Cola (regular, full sugar), and shared the deal link in the Dorm_404_Bros Mattermost channel.",
+    "label": "signal",
+    "category": "shopping_deals"
+  },
+  {
+    "time": "2026-01-02T20:15:33+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 20:15, he opened Messages and replied to Mom's text asking if he was eating well: 'yeah mom dw i ate at the canteen today lol' and added a thumbs-up emoji.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-02T23:12:40+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:12, he opened the Clock app and disabled his 07:30 AM morning class alarm.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-03T00:48:15+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 00:48, he paused between matches, ordered a bag of chips on chilemei, and sent Kevin a Mattermost DM: 'one more? [Cool]' with a pepe meme attached.",
+    "label": "signal",
+    "category": "late_night_snack"
+  },
+  {
+    "time": "2026-01-03T12:15:11+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:15, he opened Gallery -> Screenshots, deleted old game result screenshots, but made sure to keep his KFC and chilemei discount coupons.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-03T14:20:05+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:20, he opened chilemei, applied a student-discount coupon for a fried chicken combo, paid with WeChat Pay, and shared the order screenshot in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-03T23:10:44+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:10, he opened Mastodon to scroll through some late-night gaming memes, then opened Settings and activated System Dark Mode.",
+    "label": "signal",
+    "category": "night_eye_care"
+  },
+  {
+    "time": "2026-01-04T15:08:51+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:08, his earbuds lost Bluetooth connection in the library; he immediately muted media volume to 0 in Settings, reconnected, and went back to reading his notes.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-04T18:30:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:30, he opened chilemei, sorted by price, found a BOGO burger deal with free delivery, applied the student coupon, and paid ¥15.9 via WeChat Pay.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-05T08:40:15+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 08:40, he checked Google Maps, saw it was raining heavily, and immediately opened Didi to book an Express car to the teaching building instead of using a shared bike.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-05T13:15:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 13:15, he opened Taodian, searched for 'Coca-Cola 24 pack', filtered by 'Free Shipping' and 'Price: Low to High', and added the regular full-sugar version to his cart, ignoring the zero-calorie options.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-06T12:30:10+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 12:30, he opened chilemei, ordered a cheap fried chicken burger combo with a student discount, and typed in the remark section: 'broke student here, please add extra ketchup packets, thanks bro [Doge]'.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-06T16:45:33+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 16:45, he opened the Files app, navigated to the Downloads folder, and changed the sort order to 'Modified (newest first)' to quickly locate the syllabus PDF he just downloaded.",
+    "label": "signal",
+    "category": "file_management"
+  },
+  {
+    "time": "2026-01-07T12:45:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:45, he checked his Calendar and noticed it was Kevin's birthday. He opened Mattermost and sent in the Dorm_404_Bros channel: 'Happy Birthday bro! Time to carry me tonight 🎉 [Doge]'.",
+    "label": "signal",
+    "category": "birthday_wish_routine"
+  },
+  {
+    "time": "2026-01-07T20:10:05+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 20:10, he opened Mastodon, uploaded a photo of his messy desk and a bowl of instant ramen, added the caption 'gourmet dinner during exam prep lol 🍜 [Facepalm]', and set the visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-07T23:26:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:26, he opened Messages and sent Mom a text: 'mom… i'm kinda broke rn, could you send a bit? 🥺 [Doge]' and then sent a follow-up sticker.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-08T07:45:12+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 07:45, his alarm rang for a morning class; while getting up he saw Mom's text in Messages saying she transferred the money, replied 'got it tysm mom!! will buy real food i promise lol', and started getting ready.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-08T15:20:33+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:20, his earbuds dropped connection again while studying in the quiet zone; he immediately muted media volume in Settings, then reconnected Bluetooth without looking up from his notes.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-09T09:10:09+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:10, he opened Meituan Bike, scanned a nearby shared bike with his student monthly pass, and rode to the teaching building.",
+    "label": "signal",
+    "category": "shared_bike_commute"
+  },
+  {
+    "time": "2026-01-09T23:18:55+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:18, he opened Clock and switched off the 07:30 alarm for Saturday morning, then launched 王者荣耀 and jumped into a late-night ranked lobby.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-10T12:14:36+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:14, he woke up, navigated to Gallery -> Screenshots, and batch-deleted images older than 30 days.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-10T14:30:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:30, he ordered cheap BBQ skewers via chilemei using a student discount coupon and waited for delivery while watching Bilibili.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-12T09:05:44+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 09:05, he booked a Didi Express on his phone, then opened Mattermost and sent to the AI Research channel: 'my bad guys, slept through the alarm, in a car rn be there in 10'.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-12T15:15:08+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:15, his Bluetooth earbuds disconnected in the quiet zone; he instantly muted media volume to 0 in Settings and reconnected before reopening his notes.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-12T23:03:05+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:03, while browsing late at night, he went to system Settings and enabled Dark Mode to stop the bright white screen from hurting his eyes.",
+    "label": "signal",
+    "category": "night_eye_care"
+  },
+  {
+    "time": "2026-01-13T22:10:44+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 22:10, he DM'd Kevin on Mattermost: 'u on tonight or nah lol [Cool]' and followed up with a doge sticker when Kevin didn't reply immediately.",
+    "label": "signal",
+    "category": "messaging_friends"
+  },
+  {
+    "time": "2026-01-13T22:35:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 22:35, Mom texted him asking about his exam schedule; he opened Messages and replied: 'next week mom dont worry i got this [Cool]' then sent a selfie of himself pretending to study.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-14T09:50:20+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:50, he opened Meituan Bike, scanned a shared bike near the dorm gate with his student monthly pass, and rode to the teaching building.",
+    "label": "signal",
+    "category": "shared_bike_commute"
+  },
+  {
+    "time": "2026-01-14T18:50:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:50, he opened chilemei, found a ¥9.9 Japanese ramen deal with student discount and free delivery, placed the order, and shared the deal link in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-14T21:40:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 21:40, he opened Mastodon and shared a screenshot of his code working perfectly, adding the caption 'Compiles on the first try, we up [Cool]' and setting visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-15T10:00:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 10:00, he opened Taodian, searched for 'Coca-Cola 24 pack', added the cheapest full sugar pack to his cart.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-15T13:10:05+08:00",
+    "location": "浙江大学紫金港校区食堂",
+    "action": "At 13:10, he opened Taodian and added a cheap keyboard to his cart, making sure the Free Shipping filter was applied.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-15T15:22:44+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:22, Bluetooth dropped in the quiet zone; he immediately set media volume to 0 in Settings, then reconnected and resumed his lecture video on Chrome.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-15T23:45:10+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 23:45, after the library closed late, he opened Didi and booked the cheapest Express car home, then messaged Kevin in Mattermost to see if he was awake to share the fare.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-16T09:10:55+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:10, he opened Taodian on his phone, checked Free Shipping deals on snack bundles sorted by price ascending, and added the cheapest chips variety pack to his cart.",
+    "label": "signal",
+    "category": "shopping_deals"
+  },
+  {
+    "time": "2026-01-16T14:20:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:20, he browsed Taodian for a new laptop, searching for 'budget gaming laptop', sorting by lowest price, and specifically checking out Xiaomi models.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-16T18:25:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:25, he opened Mastodon and posted a screenshot of a newly cleared PC game level, setting the visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-16T23:13:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:13, he opened Clock and turned off the 07:30 alarm again, then posted 'sleep is for later lol' in the Dorm_404_Bros Mattermost channel.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-17T12:18:02+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:18, he opened Gallery -> Screenshots, deleted screenshots older than a month, kept recent shopping coupon screenshots, and cleared the recycle bin.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-17T19:30:14+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 19:30, he opened chilemei, applied a buy-1-get-1 fried chicken coupon, paid ¥13, and shared the deal in Dorm_404_Bros Mattermost so Kevin could order too.",
+    "label": "signal",
+    "category": "deal_sharing"
+  },
+  {
+    "time": "2026-01-17T22:15:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 22:15, after a gaming session, he opened Mastodon, uploaded a screenshot of his victory, typed 'finally beat this boss [Cool]', and set the visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-18T09:15:44+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 09:15, realizing he was 10 mins late for a lab sync, he booked a Didi Express and sent a Mattermost message: 'late again sry guys, omw now [Facepalm]'.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-18T12:05:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:05, he opened chilemei to order lunch, selected a high-calorie fried chicken burger meal, applied a student coupon to keep it cheap.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-18T23:25:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:25, he went straight to Android Settings and enabled Dark Mode.",
+    "label": "signal",
+    "category": "night_eye_care"
+  },
+  {
+    "time": "2026-01-19T08:45:00+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 08:45, he opened Meituan Bike, scanned a shared bike with his student monthly pass, and rode to the Library.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-19T11:20:15+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 11:20, he opened Taodian to search for cheap mousepads, sorting the results by price ascending.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-19T14:30:12+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 14:30, he opened the Files app, navigated to the Downloads folder, and sorted the files by 'Modified (newest first)' to quickly locate his newly downloaded CS lecture slides.",
+    "label": "signal",
+    "category": "file_management"
+  },
+  {
+    "time": "2026-01-19T18:40:12+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:40, he opened chilemei, ordered a ¥13.5 chicken cutlet rice using a student-only discount, and shared the order status in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-20T08:30:00+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 08:30, he opened Google Maps and checked the cycling route to the Library.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-20T09:15:40+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:15, he opened Taodian on his phone, sorted by price ascending with Free Shipping filter on, and placed a small add-on order for the cheapest instant noodle variety pack.",
+    "label": "signal",
+    "category": "shopping_deals"
+  },
+  {
+    "time": "2026-01-20T15:22:33+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:22, Bluetooth dropped while he was studying in the quiet zone, so he muted media volume to 0 in Settings and then reconnected his earbuds.",
+    "label": "signal",
+    "category": "bluetooth_cleanup"
+  },
+  {
+    "time": "2026-01-20T16:40:12+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 16:40, he opened the Files app, went to the Download folder, and sorted the items by 'Modified (newest first)' to find the latest research paper he saved.",
+    "label": "signal",
+    "category": "file_management"
+  },
+  {
+    "time": "2026-01-21T01:15:00+08:00",
+    "location": "浙江大学紫金港校区实验室",
+    "action": "At 01:15, after staying late at the lab, he opened Didi to book the cheapest Express car back to the dorm, messaging Kevin to split the fare.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-21T11:50:33+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 11:50, he opened Taodian, searched for 'Coca-Cola 24 pack (regular, full sugar)', sorted by price ascending, and checked if the shop offered free campus delivery.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-21T18:10:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:10, he opened Meituan Bike, scanned a shared bike with his student monthly pass, and rode to the electronics repair shop.",
+    "label": "signal",
+    "category": "shared_bike_commute"
+  },
+  {
+    "time": "2026-01-21T23:25:50+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:25, Mom texted him about eating properly; he opened Messages and replied: 'got it, tysm ❤️ [Doge]' then locked the screen and went back to gaming.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-22T09:10:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 09:10, realizing he overslept, he booked a Didi Express to campus and quickly sent a Mattermost message to his project group: 'overslept, omw [Facepalm]'.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-22T11:12:31+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 11:12, he opened chilemei on his phone, browsed the cheapest lunch options with student discount and free delivery, then bookmarked a ¥10.9 BBQ rice bowl for later ordering.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-22T12:05:15+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 12:05, he ordered a budget lunch combo on chilemei, ensuring it was under 15 RMB.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-23T14:00:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:00, a group member asked to meet at 9 AM tomorrow; he replied in Mattermost: 'no way, im asleep until 11. lets do 1 PM instead lol'.",
+    "label": "signal",
+    "category": "meeting_preference"
+  },
+  {
+    "time": "2026-01-23T16:15:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 16:15, he opened Taodian, searched for 'Xiaomi gaming laptop', sorted the results by 'Price: Low to High'.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-23T18:55:18+08:00",
+    "location": "浙江大学紫金港校区快餐店",
+    "action": "At 18:55, he opened Gallery -> Screenshots, found a saved deal screenshot, redeemed it at the counter for a discounted burger dinner, and posted 'W deal lol [Cool]' in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "coupon_usage"
+  },
+  {
+    "time": "2026-01-23T23:18:12+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:18, he turned off the 07:30 alarm in Clock for Saturday, then stayed up playing PC games with dozens of older Chrome tabs still sitting in the background of his phone.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-24T11:30:05+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 11:30, he opened Taodian to browse the cheapest snacks with Free Shipping enabled, and dropped a doge meme in the Dorm_404_Bros Mattermost channel when he saw his wallet balance.",
+    "label": "signal",
+    "category": "shopping_deals"
+  },
+  {
+    "time": "2026-01-24T12:12:49+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:12, he opened Gallery -> Screenshots, deleted screenshots older than 30 days, retained recent meme references and a subway-pass capture, then exited Gallery.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-24T16:40:10+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 16:40, he posted on Mastodon about finishing a tough game level, setting the visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-24T18:10:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:10, he opened chilemei, ordered a ¥11.9 Korean fried chicken meal with student discount and free delivery, then browsed Chrome while waiting.",
+    "label": "signal",
+    "category": "food_delivery"
+  },
+  {
+    "time": "2026-01-24T23:05:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:05, he pulled down the quick settings and toggled System Dark Mode on.",
+    "label": "signal",
+    "category": "night_eye_care"
+  },
+  {
+    "time": "2026-01-25T11:38:14+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 11:38, he had just woken up near noon on Sunday when a group project member called; he let it ring, then opened Messages and texted: 'just woke up, whats up?' and put his phone away.",
+    "label": "signal",
+    "category": "phone_etiquette"
+  },
+  {
+    "time": "2026-01-25T12:18:44+08:00",
+    "location": "浙江大学紫金港校区食堂",
+    "action": "At 12:18, he bought a proper lunch at the canteen, and texted Mom a photo in Messages with the caption 'see mom im eating real food today!!' after she complained he only ate instant noodles.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-26T09:14:05+08:00",
+    "location": "浙江大学紫金港校区",
+    "action": "At 09:14, he opened Taodian, grabbed the daily coins, and immediately closed the app to avoid getting distracted by the feed.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-26T12:10:30+08:00",
+    "location": "浙江大学紫金港校区食堂",
+    "action": "At 12:10, he got a cheap plate of dumplings for ¥9 and ignored the newly opened, slightly more expensive sushi booth.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-26T14:45:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:45, he watched a 20-minute video comparing budget Logitech gaming mice on Chrome, then added the cheapest one to his Taodian wishlist and sent Kevin a Mattermost DM: 'this mouse is a steal [Cool]'.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-26T16:10:00+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 16:10, he opened the Files app, navigated to the Downloads folder, and sorted the files by 'Modified (newest first)' to quickly find his recently downloaded OS assignment PDF.",
+    "label": "signal",
+    "category": "file_management"
+  },
+  {
+    "time": "2026-01-27T11:30:15+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 11:30, he opened Messages, drafted a text to Mom: 'mom the meal plan is looking completely empty... spare some change for your favorite son? 🥺🙏' and sent it without calling.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-01-27T14:00:22+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:00, saw the weather was sunny and clear, he opened Google Maps, checked the walking route to the Library.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-27T17:20:10+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 17:20, he opened Calendar, found a free slot at 3 PM tomorrow, and sent a Mattermost DM to the group: 'let's do a quick sync at 3pm tomorrow, keep it under 20 mins pls'.",
+    "label": "signal",
+    "category": "meeting_preference"
+  },
+  {
+    "time": "2026-01-27T19:15:08+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 19:15, after clearing a tough boss on PC, he opened Mastodon and posted a screenshot of his loot with the caption 'finally a god-tier artifact [Cool]', carefully setting the post visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-28T14:05:11+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 14:05, he checked his Calendar for next week's group project sync and sent a short DM in Mattermost: 'yo, wednesday 2pm works for me, let's keep it quick lol'.",
+    "label": "signal",
+    "category": "meeting_preference"
+  },
+  {
+    "time": "2026-01-28T16:20:00+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 16:20, he opened Meituan Bike, scanned a shared bike with his student monthly pass outside the library, and rode to a nearby cafe.",
+    "label": "signal",
+    "category": "shared_bike_commute"
+  },
+  {
+    "time": "2026-01-28T20:40:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 20:40, he opened chilemei, applied a student coupon for BBQ skewers with free delivery, paid ¥14, and shared the coupon code in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "deal_sharing"
+  },
+  {
+    "time": "2026-01-29T08:35:12+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 08:35, he checked the weather and saw it's heavy rain outside, he opened Google Maps to check the subway schedule to the library.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-29T18:20:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 18:20, he opened Jingdian, checked the price for regular Coca-Cola, and closed the app immediately, switched to Taodian.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-29T21:30:18+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 21:30, he opened chilemei, applied his saved student discount coupon, and ordered a high-calorie Japanese ramen combo.",
+    "label": "signal",
+    "category": "preference_diet"
+  },
+  {
+    "time": "2026-01-29T23:55:05+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 23:55, he opened Didi, requested the cheapest Express car back to the dorm, and sent Kevin a DM on Mattermost: 'yo u still awake? come downstairs and split this cab fare lol'.",
+    "label": "signal",
+    "category": "commute_routing"
+  },
+  {
+    "time": "2026-01-30T15:10:00+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:10, a teammate asked to schedule a project sync in Mattermost. He opened the Calendar app, checked his schedule for tomorrow, and replied in Mattermost: 'Meetings before 12 are a hard no for me. [Doge] let's do 3 PM tomorrow, keep it under 20 mins lol'.",
+    "label": "signal",
+    "category": "meeting_preference"
+  },
+  {
+    "time": "2026-01-30T15:30:12+08:00",
+    "location": "浙江大学紫金港校区基础图书馆（静区）",
+    "action": "At 15:30, he opened the Files app, went to the Downloads folder, set the sort order was 'Modified (newest first)', and opened the newly downloaded assignment template.",
+    "label": "signal",
+    "category": "file_management"
+  },
+  {
+    "time": "2026-01-30T19:10:08+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 19:10, he opened Mastodon, posted a screenshot of a funny chat with a teammate in his game, captioned it 'bruh look at this dude 💀', and restricted the visibility to 'followers-only'.",
+    "label": "signal",
+    "category": "social_media_posting"
+  },
+  {
+    "time": "2026-01-30T23:12:40+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 23:12, he switched off the 07:30 alarm in Clock and typed 'tomorrow i'm hibernating lol' in Dorm_404_Bros Mattermost.",
+    "label": "signal",
+    "category": "weekend_sleeper"
+  },
+  {
+    "time": "2026-01-31T12:16:11+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 12:16, he opened Gallery -> Screenshots, trimmed the album by removing screenshots older than 30 days, and kept fresh coupon screenshots from the end of the month.",
+    "label": "signal",
+    "category": "gallery_cleanup"
+  },
+  {
+    "time": "2026-01-31T14:10:15+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 14:10, he checked Taodian for a cheap replacement mouse, ensuring he sorted by lowest price.",
+    "label": "signal",
+    "category": "preference_shopping"
+  },
+  {
+    "time": "2026-01-31T21:05:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 21:05, Mom texted him about Chinese New Year travel plans; he opened Messages and replied: 'already booked the train ticket mom, arriving feb 5 around 3pm' and sent a thumbs-up.",
+    "label": "signal",
+    "category": "messaging_mom"
+  },
+  {
+    "time": "2026-02-01T19:45:30+08:00",
+    "location": "浙江大学紫金港校区翠柏1舍",
+    "action": "At 19:45, he opened chilemei, ordered a ¥12 burger meal with student coupon and free delivery, and settled in to watch videos on Chrome while waiting.",
+    "label": "signal",
+    "category": "food_delivery"
+  }
+]

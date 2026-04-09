@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</title>
+    <meta name="description"
+        content="KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation">
+    <meta name="keywords" content="Mobile Agent, GUI Agent, Android, Benchmark, MCP">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-title" href="#">
+                <strong>KnowU-Bench</strong>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="navbar-burger">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#leaderboard">Leaderboard</a>
+                <a class="navbar-item" href="#overview">Overview</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="https://arxiv.org/abs/2512.19432" class="button is-small is-dark" target="_blank">
+                            <span class="icon"><i class="ai ai-arxiv"></i></span>
+                            <span>Paper</span>
+                        </a>
+                        <a href="https://github.com/ZJU-REAL/RealGUI-Bench" class="button is-small is-dark"
+                            target="_blank">
+                            <span class="icon"><i class="fab fa-github"></i></span>
+                            <span>Code</span>
+                        </a>
+                        <div class="dropdown is-hoverable is-right" id="cite-dropdown">
+                            <div class="dropdown-trigger">
+                                <button class="button is-small is-dark" aria-haspopup="true" aria-controls="cite-menu">
+                                    <span class="icon"><i class="fas fa-quote-right"></i></span>
+                                    <span>Cite</span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="cite-menu" role="menu">
+                                <div class="dropdown-content cite-dropdown-content">
+                                    <div class="dropdown-item">
+                                        <p class="is-size-7 has-text-weight-semibold mb-2">BibTeX</p>
+                                        <pre class="cite-bibtex"><code>@misc{chen2025knowubenchinteractiveproactivepersonalized,
+      title={KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation},
+      author={Tongbo Chen and Zhengxi Lu and Zhan Xu and Guocheng Shao and Shaohan Zhao and Fei Tang and Yong Du and Kaitao Song and Yizhou Liu and Yuchen Yan and Wenqi Zhang and Xu Tan and Weiming Lu and Jun Xiao and Yueting Zhuang and Yongliang Shen},
+      year={2025},
+      eprint={2512.19432},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2512.19432},
+}</code></pre>
+                                        <button class="button is-small is-fullwidth mt-2" id="copy-cite-btn">
+                                            <span class="icon"><i class="fas fa-copy"></i></span>
+                                            <span>Copy to Clipboard</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title">
+                            KnowU-Bench: Towards Interactive, Proactive,
+                            and Personalized Mobile Agent Evaluation
+                        </h1>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Tongbo Chen<sup>1,*</sup>,</span>
+                            <span class="author-block">Zhengxi Lu<sup>1,*</sup>,</span>
+                            <span class="author-block">Zhan Xu<sup>1,*</sup>,</span>
+                            <span class="author-block">Guocheng Shao<sup>1,*</sup>,</span>
+                            <span class="author-block">Shaohan Zhao<sup>1,*</sup>,</span>
+                            <span class="author-block">Fei Tang<sup>1</sup>,</span>
+                            <span class="author-block">Yong Du<sup>1</sup>,</span>
+                            <span class="author-block">Kaitao Song<sup>2</sup>,</span>
+                            <span class="author-block">Yizhou Liu<sup>1</sup>,</span>
+                            <span class="author-block">Yuchen Yan<sup>1</sup>,</span>
+                            <span class="author-block">Wenqi Zhang<sup>1</sup>,</span>
+                            <span class="author-block">Xu Tan<sup>3</sup>,</span>
+                            <span class="author-block">Weiming Lu<sup>1</sup>,</span>
+                            <span class="author-block">Jun Xiao<sup>1</sup>,</span>
+                            <span class="author-block">Yueting Zhuang<sup>1</sup>,</span>
+                            <span class="author-block">Yongliang Shen<sup>1,&dagger;</sup></span>
+                        </div>
+
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>1</sup>Zhejiang University</span>
+                            <span class="author-block"><sup>2</sup>Apple</span>
+                            <span class="author-block"><sup>3</sup>Tencent</span>
+                            <br>
+                            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                            <span class="author-block"><sup>&dagger;</sup>Corresponding authors</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="column is-full">
+                    <div class="banner">
+                        <img src="assets/knowu_bench_intro.png" alt="KnowU-Bench overview and difficulty comparison">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <main class="container is-max-desktop">
+        <!-- Leaderboard -->
+        <section id="leaderboard" class="section">
+            <h2 class="title is-3 has-text-centered">Leaderboard</h2>
+            <div class="content has-text-justified">
+                <p>Success rate (%) on KnowU-Bench. We report overall SR together with per-type SR on 42
+                    general tasks, 86 personalized tasks, and 64 proactive tasks. <strong>All results use max steps =
+                        50.</strong> Please <a href="mailto:chentongbo33@gmail.com"><strong>contact
+                            us</strong></a> to submit results.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="box leaderboard-filters">
+                <div class="columns is-mobile is-multiline is-vcentered is-variable is-3">
+                    <!-- <div class="column is-narrow">
+                        <span class="has-text-weight-semibold">Filters:</span>
+                    </div> -->
+                    <div class="column is-narrow">
+                        <div class="field">
+                            <label class="label is-small">Model Type:</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="filter-model-type">
+                                        <option value="all">All</option>
+                                        <option value="Agentic Framework">Agentic Framework</option>
+                                        <option value="End-to-End Model">End-to-End Model</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div class="field">
+                            <label class="label is-small">Task Categories:</label>
+                            <div class="control">
+                                <label class="checkbox mr-3">
+                                    <input type="checkbox" id="filter-general" checked>
+                                    General
+                                </label>
+                                <label class="checkbox mr-3">
+                                    <input type="checkbox" id="filter-personalized" checked>
+                                    Personalized
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="filter-proactive" checked>
+                                    Proactive
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Max Steps filter hidden - currently all results use max steps = 50
+                    <div class="column is-narrow">
+                        <div class="field">
+                            <label class="label is-small">Max Steps:</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="filter-steps">
+                                        <option value="all">All</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="column is-narrow">
+                        <div class="field">
+                            <label class="label is-small">&nbsp;</label>
+                            <div class="control">
+                                <button class="button is-light" id="clear-filters">
+                                    Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Table -->
+            <div class="table-container osworld-table-container">
+                <table class="table is-fullwidth is-hoverable osworld-leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px;">Rank</th>
+                            <th style="width: 100px;">Category</th>
+                            <th style="width: 150px;">Model</th>
+                            <!-- <th style="width: 80px;" class="has-text-centered">Max Steps</th> -->
+                            <th id="th-overall" style="width: 100px;" class="has-text-centered sortable-header"
+                                data-sort="overall">
+                                Overall <i class="fas fa-sort sort-icon"></i>
+                            </th>
+                            <th id="th-general" style="width: 100px;" class="has-text-centered sortable-header"
+                                data-sort="general">
+                                General <i class="fas fa-sort sort-icon"></i>
+                            </th>
+                            <th id="th-personalized" style="width: 100px;" class="has-text-centered sortable-header"
+                                data-sort="personalized">
+                                Personalized <i class="fas fa-sort sort-icon"></i>
+                            </th>
+                            <th id="th-proactive" style="width: 100px;" class="has-text-centered sortable-header"
+                                data-sort="proactive">
+                                Proactive <i class="fas fa-sort sort-icon"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Loaded from leaderboard.json -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section id="overview" class="section">
+            <h2 class="title is-3">Overview</h2>
+
+            <div class="content has-text-justified">
+                <p><strong>KnowU-Bench</strong> is an online, interactive personalization benchmark for
+                    mobile agents built on a reproducible Android emulation environment. It contains <strong>192
+                        tasks</strong> over <strong>23 apps</strong>: 42 general, 86 personalized, and 64 proactive.</p>
+
+                <p>It evaluates whether agents can complete grounded GUI tasks, acquire missing preferences through
+                    clarification, and decide when to act, ask, or remain silent.</p>
+            </div>
+
+        </section>
+
+        <!-- Evaluation Pipeline -->
+        <section class="section">
+            <h2 class="title is-4">Evaluation Pipeline</h2>
+            <div class="content has-text-justified">
+                <p>KnowU-Bench orchestrates evaluation through a multi-stage pipeline. Each <strong>task</strong> is dispatched to a <strong>worker</strong> that manages parallelism and assigns it to a <strong>mobile agent</strong> running on Android emulators (AVDs). During execution, the agent interacts with a profile-grounded <strong>user agent</strong> to resolve ambiguous preferences through clarifying dialogue. Finally, a <strong>hybrid evaluator</strong> combines rule-based state checks with LLM-as-Judge semantic scoring to produce the final result.</p>
+            </div>
+
+            <figure class="image mt-4">
+                <img src="assets/knowu_bench_pipeline.png"
+                    alt="KnowU-Bench evaluation pipeline: task dispatch, mobile agent execution, user agent interaction, and hybrid evaluation">
+                <figcaption class="has-text-centered mt-2" style="font-size: 0.9rem; color: #666;">
+                    <strong>Figure:</strong> End-to-end evaluation pipeline of KnowU-Bench.
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- Benchmark Comparison -->
+        <section class="section">
+            <h2 class="title is-4">Benchmark Comparison</h2>
+            <div class="content has-text-justified">
+                <p>Most prior benchmarks focus on either GUI execution or offline personalization. KnowU-Bench
+                    combines both in a live, reproducible mobile environment.</p>
+
+                <p>It is the only benchmark here that jointly covers vague instructions, proactive execution, user
+                    simulation, user logs, and user modeling for <strong>personalized and proactive GUI
+                        execution</strong>.</p>
+            </div>
+
+            <figure class="image mt-4">
+                <img src="assets/knowu_bench_benchmark_comparison.png"
+                    alt="Comparison of KnowU-Bench with GUI execution and personalization benchmarks across five capability dimensions">
+                <figcaption class="has-text-centered mt-2" style="font-size: 0.9rem; color: #666;">
+                    <strong>Figure:</strong> KnowU-Bench is the only benchmark in this comparison that covers
+                    all five capability dimensions.
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- Task Categories -->
+        <section class="section">
+            <h2 class="title is-4">Task Categories</h2>
+
+            <div class="content has-text-justified">
+                <p>KnowU-Bench contains <strong>192 tasks</strong> across three categories. The donut chart
+                    summarizes the benchmark composition, while the cards explain what each split is designed to test.
+                </p>
+            </div>
+
+            <div class="task-chart-wrap">
+                <div class="task-chart-canvas-box">
+                    <canvas id="task-category-chart"
+                        aria-label="Donut chart showing the task category distribution in KnowU-Bench"></canvas>
+                    <div class="task-chart-center">
+                        <div class="task-chart-center-num" id="task-chart-center-num">192</div>
+                        <div class="task-chart-center-label" id="task-chart-center-label">Total Tasks</div>
+                        <div class="task-chart-center-meta" id="task-chart-center-meta">42 General · 86 Personalized ·
+                            64 Proactive</div>
+                    </div>
+                </div>
+                <div class="task-chart-legend" id="task-chart-legend"></div>
+            </div>
+        </section>
+
+        <!-- Insights -->
+        <section class="section">
+            <h2 class="title is-4">Key Insights</h2>
+
+            <div class="content has-text-justified">
+                <p>We summarize the main experimental takeaways as a set of research-question-style findings, following
+                    the presentation style of benchmark analysis pages while grounding the content in the paper results.
+                </p>
+            </div>
+
+            <div class="insights-grid">
+                <article class="insight-card insight-card-cyan">
+                    <p class="insight-rq">RQ1</p>
+                    <h3 class="insight-title">How much harder are personalized and proactive tasks?</h3>
+                    <ul class="insight-points">
+                        <li><span class="insight-highlight">General execution is no longer the main bottleneck.</span>
+                            MAI-UI-8B and Seed 2.0 Pro both reach <span class="insight-metric">100.0%</span> success
+                            rate on general tasks.</li>
+                        <li>Performance drops sharply once agents must infer preferences or calibrate initiative.</li>
+                        <li>Claude Sonnet 4.6 achieves the best overall success rate at
+                            <span class="insight-metric">60.4%</span>, while all open-source models stay below
+                            <span class="insight-metric">12%</span> on the hard personalized split.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="insight-card insight-card-pink">
+                    <p class="insight-rq">RQ2</p>
+                    <h3 class="insight-title">Does asking more questions improve personalization?</h3>
+                    <ul class="insight-points">
+                        <li><span class="insight-highlight">No. Asking more is not the same as asking better.</span>
+                        </li>
+                        <li>Claude Sonnet 4.6 reaches <span class="insight-metric">44.2%</span> success rate and
+                            <span class="insight-metric">78.9%</span> average score while asking only
+                            <span class="insight-metric">0.4</span> questions per task on average.
+                        </li>
+                        <li>Seed 2.0 Pro asks about twice as many questions yet still trails behind, so the real
+                            bottleneck is converting user feedback into correct downstream actions.</li>
+                    </ul>
+                </article>
+
+                <article class="insight-card insight-card-amber">
+                    <p class="insight-rq">RQ3</p>
+                    <h3 class="insight-title">What makes proactive service difficult?</h3>
+                    <ul class="insight-points">
+                        <li><span class="insight-highlight">Proactivity is fundamentally a calibration problem.</span>
+                        </li>
+                        <li>Claude Sonnet 4.6 is the most balanced model, with the best Act score at
+                            <span class="insight-metric">70.8%</span>.
+                        </li>
+                        <li>Qwen3.5-397B-A17B leads on Silent at <span class="insight-metric">73.7%</span> and reaches
+                            <span class="insight-metric">75.0%</span> on Stop, but falls to
+                            <span class="insight-metric">31.8%</span> on Act.
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="insight-card insight-card-purple">
+                    <p class="insight-rq">RQ4</p>
+                    <h3 class="insight-title">Where do current agents fail?</h3>
+                    <ul class="insight-points">
+                        <li><span class="insight-highlight">Personalization and proactivity fail for different
+                                reasons.</span></li>
+                        <li>On personalized tasks, Clarify errors dominate at <span class="insight-metric">66.7%</span>,
+                            followed by Partial failures at <span class="insight-metric">27.1%</span>.</li>
+                        <li>On proactive tasks, Intervention errors account for <span class="insight-metric">60.0%</span>
+                            and Passive errors add another <span class="insight-metric">20.0%</span>, making initiative
+                            calibration the dominant failure mode.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- System Architecture -->
+        <section class="section">
+            <h2 class="title is-4">Environment And User Modeling</h2>
+
+            <div class="content has-text-justified">
+                <p>KnowU-Bench couples a reproducible Android environment, a GUI agent, an online user
+                    simulator grounded in profiles and logs, and a hybrid evaluation pipeline.</p>
+            </div>
+
+            <figure class="image">
+                <img src="assets/knowu_bench_environment.png" alt="KnowU-Bench environment, mobile agent, and user agent overview">
+            </figure>
+        </section>
+
+        <!-- Acknowledgements -->
+        <section class="section">
+            <h2 class="title is-3">Acknowledgements</h2>
+            <div class="content has-text-justified">
+                <p>We thank <a href="https://github.com/Tongyi-MAI/MobileWorld">MobileWorld</a> for providing the
+                    original environment and benchmark foundation.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>KnowU-Bench Team</strong> &middot;
+                <a href="https://github.com/ZJU-REAL/RealGUI-Bench">GitHub</a> &middot;
+                <a href="https://github.com/ZJU-REAL/RealGUI-Bench/issues">Issues</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize syntax highlighting
+        hljs.highlightAll();
+
+        // Navbar burger toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurger = document.getElementById('navbar-burger');
+            const $navbarMenu = document.getElementById('navbar-menu');
+
+            if ($navbarBurger) {
+                $navbarBurger.addEventListener('click', () => {
+                    $navbarBurger.classList.toggle('is-active');
+                    $navbarMenu.classList.toggle('is-active');
+                });
+            }
+        });
+
+        // Copy code function
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<span class="icon is-small"><i class="fas fa-check"></i></span><span>Copied!</span>';
+                btn.classList.add('is-success');
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('is-success');
+                }, 2000);
+            });
+        }
+
+        // Copy cite button
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyCiteBtn = document.getElementById('copy-cite-btn');
+            if (copyCiteBtn) {
+                copyCiteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const bibtex = copyCiteBtn.closest('.dropdown-item').querySelector('code').textContent;
+                    navigator.clipboard.writeText(bibtex).then(() => {
+                        const originalHTML = copyCiteBtn.innerHTML;
+                        copyCiteBtn.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Copied!</span>';
+                        copyCiteBtn.classList.add('is-success');
+                        setTimeout(() => {
+                            copyCiteBtn.innerHTML = originalHTML;
+                            copyCiteBtn.classList.remove('is-success');
+                        }, 2000);
+                    });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartCanvas = document.getElementById('task-category-chart');
+            const legendContainer = document.getElementById('task-chart-legend');
+            const centerNum = document.getElementById('task-chart-center-num');
+            const centerLabel = document.getElementById('task-chart-center-label');
+            const centerMeta = document.getElementById('task-chart-center-meta');
+
+            if (!chartCanvas || !legendContainer || typeof Chart === 'undefined') {
+                return;
+            }
+
+            const taskCategories = [
+                {
+                    label: 'General',
+                    value: 42,
+                    color: '#06b6d4',
+                    summary: '21.9% of benchmark',
+                    description: 'Fully specified GUI tasks that measure grounded execution without preference ambiguity.'
+                },
+                {
+                    label: 'Personalized',
+                    value: 86,
+                    color: '#ec4899',
+                    summary: '44.8% of benchmark',
+                    description: 'Ambiguous tasks that require preference inference, clarification, and multi-turn interaction.'
+                },
+                {
+                    label: 'Proactive',
+                    value: 64,
+                    color: '#f59e0b',
+                    summary: '33.3% of benchmark',
+                    description: 'Tasks that test whether the agent should act, ask, or remain silent on its own.'
+                }
+            ];
+
+            const totalTasks = taskCategories.reduce((sum, item) => sum + item.value, 0);
+            let selectedIndex = null;
+
+            function updateCenter(index = null) {
+                if (index === null) {
+                    centerNum.textContent = String(totalTasks);
+                    centerLabel.textContent = 'Total Tasks';
+                    centerMeta.textContent = taskCategories.map(item => `${item.value} ${item.label}`).join(' · ');
+                } else {
+                    const item = taskCategories[index];
+                    centerNum.textContent = String(item.value);
+                    centerLabel.textContent = item.label;
+                    centerMeta.textContent = `${item.summary} · ${item.description}`;
+                }
+
+                legendContainer.querySelectorAll('.task-legend-item').forEach(button => {
+                    const isActive = Number(button.dataset.index) === index;
+                    button.classList.toggle('is-active', isActive);
+                    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
+            }
+
+            function toggleSelection(index) {
+                selectedIndex = selectedIndex === index ? null : index;
+                chart.update();
+                updateCenter(selectedIndex);
+            }
+
+            legendContainer.innerHTML = taskCategories.map((item, index) => `
+                <button class="task-legend-item" type="button" data-index="${index}" aria-pressed="false">
+                    <span class="task-legend-top">
+                        <span class="task-legend-badge">
+                            <span class="task-legend-dot" style="background:${item.color};"></span>
+                            <span class="task-legend-name">${item.label}</span>
+                        </span>
+                        <span class="task-legend-value">${item.value}</span>
+                    </span>
+                    <span class="task-legend-share">${item.summary}</span>
+                    <span class="task-legend-desc">${item.description}</span>
+                </button>
+            `).join('');
+
+            legendContainer.querySelectorAll('.task-legend-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    toggleSelection(Number(button.dataset.index));
+                });
+
+                button.addEventListener('mouseenter', () => {
+                    if (selectedIndex === null) {
+                        updateCenter(Number(button.dataset.index));
+                    }
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    if (selectedIndex === null) {
+                        updateCenter(null);
+                    }
+                });
+            });
+
+            const chart = new Chart(chartCanvas, {
+                type: 'doughnut',
+                data: {
+                    labels: taskCategories.map(item => item.label),
+                    datasets: [{
+                        data: taskCategories.map(item => item.value),
+                        backgroundColor: taskCategories.map(item => item.color),
+                        borderColor: 'transparent',
+                        borderWidth: 0,
+                        hoverBorderWidth: 0,
+                        offset(context) {
+                            return selectedIndex === context.dataIndex ? 14 : 0;
+                        }
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '64%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label(context) {
+                                    const value = context.parsed;
+                                    const share = ((value / totalTasks) * 100).toFixed(1);
+                                    return `${context.label}: ${value} tasks (${share}%)`;
+                                }
+                            }
+                        }
+                    },
+                    onHover(event, elements, chartInstance) {
+                        chartInstance.canvas.style.cursor = elements.length ? 'pointer' : 'default';
+                        if (selectedIndex !== null) {
+                            return;
+                        }
+                        updateCenter(elements.length ? elements[0].index : null);
+                    }
+                }
+            });
+
+            chartCanvas.addEventListener('mouseleave', () => {
+                if (selectedIndex === null) {
+                    updateCenter(null);
+                }
+            });
+
+            chartCanvas.addEventListener('click', (event) => {
+                const activePoints = chart.getElementsAtEventForMode(
+                    event,
+                    'nearest',
+                    { intersect: true },
+                    true
+                );
+
+                if (!activePoints.length) {
+                    selectedIndex = null;
+                    chart.update();
+                    updateCenter(null);
+                    return;
+                }
+
+                toggleSelection(activePoints[0].index);
+            });
+
+            updateCenter(null);
+        });
+
+        // Leaderboard functionality
+        document.addEventListener('DOMContentLoaded', async function () {
+            const tbody = document.getElementById('leaderboard-body');
+            const filterModelType = document.getElementById('filter-model-type');
+            // const filterSteps = document.getElementById('filter-steps');  // Max Steps filter hidden
+            const filterGeneral = document.getElementById('filter-general');
+            const filterPersonalized = document.getElementById('filter-personalized');
+            const filterProactive = document.getElementById('filter-proactive');
+            const clearFiltersBtn = document.getElementById('clear-filters');
+
+            let leaderboardData = [];
+            let filteredData = [];
+            let currentSort = { key: 'overall', dir: 'desc' };
+
+            // Load data from JSON
+            try {
+                const response = await fetch('leaderboard.json');
+                const data = await response.json();
+                leaderboardData = data.results;
+                filteredData = [...leaderboardData];
+                updateCheckboxStates();
+                renderTable();
+            } catch (error) {
+                tbody.innerHTML = '<tr><td colspan="7" class="has-text-centered">Failed to load leaderboard data.</td></tr>';
+                console.error('Error loading leaderboard:', error);
+            }
+
+            // Sortable header click handler
+            document.querySelectorAll('.sortable-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const sortKey = header.dataset.sort;
+                    if (currentSort.key === sortKey) {
+                        currentSort.dir = currentSort.dir === 'desc' ? 'asc' : 'desc';
+                    } else {
+                        currentSort.key = sortKey;
+                        currentSort.dir = 'desc';
+                    }
+                    updateSortIcons();
+                    renderTable();
+                });
+            });
+
+            function updateSortIcons() {
+                document.querySelectorAll('.sortable-header').forEach(header => {
+                    const icon = header.querySelector('.sort-icon');
+                    if (header.dataset.sort === currentSort.key) {
+                        icon.className = currentSort.dir === 'desc' ? 'fas fa-sort-down sort-icon active' : 'fas fa-sort-up sort-icon active';
+                    } else {
+                        icon.className = 'fas fa-sort sort-icon';
+                    }
+                });
+            }
+
+            // Filter handlers
+            filterModelType.addEventListener('change', applyFilters);
+            // filterSteps.addEventListener('change', applyFilters);  // Max Steps filter hidden
+            filterGeneral.addEventListener('change', handleCategoryChange);
+            filterPersonalized.addEventListener('change', handleCategoryChange);
+            filterProactive.addEventListener('change', handleCategoryChange);
+            clearFiltersBtn.addEventListener('click', () => {
+                filterModelType.value = 'all';
+                // filterSteps.value = 'all';  // Max Steps filter hidden
+                filterGeneral.checked = true;
+                filterPersonalized.checked = true;
+                filterProactive.checked = true;
+                currentSort = { key: 'overall', dir: 'desc' };
+                updateSortIcons();
+                updateCheckboxStates();
+                applyFilters();
+            });
+
+            // Handle category checkbox changes
+            function handleCategoryChange() {
+                updateCheckboxStates();
+                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
+
+                // Reset sort to overall if current sort column is being hidden
+                if ((currentSort.key === 'general' && !filterGeneral.checked) ||
+                    (currentSort.key === 'personalized' && !filterPersonalized.checked) ||
+                    (currentSort.key === 'proactive' && !filterProactive.checked)) {
+                    currentSort = { key: 'overall', dir: 'desc' };
+                    updateSortIcons();
+                }
+                // If only one category selected, switch to that category
+                if (checkedCount === 1) {
+                    if (filterGeneral.checked) currentSort.key = 'general';
+                    else if (filterPersonalized.checked) currentSort.key = 'personalized';
+                    else if (filterProactive.checked) currentSort.key = 'proactive';
+                    updateSortIcons();
+                }
+                // If multiple categories selected and currently sorting by a single category column, switch to overall
+                if (checkedCount > 1 && ['general', 'personalized', 'proactive'].includes(currentSort.key)) {
+                    currentSort = { key: 'overall', dir: 'desc' };
+                    updateSortIcons();
+                }
+                applyFilters();
+            }
+
+            // Update checkbox disabled states - prevent deselecting last one
+            function updateCheckboxStates() {
+                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
+
+                // If only one is checked, disable it to prevent unchecking
+                filterGeneral.disabled = checkedCount === 1 && filterGeneral.checked;
+                filterPersonalized.disabled = checkedCount === 1 && filterPersonalized.checked;
+                filterProactive.disabled = checkedCount === 1 && filterProactive.checked;
+            }
+
+            // Update column visibility in table header
+            function updateColumnVisibility() {
+                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
+                const showOverall = checkedCount > 1;
+
+                document.getElementById('th-overall').style.display = showOverall ? '' : 'none';
+                document.getElementById('th-general').style.display = filterGeneral.checked ? '' : 'none';
+                document.getElementById('th-personalized').style.display = filterPersonalized.checked ? '' : 'none';
+                document.getElementById('th-proactive').style.display = filterProactive.checked ? '' : 'none';
+            }
+
+            // Calculate filtered score based on selected task categories
+            function getFilteredScore(row) {
+                const columns = [
+                    { enabled: filterGeneral.checked, score: row.general, tasks: row.general_tasks },
+                    { enabled: filterPersonalized.checked, score: row.personalized, tasks: row.personalized_tasks },
+                    { enabled: filterProactive.checked, score: row.proactive, tasks: row.proactive_tasks }
+                ];
+
+                let weightedScore = 0;
+                let totalTasks = 0;
+                columns.forEach(({ enabled, score, tasks }) => {
+                    if (!enabled || score === null || tasks === null || tasks === 0) return;
+                    weightedScore += score * tasks;
+                    totalTasks += tasks;
+                });
+
+                if (totalTasks === 0) return null;
+                return weightedScore / totalTasks;
+            }
+
+            // Check if all category filters are selected
+            function allCategoriesSelected() {
+                return filterGeneral.checked && filterPersonalized.checked && filterProactive.checked;
+            }
+
+            function applyFilters() {
+                const includeGui = filterGeneral.checked;
+                const includeUser = filterPersonalized.checked;
+                const includeMcp = filterProactive.checked;
+
+                filteredData = leaderboardData.filter(row => {
+                    const modelTypeMatch = filterModelType.value === 'all' || row.model_type === filterModelType.value;
+                    // const stepsMatch = filterSteps.value === 'all' || row.max_steps === parseInt(filterSteps.value);  // Max Steps filter hidden
+
+                    // Filter out rows that have no data for any selected category
+                    const hasSelectedData =
+                        (includeGui && row.general !== null) ||
+                        (includeUser && row.personalized !== null) ||
+                        (includeMcp && row.proactive !== null);
+
+                    return modelTypeMatch && hasSelectedData;  // && stepsMatch
+                });
+                renderTable();
+            }
+
+            function formatDate(dateStr) {
+                const date = new Date(dateStr);
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            }
+
+            function formatScore(value) {
+                return value !== null ? Number(value).toFixed(1) : '-';
+            }
+
+            function renderTable() {
+                const useFilteredScore = !allCategoriesSelected();
+                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
+                const showOverall = checkedCount > 1;
+
+                // Update column visibility in header
+                updateColumnVisibility();
+
+                // Sort data
+                const sorted = [...filteredData].sort((a, b) => {
+                    let aVal, bVal;
+                    if (currentSort.key === 'date') {
+                        aVal = new Date(a.date).getTime();
+                        bVal = new Date(b.date).getTime();
+                    } else if (currentSort.key === 'overall' && useFilteredScore) {
+                        // When sorting by overall with filtered categories, use filtered score
+                        aVal = getFilteredScore(a) ?? -1;
+                        bVal = getFilteredScore(b) ?? -1;
+                    } else {
+                        // Handle numeric score columns: overall, general, personalized, proactive
+                        aVal = a[currentSort.key] ?? -1;
+                        bVal = b[currentSort.key] ?? -1;
+                    }
+                    return currentSort.dir === 'desc' ? bVal - aVal : aVal - bVal;
+                });
+
+                // Render rows
+                tbody.innerHTML = sorted.map((row, index) => {
+                    const rank = index + 1;
+                    const isFirst = rank === 1;
+                    const rowClass = isFirst ? 'first-rank-row' : '';
+                    const starIcon = isFirst ? ' ⭐' : '';
+
+                    // Create clickable model name with link
+                    let modelName = row.model;
+                    if (row.link && row.link !== '#') {
+                        let href = row.link;
+                        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+                            href = 'https://' + href;
+                        }
+                        modelName = `<a href="${href}" class="model-link" target="_blank" rel="noopener noreferrer">${row.model}</a>`;
+                    }
+
+                    // Category badge class
+                    const categoryClass = row.model_type === 'Agentic Framework' ? 'tag is-info is-light' : 'tag is-link is-light';
+                    const categoryLabel = row.model_type === 'Agentic Framework' ? 'Agentic' : 'End-to-End';
+
+                    // Calculate display score for Overall column
+                    let overallDisplay;
+                    if (useFilteredScore) {
+                        const filteredScore = getFilteredScore(row);
+                        overallDisplay = formatScore(filteredScore);
+                    } else {
+                        overallDisplay = formatScore(row.overall);
+                    }
+
+                    // Build cells based on which columns are visible
+                    const overallCell = showOverall ?
+                        `<td class="has-text-centered"><strong class="overall-score">${overallDisplay}</strong></td>` : '';
+                    const generalCell = filterGeneral.checked ?
+                        `<td class="has-text-centered">${formatScore(row.general)}</td>` : '';
+                    const personalizedCell = filterPersonalized.checked ?
+                        `<td class="has-text-centered">${formatScore(row.personalized)}</td>` : '';
+                    const proactiveCell = filterProactive.checked ?
+                        `<td class="has-text-centered">${formatScore(row.proactive)}</td>` : '';
+
+                    return `
+                        <tr class="${rowClass}">
+                            <td class="has-text-centered"><strong>${rank}</strong></td>
+                            <td><span class="category-badge ${categoryClass}">${categoryLabel}</span></td>
+                            <td class="model-cell">
+                                <div class="model-name"><strong>${modelName}</strong></div>
+                                <div class="model-org">${row.organization}</div>
+                                <div class="model-date"><i class="far fa-calendar"></i> ${formatDate(row.date)}</div>
+                            </td>
+                            <!-- <td class="has-text-centered">${row.max_steps}</td> -->
+                            ${overallCell}
+                            ${generalCell}
+                            ${personalizedCell}
+                            ${proactiveCell}
+                        </tr>
+                    `;
+                }).join('');
+            }
+        });
+    </script>
+</body>
+
+</html>
