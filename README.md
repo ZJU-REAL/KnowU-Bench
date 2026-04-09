@@ -7,6 +7,8 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Stars](https://img.shields.io/github/stars/ZJU-REAL/KnowU-Bench?style=social)](https://github.com/ZJU-REAL/KnowU-Bench/stargazers)
 [![arXiv](https://img.shields.io/badge/arXiv-xxx.xxxx-b31b1b.svg)](https://arxiv.org/abs/xxx.xxxx)
+[![Page](https://img.shields.io/badge/Page-KnowU--Bench-blue.svg)](https://zju-real.github.io/KnowU-Bench/)
+
 
 **KnowU-Bench** is an online, interactive benchmark for evaluating personalized and proactive mobile agents in reproducible Android environments.
 
@@ -36,16 +38,16 @@ Mobile GUI agents have made rapid progress on explicit task execution, yet a dee
 
 ## 📰 News
 
-- [ 2026-04-07 ] We release the code for KnowU-Bench.
+- [2026-04-07] Code for KnowU-Bench is released.
 
 ## 📊 Benchmark Snapshot
 
 | Item | Value |
 | --- | --- |
-| Benchmark name | `KnowU-Bench` |
+| Benchmark name | KnowU-Bench |
 | App coverage | 23 apps at benchmark scope |
 | Registered tasks in current checkout | 192 |
-| Task families | 42 `general`, 86 `personalized`, 64 `proactive` |
+| Task families | 42 general, 86 personalized, 64 proactive |
 | Agent-user interaction tasks | 94 tasks tagged `agent-user-interaction` |
 | User profiles | `developer`, `grandma`, `student`, `user` |
 | Built-in agents | 9 |
