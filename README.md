@@ -242,6 +242,22 @@ uv run mw env exec knowu_bench_env_0_dev
 
 The `scripts/` directory also contains batch runners and analysis helpers such as `run_eval.sh`, `run_gpt_e2e.sh`, `calc_paper_metrics.py`, and `calc_pref_routine_accuracy.py`.
 
+## ⭐️ Citation
+
+If you find this project useful, welcome to cite us.
+
+```bit
+@misc{chen2026knowubenchinteractiveproactivepersonalized,
+      title={KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation}, 
+      author={Tongbo Chen and Zhengxi Lu and Zhan Xu and Guocheng Shao and Shaohan Zhao and Fei Tang and Yong Du and Kaitao Song and Yizhou Liu and Yuchen Yan and Wenqi Zhang and Xu Tan and Weiming Lu and Jun Xiao and Yueting Zhuang and Yongliang Shen},
+      year={2026},
+      eprint={2604.08455},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2604.08455}, 
+}
+```
+
 ## 📄 License
 
 This project is released under the Apache-2.0 License. See [LICENSE](./LICENSE) for details.
