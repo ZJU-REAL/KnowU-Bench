@@ -25,8 +25,8 @@ DRAG = "drag"
 ASK_USER = "ask_user"
 MCP = "mcp"
 ENV_FAIL = "error_env"
-DEFAULT_IMAGE = "ghcr.io/tongyi-mai/mobile_world:latest"
-DEFAULT_NAME_PREFIX = "realgui_bench_env"
+DEFAULT_IMAGE = "ghcr.io/zju-real/knowu_bench:latest"
+DEFAULT_NAME_PREFIX = "knowu_bench_env"
 _ACTION_TYPES = (
     CLICK,
     DOUBLE_TAP,

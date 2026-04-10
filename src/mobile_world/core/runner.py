@@ -258,7 +258,7 @@ def run_agent_with_evaluation(
     device: str = "emulator-5554",
     step_wait_time: float = 1.0,
     suite_family: str = "mobile_world",
-    env_name_prefix: str = "realgui_bench_env",
+    env_name_prefix: str = "knowu_bench_env",
     env_image: str = "mobile_world",
     dry_run: bool = False,
     enable_mcp: bool = False,

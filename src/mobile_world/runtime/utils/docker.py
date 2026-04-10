@@ -207,7 +207,7 @@ def docker_exec_replace(container_name: str, command: str, *, interactive: bool 
 
 
 def discover_backends(
-    image_filter: str = "mobile_world", prefix: str = "realgui_bench_env"
+    image_filter: str = "mobile_world", prefix: str = "knowu_bench_env"
 ) -> tuple[list[str], list[str]]:
     """Discover backend URLs from running containers.
 

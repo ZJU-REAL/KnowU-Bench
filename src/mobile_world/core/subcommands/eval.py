@@ -108,8 +108,8 @@ def _add_common_arguments(parser: argparse.ArgumentParser) -> None:
         "--env-prefix",
         "--env_prefix",
         dest="env_name_prefix",
-        default="realgui_bench_env",
-        help="Name prefix for containers (default: realgui_bench_env)",
+        default="knowu_bench_env",
+        help="Name prefix for containers (default: knowu_bench_env)",
     )
     parser.add_argument(
         "--env-image",

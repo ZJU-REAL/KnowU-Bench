@@ -266,7 +266,7 @@ def run_user_task(
     device: str = "emulator-5554",
     step_wait_time: float = 1.0,
     suite_family: str = "mobile_world",
-    env_name_prefix: str = "realgui_bench_env",
+    env_name_prefix: str = "knowu_bench_env",
     env_image: str = "mobile_world",
     enable_mcp: bool = False,
     log_verbose: bool = False,

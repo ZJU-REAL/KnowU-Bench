@@ -32,7 +32,7 @@ mobile-world env restart <container_name>
 
 **Example:**
 ```bash
-mobile-world env restart realgui_bench_env_0
+mobile-world env restart knowu_bench_env_0
 ```
 
 This command:
@@ -50,7 +50,7 @@ mobile-world env exec <container_name>
 
 **Example:**
 ```bash
-mobile-world env exec realgui_bench_env_0
+mobile-world env exec knowu_bench_env_0
 ```
 
 You can also run custom commands:
