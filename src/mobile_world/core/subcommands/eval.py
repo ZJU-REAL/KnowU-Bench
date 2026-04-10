@@ -115,8 +115,8 @@ def _add_common_arguments(parser: argparse.ArgumentParser) -> None:
         "--env-image",
         "--env_image",
         dest="env_image",
-        default="mobile_world",
-        help="Image name for containers (default: mobile_world)",
+        default="knowu_bench",
+        help="Image name for containers (default: knowu_bench)",
     )
     parser.add_argument(
         "--enable-mcp",

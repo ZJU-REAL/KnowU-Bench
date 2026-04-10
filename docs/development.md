@@ -116,7 +116,7 @@ Remove containers when done:
 # Remove specific containers
 mobile-world env rm my_dev_env_0 my_dev_env_1
 
-# Remove all mobile_world containers
+# Remove all knowu_bench containers
 mobile-world env rm --all
 ```
 
@@ -165,7 +165,7 @@ If code changes aren't appearing:
 1. Check if ports are available
 2. Verify Docker daemon is running: `docker ps`
 3. Check logs: `docker logs <container_name>`
-4. Ensure Docker image exists: `docker images | grep mobile_world`
+4. Ensure Docker image exists: `docker images | grep knowu_bench`
 
 ### Permission Errors
 

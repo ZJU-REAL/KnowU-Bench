@@ -259,7 +259,7 @@ def run_agent_with_evaluation(
     step_wait_time: float = 1.0,
     suite_family: str = "mobile_world",
     env_name_prefix: str = "knowu_bench_env",
-    env_image: str = "mobile_world",
+    env_image: str = "knowu_bench",
     dry_run: bool = False,
     enable_mcp: bool = False,
     enable_user_interaction: bool = False,

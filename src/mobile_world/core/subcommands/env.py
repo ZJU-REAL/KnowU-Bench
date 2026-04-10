@@ -138,7 +138,7 @@ def configure_parser(subparsers: argparse._SubParsersAction) -> None:
     launch_parser.add_argument(
         "--image",
         default=DEFAULT_IMAGE,
-        help="Docker image to use (default: mobile_world:latest)",
+        help="Docker image to use (default: knowu_bench:latest)",
     )
     launch_parser.add_argument(
         "--detach",

@@ -76,5 +76,5 @@ echo "USER_AGENT_MODEL: $USER_AGENT_MODEL"
 if [[ -n "$AW_HOST" ]]; then
     echo "后端地址: $AW_HOST"
 else
-    echo "后端地址: 自动发现 mobile_world_env_* 容器"
+    echo "后端地址: 自动发现 knowu_bench_env_* 容器"
 fi
