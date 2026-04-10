@@ -3,9 +3,6 @@
 
 <h1>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</h1>
 
-[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
-[![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Stars](https://img.shields.io/github/stars/ZJU-REAL/KnowU-Bench?style=social)](https://github.com/ZJU-REAL/KnowU-Bench/stargazers)
 [![arXiv](https://img.shields.io/badge/arXiv-2604.08455-b31b1b.svg)](https://arxiv.org/abs/2604.08455)
 [![Daily Paper](https://img.shields.io/badge/Daily%20Paper-huggingface-d4af37.svg?labelColor=555555)](https://huggingface.co/papers/2604.08455)
 [![Page](https://img.shields.io/badge/Page-KnowU--Bench-blue.svg)](https://zju-real.github.io/KnowU-Bench/)
