@@ -116,7 +116,6 @@ cp .env.example .env
 Update `.env` with the credentials you actually need:
 
 - `API_KEY`: model API key for the mobile agent
-- `DASHSCOPE_API_KEY`, `MODELSCOPE_API_KEY`: optional MCP configuration
 - `USER_AGENT_API_KEY`, `USER_AGENT_BASE_URL`, `USER_AGENT_MODEL`: user-agent configuration for interaction tasks
 
 The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`.
@@ -231,7 +230,6 @@ For development workflows, container restart behavior, VNC debugging, and source
 - [Development Guide](./docs/development.md)
 - [Windows Setup](./docs/setup_for_windows.md)
 - [AVD Configuration](./docs/configure_avd.md)
-- [MCP Setup](./docs/mcp_setup.md)
 
 A common dev workflow is:
 
