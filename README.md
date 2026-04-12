@@ -36,7 +36,7 @@ Mobile GUI agents have made rapid progress on explicit task execution, yet a dee
 
 ## 📰 News
 
-- [2026-04-11] We have released our experiment [docker](https://github.com/zju-real/KnowU-Bench/pkgs/container/knowu_bench).
+- [2026-04-11] We have released our experiment [docker](https://github.com/users/yaosqz/packages/container/package/knowu-bench).
 - [2026-04-07] Code for KnowU-Bench is released.
 
 ## 📊 Benchmark Snapshot
