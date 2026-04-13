@@ -116,7 +116,7 @@ Update `.env` with the credentials you actually need:
 - `API_KEY`: model API key for the mobile agent
 - `USER_AGENT_API_KEY`, `USER_AGENT_BASE_URL`, `USER_AGENT_MODEL`: user-agent configuration for interaction tasks
 
-The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`.
+The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`. You could install our image from `ghcr.io/yaosqz/knowu-bench:latest`.
 
 ## ⚡ Quick Start
 
