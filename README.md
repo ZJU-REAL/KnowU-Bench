@@ -53,44 +53,6 @@ Mobile GUI agents have made rapid progress on explicit task execution, yet a dee
 
 The current Python task registry directly references 17 app identifiers in this checkout. Evaluation combines textual answer verification, backend database checks, local storage inspection, application callbacks, and hybrid evaluation flows for personalized tasks.
 
-## 🧩 Benchmark Structure
-
-### General tasks
-
-General tasks evaluate direct end-to-end execution from natural language instructions.
-
-Examples in the current codebase:
-- `BirthdayWishGeneralTask`
-- `BuyComputerGeneralTask`
-- `CommuteLateWithNoticeGeneralTask`
-- `SearchTopInfoGeneralTask`
-
-Source directory: `src/mobile_world/tasks/definitions/general`
-
-### Personalized tasks
-
-Personalized tasks test whether the agent can infer user preferences from profile fields, historical logs, and clarifying interaction. These tasks often require confirmation, comparison, or habit-sensitive decisions.
-
-Examples in the current codebase:
-- `OrderLunchTradeoffTask@user`
-- `BuyColaPreferenceTask@developer`
-- `ShareFavoritePhotosPreferenceAskUserTask@student`
-- `CalendarInviteConflictResolutionTask@user`
-
-Source directory: `src/mobile_world/tasks/definitions/preference`
-
-### Proactive tasks
-
-Proactive tasks evaluate behavior grounded in recurring user habits. The agent must decide whether it should act, ask, wait, or stay silent based on the user profile and logs.
-
-Examples in the current codebase:
-- `WeekendSleeperTask@student`
-- `MorningPaperReadingTask@user`
-- `BatterySaverRoutineTask@developer`
-- `WeeklyReportRoutineTask@grandma`
-
-Source directory: `src/mobile_world/tasks/definitions/routine`
-
 ## 🚀 Installation
 
 ### Requirements
@@ -116,7 +78,7 @@ Update `.env` with the credentials you actually need:
 - `API_KEY`: model API key for the mobile agent
 - `USER_AGENT_API_KEY`, `USER_AGENT_BASE_URL`, `USER_AGENT_MODEL`: user-agent configuration for interaction tasks
 
-The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`. You could install our image from `ghcr.io/yaosqz/knowu-bench:latest`.
+The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`. Please install our image from `ghcr.io/yaosqz/knowu-bench:latest`.
 
 ## ⚡ Quick Start
 
