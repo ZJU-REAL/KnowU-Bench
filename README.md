@@ -206,7 +206,7 @@ The `scripts/` directory also contains batch runners and analysis helpers such a
 If you find this project useful, welcome to cite us.
 
 ```bit
-@misc{chen2026knowubenchinteractiveproactivepersonalized,
+@misc{chen2026knowubench,
       title={KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation}, 
       author={Tongbo Chen and Zhengxi Lu and Zhan Xu and Guocheng Shao and Shaohan Zhao and Fei Tang and Yong Du and Kaitao Song and Yizhou Liu and Yuchen Yan and Wenqi Zhang and Xu Tan and Weiming Lu and Jun Xiao and Yueting Zhuang and Yongliang Shen},
       year={2026},
