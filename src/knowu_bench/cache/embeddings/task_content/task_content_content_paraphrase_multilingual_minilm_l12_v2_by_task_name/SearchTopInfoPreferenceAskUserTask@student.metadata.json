@@ -1,0 +1,25 @@
+{
+  "task_name": "SearchTopInfoPreferenceAskUserTask@student",
+  "class_name": "SearchTopInfoPreferenceAskUserTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "SearchTopInfoPreferenceAskUserTask@student",
+    "class_name": "SearchTopInfoPreferenceAskUserTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "Search for the recent news in the field I am interested, and send an email to Kevin with a subject line that includes the field name and the following message:\nHere is the recent news in the [field name] field:\n[One sentence summary of the recent news you found]",
+    "profile_id": "student",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/student.yaml"
+  }
+}

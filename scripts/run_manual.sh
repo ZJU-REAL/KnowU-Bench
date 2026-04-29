@@ -101,6 +101,6 @@ echo "❓ 模拟提问: $QUESTION"
 echo "-----------------------------------"
 
 # 执行测试任务
-uv run python src/mobile_world/tasks/test_task.py \
+uv run python src/knowu_bench/tasks/test_task.py \
     --task "$TASK_NAME" \
     --question "$QUESTION"

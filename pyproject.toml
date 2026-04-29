@@ -40,6 +40,7 @@ dependencies = [
     "opencv-python",
     "python-multipart>=0.0.6",
     "openai>=1.106.1",
+    "dashscope>=1.24.6",
     "mcp>=1.9.4",
     "imagehash>=4.3.2",
     "joblib",
@@ -69,19 +70,16 @@ dev = [
 all = ["mobile-world[agents,dev]"]
 
 [project.scripts]
-mobile-world = "mobile_world.core.cli:main"
-mw = "mobile_world.core.cli:main"
+mobile-world = "knowu_bench.core.cli:main"
+mw = "knowu_bench.core.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/your-org/mobile-world"
 Repository = "https://github.com/your-org/mobile-world"
 Documentation = "https://mobile-world.readthedocs.io"
 
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools.package-dir]
-"" = "src"
+[tool.hatch.build.targets.wheel]
+packages = ["src/knowu_bench"]
 
 
 [tool.pytest.ini_options]
@@ -116,10 +114,10 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 # FastHTML uses star imports as its standard pattern
-"src/mobile_world/core/log_viewer/routes.py" = ["F405", "F403"]
+"src/knowu_bench/core/log_viewer/routes.py" = ["F405", "F403"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["mobile_world"]
+known-first-party = ["knowu_bench"]
 
 [tool.mypy]
 python_version = "3.12"

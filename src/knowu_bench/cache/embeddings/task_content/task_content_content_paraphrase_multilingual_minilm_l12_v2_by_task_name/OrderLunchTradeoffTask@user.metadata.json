@@ -1,0 +1,25 @@
+{
+  "task_name": "OrderLunchTradeoffTask@user",
+  "class_name": "OrderLunchTradeoffTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "OrderLunchTradeoffTask@user",
+    "class_name": "OrderLunchTradeoffTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "我中午时间紧，帮我点份清淡午餐，预算别太高，平台按我偏好选但不必强求。",
+    "profile_id": "user",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/user.yaml"
+  }
+}

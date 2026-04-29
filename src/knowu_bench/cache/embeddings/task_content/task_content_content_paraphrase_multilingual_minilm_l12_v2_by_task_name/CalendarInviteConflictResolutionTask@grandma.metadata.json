@@ -1,0 +1,26 @@
+{
+  "task_name": "CalendarInviteConflictResolutionTask@grandma",
+  "class_name": "CalendarInviteConflictResolutionTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "CalendarInviteConflictResolutionTask@grandma",
+    "class_name": "CalendarInviteConflictResolutionTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "lang-cn",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "我刚收到一个临时邀约短信（今天 10:30-11:00）。请先检查我的日历：若和我固定高优先安排冲突就拒绝；否则接受并把这次邀约写入日历。",
+    "profile_id": "grandma",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/grandma.yaml"
+  }
+}

@@ -76,7 +76,7 @@ class EpisodeRecord:
 
 def parse_args() -> argparse.Namespace:
     repo_root = Path(__file__).resolve().parents[1]
-    default_task_defs = repo_root / "src" / "mobile_world" / "tasks" / "definitions"
+    default_task_defs = repo_root / "src" / "knowu_bench" / "tasks" / "definitions"
 
     parser = argparse.ArgumentParser(
         description=(
@@ -93,7 +93,7 @@ def parse_args() -> argparse.Namespace:
         "--task-definitions-root",
         type=Path,
         default=default_task_defs,
-        help="Path to src/mobile_world/tasks/definitions.",
+        help="Path to src/knowu_bench/tasks/definitions.",
     )
     parser.add_argument(
         "--json",

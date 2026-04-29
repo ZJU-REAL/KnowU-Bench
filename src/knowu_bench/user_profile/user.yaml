@@ -1,0 +1,446 @@
+version: "2.0"
+description: "MobileWorld Benchmark Configuration - Scenario: High-Pressure Academic Environment (MERGED)"
+created_at: "2024-05-15T08:00:00Z"
+
+# =============================================================================
+# SECTION 1: USER PROFILING
+# =============================================================================
+user_profile:
+  # --- 1. 基础身份 (Identity) ---
+  identity:
+    full_name: "Aiden Lin"
+    age: 34
+    occupation: "Associate Professor / AI Lab Director"
+    employer: "Peking University (PKU)"
+
+    auth_documents:
+      id_card: "11010119900614XXXX"
+      passport: "E12345678"
+      frequent_flyer: "CA-99887766 (Star Alliance)"
+    contact_info:
+      phone: "+86 138-0000-8888"
+      email_work: "aiden.lin@pku.edu.cn"
+      email_personal: "aiden.ai.researcher@gmail.com"
+
+  # --- 2. 环境感知 (Context) [来源: main] ---
+  locations:
+    home:
+      address: "北京市海淀区知春路 6 号院 锦秋国际大厦"
+      label: "Home"
+      latitude: 39.9795
+      longitude: 116.3382
+      instructions: "Leave at door, do not ring bell after 10 PM."
+    work:
+      address: "北京市海淀区颐和园路 5 号 北京大学理科一号楼"
+      label: "Lab"
+      latitude: 39.9869
+      longitude: 116.3059
+      instructions: "Front desk / Call student for pickup."
+
+  digital_context:
+    devices:
+      - "MacBook Pro (Primary)"
+      - "Android Flagship (Mobile)"
+      - "Linux Server (Remote)"
+    system_settings:
+      language: "English (US)"
+      theme: "Dark Mode (Always)"
+      time_zone: "Asia/Shanghai (GMT+8)"
+    security:
+      auth_method: "Biometric (FaceID/TouchID) preferred over password"
+
+  # --- 3. 行为模式 (Habits) [来源: main，完整保留] ---
+  habits:
+    # --- 1. 信息获取惯例 ---
+    morning_routine:
+      description: "Checks AlphaXiv and HuggingFace Papers every morning."
+      trigger:
+        time_range: ["08:25", "08:35"]
+        context_cue: "Device unlocked"
+      action:
+        type: "browse_info"
+        sequence:
+          - "Open Chrome -> https://www.alphaxiv.org"
+          - "Open Chrome -> https://huggingface.co/papers"
+
+    # --- 2. 周报惯例 ---
+    weekly_report:
+      description: "Sends weekly progress summary to the Dean."
+      trigger:
+        day_of_week: "Friday"
+        time_range: ["16:55", "17:05"]
+        context_cue: "File 'Weekly_Report.pdf' exists in Documents"
+      action:
+        type: "send_email"
+        recipient: "dean@pku.edu.cn"
+        content_keywords: ["Weekly Report", "attached"]
+
+    # --- 3. 低电量续航模式 ---
+    low_battery_saver:
+      description: "Enables power saving mode when battery is low to stay connected."
+      trigger:
+        condition: "Battery level <= 15%"
+        context_cue: "System Low Battery Warning"
+      action:
+        type: "change_settings"
+        settings: ["power_saving_mode"]
+
+    # --- 4. 深度工作模式 ---
+    deep_work_block:
+      description: "Protects morning time for writing, declines meetings."
+      trigger:
+        time_range: ["09:00", "11:30"]
+        day_of_week: ["Mon", "Tue", "Wed", "Thu", "Fri"]
+      action:
+        type: "set_dnd_mode"
+        auto_decline_meetings: true
+
+    # --- 5. 紧急消息响应 (On-Call) ---
+    on_call_response:
+      description: "Immediately acknowledges critical server alerts during off-hours."
+      trigger:
+        simulation_datetime: "2026-02-12 20:00:00"
+        app: "Mattermost"
+        team: "AGI_Reasoning_Lab"
+        channel: "AI-Research"
+        alert_message: "🚨 CRITICAL: Server 500 Error detected in Cluster-A. API response time exceeded 5s."
+      action:
+        type: "send_message"
+        reply_keywords: ["ack", "checking now", "received"]
+
+    # --- 6. 会议预读 ---
+    pre_meeting_prep:
+      description: "Prepares for meetings by reviewing relevant technical specifications 5 minutes before the start time."
+      trigger:
+        type: "time_event"
+        simulation_datetime: "2026-05-20 18:24:47"
+        meeting_title: "Paper Sharing"
+        meeting_start: "2026-05-20 18:25:00"
+        meeting_end: "2026-05-20 21:00:00"
+        reminder_minutes: 0
+        offset_minutes: -5
+        calendar_event_keywords: ["Paper Sharing", "Paper Discussion", "Paper Review"]
+      action:
+        type: "open_file"
+        file_name: "Agent_Learning_via_Early_Experience.pdf"
+        file_source: "src/knowu_bench/cache/users/aiden_lin/Agent_Learning_via_Early_Experience.pdf"
+        file_name_pattern: "{Paper_Title}.pdf"
+        location: "Documents/"
+        detail: "5 minutes before the paper sharing meeting, open the corresponding PDF in Documents/."
+
+    # --- 7. 周末关闹钟 ---
+    weekend_sleeper:
+      description: "Disables the 07:30 AM work alarm on Friday nights to avoid waking up early on weekends."
+      trigger:
+        type: "time_event"
+        time: "23:00"
+        days: ["Friday"]
+      action:
+        type: "app_interaction"
+        app: "Clock"
+        operation: "disable_alarm"
+        target: "07:30"
+        detail: "On Friday at 23:00, open Clock app and turn off the 07:30 alarm."
+
+    # --- 8. 截图清理 ---
+    gallery_cleanup:
+      description: "Weekly screenshot cleanup with age-based retention."
+      trigger:
+        type: "time_event"
+        day_of_week: "Sunday"
+        time_range: ["22:10", "22:20"]
+        simulation_datetime: "2026-05-24 22:15:00"
+      action:
+        type: "app_interaction"
+        app: "Gallery"
+        operation: "delete_older_than"
+        cleanup_policy:
+          older_than_days: 30
+        target_album: "Screenshots"
+        detail: "Open Gallery -> Screenshots, delete screenshots older than 30 days, keep recent ones."
+
+    # --- 9. 联系人自动保存 ---
+    contact_saver:
+      description: "Automatically saves new contacts from SMS when people introduce themselves."
+      trigger:
+        type: "received_sms"
+        pattern: "this is [Name]"
+      action:
+        type: "save_contact"
+        app: "Contacts"
+        detail: "If an SMS says 'Hi, this is Bob', open Contacts and save 'Bob' with the sender's number."
+
+  # --- 4. 偏好设置 (Preferences) ---
+  preferences:
+
+    # --- 饮食偏好 (Diet & Food) ---
+    diet:
+      coffee: "Iced Americano, No Sugar, Extra Shot (Order at 14:00)"
+      diet_type: "Daytime: Quick, filling cafeteria meals (Beijing-style staples like noodles and stir-fries, or Japanese bowls). Evening: Heavy comfort food."
+      soft_drinks: "Sugar-free Coca-Cola (Absolutely no Pepsi)"
+      delivery_platform: "Tuantuan (Has membership, preferred over Chilemei)"
+      cuisine_preference: ["Japanese", "Beijing cuisine", "Sichuan (Dinner only)"]
+      special_notes: "Lactose intolerant — always orders oat milk. Dislikes peanuts (Requests 'no peanuts' even for Kung Pao chicken)."
+      dinner_preference: "Craves Kung Pao chicken for dinner as a stress-relief comfort food." 
+      delivery_general_remark: "Please add extra rice"                           
+
+    # --- 购物偏好 (Shopping) ---
+    shopping:
+      brands: ["Logitech", "Apple"]
+      online_platforms:
+        preferred: "Taodian (Preferred over Jingdian)"                
+        secondary: "Jingdian (Alternative, faster delivery)"
+      delivery_courier: "First choice: SF Express; Second choice: Zhongtong Express."  
+      payment_method: "Alipay preferred over WeChat Pay (bound to reimbursement account)"
+      price_sensitivity:
+        general: "Low for productivity tools; high for non-essential items"
+        clothes_threshold: "If the price of clothes exceeds 100 yuan, considered relatively expensive."  
+      reimbursement_note: "Always requests fapiao (invoice) for work-related purchases"
+      shoe: { shoe_size_eu: 41, shoe_color: white }
+      clothes: "No black clothes and no one-piece outfits"
+      computer: "Personal use: Apple (MacBook)."
+
+    # --- 出行偏好 (Travel & Transport) ---
+    travel:
+      seat: "Aisle (Need to work on laptop)"
+      daily_commute:
+        primary_transport: "Subway (Line 10 + Line 4)"
+        subway_payment: "Alipay transit QR code (乘车码小程序)"
+      weather_adaptation:
+        normal_weather: "Subway (default daily commute)"
+        rain_or_extreme_weather: "Didi Premier (礼橙专车) — avoids walking to station in bad weather"
+        late_night: "Didi Premier (after subway stops running, ~23:00)"
+      ride_hailing:
+        app: "Didi"
+        preferred_tier: "Premier (礼橙专车)"
+        payment: "Alipay"
+      transport: "subway"
+      flight_preference:
+        airline: "Air China preferred (Star Alliance member CA-99887766)"
+        time: "Morning flights preferred (Arrive early, work in afternoon)"
+      navigation_app: "Maps (preferred navigation app)"
+    
+
+    # --- App偏好 (App & Digital) [来源: main，无冲突] ---
+    apps:
+      browser: "Chrome"
+      email_client: "Mail"
+      messaging:
+        work_team: "Mattermost (Lab internal communication)"
+        project_communication: "Mattermost channel 'AI-Research' (Uses this strictly for all CS academic projects, paper discussions, and lab sync meetings)"
+        sms: "Messages (For SMS-based contacts)"
+      calendar: "Calendar (Primary scheduling tool)"
+      file_management: "Files"
+      document_viewer: "OpenDocument (For viewing PDFs)"
+      photos: "Gallery"
+      search: "Google"
+      news_and_papers:
+        - "AlphaXiv (via Chrome)"
+        - "HuggingFace Papers (via Chrome)"
+        - "Mastodon (Follows ML researchers)"
+
+    # --- 社交偏好 (Social & Communication) ---
+    social:
+      communication_style: "Direct and concise; dislikes lengthy pleasantries"
+      response_time:
+        high_priority: "Immediate (Dean, server alerts)"
+        routine: "Within 2 hours during work hours"
+      meeting_preference:
+        scheduling: "Avoids meetings between 9:00 - 11:30 (Deep work block)"
+        duration: "Prefers 30 min max"
+      social_media:
+        active: ["Mastodon (Academic networking)"]
+        avoid: ["Douyin/TikTok"]
+        posting_preference: "Likes promoting personal academic work and research updates on Mastodon."
+        default_visibility: "public"  # 学术传播需要最大曝光，公开可见
+      delegation: "Delegates admin tasks to Alice Wang; gives Bob Li extra guidance on code"
+      hobby:
+        field_of_interest: "gui agent/personalized agent"          # [来源: mall-preference]
+      share:
+        photos: "User likes to share screenshots of academic papers"  # [来源: mall-preference]
+
+  # --- 5. 决策逻辑 (Decision Criteria) ---
+  decision_criteria:
+    priorities: ["Academic Reputation", "Lab Efficiency", "Student Growth"]
+    trade_offs:
+      - "Time > Money (Willing to pay for express shipping)"
+      - "Performance > Stability (Willing to try beta software)"
+    pain_points:
+      - "Dealing with university financial reimbursement systems"
+
+  # --- 6. 社交关系 (Social Graph) ---
+  social_graph:
+    high_priority:
+      - name: "Prof. Zhang"
+        role: "Dean/Mentor"
+        instruction: "Notify immediately via all channels"
+    routine:
+      - name: "Alice Wang"
+        role: "Lab Admin / Head Student"
+        instruction: "Delegate administrative tasks"
+      - name: "Bob Li"
+        role: "PhD Student"
+        instruction: "Needs detailed code reviews (Weak coder)"
+    academic_team:
+      - name: "CS Project Team / Lab Members"
+        role: "Research Group"
+        app_preference: "Mattermost"
+        target_channel: "AI-Research"
+        interaction: "Formal, direct, and concise coordination for research projects and sync meetings. No pleasantries."
+    personal:
+      - name: "Sarah Lin"
+        role: "Sister"
+        instruction: "Personal matters only"
+
+# =============================================================================
+# SECTION 2: ENVIRONMENT STATE (动态场景 - 初始状态)
+# [来源: main，两分支完全一致，直接保留]
+# =============================================================================
+environment_init_state:
+
+  app_files:
+    files:
+      - path: "Downloads/Agent_Learning_via_Early_Experience.pdf"
+        source: "src/knowu_bench/cache/users/aiden_lin/Agent_Learning_via_Early_Experience.pdf"
+      - path: "Documents/Research/NIPS2023/hugginggpt.pdf"
+        source: "src/knowu_bench/cache/users/aiden_lin/hugginggpt.pdf"
+      - path: "Downloads/Reimbursement_Form_Template.docx"
+      - path: "Documents/Research/ICLR2026/experiment_results.csv"
+      - path: "Documents/Personal/Rent_Contract.pdf"
+
+  app_messages:
+    threads:
+      - sender: "CN-EXPRESS"
+        text: "Package (SF10293) arrived. Pickup code 8829."
+        time: "08:30 AM"
+        read: false
+      - sender: "95588"
+        text: "Verification code 4920."
+        time: "Yesterday"
+        read: true
+      - sender: "Sarah Lin"
+        text: "Mom's birthday dinner this Sunday."
+        time: "Yesterday"
+        read: false
+
+  app_contacts:
+    list:
+      - { name: "Alice Wang", role: "PhD", phone: "139-1111-2222", email: "alice.wang@ftu.edu.cn" }
+      - { name: "Prof. Zhang", role: "Dean", phone: "135-9999-8888", email: "zhang@ftu.edu.cn" }
+      - { name: "Lab Security", role: "Emergency", phone: "010-6278-0000" }
+
+  app_calendar:
+    events:
+      - time: "09:00 - 10:00"
+        title: "Deep Work (Do Not Disturb)"
+      - time: "10:30 - 11:30"
+        title: "Meeting with Dean Zhang"
+        location: "Admin Building 301"
+      - time: "14:00 - 16:00"
+        title: "Group Seminar: Multimodal Agents"
+        location: "Lab Conference Room"
+      - time: "23:59 - 23:59"
+        title: "DEADLINE: ICLR Abstract Submission"
+        priority: "Critical"
+
+  app_settings:
+    network: "FTU-Research-Net (5GHz)"
+    bluetooth: "Connected (Noise Cancelling Headphones)"
+    display:
+      auto_lock_minutes: 5
+
+  app_clock:
+    alarms:
+      - time: "07:30"
+        label: "Work Week Wake Up"
+        status: "on"
+        repeat: ["Mon", "Tue", "Wed", "Thu", "Fri"]
+        vibrate: true
+      - time: "09:00"
+        label: "Weekend Brunch"
+        status: "off"
+        repeat: ["Sat", "Sun"]
+        vibrate: false
+      - time: "14:00"
+        label: "Power Nap"
+        status: "on"
+        delete_after_use: true
+
+  app_gallery:
+    albums:
+      - name: "Camera"
+        content:
+          - filename: "whiteboard_brainstorming.jpg"
+            source: "src/knowu_bench/cache/users/aiden_lin/whiteboard_brainstorming.jpg"
+      - name: "Screenshots"
+        content:
+          - filename: "training_reward.png"
+            source: "src/knowu_bench/cache/users/aiden_lin/training_reward.png"
+
+  app_mattermost:
+    status: "Active - 3 Unread Mentions"
+    teams:
+      - name: "AGI_Reasoning_Lab"
+        channels:
+          - name: "experiments-gpu"
+            unread: true
+            history:
+              - user: "Student_Bob"
+                text: "@AidenLin Professor, the H800 cluster crashed again during the LLaMA-3 fine-tuning."
+                time: "09:15 AM"
+          - name: "general"
+            last_msg: "Admin: Campus network maintenance at 2 AM."
+    direct_messages:
+      - user: "Alice Wang"
+        unread: true
+        text: "Boss, I need your approval on the Abstract before submission. The deadline is tonight!"
+
+  app_mail:
+    account: "aiden.lin@ftu.edu.cn"
+    inbox:
+      - id: 101
+        sender: "conf-chair@iclr.cc"
+        subject: "ICLR 2025 Reviewer Invitation"
+        snippet: "Invite you to serve as Area Chair..."
+        status: { read: false, flagged: true }
+      - id: 102
+        sender: "finance@ftu.edu.cn"
+        subject: "[Reminder] Q1 Grant Reimbursement"
+        snippet: "Please submit receipts by Friday."
+        status: { read: false, flagged: false }
+      - id: 103
+        sender: "newsletter@tech-daily.com"
+        subject: "Top 10 AI Tools in 2024"
+        status: { read: true, flagged: false }
+
+  app_docreader:
+    recent:
+      - file: "2405.00123_arxiv.pdf"
+        progress: "Page 3 of 12"
+
+  app_chrome:
+    tabs:
+      - { title: "Overleaf - ICLR Submission", url: "https://www.overleaf.com/project/..." }
+      - { title: "Google Scholar Profile", url: "https://scholar.google.com/" }
+      - { title: "GitHub - AgentBench", url: "https://github.com/FTU-Lab/AgentBench" }
+
+  app_mastodon:
+    user: "@aiden_ai"
+    notifications:
+      - type: "mention"
+        from: "@YannLeCun"
+        text: "Interesting take on modular networks by @aiden_ai."
+    drafts: ["Our team's latest benchmark on Agent Evaluation is now live on ArXiv!"]
+
+  app_taodian:
+    cart:
+      - { item: "Ergonomic Chair", price: 2500.00, selected: false }
+      - { item: "USB-C Hub (10-in-1)", price: 199.00, selected: true }
+    orders:
+      - { id: "TD-8821", item: "Disposable Coffee Cups", status: "Shipping" }
+
+  app_map:
+    saved:
+      - { name: "Home", coords: "39.9, 116.3" }
+      - { name: "Work", coords: "39.95, 116.35" }
+    history: ["Convention Center", "Hospital nearby"]

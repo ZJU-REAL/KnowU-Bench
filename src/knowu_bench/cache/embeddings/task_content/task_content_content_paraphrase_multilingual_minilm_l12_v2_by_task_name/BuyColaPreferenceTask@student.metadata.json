@@ -1,0 +1,25 @@
+{
+  "task_name": "BuyColaPreferenceTask@student",
+  "class_name": "BuyColaPreferenceTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "BuyColaPreferenceTask@student",
+    "class_name": "BuyColaPreferenceTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "帮我买一箱我最爱喝的可乐，送到我工作的地点。",
+    "profile_id": "student",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/student.yaml"
+  }
+}

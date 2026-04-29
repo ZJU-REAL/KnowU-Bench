@@ -165,7 +165,7 @@ If code changes aren't appearing:
 1. Check if ports are available
 2. Verify Docker daemon is running: `docker ps`
 3. Check logs: `docker logs <container_name>`
-4. Ensure Docker image exists: `docker images | grep knowu_bench`
+4. Ensure Docker image exists: `docker images | grep knowu-bench`
 
 ### Permission Errors
 
@@ -223,9 +223,8 @@ This creates containers named: `experiment_0`, `experiment_1`, etc.
 Start and attach the containers in `dev` mode and execute the below command:
 
 ```
-uv run python src/mobile_world/tasks/test_task.py --task xxx --question "xxxx"
+uv run python src/knowu_bench/tasks/test_task.py --task xxx --question "xxxx"
 ```
 
 The `--task` flag specifies the task name, while `--question` is an optional argument that provides a clarification question for agent-user interaction tasks.  
 This command initializes the task environment, after which you can interact with the GUI via VNC to complete the task manually.
-

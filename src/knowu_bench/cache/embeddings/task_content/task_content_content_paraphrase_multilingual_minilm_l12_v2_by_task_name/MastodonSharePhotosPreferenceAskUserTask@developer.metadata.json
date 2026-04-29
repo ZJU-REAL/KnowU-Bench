@@ -1,0 +1,25 @@
+{
+  "task_name": "MastodonSharePhotosPreferenceAskUserTask@developer",
+  "class_name": "MastodonSharePhotosPreferenceAskUserTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "MastodonSharePhotosPreferenceAskUserTask@developer",
+    "class_name": "MastodonSharePhotosPreferenceAskUserTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "lang-en",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "Help me post one photo I want to share to Mastodon feed, and write a caption that matches my communication style.",
+    "profile_id": "developer",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/developer.yaml"
+  }
+}

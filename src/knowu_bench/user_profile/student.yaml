@@ -1,0 +1,350 @@
+version: "2.1"
+description: "MobileWorld Benchmark Configuration - Scenario: The Budget Student (Lucas Jensen)"
+created_at: "2024-05-15T08:00:00Z"
+
+# =============================================================================
+# SECTION 1: USER PROFILING
+# =============================================================================
+user_profile:
+  # --- 1. 基础身份 (Identity) ---
+  identity:
+    full_name: "Lucas Jensen"
+    nickname: "Luke"
+    age: 19
+    occupation: "Sophomore Student (CS Major)"
+    
+    auth_documents:
+      student_id: "STU-2023-8892"
+    contact_info:
+      phone: "+86 150-5555-6666"
+      email_personal: "lucas.j.student@gmail.com" 
+      email_school: "lucas@university.edu.cn"
+
+  # --- 2. 环境感知 (Context) ---
+  locations:
+    home:
+      address: "浙江大学紫金港校区翠柏1舍，杭州市西湖区余杭塘路866号"
+      label: "Dorm"
+      latitude: 30.3080
+      longitude: 120.0870
+    work:
+      address: "浙江大学紫金港校区基础图书馆（静区），杭州市西湖区余杭塘路866号"
+      label: "Library"
+      latitude: 30.3065
+      longitude: 120.0885
+
+  digital_context:
+    devices: 
+      - "Android Flagship Killer (Xiaomi/OnePlus)" 
+    system_settings:
+      language: "English (US)"
+      theme: "Dark Mode (Prefer)" 
+      time_zone: "Asia/Shanghai (GMT+8)"
+
+  # --- 3. 行为模式 (Habits - 重构版) ---
+  habits:
+    # --- 3. [Benchmark Task 4] 图书馆防社死 (Settings/System) ---
+    # 逻辑：在图书馆如果耳机断连，必须立刻把媒体音量调成 0，防止二次元音乐外放
+    # --- 10. 蓝牙断开媒体清理 ---
+    bluetooth_cleanup:
+      description: "Mutes media volume when Bluetooth disconnects to prevent public embarrassment."
+      trigger:
+        condition: "Bluetooth disconnected"
+        context_cue: "User playing music in public"
+      action:
+        type: "change_settings"
+        settings: ["mute_media_volume"]
+
+    # --- 4. [Benchmark Task 11] 周末报复性补觉 (Clock) ---
+    # 逻辑：周五晚上打完游戏，关掉周六早上的闹钟，准备睡到下午
+    weekend_sleeper:
+      description: "Disables the 07:30 AM morning class alarm on Friday nights to avoid waking up early on weekends."
+      trigger:
+        type: "time_event"
+        time: "23:00"
+        days: ["Friday"]
+      action:
+        type: "app_interaction"
+        app: "Clock"
+        operation: "disable_alarm"
+        target: "07:30"
+        detail: "On Friday at 23:00, open Clock app and turn off the 07:30 alarm."
+
+    # --- 5b. [Benchmark Task 1b] 深夜护眼模式 (Settings) ---
+    # 逻辑：深夜使用手机时（无论工作还是娱乐），开启系统深色模式保护眼睛
+    night_eye_care:
+      description: "Enables system Dark Mode when using the phone late at night to protect eyes."
+      trigger:
+        time_range: ["22:55", "23:30"]
+        context_cue: "User is actively using the phone at night"
+        simulation_datetime: "2026-02-12 23:03:00"
+      action:
+        type: "change_settings"
+        settings: ["dark_theme"]
+
+    # --- 6. [Benchmark Task 13] 生日短信祝福 (Calendar + Messages) ---
+    birthday_wish_routine:
+      description: "Sends a birthday SMS to Mom when a birthday event appears in the calendar."
+      trigger:
+        type: "calendar_event"
+        keyword: "Birthday"
+        check_time: "12:00"
+      action:
+        type: "send_message"
+        app: "Messages"
+        content: "Happy Birthday Mom!"
+        recipient:
+          name: "Mom"
+          phone: "+8613800001111"
+        calendar_event:
+          date: "2026-05-22"
+        detail: "Check calendar at 12:00. If it's Mom's birthday, send her a 'Happy Birthday!' SMS."
+
+    # --- 7. [新增] 截图相册清理 (Gallery) ---
+    # 依据日志：Lucas 会在中午到下午清理重复截图，但会保留优惠券截图和 Memes 相册
+    gallery_cleanup:
+      description: "Deletes old screenshots while keeping recent coupons."
+      trigger:
+        type: "time_event"
+        day_of_week: "Saturday"
+        time_range: ["12:10", "12:20"]
+        simulation_datetime: "2026-05-23 12:15:00"
+      action:
+        type: "app_interaction"
+        app: "Gallery"
+        operation: "delete_older_than"
+        cleanup_policy:
+          older_than_days: 30
+        target_album: "Screenshots"
+        detail: "Open Gallery -> Screenshots, delete screenshots older than 30 days, keep recent ones."
+
+  # --- 4. 偏好设置 (Preferences - 完善版) ---
+  preferences:
+    # --- 饮食偏好 (Diet & Food) ---
+    diet:
+      coffee: "Never drinks coffee — prefers bottled iced tea or energy drinks (Red Bull / Monster)"
+      diet_type: "High calorie, low cost. Burgers, instant ramen, fried chicken."
+      soft_drinks: "Coca-Cola (regular, full sugar). Absolutely no diet/zero sugar versions."
+      delivery_platform: "chilemei (Has student discount coupons, preferred over tuantuan)"
+      cuisine_preference: ["Burgers", "Japanese Ramen", "Korean Fried Chicken", "BBQ Skewers"]
+      cuisine_dislike: ["Expensive salads", "Anything labeled 'organic' or 'health food'", "Sushi (too expensive for too little food)"]
+      special_notes: "No food allergies. Will eat anything cheap. Always checks if there's a 'buy 1 get 1' deal before ordering."
+      meal_habits:
+        breakfast: "Skipped (sleeps through it — wakes at 11 AM when no morning classes)"
+        lunch: "Campus cafeteria, cheapest window, around 12:30"
+        dinner: "Delivery or instant noodles, after 21:00"
+        late_night_snack: "Mandatory during gaming sessions — usually chips or instant ramen around 01:00"
+
+    # --- 购物偏好 (Shopping) ---
+    shopping:
+      brands: ["Xiaomi (Best value)", "OnePlus", "Logitech (Gaming peripherals only)"]
+      online_platforms:
+        preferred: "Taodian (Cheapest prices, sorts by price ascending, free shipping filter always on)"
+        avoid: "jingdian (Too expensive unless there's a huge sale like 618 or Double 11)"
+      payment_method: "WeChat Pay preferred (Bound to Mom's family card for emergencies). Alipay as backup."
+      decision_style: "Price is king. Reads buyer reviews (especially bad ones). Compares prices across 3+ platforms before buying anything over ¥50."
+      price_sensitivity: "Extremely high for everything. Will spend hours finding a ¥5 coupon."
+      coupon_behavior: "Hoards coupons. Screenshots every discount code. Shares deals in roommate group chat."
+      splurge_exception: "Gaming peripherals and Steam sales — will skip meals to afford a new game."
+      shoe:
+        shoe_size_eu: 41
+        shoe_color: white
+      clothes:
+        color_preference: "White"
+        budget: "Below 100 CNY per item."
+      computer:
+        coding_machine: "MacBook Air M-series (Lightest Mac, good battery for lectures, runs VS Code and Docker smoothly). Preferred for programming and schoolwork."
+        gaming_machine: "Windows desktop PC (DIY or branded like Lenovo Legion Tower). Needs a dedicated GPU (NVIDIA RTX series) for Genshin Impact and League of Legends at high settings."
+        budget: "Total under ¥10000 if possible. Would rather save on the Mac (refurbished is OK) and spend more on the gaming GPU."
+        os_preference: "macOS for coding (Unix terminal), Windows for gaming (game compatibility)."
+        brands: ["Apple (MacBook Air only — Pro is overkill and too expensive)", "Lenovo (Legion series for gaming desktops)", "Xiaomi (Redmi G series as budget gaming alternative)"]
+        avoid: ["Dell (Too corporate-looking)", "Huawei (Not gamer-friendly)", "Any laptop with less than 16GB RAM"]
+
+    # --- 出行偏好 (Travel & Transport) ---
+    travel:
+      daily_transport: "Shared bike (Meituan Bike monthly student pass) or walk. Subway only if raining (Student Pass)."
+      ride_hailing: "Almost never — too expensive. Only uses Didi Express (cheapest tier) if splitting with roommates."
+      navigation_app: "Google Maps (preferred for transit routes and bike navigation)"
+      flight_preference:
+        frequency: "Almost never flies. Train (hard seat/second class) for trips home."
+        booking: "12306 app. Always picks cheapest option. Books student discount tickets."
+      hotel_requirements: "Youth hostel or friend's couch. If forced to book: cheapest on Meituan, must have Wi-Fi and AC."
+      luggage: "One backpack for everything. No checked luggage ever."
+      seat: "Window (Wants to lean against it and sleep)"
+      home_trip: "Goes home by train only during Spring Festival and summer break"
+
+    # --- App偏好 (App & Digital) ---
+    apps:
+      browser:
+        app: "Chrome"
+        tabs_behavior: "Never close tabs (50+ tabs permanently open)"
+      email_client: "Gmail (Only checks school email when forced)"
+      messaging:
+        primary: "Mattermost (Roommate group chat + gaming squad)"
+        project_communication: "Mattermost channel 'AI-Research' (Uses this strictly for all CS academic projects and group work)"
+        sms: "Messages (Only for Mom and verification codes)"
+        avoid: "Phone calls — will let it ring and text back 'what's up'"
+      calendar: "Clock alarms only. Rarely uses Calendar app — remembers deadlines via panic."
+      file_management: "Files (Messy downloads folder, never organized)"
+      photos: "Gallery (Mostly screenshots and memes)"
+      music: "NetEase Cloud Music (二次元/ACG playlists, has VIP from student discount)"
+      video: "Bilibili (Primary entertainment) in chrome. YouTube (For CS tutorials only)."
+      games: "Genshin Impact, League of Legends Mobile (王者荣耀)"
+      search: "Google (via Chrome)"
+      news_and_papers: "Bilibili tech videos, V2EX, Reddit (r/programming, r/gaming)"
+      study: "VS Code (via remote SSH on phone when desperate)"
+      system_settings:
+        display: "Dark Mode (Prefer)"
+      platform_specific:
+        taodian:
+          sort_order: "Price Ascending"
+          filter: "Free Shipping"
+
+    # --- 社交偏好 (Social & Communication) ---
+    social:
+      tone: "Casual, Slang-heavy, Gen-Z"
+      emoji_usage: "High frequency. Loves 'Doge' [狗头], 'Facepalm' [捂脸], 'Cool' [墨镜]."
+      text_habits:
+        - "Uses lowercase often (e.g., 'idk', 'lol')"
+        - "Uses memes instead of words when possible"
+        - "Adds '[Doge]' to soften requests (e.g., 'Give me money [Doge]')"
+        - "Memes > Words. Voice messages only in gaming contexts."
+        - "Never sends voice messages in normal chat."
+      forbidden: "Formal greetings like 'Dear', 'Sincerely'. Never makes phone calls."
+      response_time:
+        high_priority: "Immediate (Roommate Kevin, Gaming squad invites)"
+        mom: "Within 30 minutes (Will get called if delayed)"
+        routine: "Hours later or never (Professors, group project members)"
+      meeting_preference:
+        scheduling: "Avoids anything before 12:00 (Still asleep — prefer rhythm: sleep at 3 AM, wake at 11 AM)"
+        duration: "Hates meetings. Prefers text-based communication for everything."
+      social_media:
+        posting_preference: "Likes posting game clear/completion updates on Mastodon."
+        default_visibility: "followers-only"  # 游戏动态希望被看到，不在乎隐私
+      group_dynamics: "Will volunteer for coding tasks in group projects but refuses to do the presentation or write the report."
+
+  # --- 5. 决策逻辑 (Decision Criteria) ---
+  decision_criteria: 
+    priorities: ["Price", "Fun/Gaming", "Minimal Effort"]
+    trade_offs:
+      - "Privacy < Discount (Willing to share location for coupons)"
+      - "Sleep < Gaming (Will stay up late if friends are online)"
+    pain_points:
+      - "Laggy internet"
+      - "Empty wallet"
+
+  # --- 6. 社交关系 (Social Graph) ---
+  social_graph:
+    high_priority:
+      - name: "Roommate Kevin"
+        role: "Gaming Carry"
+        app_preference: "Mattermost"
+        interaction: "Spam with memes until he replies"
+    financial:
+      - name: "Mom"
+        role: "ATM"
+        app_preference: "Messages"
+        interaction: "Polite but needy, always ends with Cute Emoji"
+    academic:
+      - name: "CS Project Team"
+        role: "Group Member (Coder)"
+        app_preference: "Mattermost"
+        target_channel: "AI-Research"
+        interaction: "Reluctantly coordinates project tasks here. Hates sync meetings but will drop a quick message in this channel when forced."
+
+# =============================================================================
+# SECTION 2: ENVIRONMENT STATE (动态场景 - 初始状态)
+# =============================================================================
+environment_init_state:
+
+  # 1. App: Gallery (预置表情包和截图)
+  app_gallery:
+    albums:
+      - name: "Memes" # [新增] 表情包相册
+        content:
+          - filename: "doge_head.jpg"
+            source: "src/knowu_bench/cache/users/lucas/doge.jpg"
+          - filename: "pepe_sad.jpg"
+            source: "src/knowu_bench/cache/users/lucas/pepe.jpg"
+      - name: "Screenshots"
+        content:
+          - filename: "kfc_coupon_yesterday.jpg" # 昨天的优惠券
+            source: "src/knowu_bench/cache/users/lucas/kfc.jpg"
+      - name: "Camera"
+        content:
+          - filename: "supermarket_receipt.jpg" # 刚拍的小票
+            source: "src/knowu_bench/cache/users/lucas/receipt.jpg"
+
+  # 2. App: Mattermost (体现聊天风格的历史记录)
+  app_mattermost:
+    status: "Online"
+    teams:
+      - name: "CS_Sophomores"
+        channels:
+          - name: "Dorm_404_Bros"
+            unread: true
+            history:
+              - user: "Lucas" # 历史消息，体现风格
+                text: "Bro, internet is so bad rn [Facepalm]"
+                time: "Yesterday"
+              - user: "Kevin"
+                text: "Stop downloading 4k movies lol"
+                time: "Yesterday"
+    direct_messages:
+      - user: "Mom"
+        unread: false
+        text: "Did you receive the money?"
+
+  # 3. App: Settings (流量预警状态)
+  app_settings:
+    network:
+      mobile_data:
+        used: "19.5 GB"
+        limit: "20.0 GB" # 接近上限，触发焦虑
+      wifi: "Campus-Student-Net"
+    display:
+      dark_mode: true
+
+  # 4. App: Messages (流量短信)
+  app_messages:
+    threads:
+      - sender: "China Mobile"
+        text: "[System Alert] You have used 95% of your high-speed data."
+        time: "10:30 AM"
+        read: false # 未读，等待处理
+
+  # 5. App: Contacts (联系人)
+  app_contacts:
+    list:
+      - { name: "Roommate Kevin", phone: "13922223344" }
+
+  # 6. App: Taodian (购物车)
+  app_taodian:
+    cart:
+      - { item: "Instant Noodles (Beef Flavor)", price: 4.50, selected: true }
+      - { item: "Cola 12-Pack", price: 19.90, selected: true }
+
+  # 7. App: Files & Docreader
+  app_files:
+    files:
+      - path: "Downloads/OS_Project_Assignment.pdf"
+        source: "src/knowu_bench/cache/users/lucas/os_assign.pdf"
+
+  app_docreader:
+    recent:
+      - file: "OS_Project_Assignment.pdf"
+        progress: "Page 1"
+
+  # 8. App: Calendar
+  app_calendar:
+    events:
+      - time: "Next Monday 08:00"
+        title: "Submit OS Project OR FAIL" # 风格化的标题
+        color: "Red"
+
+  # 9. App: Mastodon
+  app_mastodon:
+    user: "@luke_cs"
+    feed:
+      - user: "@CampusDeals"
+        content: "BOGO Free Burger King today! #Deal"

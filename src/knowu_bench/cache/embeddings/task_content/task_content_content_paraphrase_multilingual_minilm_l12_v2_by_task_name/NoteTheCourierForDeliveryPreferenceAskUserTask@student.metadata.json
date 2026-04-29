@@ -1,0 +1,25 @@
+{
+  "task_name": "NoteTheCourierForDeliveryPreferenceAskUserTask@student",
+  "class_name": "NoteTheCourierForDeliveryPreferenceAskUserTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "NoteTheCourierForDeliveryPreferenceAskUserTask@student",
+    "class_name": "NoteTheCourierForDeliveryPreferenceAskUserTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "帮用户买一张沙发，备注提醒商家选择用户喜欢的快递发货。",
+    "profile_id": "student",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/student.yaml"
+  }
+}

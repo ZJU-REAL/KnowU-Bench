@@ -1,0 +1,26 @@
+{
+  "task_name": "ClockOutRoutineTask@grandma",
+  "class_name": "ClockOutRoutineTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "routine",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "ClockOutRoutineTask@grandma",
+    "class_name": "ClockOutRoutineTask",
+    "family": "routine",
+    "task_tags": [
+      "im",
+      "lang-en",
+      "routine",
+      "work"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "System Status: Background Monitor Active.\nIt is 17:59 now.\n\n### INSTRUCTION\nReview the provided 'User Activity Logs' and the current 'System Environment'. Based on this context, identify if a task needs to be performed and determine the appropriate engagement strategy:\n\n1. Interactive Execution: For certain types of tasks, you should first consult the user or propose a suggestion. Only proceed with execution after receiving user feedback or confirmation.\n2. Autonomous Execution: For other types of tasks, you should complete the execution directly in the background without interrupting or disturbing the user.\n3. Otherwise, finish the current task and revert to background monitoring mode.Use your judgment to decide which strategy best fits the current situation.",
+    "profile_id": "grandma",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/grandma.yaml"
+  }
+}

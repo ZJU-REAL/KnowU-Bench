@@ -11,6 +11,7 @@ GEMINI_API_KEY="${GEMINI_API_KEY:-${GOOGLE_API_KEY:-sk-or-v1-62bd5f74b533b2e3207
 MAX_CONCURRENCY="${MAX_CONCURRENCY:-8}"            # 并发数，建议不超过可用环境数
 MAX_ROUND="${MAX_ROUND:-50}"                       # 每个任务最多交互轮数
 STEP_WAIT_TIME="${STEP_WAIT_TIME:-5}"              # 每步后的等待时间
+ENV_IMAGE="${ENV_IMAGE:-ghcr.io/yaosqz/knowu-bench:latest}" # 自动发现容器时使用的默认镜像
 AW_HOST="${AW_HOST:-http://127.0.0.1:6800,http://127.0.0.1:6801,http://127.0.0.1:6802,http://127.0.0.1:6803,http://127.0.0.1:6804,http://127.0.0.1:6805,http://127.0.0.1:6806,http://127.0.0.1:6807}" # 多环境地址；留空可自动发现
 USER_FILTER="${USER_FILTER:-}"                     # 可选: user / student / developer / grandma
 USER_LOG_SOURCE="${USER_LOG_SOURCE:-noise}"        # clean / noise
@@ -68,7 +69,26 @@ if [[ -n "$AW_HOST" ]]; then
     AW_HOST_ARGS=(--aw-host "$AW_HOST")
 fi
 
-nohup mw eval     --agent_type "$AGENT_TYPE"     --task "$TASK"     --task-tags "$TASK_TAGS"     --enable-user-interaction     --max_round "$MAX_ROUND"     --model_name "$MODEL_NAME"     --llm_base_url "$LLM_BASE_URL"     --api_key "$AGENT_API_KEY"     --step_wait_time "$STEP_WAIT_TIME"     --max-concurrency "$MAX_CONCURRENCY"     --log_file_root "$LOG_ROOT"     "${AW_HOST_ARGS[@]}"     --user-log-source "$USER_LOG_SOURCE"     --user-log-mode "$USER_LOG_MODE"     --rag-top-k "$RAG_TOP_K"     --rag-backend "$RAG_BACKEND"     "${MCP_ARGS[@]}"     "${USER_ARGS[@]}" > "$RUN_LOG" 2>&1 &
+nohup mw eval \
+    --agent_type "$AGENT_TYPE" \
+    --task "$TASK" \
+    --task-tags "$TASK_TAGS" \
+    --enable-user-interaction \
+    --max_round "$MAX_ROUND" \
+    --model_name "$MODEL_NAME" \
+    --llm_base_url "$LLM_BASE_URL" \
+    --api_key "$AGENT_API_KEY" \
+    --step_wait_time "$STEP_WAIT_TIME" \
+    --env-image "$ENV_IMAGE" \
+    --max-concurrency "$MAX_CONCURRENCY" \
+    --log_file_root "$LOG_ROOT" \
+    "${AW_HOST_ARGS[@]}" \
+    --user-log-source "$USER_LOG_SOURCE" \
+    --user-log-mode "$USER_LOG_MODE" \
+    --rag-top-k "$RAG_TOP_K" \
+    --rag-backend "$RAG_BACKEND" \
+    "${MCP_ARGS[@]}" \
+    "${USER_ARGS[@]}" > "$RUN_LOG" 2>&1 &
 
 echo "任务已在后台启动 PID=$!"
 echo "主模型: $MODEL_NAME"
@@ -80,5 +100,5 @@ echo "USER_AGENT_MODEL: $USER_AGENT_MODEL"
 if [[ -n "$AW_HOST" ]]; then
     echo "后端地址: $AW_HOST"
 else
-    echo "后端地址: 自动发现 knowu_bench_env_* 容器"
+    echo "后端地址: 自动发现 knowu_bench_env_* 容器（镜像过滤: $ENV_IMAGE）"
 fi

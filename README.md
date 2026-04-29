@@ -78,7 +78,13 @@ Update `.env` with the credentials you actually need:
 - `API_KEY`: model API key for the mobile agent
 - `USER_AGENT_API_KEY`, `USER_AGENT_BASE_URL`, `USER_AGENT_MODEL`: user-agent configuration for interaction tasks
 
-The default environment image in code is `ghcr.io/zju-real/knowu_bench:latest`. Please install our image from `ghcr.io/yaosqz/knowu-bench:latest`.
+The default benchmark Docker image path is `ghcr.io/yaosqz/knowu-bench:latest`.
+
+If you want to pull it manually in advance:
+
+```bash
+docker pull ghcr.io/yaosqz/knowu-bench:latest
+```
 
 ## ⚡ Quick Start
 
@@ -170,13 +176,15 @@ You can also pass a custom Python file path to `--agent-type` as long as it defi
 
 ## 📁 Repository Layout
 
+Below, replace `src/<your_bench_package>/` with the package directory for your own benchmark.
+
 ```text
-src/mobile_world/tasks/definitions/      Benchmark task definitions
-src/mobile_world/user_profile/           Structured user personas
-src/mobile_world/user_logs/              Clean and noisy user histories
-src/mobile_world/agents/implementations/ Built-in agent baselines
-src/mobile_world/runtime/                Env client, controller, and app helpers
-src/mobile_world/core/                   CLI, orchestration, server, log viewer
+src/<your_bench_package>/tasks/definitions/      Benchmark task definitions
+src/<your_bench_package>/user_profile/           Structured user personas
+src/<your_bench_package>/user_logs/              Clean and noisy user histories
+src/<your_bench_package>/agents/implementations/ Built-in agent baselines
+src/<your_bench_package>/runtime/                Env client, controller, and app helpers
+src/<your_bench_package>/core/                   CLI, orchestration, server, log viewer
 scripts/                                 Evaluation runners and metric calculators
 docs/                                    Setup and development guides
 site/                                    Website and leaderboard assets

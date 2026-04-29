@@ -1,0 +1,293 @@
+version: "2.2"
+description: "MobileWorld Benchmark Configuration - Scenario: Sysadmin/DevOps (Kenji Sato)"
+created_at: "2024-05-15T08:00:00Z"
+
+# =============================================================================
+# SECTION 1: USER PROFILING
+# =============================================================================
+user_profile:
+  # --- 1. 基础身份 (Identity) ---
+  identity:
+    full_name: "Kenji Sato"
+    nickname: "root"
+    age: 30
+    occupation: "Senior DevOps Engineer / SRE"
+    employer: "CloudScale Innovations Inc."
+    
+    auth_documents:
+      employee_id: "SRE-007"
+    contact_info:
+      phone: "+86 139-0000-1024" 
+      email_work: "kenji.sato@cloudscale.io" 
+      email_personal: "kenji.dev.ops@gmail.com"
+
+  # --- 2. 环境感知 (Context) ---
+  locations:
+    home:
+      address: "北京市海淀区颐和山庄紫宵园公寓"
+      label: "HomeLab"
+      latitude: 40.0590
+      longitude: 116.2680
+      instructions: "Do not disturb if red light is on."
+    work:
+      address: "北京市海淀区苏州街3号阶跃星辰"
+      label: "DC"
+      latitude: 39.9810
+      longitude: 116.3070
+
+  digital_context:
+    devices: 
+      - "Android Flagship (Rooted)" 
+      - "Linux Workstation"
+    system_settings:
+      language: "English (US)"
+      theme: "Dark Mode (Always)" 
+      time_zone: "UTC" # 服务器时间
+      font_size: "Small" 
+    security: 
+      auth_method: "Complex Alphanumeric Password" 
+
+  # --- 3. 行为模式 (Habits - 融合惯例任务库) ---
+  habits:
+    # --- 1. [Benchmark Task 6] 紧急故障响应 (Messages + Chrome + Mattermost) ---
+    # 逻辑：收到 PagerDuty 报警 -> 查监控 -> 群里响应 "Ack"
+    on_call_response:
+      description: "Immediately acknowledges critical server alerts during off-hours."
+      trigger:
+        simulation_datetime: "2026-02-15 01:10:00"
+        app: "Mattermost"
+        team: "neuralforge"
+        channel: "DevOps"
+        alert_message: "🚨 CRITICAL: Pod restart loop detected in payment-gateway. Error rate > 5%."
+      action:
+        type: "send_message"
+        reply_keywords: ["ack", "checking now", "received", "investigating"]
+
+    # --- 2. [Benchmark Task 8] 运维交接班 (Mattermost) ---
+    # 逻辑：每天下班/换班时，必须在群里同步系统状态，而不是简单的“再见”
+    # 原型：The Clock-out Routine
+    clock_out_routine:
+      description: "Sends a clock-out message to the team channel at the end of the workday."
+      trigger:
+        type: "time_event"
+        time: "18:00"
+        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+      action:
+        type: "send_message"
+        app: "Mattermost"
+        channel: "devops" # 使用 channel handle，避免显示名解析失败
+        content: "Clocking out, see you tomorrow"
+        detail: "At 18:00 on weekdays, open Mattermost and send 'Clocking out, see you tomorrow' to the 'devops' channel."
+
+    # --- 3. [Benchmark Task 2] 关键通讯保活 (Settings) ---
+    # 逻辑：电量低时必须开省电模式，因为手机没电=漏接报警=事故
+    # 原型：The Battery Saver
+    low_battery_saver:
+      description: "Enables power saving mode when battery is low to stay connected."
+      trigger:
+        condition: "Battery level <= 15%"
+        context_cue: "System Low Battery Warning"
+      action:
+        type: "change_settings"
+        settings: ["power_saving_mode"]
+
+    # --- 4b. [Benchmark Task 1b] 深夜护眼模式 (Settings) ---
+    # 逻辑：深夜使用手机时（无论工作还是娱乐），开启系统深色模式保护眼睛
+    night_eye_care:
+      description: "Enables system Dark Mode when using the phone late at night to protect eyes."
+      trigger:
+        time_range: ["00:00", "04:00"]
+        context_cue: "User is actively using the phone at night (late-night ops)"
+        simulation_datetime: "2026-02-12 02:15:00"
+      action:
+        type: "change_settings"
+        settings: ["dark_theme"]
+
+    # --- 5. [Benchmark Task 4] 机房静默协议 (Settings) ---
+    # 逻辑：耳机断连后立刻静音，防止噪音在安静的机房或办公室爆发
+    # 原型：The Media Cleanup
+    bluetooth_cleanup:
+      description: "Mutes media volume when Bluetooth disconnects to prevent public embarrassment."
+      trigger:
+        condition: "Bluetooth disconnected"
+        context_cue: "User playing music in public"
+      action:
+        type: "change_settings"
+        settings: ["mute_media_volume"]
+
+  # --- 4. 偏好设置 (Preferences) ---
+  preferences:
+    # --- 饮食偏好 (Diet & Food) ---
+    diet:
+      diet_type: "Quick, no-mess meals that can be eaten at the desk. Efficiency over taste."
+      delivery_platform: "Tuantuan (Faster delivery in Haidian area, preferred over Chilemei)"
+      cuisine_preference: ["Japanese (Onigiri, Ramen)", "Sandwiches", "Burritos/Wraps", "Protein bowls"]
+      special_notes: "Peanut allergy (mild)."
+      dinner_preference: "Quick protein bowl for dinner."
+      delivery_general_remark: "DO NOT KNOCK OR RING BELL. Leave at door. Send SMS only."
+      blacklisted_foods: ["Peanuts (Mild allergy)"]
+      caffeine_supply:
+        energy_drink: "Monster Ultra White (Sugar-free, for P0/P1 war-room sessions)"
+
+    # --- 购物偏好 (Shopping) ---
+    shopping:
+      online_platforms:
+        preferred: "jingdian (Reliable for electronics and daily supplies, authentic products, fast logistics)"
+        secondary: "Taodian (Only when jingdian doesn't carry the item, e.g. niche server parts or imported tools)"
+      electronics:
+        computer_preference:
+          brand: "ThinkPad (Durable, Linux-friendly, excellent keyboard)"
+          os: "Linux only (Fedora or Arch). Will not buy anything that ships with Windows without Linux-cert."
+          priority: "Performance > Portability. Needs ≥32GB RAM, dedicated GPU not required."
+          budget: "8000-12000 CNY for a work laptop; willing to stretch for ThinkPad X1 Carbon or T-series."
+        liked_brands: ["Intel (CPUs & NICs)", "Logitech (Peripherals)", "Ubiquiti (Networking)"]
+        disliked_brands: ["Apple (Locked ecosystem, no root access)", "Huawei laptops (Poor Linux driver support)"]
+        no_buy_list: ["Smart-home voice assistants (Privacy concern)", "Wireless-only mice (Latency)"]
+      shoe:
+        shoe_size_eu: 42
+        shoe_color: black
+      clothes:
+        color_preference: "Black"
+        budget: "Below 150 CNY per item."
+      
+      courier_preference: "SF Express (Fast, reliable parcel tracking; avoid budget couriers for fragile hardware)"
+      payment_method: "Alipay preferred for daily purchases (simple and fast)"
+      payment_routing:
+        work_expenses: "Corporate Amex (Requires immediate PDF receipt generation)"
+        daily_transit: "Standard Alipay"
+
+    # --- 出行偏好 (Travel & Transport) ---
+    travel:
+      commute_optimization:
+        primary_mode: "Subway Line 16 (Xibei Wang Station)"
+        weather_fallback: "DiDi Premium if raining > 5mm/h"
+        route_preference: "Avoid highways, prefer stable 5G coverage areas for emergency remote SSH."
+      remote_readiness:
+        connectivity_stack: "Peplink mobile router + Dual-SIM (Telecom/Unicom failover)"
+        minimum_sla: "Must have < 50ms latency to primary AWS region."
+
+    # --- App与设备偏好 (App & Digital) ---
+    apps:
+      shopping:
+        preferred: "jingdian (Reliable for electronics and daily supplies)"
+        secondary: "Taodian (Only when jingdian doesn't carry the item)"
+      delivery:
+        preferred: "Tuantuan (Faster delivery in Haidian area)"
+        secondary: "Chilemei (Backup when Tuantuan has no good options)"
+      browser: "Chrome (Default browser for web search and technical lookups)"
+      navigation_app: "Maps (Default system map app for route planning)"
+      mattermost:
+        role: "Primary team communication tool"
+        preferred_channel: "DevOps"
+        notification_style: "Only P0/P1 alerts bypass DND; everything else async."
+      mastodon:
+        usage: "Follows infosec & SRE communities; rarely posts personal content."
+        preferred_visibility: "followers-only"
+      news_and_papers: ["SRE & Infrastructure", "Linux kernel updates", "Cloud-native / Kubernetes", "InfoSec advisories"]
+      terminal_emulator: "Termux"
+
+    # --- 社交与沟通偏好 (Social & Communication) ---
+    social:
+      communication_style:
+        format: "Bullet points or Markdown only."
+      social_media:
+        active: ["Mastodon (Follows infosec & SRE communities; rarely posts personal content)"]
+        posting_preference: "Only posts technical write-ups, incident post-mortems, or open-source announcements."
+        default_visibility: "followers-only"  # Security > Convenience; 最小暴露原则
+  # --- 5. 决策逻辑 (Decision Criteria) ---
+  decision_criteria: 
+    priorities: ["Uptime", "Security", "Speed"]
+    trade_offs:
+      - "Security > Convenience"
+      - "Battery Life > Performance (When low battery)"
+
+  # --- 6. 社交关系 (Social Graph) ---
+  social_graph:
+    high_priority:
+      - name: "OpsBot" 
+        role: "Alert System"
+        app_preference: "Messages/Mattermost"
+      - name: "CTO"
+        role: "Boss"
+    routine:
+      - name: "Night Shift Lead"
+        role: "Handover Target"
+        app_preference: "Mattermost"
+    project_team:
+      - name: "DevOps / SRE Squad"
+        role: "Team Members"
+        app_preference: "Mattermost"
+        target_channel: "DevOps"
+        interaction: "Strictly bullet points or Markdown. Concise technical updates only. Zero fluff or pleasantries."
+
+# =============================================================================
+# SECTION 2: ENVIRONMENT STATE (动态场景 - 初始状态)
+# =============================================================================
+environment_init_state:
+
+  # 1. App: Chrome (运维战场)
+  app_chrome:
+    tabs:
+      - { title: "Grafana - Cluster Status", url: "https://monitor.cloudscale.io/d/cluster" }
+      - { title: "AWS Console", url: "https://console.aws.amazon.com/..." }
+      - { title: "GitHub - mobile-world-benchmark", url: "https://github.com/..." }
+
+  # 2. App: Messages (报警与验证码)
+  app_messages:
+    threads:
+      - sender: "PagerDuty" 
+        text: "[CRITICAL] Service 'Payment-Gateway' is DOWN. Error rate > 5%."
+        time: "2 mins ago" 
+        read: false
+      - sender: "AuthMsg"
+        text: "Your GitHub verification code is 492-881."
+        time: "Yesterday"
+        read: true
+
+  # 3. App: Mattermost (工作群)
+  app_mattermost:
+    status: "Online"
+    teams:
+      - name: "DevOps_Team"
+        channels:
+          - name: "incidents-p0"
+            unread: true
+            history:
+              - user: "OpsBot"
+                text: "⚠️ Alert: Pod restart loop detected."
+                time: "2 mins ago"
+          - name: "DevOps"
+            unread: false
+            last_msg: "Shift handover logs are updated. Next shift please monitor payment latency."
+
+  # 4. App: Settings (初始状态)
+  app_settings:
+    display:
+      dark_mode: true
+      night_light: false
+    battery:
+      level: "18%" # [测试点] 初始电量低，触发 Habit 3
+      power_saving_mode: false # 期望 Agent 把它打开
+    volume:
+      media: 50 # [测试点] 音量不为0，断连时需触发 Habit 5
+
+  # 5. App: Files
+  app_files:
+    files:
+      - path: "Downloads/server_error_dump.log"
+        source: "src/knowu_bench/cache/users/kenji/error.log"
+      - path: "Documents/Keys/id_rsa.pub"
+        source: "src/knowu_bench/cache/users/kenji/id_rsa.pub"
+
+  # 6. App: Docreader
+  app_docreader:
+    recent:
+      - file: "server_error_dump.log"
+        progress: "Bottom"
+
+  # 7. App: Calendar
+  app_calendar:
+    events:
+      - time: "All Day"
+        title: "On-Call Shift"
+        color: "Red"

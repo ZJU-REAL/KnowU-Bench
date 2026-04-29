@@ -15,6 +15,7 @@ CLAUDE_API_KEY="${CLAUDE_API_KEY:-sk-or-v1-62bd5f74b533b2e320796ddee172a0b909bde
 MAX_CONCURRENCY="${MAX_CONCURRENCY:-1}"
 MAX_ROUND="${MAX_ROUND:-50}"
 STEP_WAIT_TIME="${STEP_WAIT_TIME:-4}"
+ENV_IMAGE="${ENV_IMAGE:-ghcr.io/yaosqz/knowu-bench:latest}"
 AW_HOST="${AW_HOST:-http://127.0.0.1:6800}"
 USER_FILTER="${USER_FILTER:-}"
 USER_LOG_SOURCE="${USER_LOG_SOURCE:-noise}"
@@ -109,6 +110,7 @@ build_cmd() {
         --llm_base_url "$LLM_BASE_URL"
         --api_key "$AGENT_API_KEY"
         --step_wait_time "$STEP_WAIT_TIME"
+        --env-image "$ENV_IMAGE"
         --max-concurrency "$MAX_CONCURRENCY"
         --log_file_root "$log_root"
         --user-log-source "$USER_LOG_SOURCE"
@@ -195,6 +197,8 @@ if [[ -n "$TASK_TAGS" ]]; then
 fi
 if [[ -n "$AW_HOST" ]]; then
     echo "  后端地址: $AW_HOST"
+else
+    echo "  后端地址: 自动发现 knowu_bench_env_* 容器（镜像过滤: $ENV_IMAGE）"
 fi
 echo "========================================"
 

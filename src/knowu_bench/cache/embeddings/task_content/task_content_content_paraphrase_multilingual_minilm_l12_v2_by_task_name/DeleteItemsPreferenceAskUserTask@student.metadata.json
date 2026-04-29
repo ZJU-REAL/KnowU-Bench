@@ -1,0 +1,25 @@
+{
+  "task_name": "DeleteItemsPreferenceAskUserTask@student",
+  "class_name": "DeleteItemsPreferenceAskUserTask",
+  "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+  "text_mode": "content",
+  "family": "preference",
+  "embedding_shape": [
+    1,
+    384
+  ],
+  "record": {
+    "task_name": "DeleteItemsPreferenceAskUserTask@student",
+    "class_name": "DeleteItemsPreferenceAskUserTask",
+    "family": "preference",
+    "task_tags": [
+      "agent-user-interaction",
+      "hybrid-eval",
+      "preference"
+    ],
+    "text_mode": "content",
+    "text_for_embedding": "请帮我删掉购物平台app购物车中我不想要的电子产品。",
+    "profile_id": "student",
+    "profile_path": "/data/zju-129/chentongbo/projects/MobileWorld/src/knowu_bench/user_profile/student.yaml"
+  }
+}
