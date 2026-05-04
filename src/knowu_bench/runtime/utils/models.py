@@ -256,7 +256,7 @@ APP_DICT = {
 
 COMMON_APP_MAPPER = {
     "com.quark.browser": "夸克",
-    "com.mattermost.rn": "Mattermost",
+    "com.mattermost.rnbeta": "Mattermost",
     "com.google.android.apps.labs.language.tailwind": "NotebookLM",
     "com.tailscale.ipn": "Tailscale",
     "com.webank.wemoney": "微众银行",

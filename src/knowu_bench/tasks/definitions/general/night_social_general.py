@@ -10,6 +10,7 @@ except ImportError:
 
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -21,7 +22,7 @@ class NightSocialGeneralTask(BaseTask):
     app_names = {"Settings", "Mastodon"}
 
     SOCIAL_PACKAGE = "org.joinmastodon.android.mastodon"
-    TARGET_TIMESTAMP = "021223002026.00"
+    DEFAULT_SCENE_TIME = "23:00:00"
 
     goal = "现在是晚上 23:00，屏幕太亮了，请帮我打开深色模式（Dark Mode）。"
 
@@ -35,7 +36,11 @@ class NightSocialGeneralTask(BaseTask):
 
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {self.TARGET_TIMESTAMP}")
+        simulation_dt = resolve_routine_datetime(
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
+        execute_adb(f"shell su 0 date {format_adb_datetime(simulation_dt)}")
         execute_adb("shell cmd uimode night no")
         time.sleep(2)
 

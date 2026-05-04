@@ -1,6 +1,5 @@
 import re
 import time
-from datetime import datetime
 from loguru import logger
 
 try:
@@ -11,6 +10,10 @@ except ImportError:
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 
 class DailyFamilyCallTask(BaseRoutineTask):
@@ -26,7 +29,7 @@ class DailyFamilyCallTask(BaseRoutineTask):
         "target_name": "Son (Qiang)",
         "target_phone": "13988887777",
         "time_range": ["19:30", "20:00"],
-        "simulation_datetime": "2026-05-26 19:45:00",
+        "simulation_datetime": "19:45:00",
     }
 
     def __init__(self, params: dict = None):
@@ -34,14 +37,13 @@ class DailyFamilyCallTask(BaseRoutineTask):
         self.target_name = self.DEFAULTS["target_name"]
         self.target_phone = self.DEFAULTS["target_phone"]
         self.time_range = list(self.DEFAULTS["time_range"])
-        self.simulation_dt = self.DEFAULTS["simulation_datetime"]
+        self.trigger = {}
 
         habit = self._get_habit(self.HABIT_KEY)
         if habit:
             self.expectation["should_act"] = True
-            trigger, action = habit.get("trigger", {}), habit.get("action", {})
-            self.time_range = trigger.get("time_range", self.time_range)
-            self.simulation_dt = trigger.get("simulation_datetime", self.simulation_dt)
+            self.trigger, action = habit.get("trigger", {}) or {}, habit.get("action", {})
+            self.time_range = self.trigger.get("time_range", self.time_range)
             self.target_name = action.get("target_name", self.target_name)
             if raw_phone := action.get("target_phone"):
                 self.target_phone = re.sub(r"[^0-9+]", "", raw_phone)
@@ -49,6 +51,11 @@ class DailyFamilyCallTask(BaseRoutineTask):
                 f"Habit loaded: target={self.target_name}, phone={self.target_phone}, "
                 f"time_range={self.time_range}"
             )
+        self.simulation_dt = resolve_routine_datetime(
+            self.trigger,
+            default_time=self.DEFAULTS["simulation_datetime"],
+            task_name=self.name,
+        )
         self._goal = self._build_goal()
 
     @property
@@ -70,13 +77,8 @@ class DailyFamilyCallTask(BaseRoutineTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        try:
-            dt = datetime.strptime(self.simulation_dt, "%Y-%m-%d %H:%M:%S")
-            execute_adb(f"shell su 0 date {dt.strftime('%m%d%H%M%Y.%S')}")
-            display_time = dt.strftime("%H:%M (%B %d, %Y)")
-        except Exception:
-            execute_adb("shell su 0 date 052619452026.00")
-            display_time = "19:45 (May 26, 2026)"
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
+        display_time = self.simulation_dt.strftime("%H:%M (%B %d, %Y)")
 
         self._inject_contact(controller)
         execute_adb("shell content delete --uri content://call_log/calls")

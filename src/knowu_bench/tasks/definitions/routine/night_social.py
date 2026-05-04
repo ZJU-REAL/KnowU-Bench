@@ -1,6 +1,5 @@
 import time
 import re
-from datetime import datetime
 from loguru import logger
 
 try:
@@ -11,6 +10,10 @@ except ImportError:
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 class NightEyeCareRoutineTask(BaseRoutineTask):
     """Night eye-care routine task."""
@@ -20,7 +23,7 @@ class NightEyeCareRoutineTask(BaseRoutineTask):
     app_names = {"Settings", "Mastodon"}
     
     SOCIAL_PACKAGE = "org.joinmastodon.android.mastodon"
-    DEFAULT_SIMULATION_DATETIME = "2026-02-12 23:00:00"
+    DEFAULT_SIMULATION_DATETIME = "23:00:00"
     DEFAULT_TIME_RANGE = ["22:55", "23:30"]
 
     def __init__(self, params: dict = None):
@@ -30,28 +33,24 @@ class NightEyeCareRoutineTask(BaseRoutineTask):
             "actions": [], 
             "time_window": self.DEFAULT_TIME_RANGE
         }
-        self.simulation_dt = datetime.strptime(self.DEFAULT_SIMULATION_DATETIME, "%Y-%m-%d %H:%M:%S")
+        trigger = {}
         habit = self._get_habit("night_eye_care")
         if habit:
+            trigger = habit.get("trigger", {}) or {}
             self.expectation.update({
                 "should_act": True,
                 "actions": habit.get("action", {}).get("settings", []),
-                "time_window": habit.get("trigger", {}).get("time_range", self.DEFAULT_TIME_RANGE)
+                "time_window": trigger.get("time_range", self.DEFAULT_TIME_RANGE)
             })
-            if sim_dt_str := habit.get("trigger", {}).get("simulation_datetime"):
-                try:
-                    self.simulation_dt = datetime.strptime(sim_dt_str, "%Y-%m-%d %H:%M:%S")
-                except ValueError:
-                    logger.warning(f"Invalid simulation_datetime: {sim_dt_str}, fallback to default.")
-            else:
-                try:
-                    h, m = map(int, self.expectation["time_window"][0].split(":"))
-                    self.simulation_dt = self.simulation_dt.replace(hour=h, minute=m + 5)
-                except Exception:
-                    logger.warning("Invalid time_window config, fallback to default simulation datetime.")
-            logger.info(f"Habit Loaded: {self.expectation}, simulation_dt={self.simulation_dt}")
         else:
             logger.info("No night_eye_care habit found.")
+        self.simulation_dt = resolve_routine_datetime(
+            trigger,
+            default_time=self.DEFAULT_SIMULATION_DATETIME,
+            task_name=self.name,
+        )
+        if habit:
+            logger.info(f"Habit Loaded: {self.expectation}, simulation_dt={self.simulation_dt}")
         self._goal = self._build_goal(system_context=f"It is ({self.simulation_dt.strftime('%H:%M')}) now.")
 
     @property
@@ -67,10 +66,9 @@ class NightEyeCareRoutineTask(BaseRoutineTask):
                 if is_mastodon_healthy(): break
                 time.sleep(3)
 
-        target_ts = self.simulation_dt.strftime("%m%d%H%M%Y.%S")
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {target_ts}")
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
         execute_adb("shell cmd uimode night no")
         time.sleep(2)
 

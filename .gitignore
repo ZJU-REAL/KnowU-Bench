@@ -74,3 +74,4 @@ docker/skins
 *.npy
 *.zip
 *.codex
+tests/*

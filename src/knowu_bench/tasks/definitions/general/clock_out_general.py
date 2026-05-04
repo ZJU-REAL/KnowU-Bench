@@ -10,6 +10,7 @@ except ImportError:
 
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -21,7 +22,11 @@ class ClockOutGeneralTask(BaseTask):
     app_names = {"Mattermost"}
 
     TARGET_CHANNEL = "town-square"
-    TARGET_TIMESTAMP = "021017592026.00"
+    DEFAULT_SCENE_TIME = "17:59:00"
+    DEFAULT_TRIGGER = {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "time": DEFAULT_SCENE_TIME,
+    }
     EXPECTED_KEYWORDS = ["下班", "辛苦", "明天见", "clocking", "out", "bye", "leaving", "see you"]
 
     goal = (
@@ -41,12 +46,17 @@ class ClockOutGeneralTask(BaseTask):
             pass
         time.sleep(5)
         execute_adb("reverse tcp:8065 tcp:8065")
+        simulation_dt = resolve_routine_datetime(
+            self.DEFAULT_TRIGGER,
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
         cmds = [
             "shell settings put global auto_time 0",
             "shell settings put system time_12_24 24",
-            f"shell su 0 date {self.TARGET_TIMESTAMP}",
-            "shell am force-stop com.mattermost.rn",
-            "shell am start -n com.mattermost.rn/.MainActivity",
+            f"shell su 0 date {format_adb_datetime(simulation_dt)}",
+            "shell am force-stop com.mattermost.rnbeta",
+            "shell am start -n com.mattermost.rnbeta/.MainActivity",
         ]
         for cmd in cmds:
             execute_adb(cmd)

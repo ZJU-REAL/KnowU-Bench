@@ -7,6 +7,10 @@ from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.proxy_config import android_proxy_setting_command
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 try:
     from knowu_bench.runtime.app_helpers.mattermost import (
@@ -41,8 +45,7 @@ class MattermostOnCallTask(BaseRoutineTask):
     DEFAULT_TEAM = TEAM_NAME
     DEFAULT_ALERT = "🚨 CRITICAL: Server 500 Error detected in Cluster-A. API Response time > 5s."
     DEFAULT_KEYWORDS = ["ack", "checking now", "received"]
-    DEFAULT_SIM_TIME = "2026-02-10 20:00:00"
-    MIN_SIM_TIME = datetime(2026, 2, 10, 0, 0, 0)
+    DEFAULT_SIM_TIME = "20:00:00"
     BACKEND_READY_TIMEOUT_SEC = 45
     BACKEND_READY_INTERVAL_SEC = 2
     ALERT_SEND_RETRIES = 3
@@ -92,16 +95,11 @@ class MattermostOnCallTask(BaseRoutineTask):
         return self.DEFAULT_ALERT
 
     def _resolve_sim_time(self, trigger) -> datetime:
-        raw = trigger.get("simulation_datetime") or trigger.get("datetime") or self.DEFAULT_SIM_TIME
-        try:
-            dt = datetime.strptime(str(raw), "%Y-%m-%d %H:%M:%S")
-        except Exception:
-            logger.warning(f"Invalid date '{raw}', using default.")
-            dt = datetime.strptime(self.DEFAULT_SIM_TIME, "%Y-%m-%d %H:%M:%S")
-        if dt < self.MIN_SIM_TIME:
-            logger.warning(f"Date '{dt}' too old, clamping to min.")
-            dt = dt.replace(year=self.MIN_SIM_TIME.year, month=self.MIN_SIM_TIME.month, day=self.MIN_SIM_TIME.day)
-        return dt
+        return resolve_routine_datetime(
+            trigger,
+            default_time=self.DEFAULT_SIM_TIME,
+            task_name=self.name,
+        )
 
     def _resolve_keywords(self, action) -> list[str]:
         conf = action.get("reply_keywords") or action.get("reply_content")
@@ -153,9 +151,9 @@ class MattermostOnCallTask(BaseRoutineTask):
             f"shell {android_proxy_setting_command()}",
             "shell settings put global auto_time 0",
             "shell settings put system time_12_24 24",
-            f"shell su 0 date {self.simulation_dt.strftime('%m%d%H%M%Y.%S')}",
-            "shell am force-stop com.mattermost.rn",
-            "shell am start -n com.mattermost.rn/.MainActivity",
+            f"shell su 0 date {format_adb_datetime(self.simulation_dt)}",
+            "shell am force-stop com.mattermost.rnbeta",
+            "shell am start -n com.mattermost.rnbeta/.MainActivity",
         ]:
             execute_adb(cmd)
 

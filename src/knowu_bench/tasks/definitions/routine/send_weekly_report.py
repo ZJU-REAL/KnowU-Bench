@@ -2,6 +2,7 @@ from datetime import datetime
 from loguru import logger
 
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.runtime.app_helpers.mail import get_sent_email_info
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
@@ -17,9 +18,7 @@ class WeeklyReportRoutineTask(BaseRoutineTask):
     REMOTE_FILE_PATH = f"/sdcard/Documents/{FILE_NAME}"
     MAIL_PACKAGE = "com.gmailclone"
 
-    TARGET_YEAR = 2026
-    TARGET_MONTH = 2
-    TARGET_DAY = 13
+    DEFAULT_TRIGGER = {"day_of_week": "Friday", "time_range": ["16:55", "17:05"]}
 
     app_names = {"Mail", "Files"}
 
@@ -31,17 +30,23 @@ class WeeklyReportRoutineTask(BaseRoutineTask):
             "time_window": ["00:00", "23:59"],
             "target_weekday": "Friday",
         }
+        self.trigger = dict(self.DEFAULT_TRIGGER)
         habit = self._get_habit("weekly_report")
         if habit:
             self.expectation["should_act"] = True
             self.expectation["target_recipient"] = habit.get("action", {}).get("recipient", "")
-            trigger = habit.get("trigger", {})
-            self.expectation["time_window"] = trigger.get("time_range", ["16:55", "17:30"])
-            self.expectation["target_weekday"] = trigger.get("day_of_week", "Friday")
+            self.trigger = habit.get("trigger", {}) or {}
+            self.expectation["time_window"] = self.trigger.get("time_range", ["16:55", "17:30"])
+            self.expectation["target_weekday"] = self.trigger.get("day_of_week", "Friday")
             logger.info(f"Habit Loaded: {self.expectation}")
         else:
             self.expectation["should_act"] = False
             logger.info("No habit found.")
+        self.simulation_dt = resolve_routine_datetime(
+            self.trigger,
+            default_time="16:59:00",
+            task_name=self.name,
+        )
         self._goal = self._build_goal()
 
     @property
@@ -51,9 +56,10 @@ class WeeklyReportRoutineTask(BaseRoutineTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        res = execute_adb("shell su root date 021316592026.00")
+        target_timestamp = format_adb_datetime(self.simulation_dt)
+        res = execute_adb(f"shell su root date {target_timestamp}")
         if not res.success:
-            execute_adb("shell date 021316592026.00")
+            execute_adb(f"shell date {target_timestamp}")
 
         execute_adb("shell mkdir -p /sdcard/Documents")
         if not execute_adb(f"shell touch {self.REMOTE_FILE_PATH}").success:
@@ -72,7 +78,10 @@ class WeeklyReportRoutineTask(BaseRoutineTask):
             else "You do NOT have this routine in your profile."
         )
         self.relevant_information = self._build_relevant_information(
-            current_context="It is Friday afternoon (16:59). You are using your phone.",
+            current_context=(
+                f"It is {self.simulation_dt.strftime('%A')} afternoon "
+                f"({self.simulation_dt.strftime('%H:%M')}). You are using your phone."
+            ),
             routine_status=routine_hint,
             task_specific_detail=(
                 "If you accept, the assistant may prepare and send your weekly report email with attachment."

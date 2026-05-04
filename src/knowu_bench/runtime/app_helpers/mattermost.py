@@ -576,6 +576,96 @@ def get_users_in_channel(channel_id: str):
     return members
 
 
+def _patch_mattermost_config():
+    """Patch Mattermost config.json to disable session expiry and idle timeout,
+    and to allow WebSocket connections from the Android emulator.
+
+    Called after copying the backup but before docker compose up, so Mattermost
+    starts with session settings that effectively never expire.
+
+    The Android Mattermost app connects to ws://10.0.2.2:8065/api/v4/websocket
+    and sends Origin: http://10.0.2.2:8065. Mattermost's WebSocket upgrader
+    rejects the upgrade with HTTP 400 ("URL Blocked because of CORS") unless
+    the Origin matches SiteURL or AllowCorsFrom. The shipped config has both
+    empty, so the upgrade fails and the app shows "The server is not reachable"
+    and never receives live updates (e.g. channels created during init by
+    mmctl). Pinning SiteURL/AllowCorsFrom here unblocks the upgrade.
+    """
+    config_path = os.path.join(
+        MATTERMOST_DOCKER_DIR, "volumes", "app", "mattermost", "config", "config.json"
+    )
+    try:
+        with open(config_path) as f:
+            config = json.load(f)
+
+        svc = config.setdefault("ServiceSettings", {})
+        svc["SessionLengthWebInDays"] = 36500
+        svc["SessionLengthWebInHours"] = 876000
+        svc["SessionLengthMobileInDays"] = 36500
+        svc["SessionLengthMobileInHours"] = 876000
+        svc["SessionLengthSSOInDays"] = 36500
+        svc["SessionLengthSSOInHours"] = 876000
+        svc["SessionIdleTimeoutInMinutes"] = 0
+        svc["ExtendSessionLengthWithActivity"] = True
+        svc["SiteURL"] = "http://10.0.2.2:8065"
+        svc["AllowCorsFrom"] = "*"
+
+        with open(config_path, "w") as f:
+            json.dump(config, f, indent=4)
+
+        logger.info(
+            "Patched Mattermost config: sessions never expire; "
+            "SiteURL/AllowCorsFrom set for emulator WebSocket"
+        )
+    except Exception as e:
+        logger.warning(f"Failed to patch Mattermost config (non-fatal): {e}")
+
+
+def _extend_session_expiry():
+    """Extend all existing Mattermost session expiry times in the database.
+
+    The Android emulator snapshot stores a cached auth token, but the PostgreSQL
+    backup has session records with fixed expiry timestamps. As real time advances
+    past those timestamps, sessions become invalid and the app logs the user out.
+    This function extends all sessions to 100 years from now and refreshes
+    lastactivityat to prevent idle-timeout invalidation.
+
+    MUST be called while only PostgreSQL is running, before the Mattermost server
+    container starts. Mattermost runs a session-cleanup pass shortly after it
+    connects to the DB and will DELETE any rows where expiresat is in the past,
+    racing against this UPDATE. Starting postgres first eliminates the race.
+    """
+    max_retries = 10
+    for attempt in range(max_retries):
+        connection, cursor = connect_to_postgres()
+        if connection is not None and cursor is not None:
+            try:
+                cursor.execute("""
+                    UPDATE sessions
+                    SET expiresat = (EXTRACT(EPOCH FROM (NOW() + INTERVAL '36500 days')) * 1000)::bigint,
+                        lastactivityat = (EXTRACT(EPOCH FROM NOW()) * 1000)::bigint
+                    WHERE expiresat > 0
+                """)
+                rows_updated = cursor.rowcount
+                connection.commit()
+                logger.info(f"Extended expiry for {rows_updated} Mattermost session(s)")
+                return True
+            except Exception as e:
+                logger.error(f"Failed to extend session expiry: {e}")
+                return False
+            finally:
+                cursor.close()
+                connection.close()
+        else:
+            logger.debug(
+                f"Waiting for PostgreSQL to be ready (attempt {attempt + 1}/{max_retries})"
+            )
+            time.sleep(2)
+
+    logger.error("PostgreSQL not ready after max retries, could not extend session expiry")
+    return False
+
+
 def start_mattermost_backend(mattermost_backend_status_dir=MATTERMOST_STATUS_DIR):
     """Start the Mattermost backend."""
     status = get_mattermost_backend_status()
@@ -587,14 +677,31 @@ def start_mattermost_backend(mattermost_backend_status_dir=MATTERMOST_STATUS_DIR
     try:
         # mattermost backend requires 2000:2000 permission, need to preserve
         copytree_with_ownership(mattermost_backend_status_dir, MATTERMOST_DOCKER_DIR)
-        # Change to mattermost docker directory and start services
+
+        # Patch config before starting so Mattermost reads updated session settings
+        _patch_mattermost_config()
+
+        # Start PostgreSQL first (without Mattermost) so we can extend session
+        # expiry before Mattermost connects and prunes "expired" rows. If both
+        # containers come up together, Mattermost's startup cleanup races our
+        # UPDATE and wins on slow-start runs, leaving the Android app with a
+        # token whose backing session row has been deleted (login screen).
+        pg_cmd = ["docker", "compose"] + COMPOSE_FILES + ["up", "-d", "postgres"]
+        subprocess.run(
+            pg_cmd, cwd=MATTERMOST_DOCKER_DIR, capture_output=True, text=True, check=True
+        )
+
+        # Extend existing session expiry while only postgres is running.
+        _extend_session_expiry()
+
+        # Now bring up the Mattermost server.
         cmd = ["docker", "compose"] + COMPOSE_FILES + ["up", "-d"]
         result = subprocess.run(
             cmd, cwd=MATTERMOST_DOCKER_DIR, capture_output=True, text=True, check=True
         )
         logger.info("Mattermost backend started successfully")
-
         logger.debug(f"Docker compose output: {result.stdout}\n{result.stderr}")
+
         return True
     except subprocess.CalledProcessError as e:
         logger.error(f"Failed to start Mattermost backend: {e}")

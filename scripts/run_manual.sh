@@ -90,8 +90,16 @@ set -e
 # TASK_NAME="MastodonSharePhotosPreferenceAskUserTask@user"
 # QUESTION="Which photo you prefer?"
 
-TASK_NAME="PreMeetingPrepTask@user"
-QUESTION="Do you want to open file?"
+# TASK_NAME="PreMeetingPrepTask@user"
+# QUESTION="Do you want to open file?"
+
+# ===== M1. Mattermost 请假通知 (MattermostLeaveNoticeGeneralTask) =====
+# 场景：用户身体不适,Agent 要在 Mattermost Town Square 发一条请假消息
+# 用途：测试 start_mattermost_backend() 中的 _patch_mattermost_config + _extend_session_expiry 修复
+# 验证点：init 日志应出现 "Patched Mattermost config" 和 "Extended expiry for N session(s)"
+#         Android 端打开 Mattermost 应直接进工作区,不弹登录页
+TASK_NAME="MattermostLeaveNoticeGeneralTask"
+QUESTION="我今天身体不舒服需要请假，请帮我在 Mattermost 的 Town Square 频道发一条消息：'大家好，我今天身体不适需要请假一天，有事请留言，谢谢。'"
 
 # =============================================================================
 

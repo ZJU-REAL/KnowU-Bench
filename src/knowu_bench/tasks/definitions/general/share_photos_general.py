@@ -9,6 +9,7 @@ from knowu_bench.runtime.app_helpers import mail
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.tasks.base import BaseTask
+from datetime import datetime
 
 EMAIL_ADDRESS = "kevin_zhang@example.com"
 EMAIL_TEXT = "Here are some pictures for you."
@@ -28,9 +29,10 @@ class SharePhotosGeneralTask(BaseTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
-        res = execute_adb("shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"shell su root date {ts}")
         if not res.success:
-            execute_adb("shell date 021014002026.00")
+            execute_adb(f"shell date {ts}")
 
         assets_dir = Path(__file__).resolve().parents[3] / "assets"
         if not assets_dir.exists():

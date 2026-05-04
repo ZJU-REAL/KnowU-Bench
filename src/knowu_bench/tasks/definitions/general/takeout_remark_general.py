@@ -13,6 +13,7 @@ from knowu_bench.runtime.app_helpers.mall import clear_callback_files, clear_con
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.tasks.base import BaseTask
+from datetime import datetime
 
 TAKEOUT_APPS = ("chilemei", "tuantuan")
 TAKEOUT_CONFIG = AppConfig(showSplashAd=True, requireLogin=False)
@@ -39,9 +40,10 @@ class TakeoutRemarkGeneralTask(BaseTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
-        res = execute_adb("shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"shell su root date {ts}")
         if not res.success:
-            execute_adb("shell date 021014002026.00")
+            execute_adb(f"shell date {ts}")
         for app in TAKEOUT_APPS:
             set_app_config(app, TAKEOUT_CONFIG)
         return True

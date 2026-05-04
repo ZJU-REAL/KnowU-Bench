@@ -65,9 +65,10 @@ class SortFilesGeneralTask(BaseTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb(f"-s {controller.device} shell settings put global auto_time 0")
-        res = execute_adb(f"-s {controller.device} shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"-s {controller.device} shell su root date {ts}")
         if not res.success:
-            execute_adb(f"-s {controller.device} shell date 021014002026.00")
+            execute_adb(f"-s {controller.device} shell date {ts}")
         self._prepare_download_files(controller)
         return True
 

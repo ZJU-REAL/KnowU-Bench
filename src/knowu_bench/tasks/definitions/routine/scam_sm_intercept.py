@@ -1,6 +1,5 @@
 import time
 import subprocess
-from datetime import datetime
 
 from loguru import logger
 
@@ -12,6 +11,10 @@ except ImportError:
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 
 def _adb_sqlite_count(db_path: str, sql: str) -> int:
@@ -50,7 +53,7 @@ class ScamSmsInterceptRoutineTask(BaseRoutineTask):
     GOOGLE_PKG = "com.google.android.apps.messaging"
 
     DEFAULTS = {
-        "simulation_datetime": "2026-02-13 11:15:00",
+        "simulation_datetime": "11:15:00",
         "sender_phone": "1069012345678",
         "sms_content": "【Bank Notice】Your account shows abnormal activity. Click http://secure-bank-check.cc to verify.",
     }
@@ -67,7 +70,10 @@ class ScamSmsInterceptRoutineTask(BaseRoutineTask):
     def __init__(self, params: dict = None):
         super().__init__(params)
         self.expectation = {"should_act": False, "actions": ["block_number", "report_spam"]}
-        self.simulation_dt = self._parse_dt(self.DEFAULTS["simulation_datetime"])
+        self.simulation_dt = resolve_routine_datetime(
+            default_time=self.DEFAULTS["simulation_datetime"],
+            task_name=self.name,
+        )
         self.sender_phone = self.DEFAULTS["sender_phone"]
         self.sms_content = self.DEFAULTS["sms_content"]
 
@@ -103,25 +109,22 @@ class ScamSmsInterceptRoutineTask(BaseRoutineTask):
     def goal(self) -> str:
         return self._goal
 
-    def _parse_dt(self, raw: str) -> datetime:
-        try:
-            return datetime.strptime(str(raw), "%Y-%m-%d %H:%M:%S")
-        except ValueError:
-            return datetime.strptime(self.DEFAULTS["simulation_datetime"], "%Y-%m-%d %H:%M:%S")
-
     def _apply_habit_config(self) -> None:
         if not self.scam_habit:
             return
         t, a = self.scam_habit.get("trigger", {}), self.scam_habit.get("action", {})
-        if raw_dt := (t.get("simulation_datetime") or t.get("datetime")):
-            self.simulation_dt = self._parse_dt(raw_dt)
+        self.simulation_dt = resolve_routine_datetime(
+            t,
+            default_time=self.DEFAULTS["simulation_datetime"],
+            task_name=self.name,
+        )
         self.sender_phone = a.get("block_number") or t.get("sender_phone") or self.sender_phone
         self.sms_content = t.get("sms_content") or self.sms_content
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {self.simulation_dt.strftime('%m%d%H%M%Y.%S')}")
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
         execute_adb(f"shell am force-stop {self.SMS_PACKAGE}")
         execute_adb("shell input keyevent HOME")
         time.sleep(1)

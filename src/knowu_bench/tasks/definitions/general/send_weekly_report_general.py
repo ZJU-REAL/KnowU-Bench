@@ -5,6 +5,7 @@ from loguru import logger
 from knowu_bench.runtime.app_helpers.mail import get_sent_email_info
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -19,6 +20,7 @@ class SendWeeklyReportGeneralTask(BaseTask):
     REMOTE_FILE_PATH = f"/sdcard/Documents/{FILE_NAME}"
     MAIL_PACKAGE = "com.gmailclone"
     TARGET_RECIPIENT = "dean@ftu.edu.cn"
+    DEFAULT_TRIGGER = {"day_of_week": "Friday", "time_range": ["16:55", "17:05"]}
 
     goal = (
         "请用 Mail 应用发送一封周报邮件给 dean@ftu.edu.cn，"
@@ -29,9 +31,15 @@ class SendWeeklyReportGeneralTask(BaseTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        res = execute_adb("shell su root date 021316592026.00")
+        simulation_dt = resolve_routine_datetime(
+            self.DEFAULT_TRIGGER,
+            default_time="16:59:00",
+            task_name=self.name,
+        )
+        target_timestamp = format_adb_datetime(simulation_dt)
+        res = execute_adb(f"shell su root date {target_timestamp}")
         if not res.success:
-            execute_adb("shell date 021316592026.00")
+            execute_adb(f"shell date {target_timestamp}")
 
         execute_adb("shell mkdir -p /sdcard/Documents")
         if not execute_adb(f"shell touch {self.REMOTE_FILE_PATH}").success:

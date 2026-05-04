@@ -14,6 +14,7 @@ from knowu_bench.runtime.app_helpers import mail
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.tasks.definitions.preference.base_prefrence_task import BasePrefrenceTask
+from datetime import datetime
 
 DEFAULT_SHARE_DIR = "src/knowu_bench/cache/users"
 SUPPORTED_IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
@@ -112,8 +113,9 @@ class ShareFavoritePhotosPreferenceAskUserTask(BasePrefrenceTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
-        if not execute_adb("shell su root date 021014002026.00").success:
-            execute_adb("shell date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        if not execute_adb(f"shell su root date {ts}").success:
+            execute_adb(f"shell date {ts}")
 
         selected_files = self._resolve_email_share_images()[:1]
         self._expected_image_paths = [str(p) for p in selected_files]

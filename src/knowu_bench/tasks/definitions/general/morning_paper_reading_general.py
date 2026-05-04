@@ -10,6 +10,7 @@ from loguru import logger
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.proxy_config import android_proxy_setting_command
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -23,7 +24,7 @@ class MorningPaperReadingGeneralTask(BaseTask):
     CHROME_PKG = "com.android.chrome"
     CHROME_HISTORY_PATH = "/data/data/com.android.chrome/app_chrome/Default/History"
     TARGET_URLS = ["https://www.alphaxiv.org", "https://huggingface.co/papers"]
-    TARGET_TIMESTAMP = "021008252026.00"
+    DEFAULT_SCENE_TIME = "08:25:00"
 
     goal = (
         "请用 Chrome 浏览器依次打开以下两个网站：\n"
@@ -34,7 +35,11 @@ class MorningPaperReadingGeneralTask(BaseTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {self.TARGET_TIMESTAMP}")
+        simulation_dt = resolve_routine_datetime(
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
+        execute_adb(f"shell su 0 date {format_adb_datetime(simulation_dt)}")
         cmds = [
             android_proxy_setting_command(),
             f"am force-stop {self.CHROME_PKG}",

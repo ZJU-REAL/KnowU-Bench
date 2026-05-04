@@ -6,6 +6,10 @@ from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.proxy_config import android_proxy_setting_command
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 
 class MorningWeatherCheckTask(BaseRoutineTask):
@@ -31,7 +35,7 @@ class MorningWeatherCheckTask(BaseRoutineTask):
         "city": "Beijing",
         "search_query": "Beijing Weather Today",
         "time_range": ["08:00", "08:30"],
-        "simulation_datetime": "2026-05-26 08:10:00",
+        "simulation_datetime": "08:10:00",
     }
 
     def __init__(self, params: dict = None):
@@ -39,14 +43,14 @@ class MorningWeatherCheckTask(BaseRoutineTask):
         self.expectation = {"should_act": False, "actions": []}
         
         self.city, self.search_query = self.DEFAULTS["city"], self.DEFAULTS["search_query"]
-        self.time_range, self.simulation_dt = list(self.DEFAULTS["time_range"]), self.DEFAULTS["simulation_datetime"]
+        self.time_range = list(self.DEFAULTS["time_range"])
+        self.trigger = {}
 
         habit = self._get_habit(self.HABIT_KEY)
         if habit:
             self.expectation["should_act"] = True
-            trigger, action = habit.get("trigger", {}), habit.get("action", {})
-            self.time_range = trigger.get("time_range", self.time_range)
-            self.simulation_dt = trigger.get("simulation_datetime", self.simulation_dt)
+            self.trigger, action = habit.get("trigger", {}) or {}, habit.get("action", {})
+            self.time_range = self.trigger.get("time_range", self.time_range)
 
             if m := re.search(r"in\s+(\w+)", habit.get("description", ""), re.I):
                 self.city, self.search_query = m.group(1), f"{m.group(1)} Weather Today"
@@ -54,6 +58,11 @@ class MorningWeatherCheckTask(BaseRoutineTask):
             for step in action.get("sequence", []):
                 if qm := re.search(r"['\"](.+?)['\"]", step):
                     self.search_query = qm.group(1)
+        self.simulation_dt = resolve_routine_datetime(
+            self.trigger,
+            default_time=self.DEFAULTS["simulation_datetime"],
+            task_name=self.name,
+        )
         self._goal = self._build_goal()
 
     @property
@@ -61,16 +70,10 @@ class MorningWeatherCheckTask(BaseRoutineTask):
         return self._goal
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
-        from datetime import datetime
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        try:
-            dt = datetime.strptime(self.simulation_dt, "%Y-%m-%d %H:%M:%S")
-            execute_adb(f"shell su 0 date {dt.strftime('%m%d%H%M%Y.%S')}")
-            display_time = dt.strftime("%H:%M (%B %d, %Y)")
-        except Exception:
-            execute_adb("shell su 0 date 052608102026.00")
-            display_time = self.time_range[0]
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
+        display_time = self.simulation_dt.strftime("%H:%M (%B %d, %Y)")
 
         cmds = [
             android_proxy_setting_command(),
@@ -108,14 +111,28 @@ class MorningWeatherCheckTask(BaseRoutineTask):
 
     def _fetch_weather_temp(self) -> float | None:
         lat, lon = self.CITY_COORDS.get(self.city, self.CITY_COORDS["Beijing"])
+        target_date = self.simulation_dt.strftime("%Y-%m-%d")
         try:
             resp = requests.get("https://api.open-meteo.com/v1/forecast", params={
-                "latitude": lat, "longitude": lon, "daily": "temperature_2m_max", "timezone": "Asia/Shanghai",
+                "latitude": lat,
+                "longitude": lon,
+                "daily": "temperature_2m_max",
+                "timezone": "Asia/Shanghai",
+                "start_date": target_date,
+                "end_date": target_date,
             }, timeout=8)
             resp.raise_for_status()
-            if temps := resp.json().get("daily", {}).get("temperature_2m_max"):
+            daily = resp.json().get("daily", {})
+            temps = daily.get("temperature_2m_max", [])
+            dates = daily.get("time", [])
+            for date_str, temp in zip(dates, temps):
+                if date_str == target_date:
+                    api_temp = float(temp)
+                    logger.info(f"Weather API: {self.city} max temp on {target_date} = {api_temp}°C")
+                    return api_temp
+            if temps:
                 api_temp = float(temps[0])
-                logger.info(f"Weather API: {self.city} max temp today = {api_temp}°C")
+                logger.info(f"Weather API: {self.city} max temp fallback = {api_temp}°C")
                 return api_temp
         except Exception as e:
             logger.warning(f"Weather API call failed: {e}")

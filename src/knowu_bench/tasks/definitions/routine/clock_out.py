@@ -3,6 +3,7 @@ import subprocess
 import re
 from loguru import logger
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
 
@@ -19,15 +20,30 @@ class ClockOutRoutineTask(BaseRoutineTask):
     
     DEFAULT_CHANNEL = "town-square"
     DEFAULT_KEYWORDS = ["clocking", "out", "see", "you", "bye", "leaving"]
-    TARGET_TIMESTAMP = "021017592026.00"  # Feb 10 17:59
+    DEFAULT_TRIGGER = {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "time": "17:59",
+    }
 
     def __init__(self, params: dict = None):
         super().__init__(params)
 
-        habit_action = self._get_habit("clock_out_routine").get("action", {})
+        habit = self._get_habit("clock_out_routine")
+        habit_action = habit.get("action", {})
+        self.trigger = habit.get("trigger", {}) or self.DEFAULT_TRIGGER
+        scene_trigger = {
+            key: self.trigger[key]
+            for key in ("day_of_week", "days")
+            if key in self.trigger
+        } or self.DEFAULT_TRIGGER
+        self.simulation_dt = resolve_routine_datetime(
+            scene_trigger,
+            default_time="17:59:00",
+            task_name=self.name,
+        )
         target_content = (habit_action.get("content") or "").strip()
         self.expectation = {
-            "should_act": bool(self._get_habit("clock_out_routine")),
+            "should_act": bool(habit),
             "actions": [target_content] if target_content else [],
             "target_content": target_content,
             "target_channel": self._normalize_channel(habit_action.get("channel")) or self.DEFAULT_CHANNEL,
@@ -37,7 +53,9 @@ class ClockOutRoutineTask(BaseRoutineTask):
 
         self.target_channel = self.expectation["target_channel"]
         self.start_timestamp = 0
-        self._goal = self._build_goal(system_context="It is 17:59 now.")
+        self._goal = self._build_goal(
+            system_context=f"It is {self.simulation_dt.strftime('%A %H:%M')} now."
+        )
 
     @staticmethod
     def _normalize_channel(name: str) -> str:
@@ -64,9 +82,9 @@ class ClockOutRoutineTask(BaseRoutineTask):
         cmds = [
             "shell settings put global auto_time 0",
             "shell settings put system time_12_24 24",
-            f"shell su 0 date {self.TARGET_TIMESTAMP}",
-            "shell am force-stop com.mattermost.rn",
-            "shell am start -n com.mattermost.rn/.MainActivity"
+            f"shell su 0 date {format_adb_datetime(self.simulation_dt)}",
+            "shell am force-stop com.mattermost.rnbeta",
+            "shell am start -n com.mattermost.rnbeta/.MainActivity"
         ]
         for cmd in cmds: execute_adb(cmd)
         time.sleep(8)
@@ -78,7 +96,10 @@ class ClockOutRoutineTask(BaseRoutineTask):
             else "You do NOT have this routine in your profile."
         )
         self.relevant_information = self._build_relevant_information(
-            current_context="It is Friday 17:59. Work ends at 18:00. You are idle at Home Screen.",
+            current_context=(
+                f"It is {self.simulation_dt.strftime('%A %H:%M')}. "
+                "Work ends around this time. You are idle at Home Screen."
+            ),
             routine_status=routine_hint,
             task_specific_detail="If you accept, the assistant may post your clock-out message in Mattermost.",
         )

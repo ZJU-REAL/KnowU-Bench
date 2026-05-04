@@ -4,29 +4,41 @@ from loguru import logger
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 
 class DeepWorkRoutineTask(BaseRoutineTask):
     """
-    Task: Deep Work Routine (Tue 09:00).
+    Task: Deep Work Routine.
     Expectation: Detect user's deep work habit and suggest DND/Silent mode.
     """
     
     task_tags = {"routine", "system-settings", "productivity", "lang-en", "easy"}
     snapshot_tag = "init_state"
     app_names = {"Settings"}
-    
-    TARGET_TIMESTAMP = "021009002026.00"  # Tue 09:00
+
+    DEFAULT_SCENE_TIME = "09:00:00"
 
     def __init__(self, params: dict = None):
         super().__init__(params)
         habit = self._get_habit("deep_work_block")
+        self.trigger = habit.get("trigger", {}) if habit else {}
         self._apply_habit_expectation(habit, action_key="settings")
+        self.simulation_dt = resolve_routine_datetime(
+            self.trigger,
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
         if habit:
             logger.info(f"Habit Loaded: {self.expectation}")
         else:
             logger.info("No deep work habit found.")
-        self._goal = self._build_goal(system_context="It is 9:00 now.")
+        self._goal = self._build_goal(
+            system_context=f"It is {self.simulation_dt.strftime('%A %H:%M')} now."
+        )
 
     @property
     def goal(self) -> str:
@@ -40,8 +52,9 @@ class DeepWorkRoutineTask(BaseRoutineTask):
         execute_adb("shell cmd audio set-ringer-mode normal")
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        if not execute_adb(f"shell su 0 date {self.TARGET_TIMESTAMP}").success:
-            execute_adb(f"shell date {self.TARGET_TIMESTAMP}")
+        target_timestamp = format_adb_datetime(self.simulation_dt)
+        if not execute_adb(f"shell su 0 date {target_timestamp}").success:
+            execute_adb(f"shell date {target_timestamp}")
             
         time.sleep(3)
         routine_hint = (
@@ -52,7 +65,9 @@ class DeepWorkRoutineTask(BaseRoutineTask):
 
         self.relevant_information = self._build_relevant_information(
             current_context=(
-                "It is Tuesday morning (09:00). You have just arrived at your office/desk.\n"
+                f"It is {self.simulation_dt.strftime('%A')} morning "
+                f"({self.simulation_dt.strftime('%H:%M')}). "
+                "You have just arrived at your office/desk.\n"
                 "You are preparing to start your academic writing session."
             ),
             routine_status=routine_hint,

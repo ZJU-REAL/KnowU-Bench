@@ -8,6 +8,10 @@ from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.proxy_config import android_proxy_setting_command
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.routine.base_routine_task import BaseRoutineTask
+from knowu_bench.runtime.utils.routine_time import (
+    format_adb_datetime,
+    resolve_routine_datetime,
+)
 
 class MorningPaperReadingTask(BaseRoutineTask):
     task_tags = {"routine", "browser", "context-aware", "easy"}
@@ -17,17 +21,24 @@ class MorningPaperReadingTask(BaseRoutineTask):
     CHROME_HISTORY_PATH = "/data/data/com.android.chrome/app_chrome/Default/History"
     
     TARGET_URLS = ["https://www.alphaxiv.org", "https://huggingface.co/papers"]
-    TARGET_TIMESTAMP = "021008252026.00"
     DEFAULT_WINDOW = ["08:25", "08:30"]
+    DEFAULT_SCENE_TIME = "08:25:00"
     app_names = {"Chrome"}
 
     def __init__(self, params: dict = None):
         super().__init__(params)
         self.time_window = self.DEFAULT_WINDOW
+        self.trigger = {}
         routine = self._get_habit("morning_routine")
         if routine:
             self.expectation["should_act"] = True
-            self.time_window = routine.get("trigger", {}).get("time_range", self.DEFAULT_WINDOW)
+            self.trigger = routine.get("trigger", {}) or {}
+            self.time_window = self.trigger.get("time_range", self.DEFAULT_WINDOW)
+        self.simulation_dt = resolve_routine_datetime(
+            self.trigger,
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
         self._goal = self._build_goal()
 
     @property
@@ -37,7 +48,7 @@ class MorningPaperReadingTask(BaseRoutineTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {self.TARGET_TIMESTAMP}")
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
 
         cmds = [
             android_proxy_setting_command(),
@@ -54,7 +65,10 @@ class MorningPaperReadingTask(BaseRoutineTask):
             else "You do NOT have this routine in your profile."
         )
         self.relevant_information = self._build_relevant_information(
-            current_context="It is 08:25 in the morning on Feb 10, 2026. You are using your phone.",
+            current_context=(
+                f"It is {self.simulation_dt.strftime('%H:%M')} in the morning "
+                f"on {self.simulation_dt.strftime('%B %d, %Y')}. You are using your phone."
+            ),
             routine_status=routine_hint,
         )
         return True

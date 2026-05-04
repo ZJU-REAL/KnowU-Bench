@@ -20,6 +20,7 @@ from knowu_bench.runtime.app_helpers.mall import (
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.tasks.definitions.preference.base_prefrence_task import BasePrefrenceTask
+from datetime import datetime
 
 SHOPPING_APPS = ("Taodian", "jingdian")
 
@@ -47,9 +48,10 @@ class SearchWhiteSneakersCheckoutPreferenceAskUserTask(BasePrefrenceTask):
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         """Set runtime config and provide persona context for ask-user."""
         execute_adb("shell settings put global auto_time 0")
-        res = execute_adb("shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"shell su root date {ts}")
         if not res.success:
-            execute_adb("shell date 021014002026.00")
+            execute_adb(f"shell date {ts}")
 
         set_config(self.CONFIG)
         set_app_config("jingdian", self.JINGDIAN_CONFIG)

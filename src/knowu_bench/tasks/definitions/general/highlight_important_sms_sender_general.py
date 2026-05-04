@@ -10,6 +10,7 @@ from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.setup.contacts import ContactsSetup
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.tasks.base import BaseTask
+from datetime import datetime
 
 SENDER_NAME = "Project Office"
 SENDER_PHONE = "13577776666"
@@ -35,9 +36,10 @@ class HighlightImportantSmsSenderGeneralTask(BaseTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
-        res = execute_adb("shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"shell su root date {ts}")
         if not res.success:
-            execute_adb("shell date 021014002026.00")
+            execute_adb(f"shell date {ts}")
 
         simulate_result = controller.simulate_sms(
             sender=SENDER_PHONE,

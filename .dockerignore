@@ -1,0 +1,7 @@
+.git
+.venv
+__pycache__
+*.pyc
+
+# Keep only docker/Pixel_8_API_34_x86_64.avd in the image context.
+docker/Pixel_8_API_34_x86_64.avd.*

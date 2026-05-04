@@ -28,6 +28,7 @@ except ImportError:
 
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -42,7 +43,7 @@ class MattermostResponseGeneralTask(BaseTask):
     CHANNEL_NAME = "town-square"
     ALERT_MSG = "🚨 CRITICAL: Server 500 Error detected in Cluster-A. API Response time > 5s."
     REPLY_KEYWORDS = ["ack", "acknowledged", "checking", "received", "收到", "确认"]
-    TARGET_TIMESTAMP = "021020002026.00"
+    DEFAULT_SCENE_TIME = "20:00:00"
 
     goal = (
         "Mattermost 上 town-square 频道收到一条紧急告警消息："
@@ -53,6 +54,10 @@ class MattermostResponseGeneralTask(BaseTask):
     def __init__(self, params=None):
         super().__init__(params)
         self.start_timestamp = 0
+        self.simulation_dt = resolve_routine_datetime(
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
 
     def _wait_for_backend(self, timeout=45) -> bool:
         deadline = time.time() + timeout
@@ -94,9 +99,9 @@ class MattermostResponseGeneralTask(BaseTask):
             "reverse tcp:8065 tcp:8065",
             "shell settings put global auto_time 0",
             "shell settings put system time_12_24 24",
-            f"shell su 0 date {self.TARGET_TIMESTAMP}",
-            "shell am force-stop com.mattermost.rn",
-            "shell am start -n com.mattermost.rn/.MainActivity",
+            f"shell su 0 date {format_adb_datetime(self.simulation_dt)}",
+            "shell am force-stop com.mattermost.rnbeta",
+            "shell am start -n com.mattermost.rnbeta/.MainActivity",
         ]:
             execute_adb(cmd)
 

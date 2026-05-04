@@ -1,6 +1,5 @@
 """General task: search for today's weather in Chrome."""
 
-from datetime import datetime
 import re
 
 import requests
@@ -9,6 +8,7 @@ from loguru import logger
 from knowu_bench.runtime.controller import AndroidController
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.proxy_config import android_proxy_setting_command
+from knowu_bench.runtime.utils.routine_time import format_adb_datetime, resolve_routine_datetime
 from knowu_bench.tasks.base import BaseTask
 
 
@@ -27,17 +27,24 @@ class MorningWeatherCheckGeneralTask(BaseTask):
     CITY = "Hangzhou"
     CITY_COORDS = (30.2741, 120.1551)
     TEMP_TOLERANCE = 3.0
-    TARGET_TIMESTAMP = "032808102026.00"
+    DEFAULT_SCENE_TIME = "08:10:00"
 
     goal = (
         "请用 Chrome 浏览器搜索今天杭州的天气情况，"
         "然后把天气信息（包括温度）告诉我。"
     )
 
+    def __init__(self, params=None):
+        super().__init__(params)
+        self.simulation_dt = resolve_routine_datetime(
+            default_time=self.DEFAULT_SCENE_TIME,
+            task_name=self.name,
+        )
+
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
         execute_adb("shell settings put system time_12_24 24")
-        execute_adb(f"shell su 0 date {self.TARGET_TIMESTAMP}")
+        execute_adb(f"shell su 0 date {format_adb_datetime(self.simulation_dt)}")
         cmds = [
             android_proxy_setting_command(),
             f"am force-stop {self.CHROME_PKG}",
@@ -55,7 +62,7 @@ class MorningWeatherCheckGeneralTask(BaseTask):
         return [float(x) for x in re.findall(r"-?\d+\.?\d*", text)]
 
     def _target_date_str(self) -> str:
-        return datetime.strptime(self.TARGET_TIMESTAMP, "%m%d%H%M%Y.%S").strftime("%Y-%m-%d")
+        return self.simulation_dt.strftime("%Y-%m-%d")
 
     def _fetch_weather_temp(self) -> float | None:
         lat, lon = self.CITY_COORDS

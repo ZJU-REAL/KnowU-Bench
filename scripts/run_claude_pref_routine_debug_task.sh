@@ -6,26 +6,62 @@ REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 # ===== 按需修改以下变量 =====
+DEFAULT_DEBUG_TASKS=(
+    # Dynamic-time tasks changed in the latest pass.
+    "MorningPaperReadingGeneralTask"
+    "MorningWeatherCheckGeneralTask"
+    "MattermostResponseGeneralTask"
+    "NightSocialGeneralTask"
+    "SendWeeklyReportGeneralTask"
+    "WeeklyReportRoutineTask@user"
+    "ClockOutGeneralTask"
+    "ClockOutRoutineTask@developer"
+    "DailyFamilyCallTask@grandma"
+    "DeepWorkRoutineTask@user"
+    "MorningPaperReadingTask@user"
+    "MorningWeatherCheckTask@grandma"
+    "ScamSmsInterceptRoutineTask@user"
+    # Routine tasks that exercise Mattermost/Mastodon dynamic time paths.
+    "MattermostOnCallTask@developer"
+    "NightEyeCareRoutineTask@user"
+    # Additional Mattermost smoke coverage.
+    "MattermostLeaveNoticeGeneralTask"
+    "MattermostLeaveNoticeTask@developer"
+    "CommuteLateWithNoticeGeneralTask"
+    "LateUrgentRouteWithNoticeTask@developer"
+    "CalendarScheduleGroupMeetingGeneralTask"
+    "CalendarScheduleGroupMeetingTask@developer"
+    # Additional Mastodon smoke coverage.
+    "MastodonInterestBoostGeneralTask"
+    "MastodonInterestBoostTask@user"
+    "MastodonPrivacyDefaultGeneralTask"
+    "MastodonPrivacyDefaultTestTask@user"
+    "MastodonSharePhotosGeneralTask"
+    "MastodonSharePhotosPreferenceAskUserTask@user"
+)
+DEFAULT_TASK="$(IFS=,; echo "${DEFAULT_DEBUG_TASKS[*]}")"
+
 AGENT_TYPE="${AGENT_TYPE:-general_e2e}"
-TASK="${1:-${TASK:-PreMeetingPrepTask@user}}"                         # 支持逗号分隔的多任务列表
+TASK="${1:-${TASK:-$DEFAULT_TASK}}"                                    # 支持逗号分隔的多任务列表
 TASK_TAGS="${TASK_TAGS:-}"
-MODEL_NAME="${MODEL_NAME:-claude-sonnet-4.6}"
-LLM_BASE_URL="${LLM_BASE_URL:-https://openrouter.ai/api/v1}"
-CLAUDE_API_KEY="${CLAUDE_API_KEY:-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}"
-MAX_CONCURRENCY="${MAX_CONCURRENCY:-1}"
+MODEL_NAME="${MODEL_NAME:-claude-opus-4-6-20260205}" # 名称里保留 claude，触发 Claude 专用缩放逻辑
+LLM_BASE_URL="${LLM_BASE_URL:-http://101.37.174.109:8010/v1}" # OpenAI-compatible 中转地址
+CLAUDE_API_KEY="${CLAUDE_API_KEY:-sk-E7cpAYEyWA098oDM5URpPQ}"
+MAX_CONCURRENCY="${MAX_CONCURRENCY:-4}"
 MAX_ROUND="${MAX_ROUND:-50}"
 STEP_WAIT_TIME="${STEP_WAIT_TIME:-4}"
-ENV_IMAGE="${ENV_IMAGE:-ghcr.io/yaosqz/knowu-bench:latest}"
-AW_HOST="${AW_HOST:-http://127.0.0.1:6800}"
+ENV_IMAGE="${ENV_IMAGE:-knowu-bench:latest}"
+AW_HOST="${AW_HOST:-http://127.0.0.1:6800,http://127.0.0.1:6802,http://127.0.0.1:6803,http://127.0.0.1:6804}"
 USER_FILTER="${USER_FILTER:-}"
 USER_LOG_SOURCE="${USER_LOG_SOURCE:-noise}"
 USER_LOG_MODE="${USER_LOG_MODE:-all}"
 RAG_TOP_K="${RAG_TOP_K:-10}"
 RAG_BACKEND="${RAG_BACKEND:-embedding}"
 ENABLE_MCP="${ENABLE_MCP:-false}"
-RUN_IN_BACKGROUND="${RUN_IN_BACKGROUND:-false}"
-LOG_ROOT_BASE="${LOG_ROOT_BASE:-traj_logs/debug}"
-PARALLEL="${PARALLEL:-false}"                  # true 时多任务并行执行
+RUN_IN_BACKGROUND="${RUN_IN_BACKGROUND:-true}"
+LOG_ROOT_BASE="${LOG_ROOT_BASE:-traj_logs/debug_dynamic_social}"
+BATCH_EVAL="${BATCH_EVAL:-true}"               # true 时单个 mw eval 内用 MAX_CONCURRENCY 并行分发任务
+PARALLEL="${PARALLEL:-false}"                  # BATCH_EVAL=false 时可用；true 表示多进程并行
 # ============================
 
 if [[ -z "$TASK" ]]; then
@@ -35,6 +71,9 @@ if [[ -z "$TASK" ]]; then
 
 示例（单任务）:
   bash scripts/run_claude_pref_routine_debug_task.sh 'CommuteRoutingBadWeatherTask@developer'
+
+示例（默认 smoke suite，4 个环境并行）:
+  bash scripts/run_claude_pref_routine_debug_task.sh
 
 示例（多任务，逗号分隔）:
   bash scripts/run_claude_pref_routine_debug_task.sh 'TaskA@user,TaskB@student,TaskC@developer'
@@ -46,6 +85,7 @@ if [[ -z "$TASK" ]]; then
   TASK='TaskA@user,TaskB@student' PARALLEL=true RUN_IN_BACKGROUND=true bash scripts/run_claude_pref_routine_debug_task.sh
 
 选项:
+  BATCH_EVAL=true        单个 mw eval 内并行分发任务（默认）
   PARALLEL=true           多任务并行执行（默认串行）
   RUN_IN_BACKGROUND=true  后台运行，日志写入文件
   MAX_CONCURRENCY=N       每个任务内部的并发数
@@ -124,6 +164,46 @@ build_cmd() {
     CMD+=("${user_args[@]}")
 }
 
+run_batch_tasks() {
+    local model_tag
+    model_tag="$(make_tag "$MODEL_NAME")"
+    local user_tag="${USER_FILTER:-all_users}"
+    local mcp_tag="no_mcp"
+    [[ "$ENABLE_MCP" == "true" ]] && mcp_tag="with_mcp"
+
+    local run_id
+    run_id="$(date +%Y%m%d_%H%M%S)"
+    local log_root="${LOG_ROOT_BASE}/${model_tag}_dynamic_social_smoke_${user_tag}_${USER_LOG_SOURCE}_${USER_LOG_MODE}_${RAG_BACKEND}_${mcp_tag}_${run_id}"
+    mkdir -p "$log_root"
+    local run_log="$log_root/debug.log"
+
+    build_cmd "$TASK" "$log_root"
+
+    echo "============================================"
+    echo "[批量 smoke] 单个 mw eval 内并行运行 $TASK_COUNT 个任务"
+    echo "  并发数: $MAX_CONCURRENCY"
+    echo "  日志目录: $log_root"
+    echo "  日志文件: $run_log"
+    echo "============================================"
+
+    if [[ "$RUN_IN_BACKGROUND" == "true" ]]; then
+        nohup "${CMD[@]}" > "$run_log" 2>&1 &
+        local pid=$!
+        echo "[批量 smoke] 已在后台启动 PID=$pid"
+        echo "  tail -f '$run_log'"
+        echo "  可视化结果: mw logs view --log_dir '$log_root'"
+        return 0
+    fi
+
+    set +e
+    "${CMD[@]}" 2>&1 | tee "$run_log"
+    local rc=${PIPESTATUS[0]}
+    set -e
+    echo "[批量 smoke] 完成 (exit=$rc)"
+    echo "  可视化结果: mw logs view --log_dir '$log_root'"
+    return $rc
+}
+
 run_single_task() {
     local task="$1"
     local idx="$2"
@@ -167,8 +247,10 @@ run_single_task() {
         echo "[任务 $idx/$total] 已在后台启动 PID=$pid"
         echo "$pid" >> "$PIDS_FILE"
     else
+        set +e
         "${CMD[@]}" 2>&1 | tee "$run_log"
-        local rc=$?
+        local rc=${PIPESTATUS[0]}
+        set -e
         echo "[任务 $idx/$total] 完成 (exit=$rc)"
         echo "  可视化结果: mw logs view --log_dir '$log_root'"
         return $rc
@@ -189,6 +271,7 @@ echo "  Agent 类型: $AGENT_TYPE"
 echo "  Base URL: $LLM_BASE_URL"
 echo "  最大轮数: $MAX_ROUND"
 echo "  单任务并发: $MAX_CONCURRENCY"
+echo "  批量并发模式: $BATCH_EVAL"
 echo "  多任务并行: $PARALLEL"
 echo "  后台运行: $RUN_IN_BACKGROUND"
 echo "  USER_AGENT_MODEL: $USER_AGENT_MODEL"
@@ -210,7 +293,10 @@ trap 'rm -f "$PIDS_FILE"' EXIT
 FAILED=0
 IDX=0
 
-if [[ "$PARALLEL" == "true" ]]; then
+if [[ "$BATCH_EVAL" == "true" ]]; then
+    run_batch_tasks
+    exit $?
+elif [[ "$PARALLEL" == "true" ]]; then
     # --- 并行模式：所有任务同时启动 ---
     # 并行模式强制后台写日志（前台 tee 多进程会混乱）
     RUN_IN_BACKGROUND=true

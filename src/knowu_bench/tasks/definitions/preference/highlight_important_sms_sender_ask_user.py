@@ -13,6 +13,7 @@ from knowu_bench.runtime.setup.contacts import ContactsSetup
 from knowu_bench.runtime.utils.helpers import execute_adb
 from knowu_bench.runtime.utils.loader import UserProfileLoader
 from knowu_bench.tasks.definitions.preference.base_prefrence_task import BasePrefrenceTask
+from datetime import datetime
 
 
 class HighlightImportantSmsSenderPreferenceAskUserTask(BasePrefrenceTask):
@@ -217,9 +218,10 @@ class HighlightImportantSmsSenderPreferenceAskUserTask(BasePrefrenceTask):
 
     def initialize_task_hook(self, controller: AndroidController) -> bool:
         execute_adb("shell settings put global auto_time 0")
-        res = execute_adb("shell su root date 021014002026.00")
+        ts = datetime.now().strftime("%m%d%H%M%Y.%S")
+        res = execute_adb(f"shell su root date {ts}")
         if not res.success:
-            execute_adb("shell date 021014002026.00")
+            execute_adb(f"shell date {ts}")
 
         scenario = self._get_profile_scenario()
         self._sender_name = str(scenario["sender_name"])
