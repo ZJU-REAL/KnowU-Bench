@@ -19,6 +19,27 @@ from knowu_bench.runtime.utils.models import ENV_FAIL, MCP, JSONAction
 SCALE_FACTOR = 999
 
 
+def _tool_call_to_conclusion(tool_call: dict[str, Any]) -> str:
+    if not isinstance(tool_call, dict):
+        return ""
+
+    arguments = tool_call.get("arguments")
+    if not isinstance(arguments, dict):
+        return str(tool_call.get("name") or "")
+
+    action = arguments.get("action")
+    if not action:
+        return str(tool_call.get("name") or "")
+
+    detail_keys = ("text", "coordinate", "coordinate2", "button", "status", "time")
+    details = [
+        f"{key}={arguments[key]}"
+        for key in detail_keys
+        if arguments.get(key) not in (None, "", [])
+    ]
+    return f"{action} ({', '.join(details)})" if details else str(action)
+
+
 def parse_tagged_text(text):
     result = {"thinking": None, "conclusion": None, "tool_call": None}
 
@@ -42,12 +63,11 @@ def parse_tagged_text(text):
 
     if "<tool_call>" in action_tool_part:
         tool_parts = action_tool_part.split("<tool_call>")
-        
+
         # 提取 conclusion
         action_content = tool_parts[0].strip()
         if action_content.startswith('"') and action_content.endswith('"'):
             action_content = action_content[1:-1]
-        result["conclusion"] = action_content
 
         # 提取并解析 tool_call JSON
         tool_call_content = tool_parts[1].split("</tool_call>")[0].strip()
@@ -55,6 +75,10 @@ def parse_tagged_text(text):
             result["tool_call"] = json.loads(tool_call_content)
         except json.JSONDecodeError as e:
             raise ValueError(f"Failed to parse tool_call JSON: {e}")
+
+        result["conclusion"] = action_content or _tool_call_to_conclusion(
+            result["tool_call"]
+        )
     else:
         # 如果没有触发工具，最终输出就是 conclusion
         result["conclusion"] = final_output
