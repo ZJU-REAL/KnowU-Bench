@@ -82,6 +82,14 @@ user_profile:
         type: "change_settings"
         settings: ["dark_theme"]
 
+    morning_meeting_block:
+      description: "Avoids meetings before 12:00 because of late sleep schedule."
+      trigger:
+        time_range: ["00:00", "12:00"]
+      action:
+        type: "decline_meeting"
+        auto_decline_meetings: true
+
     # --- 6. [Benchmark Task 13] 生日短信祝福 (Calendar + Messages) ---
     birthday_wish_routine:
       description: "Sends a birthday SMS to Mom when a birthday event appears in the calendar."

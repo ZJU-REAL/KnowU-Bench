@@ -109,6 +109,8 @@ class CartManagementPreferenceAskUserTask(BasePrefrenceTask):
         base_score = 1
         logger.info(f"[Eval Phase 1] Cart deletion executed via {used_app}. Base Score: {base_score}")
 
+        chat_history = getattr(controller, "user_agent_chat_history", [])
+
         rubric = (
             "Evaluate the cart-deletion result against the user's persona on three dimensions:\n\n"
             "1. Deletion Target Accuracy (40%):\n"
@@ -126,6 +128,8 @@ class CartManagementPreferenceAskUserTask(BasePrefrenceTask):
             "   Check whether the operation appears coherent and user-aligned:\n"
             "   - login/account context and interaction should be plausible\n"
             "   - deletion list should be non-empty and consistent with cart context\n"
+            "   - if clothing dislike evidence is ambiguous in the persona or agent-user chat history, the assistant should ask the user before deletion\n"
+            "   - use agent-user chat history to judge whether clarification was needed and handled properly\n"
             "   - avoid deleting obviously liked items when preference evidence is clear\n"
             "   Score 1.0 for strong execution, 0.5 for minor issues, 0.0 for major mismatch.\n\n"
             "Final weighted score = 0.4 * target_accuracy + 0.3 * app_preference + 0.3 * execution_quality."
@@ -133,6 +137,7 @@ class CartManagementPreferenceAskUserTask(BasePrefrenceTask):
         user_agent_score, judge_reasoning = self.query_user_agent_judge(
             eval_data={"app_used": used_app, **callback_data},
             rubric=rubric,
+            chat_history=chat_history if chat_history else None,
         )
 
         final_score = 0.4 * base_score + (0.6 * user_agent_score)

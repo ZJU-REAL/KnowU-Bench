@@ -105,6 +105,8 @@ class DeleteItemsPreferenceAskUserTask(BasePrefrenceTask):
         base_score = 1
         logger.info(f"[Eval Phase 1] Cart deletion executed via {used_app}. Base Score: {base_score}")
 
+        chat_history = getattr(controller, "user_agent_chat_history", [])
+
         rubric = (
             "Evaluate the cart-deletion result against the user's persona on three dimensions:\n\n"
             "1. Deletion Target Accuracy (40%):\n"
@@ -129,6 +131,7 @@ class DeleteItemsPreferenceAskUserTask(BasePrefrenceTask):
         user_agent_score, judge_reasoning = self.query_user_agent_judge(
             eval_data={"app_used": used_app, **callback_data},
             rubric=rubric,
+            chat_history=chat_history if chat_history else None,
         )
 
         final_score = 0.4 * base_score + (0.6 * user_agent_score)

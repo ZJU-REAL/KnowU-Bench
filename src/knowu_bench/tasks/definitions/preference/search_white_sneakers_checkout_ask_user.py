@@ -115,6 +115,9 @@ class SearchWhiteSneakersCheckoutPreferenceAskUserTask(BasePrefrenceTask):
         base_score = 1
         logger.info(f"[Eval Phase 1] Order placed via {used_app}. Base Score: {base_score}")
 
+        chat_history = getattr(controller, "user_agent_chat_history", [])
+        chat_tail = chat_history[-10:] if isinstance(chat_history, list) else []
+
         rubric = (
             "Evaluate the placed sneaker order against the user's persona on three dimensions:\n\n"
             "1. Basic Information Accuracy (30%):\n"
@@ -146,6 +149,7 @@ class SearchWhiteSneakersCheckoutPreferenceAskUserTask(BasePrefrenceTask):
         user_agent_score, judge_reasoning = self.query_user_agent_judge(
             eval_data={"app_used": used_app, **order_data},
             rubric=rubric,
+            chat_history=chat_tail,
         )
 
         final_score = 0.4 * base_score + (0.6 * user_agent_score)

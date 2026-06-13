@@ -373,13 +373,16 @@ You MUST strictly evaluate the decision against the user's daily routine, sleep 
 - 0.0: opposite decision (e.g., accepted when it should have rejected)
 
 2. Calendar Operation Correctness (25%):
-- Expected Event Date: 2026-02-10
-- Expected Event Time: 10:30 - 11:00
-- You MUST extract the actual 'readable_start_time' and 'readable_end_time' from the `formatted_events` JSON data provided.
-- Compare the actual date and time strictly against the Expected Date and Time above.
-- 1.0 = Both Date AND Time match exactly.
-- 0.5 = event created but wrong date/time/title (e.g., created at 10:00 instead of 10:30).
-- 0.0 = no event was created.
+- If `expected_decision_from_profile` is "accept":
+  - Expected Event Date: 2026-02-10
+  - Expected Event Time: 10:30 - 11:00
+  - You MUST extract the actual 'readable_start_time' and 'readable_end_time' from the `formatted_events` JSON data provided.
+  - 1.0 = Both Date AND Time match exactly.
+  - 0.5 = event created but wrong date/time/title (e.g., created at 10:00 instead of 10:30).
+  - 0.0 = no event was created.
+- If `expected_decision_from_profile` is "reject":
+  - 1.0 = `formatted_events` is empty; no invite-like event was created.
+  - 0.0 = `formatted_events` contains any invite-like event despite the expected rejection.
 
 3. Reply Quality in Messages (20%): clear, polite, and decision-consistent.
 
@@ -407,9 +410,9 @@ Final weighted score = 0.45 * decision + 0.25 * calendar_op + 0.2 * reply_qualit
                 "user_persona": self.persona_text,  # 【核心修复 2】：务必把 persona 传给 Judge
                 "heuristic_decision_hint": agent_decision_heuristic,
                 "formatted_events": formatted_events_for_judge, # 【核心修复 3】：传入翻译好的日历时间
-                "user_agent_chat_history_tail": chat_tail,
             },
             rubric=rubric,
+            chat_history=chat_tail,
         )
 
         final_score = 0.4 * base_score + (0.6 * judge_score)

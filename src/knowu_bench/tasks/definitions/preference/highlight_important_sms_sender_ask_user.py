@@ -80,10 +80,10 @@ class HighlightImportantSmsSenderPreferenceAskUserTask(BasePrefrenceTask):
             },
             "grandma": {
                 "sender_name": "Unknown Sender D",
-                "sender_phone": "17099887766",
+                "sender_phone": "01066665566",
                 "sender_role": "Unknown Sender",
-                "sms_content": "[Good News] Free health gift! Click link now to claim your prize.",
-                "expected_important": False,
+                "sms_content": "Community Health Center: your blood pressure follow-up reminders will be sent from this new number. Please save it for future clinic notices.",
+                "expected_important": True,
             },
         }
         return scenarios.get(self._get_profile_id(), scenarios["user"])
