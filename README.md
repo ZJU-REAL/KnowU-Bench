@@ -1,24 +1,55 @@
-
 <div align="center">
 
-<h1>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</h1>
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/title-dark.png">
+    <img src="assets/title.png" alt="KnowU-Bench" width="380">
+  </picture>
+</h1>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2604.08455-b31b1b.svg)](https://arxiv.org/abs/2604.08455)
-[![Daily Paper](https://img.shields.io/badge/Daily%20Paper-huggingface-d4af37.svg?labelColor=555555)](https://huggingface.co/papers/2604.08455)
-[![Page](https://img.shields.io/badge/Page-KnowU--Bench-blue.svg)](https://zju-real.github.io/KnowU-Bench/)
-
-
-**KnowU-Bench** is an online, interactive benchmark for evaluating personalized and proactive mobile agents in reproducible Android environments.
-
+### Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation
 
 </div>
 
+<p align="center">
+Tongbo Chen<sup>1,*</sup>, Zhengxi Lu<sup>1,*</sup>, Zhan Xu<sup>1,*</sup>, Guocheng Shao<sup>1,*</sup>, Shaohan Zhao<sup>1,*</sup>, Fei Tang<sup>1</sup>, Yong Du<sup>1</sup>, Kaitao Song<sup>2</sup>,<br>
+Yizhou Liu<sup>1</sup>, Yuchen Yan<sup>1</sup>, Wenqi Zhang<sup>1</sup>, Xu Tan<sup>3</sup>, Weiming Lu<sup>1</sup>, Jun Xiao<sup>1</sup>, Yueting Zhuang<sup>1</sup>, Yongliang Shen<sup>1,†</sup>
+</p>
+
+<p align="center">
+<sup>1</sup>Zhejiang University, &nbsp; <sup>2</sup>Apple, &nbsp; <sup>3</sup>Tencent<br>
+<sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding authors
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2604.08455"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-2604.08455-b31b1b?style=flat-square"></a>
+  <a href="https://zjureal.com/KnowU-Bench/"><img alt="Project Page" src="https://img.shields.io/badge/Project-Page-7D70D8?style=flat-square"></a>
+  <a href="https://zjureal.com/MemU-Bench/"><img alt="Related: MemU-Bench" src="https://img.shields.io/badge/Related-MemU--Bench-129C93?style=flat-square"></a>
+  <a href="https://huggingface.co/papers/2604.08455"><img alt="Hugging Face Daily Paper" src="https://img.shields.io/badge/Daily%20Paper-huggingface-d4af37?style=flat-square"></a>
+</p>
+
+<p align="center">
+  <img src="assets/hero.jpg" alt="KnowU-Bench: over one day, a phone assistant robot reads the user's past habits while the profile stays locked, asks a clarifying question about a vague request, and offers an evening suggestion that the user declines, which it respects" width="100%">
+</p>
+
+<p align="center">
+  <a href="#overview">Overview</a> ·
+  <a href="#news">News</a> ·
+  <a href="#benchmark-snapshot">Benchmark Snapshot</a> ·
+  <a href="#installation">Installation</a> ·
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#citation">Citation</a>
+</p>
+
+<a id="overview"></a>
+
+## 🔎 Overview
+
+**KnowU-Bench** is an online, interactive benchmark for evaluating personalized and proactive mobile agents in reproducible Android environments.
 
 <p align="center">
   <img src="./assets/intro.png" alt="KnowU-Bench overview" width="1000">
 </p>
-
-## Overview
 
 Mobile GUI agents have made rapid progress on explicit task execution, yet a deeper challenge remains: can an agent act on your behalf as if it truly understands you? **KnowU-Bench** is designed to measure exactly this. It goes beyond standard GUI benchmarks by evaluating three capabilities that existing work leaves unaddressed — inferring user preferences from behavioral history, eliciting missing preferences through multi-turn interaction, and deciding when to intervene, seek consent, or remain silent in proactive settings.
 
@@ -34,10 +65,17 @@ Mobile GUI agents have made rapid progress on explicit task execution, yet a dee
 
 **Main findings from our paper:** Agents that excel at explicit GUI execution degrade substantially once success depends on knowing the user or deciding whether to act at all. Personalized failures are dominated by weak preference acquisition, and proactive failures by miscalibrated intervention, revealing a fundamental gap between competent interface operation and trustworthy personal assistance.
 
+> **Related benchmark.** [MemU-Bench](https://github.com/ZJU-REAL/MemU-Bench) ([project page](https://zjureal.com/MemU-Bench/), [paper](https://arxiv.org/abs/2611.00191)) evaluates whether mobile agents can *recall* a user's long interaction history to resolve vague, history-dependent instructions — a companion to KnowU-Bench's focus on *knowing* the user.
+
+<a id="news"></a>
+
 ## 📰 News
 
+- [2026-11] The [project page](https://zjureal.com/KnowU-Bench/) is refreshed.
 - [2026-04-11] We have released our experiment [docker](https://github.com/users/yaosqz/packages/container/package/knowu-bench).
 - [2026-04-07] Code for KnowU-Bench is released.
+
+<a id="benchmark-snapshot"></a>
 
 ## 📊 Benchmark Snapshot
 
@@ -52,6 +90,8 @@ Mobile GUI agents have made rapid progress on explicit task execution, yet a dee
 | Built-in agents | 9 |
 
 The current Python task registry directly references 17 app identifiers in this checkout. Evaluation combines textual answer verification, backend database checks, local storage inspection, application callbacks, and hybrid evaluation flows for personalized tasks.
+
+<a id="installation"></a>
 
 ## 🚀 Installation
 
@@ -85,6 +125,8 @@ If you want to pull it manually in advance:
 ```bash
 docker pull ghcr.io/yaosqz/knowu-bench:latest
 ```
+
+<a id="quick-start"></a>
 
 ## ⚡ Quick Start
 
@@ -155,6 +197,8 @@ uv run mw logs export --log-dir traj_logs/my_run -o exports/my_run
 
 The log viewer gives you per-task trajectories, screenshots, actions, scores, and aggregate summaries.
 
+<a id="useful-cli-commands"></a>
+
 ## 🧰 Useful CLI Commands
 
 - `mw env check`: check Docker/KVM prerequisites and image status
@@ -166,6 +210,8 @@ The log viewer gives you per-task trajectories, screenshots, actions, scores, an
 - `mw logs view`: launch the interactive web log viewer
 - `mw info task/agent/app`: explore benchmark inventory
 
+<a id="built-in-agents"></a>
+
 ## 🤖 Built-In Agents
 
 The current registry exposes these agent types:
@@ -173,6 +219,8 @@ The current registry exposes these agent types:
 `gelab_agent`, `general_e2e`, `gui_owl_1_5`, `mai_ui_agent`, `planner_executor`, `qwen3.5`, `qwen3vl`, `seed_agent`, `ui_venus_agent`
 
 You can also pass a custom Python file path to `--agent-type` as long as it defines a class derived from `BaseAgent`.
+
+<a id="repository-layout"></a>
 
 ## 📁 Repository Layout
 
@@ -190,6 +238,8 @@ docs/                                    Setup and development guides
 site/                                    Website and leaderboard assets
 assets/                                  Project figures used in the repository
 ```
+
+<a id="development"></a>
 
 ## 🛠 Development
 
@@ -209,11 +259,13 @@ uv run mw env exec knowu_bench_env_0_dev
 
 The `scripts/` directory also contains batch runners and analysis helpers such as `run_eval.sh`, `run_gpt_e2e.sh`, `calc_paper_metrics.py`, and `calc_pref_routine_accuracy.py`.
 
-## ⭐️ Citation
+<a id="citation"></a>
+
+## 📝 Citation
 
 If you find this project useful, welcome to cite us.
 
-```bit
+```bibtex
 @misc{chen2026knowubench,
       title={KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation}, 
       author={Tongbo Chen and Zhengxi Lu and Zhan Xu and Guocheng Shao and Shaohan Zhao and Fei Tang and Yong Du and Kaitao Song and Yizhou Liu and Yuchen Yan and Wenqi Zhang and Xu Tan and Weiming Lu and Jun Xiao and Yueting Zhuang and Yongliang Shen},
@@ -223,7 +275,16 @@ If you find this project useful, welcome to cite us.
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2604.08455}, 
 }
+
+@article{liu2026memubench,
+  title   = {MemU-Bench: Benchmarking GUI Agents on Long-Horizon User Interactions},
+  author  = {Liu, Yizhou and Lu, Zhengxi and Tang, Fei and Qiu, Yiwen and Du, Yong and Chen, Tongbo and Chen, Bofan and Jiang, Tao and Xu, Wenhao and Shu, Yunfeng and Zhang, Wenqi and Lu, Weiming and Xiao, Jun and Zhuang, Yueting and Shen, Yongliang},
+  journal = {arXiv preprint arXiv:2611.00191},
+  year    = {2026}
+}
 ```
+
+<a id="license"></a>
 
 ## 📄 License
 
