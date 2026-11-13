@@ -1,77 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</title>
-    <meta name="description"
-        content="KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation">
-    <meta name="keywords" content="Mobile Agent, GUI Agent, Android, Benchmark, MCP">
-
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Academicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</title>
+  <meta name="description" content="KnowU-Bench is an online, interactive benchmark for personalized and proactive mobile agents in reproducible Android environments: 192 tasks, 23 apps, hidden user profiles, an LLM-driven user simulator and hybrid evaluation.">
+  <meta property="og:title" content="KnowU-Bench">
+  <meta property="og:description" content="Interactive, proactive and personalized mobile agent evaluation in reproducible Android environments.">
+  <meta property="og:image" content="https://zjureal.com/KnowU-Bench/assets/intro.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261114j">
 </head>
-
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item navbar-title" href="#">
-                <strong>KnowU-Bench</strong>
-            </a>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="navbar-burger">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+
+<header class="ku-top">
+  <div class="ku-top__in">
+    <a class="ku-brand" href="#top">Know<span>U</span><em>-Bench</em></a>
+    <nav class="ku-nav" aria-label="Sections">
+      <a href="#method">How it works</a>
+      <a href="#personas">Personas</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#findings">Findings</a>
+      <a href="#start">Quick start</a>
+      <a href="#cite">BibTeX</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================================================ hero -->
+  <section class="ku-hero">
+    <div class="ku-wrap ku-wrap--wide ku-hp-grid">
+     <div class="ku-hp-text">
+      <p class="ku-eyebrow">Mobile agent benchmark · arXiv 2604.08455 · April 2026</p>
+      <h1 class="ku-title"><img class="ku-wordmark" src="assets/title.png" alt="KnowU-Bench" width="460" height="82"></h1>
+      <p class="ku-subtitle">Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation</p>
+
+      <p class="ku-authors">
+        <span>Tongbo Chen<sup>1*</sup></span>
+        <span>Zhengxi Lu<sup>1*</sup></span>
+        <span>Zhan Xu<sup>1*</sup></span>
+        <span>Guocheng Shao<sup>1*</sup></span>
+        <span>Shaohan Zhao<sup>1*</sup></span>
+        <span>Fei Tang<sup>1</sup></span>
+        <span>Yong Du<sup>1</sup></span>
+        <span>Kaitao Song<sup>2</sup></span>
+        <span>Yizhou Liu<sup>1</sup></span>
+        <span>Yuchen Yan<sup>1</sup></span>
+        <span>Wenqi Zhang<sup>1</sup></span>
+        <span>Xu Tan<sup>3</sup></span>
+        <span>Weiming Lu<sup>1</sup></span>
+        <span>Jun Xiao<sup>1</sup></span>
+        <span>Yueting Zhuang<sup>1</sup></span>
+        <span>Yongliang Shen<sup>1†</sup></span>
+      </p>
+      <p class="ku-affil">
+        <span><sup>1</sup>Zhejiang University</span>
+        <span><sup>2</sup>Apple</span>
+        <span><sup>3</sup>Tencent</span>
+      </p>
+      <p class="ku-affil ku-affil--note"><span><sup>*</sup>Equal contribution</span><span><sup>†</sup>Corresponding authors</span></p>
+
+      <div class="ku-buttons">
+        <a class="ku-btn ku-btn--dark" href="https://arxiv.org/abs/2604.08455" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Paper</a>
+        <a class="ku-btn" href="https://github.com/ZJU-REAL/KnowU-Bench" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>Code</a>
+        <a class="ku-btn" href="https://huggingface.co/papers/2604.08455" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10.5" r="1.2" fill="currentColor"/><circle cx="15" cy="10.5" r="1.2" fill="currentColor"/><path d="M8.5 14.5c1.8 2 5.2 2 7 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>HF Daily Paper</a>
+        <a class="ku-btn" href="https://github.com/users/yaosqz/packages/container/package/knowu-bench" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18l-1.5 5.5A3 3 0 0 1 16.6 20H7.4a3 3 0 0 1-2.9-2.5z M6 12V8h3v4 M9 12V8h3v4 M12 12V8h3v4 M9 8V5h3v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Docker image</a>
+        <a class="ku-btn ku-btn--sib" href="https://zjureal.com/MemU-Bench/" target="_blank" rel="noopener">MemU-Bench ↗</a>
+        <a class="ku-btn" href="#cite">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4c0 3-1.5 5-4 6 M14 7h4v4c0 3-1.5 5-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>BibTeX</a>
+      </div>
+
+      <div class="ku-stats" aria-label="Benchmark at a glance">
+        <div class="ku-stat"><b>192</b><span>tasks</span></div>
+        <div class="ku-stat"><b>23</b><span>apps</span></div>
+        <div class="ku-stat"><b>94</b><span>agent–user interaction tasks</span></div>
+        <div class="ku-stat"><b>4</b><span>user profiles</span></div>
+      </div>
+      <div class="ku-split" role="img" aria-label="Task families: 42 general, 86 personalized, 64 proactive">
+        <div class="ku-split__bar">
+          <i class="ku-gen" style="flex:42"></i><i class="ku-per" style="flex:86"></i><i class="ku-pro" style="flex:64"></i>
         </div>
-        <div class="navbar-menu" id="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="#leaderboard">Leaderboard</a>
-                <a class="navbar-item" href="#overview">Overview</a>
+        <div class="ku-split__legend">
+          <span><i class="ku-dot ku-gen"></i>42 general</span>
+          <span><i class="ku-dot ku-per"></i>86 personalized</span>
+          <span><i class="ku-dot ku-pro"></i>64 proactive</span>
+        </div>
+      </div>
+     </div>
+
+     <div class="ku-hp-visual">
+      <div class="ku-dev ku-hp-dev" role="img" aria-label="Illustrative example on a phone: the user asks the assistant to buy a case of their favorite cola; the assistant, having read the habit log, asks whether to get the sugar-free one and deliver to the lab, the user agrees and the order is placed. At 23:00 on Friday the assistant proactively offers to turn off tomorrow's 07:30 alarm.">
+        <div class="ku-dev__screen">
+          <span class="ku-dev__cam" aria-hidden="true"></span>
+          <div class="ku-dev__status" aria-hidden="true">
+            <span>23:01</span>
+            <span class="ku-dev__icons">
+              <svg viewBox="0 0 16 16"><path d="M1.5 14.5h13v-13z"/></svg>
+              <svg viewBox="0 0 16 16"><path d="M8 13.8 15.4 4.6A11.8 11.8 0 0 0 8 2 11.8 11.8 0 0 0 .6 4.6z"/></svg>
+              <span>62%</span>
+              <svg class="ku-dev__batt" viewBox="0 0 26 14"><rect x=".75" y=".75" width="21.5" height="12.5" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="2.8" y="2.8" width="11.5" height="8.4" rx="1.6"/><path d="M23.8 4.6c1 .3 1.6 1.2 1.6 2.4s-.6 2.1-1.6 2.4z"/></svg>
+            </span>
+          </div>
+          <div class="ku-hp-app" aria-hidden="true">
+            <div class="ku-hp-bar">
+              <svg class="ku-hp-back" viewBox="0 0 24 24"><path d="M20 12H5m6-7-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="ku-hp-bot"><svg viewBox="0 0 24 24"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.5l-1.9-5.7-5.6-1.9L10.1 9z" fill="currentColor"/></svg></span>
+              <span class="ku-hp-who"><b>Assistant</b><small>reads your habit log</small></span>
+              <img class="ku-hp-me" src="assets/personas/user.jpg" width="26" height="26" alt="">
             </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a href="https://arxiv.org/abs/2604.08455" class="button is-small is-dark" target="_blank">
-                            <span class="icon"><i class="ai ai-arxiv"></i></span>
-                            <span>Paper</span>
-                        </a>
-                        <a href="https://github.com/ZJU-REAL/KnowU-Bench" class="button is-small is-dark"
-                            target="_blank">
-                            <span class="icon"><i class="fab fa-github"></i></span>
-                            <span>Code</span>
-                        </a>
-                        <div class="dropdown is-hoverable is-right" id="cite-dropdown">
-                            <div class="dropdown-trigger">
-                                <button class="button is-small is-dark" aria-haspopup="true" aria-controls="cite-menu">
-                                    <span class="icon"><i class="fas fa-quote-right"></i></span>
-                                    <span>Cite</span>
-                                </button>
-                            </div>
-                            <div class="dropdown-menu" id="cite-menu" role="menu">
-                                <div class="dropdown-content cite-dropdown-content">
-                                    <div class="dropdown-item">
-                                        <p class="is-size-7 has-text-weight-semibold mb-2">BibTeX</p>
-                                        <pre class="cite-bibtex"><code>@misc{chen2026knowubenchinteractiveproactivepersonalized,
+            <p class="ku-hp-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>Researcher profile hidden from the assistant</p>
+            <div class="ku-hp-chat">
+              <span class="ku-hp-day">Today</span>
+              <p class="ku-hp-msg ku-hp-msg--me">Buy a case of my favorite cola and send it to my office.<time>14:02</time></p>
+              <div class="ku-hp-msg ku-hp-msg--bot ku-hp-msg--per">Sugar-free, as usual? Deliver to the lab?<time>14:02</time></div>
+              <div class="ku-hp-chips"><span>Yes, sugar-free</span><span>Another address</span></div>
+              <p class="ku-hp-msg ku-hp-msg--me">Yes 👍<time>14:03</time></p>
+              <div class="ku-hp-order">
+                <img src="assets/cola.jpg" width="36" height="36" alt="">
+                <div><b>Sugar-free cola · 24 cans</b><span>Delivering to your office</span></div>
+                <em>✓ Order placed</em>
+              </div>
+              <span class="ku-hp-day">Friday 23:00</span>
+              <div class="ku-hp-pro">
+                <small>Proactive · from your routine</small>
+                <p>Tomorrow is Saturday — turn off your 07:30 alarm?</p>
+                <div><span class="ku-hp-btn">Turn off</span><span class="ku-hp-btn ku-hp-btn--ghost">Keep</span></div>
+              </div>
+            </div>
+            <div class="ku-hp-input"><span>Message</span><i><svg viewBox="0 0 24 24"><path d="M4 12 20 4l-4.5 16-3.6-6.4z" fill="currentColor"/></svg></i></div>
+          </div>
+          <span class="ku-dev__gesture" aria-hidden="true"></span>
+        </div>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ overview -->
+  <section class="ku-sec" id="overview">
+    <div class="ku-wrap">
+      <p class="ku-lede">Mobile GUI agents can now follow explicit instructions well. The harder question is whether an agent can act on your behalf <em>as if it truly understands you</em>.</p>
+      <div class="ku-cols2">
+        <p><strong>KnowU-Bench</strong> is an online, interactive benchmark for personalized and proactive mobile agents, built on a reproducible Android emulation environment. It evaluates three capabilities that existing benchmarks leave out: inferring user preferences from behavioral history, eliciting missing preferences through multi-turn interaction, and deciding when to intervene, seek consent, or remain silent.</p>
+        <p>The user profile is hidden from the agent; only timestamped behavioral logs are exposed. An LLM-driven user simulator grounded in structured personas answers clarifying questions and accepts or rejects proactive offers. The full proactive decision chain is scored with programmatic verification plus LLM-as-a-Judge.</p>
+      </div>
+      <figure class="ku-figure">
+        <img src="assets/intro.jpg" alt="Left: success rates of eleven models drop from clear to vague instructions. Right: key components of KnowU-Bench — user agent with multiple profiles, user interaction and LLM-as-judge; mobile environment with cross-app tasks, hybrid evaluation and a dynamic emulator; GUI agent with vague instructions and accessible history." width="960" height="351" loading="lazy">
+        <figcaption><b>Figure 1 (paper).</b> Left: model performance drops substantially from clear to vague instructions. Right: key components of KnowU-Bench.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================ method figure -->
+  <section class="ku-sec" id="method">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">How a task runs</h2>
+      <p class="ku-intro">One example per task family. The agent works on a live Android emulator; the user simulator holds the hidden profile; the evaluator checks the device state and, where preferences matter, asks an LLM judge.</p>
+    </div>
+
+    <div class="ku-wrap ku-wrap--wide">
+      <div class="ku-fig" data-ku-fig>
+        <div class="ku-fig__bar">
+          <div class="ku-tabs" role="tablist" aria-label="Task family">
+            <button class="ku-tab" role="tab" data-ku-tab="general" data-fam="gen"><span class="ku-tab__k">1</span>General<i class="ku-tab__prog"></i></button>
+            <button class="ku-tab" role="tab" data-ku-tab="personalized" data-fam="per"><span class="ku-tab__k">2</span>Personalized<i class="ku-tab__prog"></i></button>
+            <button class="ku-tab" role="tab" data-ku-tab="proactive" data-fam="pro"><span class="ku-tab__k">3</span>Proactive<i class="ku-tab__prog"></i></button>
+          </div>
+          <div class="ku-fig__ctl">
+            <div class="ku-persona-switch" data-ku-switch hidden>
+              <span>User:</span>
+              <button type="button" data-ku-who="researcher" aria-pressed="true">Researcher</button>
+              <button type="button" data-ku-who="developer" aria-pressed="false">Developer</button>
+            </div>
+            <button class="ku-play" type="button" data-ku-play aria-label="Pause">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="ku-play__pause" d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path class="ku-play__play" d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+            </button>
+            <button class="ku-replay" type="button" data-ku-replay>Replay</button>
+          </div>
+        </div>
+
+        <p class="ku-fig__cap" data-ku-cap aria-live="polite"></p>
+
+        <div class="ku-stage" data-ku-stage>
+          <div class="ku-col" data-col="agent">
+            <div class="ku-col__head"><span class="ku-col__ico">A</span>What the agent sees</div>
+            <div class="ku-col__body" data-ku-agent></div>
+          </div>
+          <div class="ku-col ku-col--phone" data-col="phone">
+            <div class="ku-col__head"><span class="ku-col__ico">P</span>Android emulator</div>
+            <div class="ku-dev" data-ku-dev>
+              <div class="ku-dev__screen">
+                <span class="ku-dev__cam" aria-hidden="true"></span>
+                <div class="ku-dev__status" aria-hidden="true">
+                  <span data-ku-clock>12:00</span>
+                  <span class="ku-dev__icons">
+                    <svg viewBox="0 0 16 16"><path d="M1.5 14.5h13v-13z"/></svg>
+                    <svg viewBox="0 0 16 16"><path d="M8 13.8 15.4 4.6A11.8 11.8 0 0 0 8 2 11.8 11.8 0 0 0 .6 4.6z"/></svg>
+                    <span>84%</span>
+                    <svg class="ku-dev__batt" viewBox="0 0 26 14"><rect x=".75" y=".75" width="21.5" height="12.5" rx="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="2.8" y="2.8" width="15.2" height="8.4" rx="1.6"/><path d="M23.8 4.6c1 .3 1.6 1.2 1.6 2.4s-.6 2.1-1.6 2.4z"/></svg>
+                  </span>
+                </div>
+                <div class="ku-dev__view" data-ku-screen></div>
+                <span class="ku-dev__gesture" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="ku-ticker" data-ku-ticker aria-live="off"></div>
+          </div>
+          <div class="ku-col" data-col="user">
+            <div class="ku-col__head"><span class="ku-col__ico">U</span>User simulator</div>
+            <div class="ku-col__body" data-ku-user></div>
+          </div>
+          <div class="ku-col ku-col--judge" data-col="judge">
+            <div class="ku-col__head"><span class="ku-col__ico">J</span>Evaluation</div>
+            <div class="ku-col__body" data-ku-judge></div>
+          </div>
+          <svg class="ku-wire" data-ku-wire aria-hidden="true"></svg>
+        </div>
+        <p class="ku-fig__note">Tasks, user profiles, log lines and scoring rules are taken from the released benchmark (BuyColaGeneralTask, BuyColaPreferenceTask, WeekendSleeperTask; the general instruction is translated from Chinese). Agent questions, user replies, screens and judge sub-scores are <b>illustrative</b>.</p>
+      </div>
+
+      <details class="ku-paperfig">
+        <summary>Paper figure: framework overview</summary>
+        <figure class="ku-figure">
+          <img src="assets/method.jpg" alt="KnowU-Bench framework: (a) environment with 23 apps, 192 tasks, 8 Android emulators and hybrid evaluation; (b) mobile agent with system prompt, vague instruction, user history and action space; (c) user agent with four roles, user profiles and user history." width="960" height="475" loading="lazy">
+          <figcaption><b>Figure 2 (paper).</b> A reproducible environment module, a GUI agent, an online user simulator grounded in profiles and logs, and a hybrid evaluation pipeline.</figcaption>
+        </figure>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================================================ families + evaluation -->
+  <section class="ku-sec" id="families">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">Three task families, one hybrid evaluator</h2>
+      <div class="ku-fams">
+        <article class="ku-fam ku-fam--gen">
+          <header><b>42</b><span>General</span></header>
+          <p>Explicit instructions that need no user-specific reasoning — a baseline for grounded GUI execution.</p>
+          <p class="ku-fam__ex">“Check my Mastodon timeline for a post related to AI or machine learning, and forward it to the ‘Town Square’ channel on Mattermost.”</p>
+        </article>
+        <article class="ku-fam ku-fam--per">
+          <header><b>86</b><span>Personalized</span></header>
+          <p>Ambiguous requests resolved against the hidden profile, either from the exposed logs or by asking the simulated user (<code>ask_user</code>).</p>
+          <p class="ku-fam__ex">“I am short on time at noon. Please order me a light lunch on a reasonable budget.”</p>
+        </article>
+        <article class="ku-fam ku-fam--pro">
+          <header><b>64</b><span>Proactive</span></header>
+          <p>No instruction at all: given time, place and device state, the agent executes, proposes and waits for consent, or stays silent. Each template runs for all four roles.</p>
+          <p class="ku-fam__ex">“Based on this context, decide whether to ask first, execute autonomously, or remain silent and continue monitoring.”</p>
+        </article>
+      </div>
+
+      <div class="ku-eval">
+        <div class="ku-eval__text">
+          <h3 class="ku-h3">Hybrid scoring</h3>
+          <p>A <b>rule-based judge</b> inspects verifiable state — recipients, created orders or events, alarm and setting values, time windows, and unsafe actions after a user rejection. A <b>rubric-conditioned LLM judge</b> scores semantic criteria such as preference alignment, trade-off quality, communication style and clarification quality.</p>
+          <p class="ku-formula"><i>S</i><sub>i</sub> = λ<sub>i</sub> · <i>S</i><sub>rule</sub> + (1 − λ<sub>i</sub>) · <i>S</i><sub>llm</sub></p>
+          <p>λ = 1 for fully deterministic tasks, 0 for purely semantic ones; for personalized tasks it follows the share of preference-dependent requirements. A task counts as a success when <i>S</i> &gt; 0.99. On 26 trajectories rated by four human experts, the hybrid judge tracks human scores more closely than the rule-only variant.</p>
+        </div>
+        <ul class="ku-metrics">
+          <li><b>SR</b><span>success rate, every split</span></li>
+          <li><b>Average score</b><span>partial preference alignment, personalized</span></li>
+          <li><b>IE</b><span>interaction efficiency: score per <code>ask_user</code> query</span></li>
+          <li><b>Act · Silent · Stop</b><span>intervene when warranted · refrain when not · cease after rejection</span></li>
+        </ul>
+      </div>
+
+      <figure class="ku-figure">
+        <img src="assets/pipeline.jpg" alt="KnowU-Bench pipeline: a task such as BuyColaPreferenceTask is dispatched by the worker to a mobile agent on Android emulators; the agent asks the user agent which cola to buy; hybrid evaluation combines rule-based checks and LLM-as-judge into a final score." width="960" height="369" loading="lazy">
+        <figcaption><b>Figure 6 (paper).</b> End-to-end pipeline: task initialization, agent interaction, user simulation and hybrid evaluation.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================ personas -->
+  <section class="ku-sec ku-sec--tint" id="personas">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">Four users, four right answers</h2>
+      <p class="ku-intro">Each profile is a YAML file with identity, locations, digital context, habits, preferences, decision criteria and a social graph. The agent never reads it — it gets the user's timestamped log (a clean version and one with about 25% injected noise), formatted as <code>[time] (location) action</code>.</p>
+      <div class="ku-personas">
+        <article class="ku-pcard">
+          <header>
+            <img alt="Hand-drawn portrait of the Researcher persona" class="ku-avatar ku-avatar--img" height="56" src="assets/personas/user.jpg" width="56" />
+            <div><h3>Researcher</h3><p>Aiden Lin, 34 · associate professor, AI lab director</p></div>
+            <code class="ku-pid">user</code>
+          </header>
+          <dl>
+            <dt>habits</dt><dd>reads AlphaXiv and HF Papers every morning; weekly report to the Dean; disables the 07:30 alarm on Friday nights</dd>
+            <dt>prefers</dt><dd>sugar-free Coca-Cola, no peanuts; Taodian with Alipay</dd>
+            <dt>style</dt><dd>direct and concise</dd>
+          </dl>
+        </article>
+        <article class="ku-pcard">
+          <header>
+            <img alt="Hand-drawn portrait of the Developer persona" class="ku-avatar ku-avatar--img" height="56" src="assets/personas/developer.jpg" width="56" />
+            <div><h3>Developer</h3><p>Kenji Sato, 30 · senior DevOps engineer / SRE</p></div>
+            <code class="ku-pid">developer</code>
+          </header>
+          <dl>
+            <dt>habits</dt><dd>acknowledges off-hours alerts at once; clock-out message to the team; Dark Mode late at night</dd>
+            <dt>prefers</dt><dd>quick, no-mess desk meals; Tuantuan for delivery</dd>
+            <dt>no routine</dt><dd>for weekend alarms or saving SMS contacts</dd>
+          </dl>
+        </article>
+        <article class="ku-pcard">
+          <header>
+            <img alt="Hand-drawn portrait of the Student persona" class="ku-avatar ku-avatar--img" height="56" src="assets/personas/student.jpg" width="56" />
+            <div><h3>Student</h3><p>Lucas Jensen, 19 · CS sophomore</p></div>
+            <code class="ku-pid">student</code>
+          </header>
+          <dl>
+            <dt>habits</dt><dd>disables the 07:30 class alarm on Friday nights; birthday SMS to Mom; mutes media when Bluetooth drops</dd>
+            <dt>prefers</dt><dd>regular full-sugar Coca-Cola — never diet; chilemei for its student coupons</dd>
+            <dt>style</dt><dd>casual, slang-heavy, Gen Z, lots of emoji</dd>
+          </dl>
+        </article>
+        <article class="ku-pcard">
+          <header>
+            <img alt="Hand-drawn portrait of the Grandma persona" class="ku-avatar ku-avatar--img" height="56" src="assets/personas/grandma.jpg" width="56" />
+            <div><h3>Grandma</h3><p>Wang Shulan, 68 · retired textile worker</p></div>
+            <code class="ku-pid">grandma</code>
+          </header>
+          <dl>
+            <dt>habits</dt><dd>checks Beijing weather each morning; blocks scam SMS after confirming; calls her son Qiang on Saturday evenings</dd>
+            <dt>prefers</dt><dd>lactose-free, low-sodium food; chilemei over Tuantuan</dd>
+            <dt>style</dt><dd>voice messages over typing</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="ku-callout">The same request can have different right answers. “Buy a case of my favorite cola” means sugar-free Coca-Cola for the researcher and full-sugar Coca-Cola for the student, and a Friday-night alarm should be switched off for one user but left alone for another. In the paper, Claude Sonnet 4.6 stays within <b>71.7–79.4%</b> average score across the four roles, while Seed 2.0 Pro ranges from <b>71.3%</b> (researcher) to <b>48.5%</b> (grandma). Grandma is the hardest role on average.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ leaderboard -->
+  <section class="ku-sec" id="leaderboard">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">Leaderboard</h2>
+      <p class="ku-intro">Success rate (%) on 42 general, 86 personalized and 64 proactive tasks, max 50 steps, full noisy user logs. Untick a family to re-rank on the remaining tasks — Overall then becomes the task-weighted average of the selected families. To submit results, <a href="mailto:chentongbo33@gmail.com">contact us</a>.</p>
+
+      <div class="ku-lb-filters">
+        <label class="ku-field">
+          <span>Model type</span>
+          <select data-ku-type>
+            <option value="all">All</option>
+            <option value="Agentic Framework">Agentic Framework</option>
+            <option value="End-to-End Model">End-to-End Model</option>
+          </select>
+        </label>
+        <fieldset class="ku-field ku-checks">
+          <legend>Task families</legend>
+          <label class="ku-check ku-check--gen"><input type="checkbox" data-ku-cat="general" checked><span>General</span></label>
+          <label class="ku-check ku-check--per"><input type="checkbox" data-ku-cat="personalized" checked><span>Personalized</span></label>
+          <label class="ku-check ku-check--pro"><input type="checkbox" data-ku-cat="proactive" checked><span>Proactive</span></label>
+        </fieldset>
+        <button class="ku-clear" type="button" data-ku-clear>Clear filters</button>
+      </div>
+
+      <div class="ku-lb-scroll">
+        <table class="ku-lb">
+          <thead>
+            <tr>
+              <th class="ku-lb__rank">Rank</th>
+              <th>Type</th>
+              <th>Model</th>
+              <th class="ku-sort" data-sort="overall" aria-sort="descending"><button type="button">Overall<i></i></button></th>
+              <th class="ku-sort ku-th--gen" data-sort="general"><button type="button">General<i></i></button></th>
+              <th class="ku-sort ku-th--per" data-sort="personalized"><button type="button">Personalized<i></i></button></th>
+              <th class="ku-sort ku-th--pro" data-sort="proactive"><button type="button">Proactive<i></i></button></th>
+            </tr>
+          </thead>
+          <tbody data-ku-lb><tr><td colspan="7" class="ku-lb__msg">Loading leaderboard…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="ku-small">Data: <a href="leaderboard.json">leaderboard.json</a>. The paper (Table 2) additionally reports MAI-UI-8B, GUI-Owl-1.5-8B and Qwen3.5-122B-A10B, with easy/hard splits and personalized average scores.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ findings -->
+  <section class="ku-sec ku-sec--tint" id="findings">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">What the benchmark shows</h2>
+      <p class="ku-lede ku-lede--sm">Agents that excel at explicit GUI execution degrade substantially once success depends on knowing the user or deciding whether to act at all.</p>
+
+      <div class="ku-finds">
+        <article class="ku-find">
+          <h3 class="ku-h3"><span class="ku-num">1</span>Execution is no longer the bottleneck</h3>
+          <p>MAI-UI-8B and Seed 2.0 Pro both reach <b>100.0%</b> on the easy general split, but strong models drop by about <b>30%</b> on average once success depends on personalization or proactivity. On the hard personalized split Claude Sonnet 4.6 reaches 44.2%; every open-source model stays below 12%. The best overall success rate is <b>60.4%</b> (Claude Sonnet 4.6).</p>
+        </article>
+
+        <article class="ku-find">
+          <h3 class="ku-h3"><span class="ku-num">2</span>Personalization fails at acquiring preferences</h3>
+          <p>Asking more is not asking better: Claude Sonnet 4.6 reaches a 44.2% success rate and 78.9% average score while asking only <b>0.4</b> questions per task; Seed 2.0 Pro asks about twice as many and still trails. Failure modes of Claude Sonnet 4.6 on personalized tasks:</p>
+          <div class="ku-bd" role="img" aria-label="Personalized failures: Clarify 66.7%, Partial 27.1%, GUI 4.2%, Preference 2.1%">
+            <div class="ku-bd__bar"><i style="flex:66.7" class="ku-s1"></i><i style="flex:27.1" class="ku-s2"></i><i style="flex:4.2" class="ku-s3"></i><i style="flex:2.1" class="ku-s4"></i></div>
+            <ul>
+              <li><i class="ku-s1"></i>Clarify — insufficient clarification <b>66.7%</b></li>
+              <li><i class="ku-s2"></i>Partial — some preferences missed <b>27.1%</b></li>
+              <li><i class="ku-s3"></i>GUI navigation <b>4.2%</b></li>
+              <li><i class="ku-s4"></i>Preference misidentified <b>2.1%</b></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ku-find">
+          <h3 class="ku-h3"><span class="ku-num">3</span>Proactivity fails at calibration</h3>
+          <p>No model is best at acting, staying silent and backing off at once. Claude Sonnet 4.6 has the best Act rate (<b>70.8%</b>); Qwen3.5-397B-A17B leads Silent (<b>73.7%</b>) and reaches 75.0% Stop but only 31.8% Act; Qwen3.5-122B-A10B has the best Stop (<b>83.3%</b>). Failure modes of Claude Sonnet 4.6 on proactive tasks:</p>
+          <div class="ku-bd ku-bd--pro" role="img" aria-label="Proactive failures: Intervention 60%, Passive 20%, GUI 15%, Rejection 5%">
+            <div class="ku-bd__bar"><i style="flex:60" class="ku-s1"></i><i style="flex:20" class="ku-s2"></i><i style="flex:15" class="ku-s3"></i><i style="flex:5" class="ku-s4"></i></div>
+            <ul>
+              <li><i class="ku-s1"></i>Intervention — acted without reason <b>60.0%</b></li>
+              <li><i class="ku-s2"></i>Passive — missed a warranted action <b>20.0%</b></li>
+              <li><i class="ku-s3"></i>GUI navigation <b>15.0%</b></li>
+              <li><i class="ku-s4"></i>Rejection — acted after a “no” <b>5.0%</b></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ku-find">
+          <h3 class="ku-h3"><span class="ku-num">4</span>How logs are surfaced matters</h3>
+          <p>Overall success rate on personalized and proactive tasks under four memory settings. The best interface depends on the model.</p>
+          <div class="ku-mini-scroll">
+            <table class="ku-mini">
+              <thead><tr><th rowspan="2">Model</th><th colspan="2">Full log</th><th colspan="2">RAG log</th></tr><tr><th>Clean</th><th>Noisy</th><th>Clean</th><th>Noisy</th></tr></thead>
+              <tbody>
+                <tr><td>MAI-UI-8B</td><td>11.1</td><td>13.6</td><td>12.3</td><td>9.3</td></tr>
+                <tr><td>Qwen3-VL-8B</td><td>13.6</td><td>17.2</td><td><b>20.4</b></td><td>19.8</td></tr>
+                <tr><td>UI-Venus-1.5-8B</td><td>15.6</td><td><b>20.3</b></td><td>13.7</td><td>19.6</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ comparison -->
+  <section class="ku-sec" id="compare">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">How it compares</h2>
+      <p class="ku-intro">GUI benchmarks test execution on explicit goals; personalization and proactive benchmarks mostly evaluate offline. KnowU-Bench is the only one in this comparison that covers vague instructions, proactive execution, user simulation, user logs and user modeling, with grounded GUI execution.</p>
+      <figure class="ku-figure">
+        <img src="assets/comparison.jpg" alt="Table comparing KnowU-Bench with AITW, AndroidControl, SPA-Bench, AndroidWorld, AndroidLab, AndroidDaily, MobileWorld, PersonalAlign, Me-Agent, ProactiveMobile, PIRA-Bench, Pare and FingerTip on five capability dimensions, evaluation method and task target." width="960" height="490" loading="lazy">
+        <figcaption><b>Table 1 (paper).</b> Comparison with existing GUI benchmarks and datasets.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================ quick start -->
+  <section class="ku-sec" id="start">
+    <div class="ku-wrap">
+      <h2 class="ku-h2">Quick start</h2>
+      <p class="ku-intro">Needs a Linux host with Docker and KVM, Python 3.12 and <code>uv</code>. The default environment image is <a href="https://github.com/users/yaosqz/packages/container/package/knowu-bench"><code>ghcr.io/yaosqz/knowu-bench:latest</code></a>.</p>
+      <div class="ku-qsteps">
+        <div class="ku-qstep">
+          <h3 class="ku-h3">1 · Install</h3>
+<pre class="ku-code"><code>git clone https://github.com/ZJU-REAL/KnowU-Bench.git
+cd KnowU-Bench
+uv sync
+cp .env.example .env    <span class="ku-c"># API_KEY, USER_AGENT_* for the simulator</span>
+docker pull ghcr.io/yaosqz/knowu-bench:latest</code></pre>
+        </div>
+        <div class="ku-qstep">
+          <h3 class="ku-h3">2 · Launch environments</h3>
+<pre class="ku-code"><code>uv run mw env check
+uv run mw env run --count 4 --launch-interval 15
+uv run mw info task --no-pager</code></pre>
+        </div>
+        <div class="ku-qstep ku-qstep--wide">
+          <h3 class="ku-h3">3 · Evaluate and inspect</h3>
+<pre class="ku-code"><code>uv run mw eval \
+  --agent-type qwen3.5 --task ALL \
+  --task-tags routine,preference,general \
+  --model-name your-model-name \
+  --llm-base-url https://your-openai-compatible-endpoint/v1 \
+  --api-key "$API_KEY" --max-round 50 --max-concurrency 4 \
+  --log-file-root traj_logs/my_run --enable-user-interaction
+
+uv run mw logs view --log-dir traj_logs/my_run</code></pre>
+          <p class="ku-small">The CLI uses the code-level tags <code>general</code>, <code>preference</code> (personalized) and <code>routine</code> (proactive). Add <code>--user student</code> to restrict to one persona, <code>--user-log-mode rag</code> for retrieved log snippets, or <code>--user-log-source noise</code> for noisy histories. Built-in agents include <code>qwen3.5</code>, <code>qwen3vl</code>, <code>gui_owl_1_5</code>, <code>mai_ui_agent</code>, <code>ui_venus_agent</code>, <code>seed_agent</code> and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ related -->
+  <section class="ku-sec" id="related">
+    <div class="ku-wrap">
+      <article class="ku-related">
+        <p class="ku-related__k">Related benchmark</p>
+        <h2 class="ku-related__t">MemU-Bench: Benchmarking GUI Agents on Long-Horizon User Interactions</h2>
+        <p>MemU-Bench tests whether GUI agents can resolve vague, history-dependent instructions by recalling a user's long-horizon interaction history. It complements KnowU-Bench: MemU-Bench asks whether an agent <em>remembers</em> what the user did, KnowU-Bench whether it <em>knows</em> the user — preferences, clarification and proactivity.</p>
+        <div class="ku-related__links">
+          <a class="ku-btn" href="https://zjureal.com/MemU-Bench/" target="_blank" rel="noopener">Page</a>
+          <a class="ku-btn" href="https://arxiv.org/abs/2611.00191" target="_blank" rel="noopener">Paper</a>
+          <a class="ku-btn" href="https://github.com/ZJU-REAL/MemU-Bench" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================ cite -->
+  <section class="ku-sec" id="cite">
+    <div class="ku-wrap">
+      <div class="ku-cite__head">
+        <h2 class="ku-h2">BibTeX</h2>
+        <button class="ku-copy" type="button" data-ku-copy="ku-bib-knowu">Copy</button>
+      </div>
+<pre class="ku-bib" id="ku-bib-knowu">@misc{chen2026knowubench,
       title={KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation},
       author={Tongbo Chen and Zhengxi Lu and Zhan Xu and Guocheng Shao and Shaohan Zhao and Fei Tang and Yong Du and Kaitao Song and Yizhou Liu and Yuchen Yan and Wenqi Zhang and Xu Tan and Weiming Lu and Jun Xiao and Yueting Zhuang and Yongliang Shen},
       year={2026},
@@ -79,870 +522,25 @@
       archivePrefix={arXiv},
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2604.08455},
-}</code></pre>
-                                        <button class="button is-small is-fullwidth mt-2" id="copy-cite-btn">
-                                            <span class="icon"><i class="fas fa-copy"></i></span>
-                                            <span>Copy to Clipboard</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-2 publication-title">
-                            KnowU-Bench: Towards Interactive, Proactive,
-                            and Personalized Mobile Agent Evaluation
-                        </h1>
-
-                        <div class="is-size-5 publication-authors">
-                            <span class="author-block">Tongbo Chen<sup>1,*</sup>,</span>
-                            <span class="author-block">Zhengxi Lu<sup>1,*</sup>,</span>
-                            <span class="author-block">Zhan Xu<sup>1,*</sup>,</span>
-                            <span class="author-block">Guocheng Shao<sup>1,*</sup>,</span>
-                            <span class="author-block">Shaohan Zhao<sup>1,*</sup>,</span>
-                            <span class="author-block">Fei Tang<sup>1</sup>,</span>
-                            <span class="author-block">Yong Du<sup>1</sup>,</span>
-                            <span class="author-block">Kaitao Song<sup>2</sup>,</span>
-                            <span class="author-block">Yizhou Liu<sup>1</sup>,</span>
-                            <span class="author-block">Yuchen Yan<sup>1</sup>,</span>
-                            <span class="author-block">Wenqi Zhang<sup>1</sup>,</span>
-                            <span class="author-block">Xu Tan<sup>3</sup>,</span>
-                            <span class="author-block">Weiming Lu<sup>1</sup>,</span>
-                            <span class="author-block">Jun Xiao<sup>1</sup>,</span>
-                            <span class="author-block">Yueting Zhuang<sup>1</sup>,</span>
-                            <span class="author-block">Yongliang Shen<sup>1,&dagger;</sup></span>
-                        </div>
-
-                        <div class="is-size-6 publication-authors">
-                            <span class="author-block"><sup>1</sup>Zhejiang University</span>
-                            <span class="author-block"><sup>2</sup>Apple</span>
-                            <span class="author-block"><sup>3</sup>Tencent</span>
-                            <br>
-                            <span class="author-block"><sup>*</sup>Equal Contribution</span>
-                            <span class="author-block"><sup>&dagger;</sup>Corresponding authors</span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="column is-full">
-                    <div class="banner">
-                        <img src="assets/knowu_bench_intro.png" alt="KnowU-Bench overview and difficulty comparison">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <main class="container is-max-desktop">
-        <!-- Leaderboard -->
-        <section id="leaderboard" class="section">
-            <h2 class="title is-3 has-text-centered">Leaderboard</h2>
-            <div class="content has-text-justified">
-                <p>Success rate (%) on KnowU-Bench across 42 general, 86 personalized, and 64 proactive tasks. All results use max steps = 50. Higher is better. Please <a href="mailto:chentongbo33@gmail.com"><strong>contact us</strong></a> to submit your results.</p>
-            </div>
-
-            <!-- Filters -->
-            <div class="box leaderboard-filters">
-                <div class="columns is-mobile is-multiline is-vcentered is-variable is-3">
-                    <!-- <div class="column is-narrow">
-                        <span class="has-text-weight-semibold">Filters:</span>
-                    </div> -->
-                    <div class="column is-narrow">
-                        <div class="field">
-                            <label class="label is-small">Model Type:</label>
-                            <div class="control">
-                                <div class="select">
-                                    <select id="filter-model-type">
-                                        <option value="all">All</option>
-                                        <option value="Agentic Framework">Agentic Framework</option>
-                                        <option value="End-to-End Model">End-to-End Model</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-narrow">
-                        <div class="field">
-                            <label class="label is-small">Task Categories:</label>
-                            <div class="control">
-                                <label class="checkbox mr-3">
-                                    <input type="checkbox" id="filter-general" checked>
-                                    General
-                                </label>
-                                <label class="checkbox mr-3">
-                                    <input type="checkbox" id="filter-personalized" checked>
-                                    Personalized
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="filter-proactive" checked>
-                                    Proactive
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Max Steps filter hidden - currently all results use max steps = 50
-                    <div class="column is-narrow">
-                        <div class="field">
-                            <label class="label is-small">Max Steps:</label>
-                            <div class="control">
-                                <div class="select">
-                                    <select id="filter-steps">
-                                        <option value="all">All</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                    <div class="column is-narrow">
-                        <div class="field">
-                            <label class="label is-small">&nbsp;</label>
-                            <div class="control">
-                                <button class="button is-light" id="clear-filters">
-                                    Clear Filters
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Leaderboard Table -->
-            <div class="table-container osworld-table-container">
-                <table class="table is-fullwidth is-hoverable osworld-leaderboard-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 60px;">Rank</th>
-                            <th style="width: 100px;">Category</th>
-                            <th style="width: 150px;">Model</th>
-                            <!-- <th style="width: 80px;" class="has-text-centered">Max Steps</th> -->
-                            <th id="th-overall" style="width: 100px;" class="has-text-centered sortable-header"
-                                data-sort="overall">
-                                Overall <i class="fas fa-sort sort-icon"></i>
-                            </th>
-                            <th id="th-general" style="width: 100px;" class="has-text-centered sortable-header"
-                                data-sort="general">
-                                General <i class="fas fa-sort sort-icon"></i>
-                            </th>
-                            <th id="th-personalized" style="width: 100px;" class="has-text-centered sortable-header"
-                                data-sort="personalized">
-                                Personalized <i class="fas fa-sort sort-icon"></i>
-                            </th>
-                            <th id="th-proactive" style="width: 100px;" class="has-text-centered sortable-header"
-                                data-sort="proactive">
-                                Proactive <i class="fas fa-sort sort-icon"></i>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="leaderboard-body">
-                        <!-- Loaded from leaderboard.json -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Overview -->
-        <section id="overview" class="section">
-            <h2 class="title is-3">Overview</h2>
-
-            <div class="content has-text-justified">
-                <p>Personalized mobile agents that infer user preferences and calibrate proactive assistance hold great
-                promise as everyday digital assistants, yet existing benchmarks fail to evaluate what this actually
-                requires. Prior work evaluates preference recovery from static histories or intent prediction from
-                fixed contexts — neither tests whether an agent can elicit missing preferences through interaction,
-                nor whether it can decide when to intervene, seek consent, or remain silent in a live GUI environment.</p>
-
-                <p><strong>KnowU-Bench</strong> is an online, interactive benchmark for personalized mobile agents built
-                on a reproducible Android emulation environment, covering <strong>192 tasks</strong> across
-                <strong>23 apps</strong>: 42 general, 86 personalized, and 64 proactive. Unlike prior work that
-                treats user preferences as static context, KnowU-Bench hides the user profile from the agent and
-                exposes only behavioral logs, forcing genuine preference inference rather than context lookup. An
-                LLM-driven user simulator grounded in structured profiles supports multi-turn clarification and
-                proactive consent handling. Evaluation covers the complete proactive decision chain through a hybrid
-                protocol combining programmatic verification with LLM-as-Judge scoring.</p>
-
-                <p>Our evaluation reveals that agents excelling at explicit GUI execution degrade substantially once
-                success depends on knowing the user or deciding whether to act at all. The core bottlenecks are not
-                GUI navigation but <strong>preference acquisition</strong> and <strong>intervention
-                calibration</strong> — exposing a fundamental gap between competent interface operation and
-                trustworthy personal assistance.</p>
-            </div>
-
-        </section>
-
-        <!-- Evaluation Pipeline -->
-        <section class="section">
-            <h2 class="title is-4">Evaluation Pipeline</h2>
-            <div class="content has-text-justified">
-                <p>KnowU-Bench orchestrates evaluation through a multi-stage pipeline. Each <strong>task</strong> is dispatched to a <strong>worker</strong> that manages parallelism and assigns it to a <strong>mobile agent</strong> running on Android emulators (AVDs). During execution, the agent interacts with a profile-grounded <strong>user agent</strong> to resolve ambiguous preferences through clarifying dialogue. Finally, a <strong>hybrid evaluator</strong> combines rule-based state checks with LLM-as-Judge semantic scoring to produce the final result.</p>
-            </div>
-
-            <figure class="image mt-4">
-                <img src="assets/knowu_bench_pipeline.png"
-                    alt="KnowU-Bench evaluation pipeline: task dispatch, mobile agent execution, user agent interaction, and hybrid evaluation">
-                <figcaption class="has-text-centered mt-2" style="font-size: 0.9rem; color: #666;">
-                    <strong>Figure:</strong> End-to-end evaluation pipeline of KnowU-Bench.
-                </figcaption>
-            </figure>
-        </section>
-
-        <!-- Benchmark Comparison -->
-        <section class="section">
-            <h2 class="title is-4">Benchmark Comparison</h2>
-            <div class="content has-text-justified">
-                <p>Most prior benchmarks focus on either GUI execution or offline personalization. KnowU-Bench
-                    combines both in a live, reproducible mobile environment.</p>
-
-                <p>It is the only benchmark here that jointly covers vague instructions, proactive execution, user
-                    simulation, user logs, and user modeling for <strong>personalized and proactive GUI
-                        execution</strong>.</p>
-            </div>
-
-            <figure class="image mt-4">
-                <img src="assets/knowu_bench_benchmark_comparison.png"
-                    alt="Comparison of KnowU-Bench with GUI execution and personalization benchmarks across five capability dimensions">
-                <figcaption class="has-text-centered mt-2" style="font-size: 0.9rem; color: #666;">
-                    <strong>Figure:</strong> KnowU-Bench is the only benchmark in this comparison that covers
-                    all five capability dimensions.
-                </figcaption>
-            </figure>
-        </section>
-
-        <!-- Task Categories -->
-        <section class="section">
-            <h2 class="title is-4">Task Categories</h2>
-
-            <div class="content has-text-justified">
-                <p>KnowU-Bench contains <strong>192 tasks</strong> across three categories. The donut chart
-                    summarizes the benchmark composition, while the cards explain what each split is designed to test.
-                </p>
-            </div>
-
-            <div class="task-chart-wrap">
-                <div class="task-chart-canvas-box">
-                    <canvas id="task-category-chart"
-                        aria-label="Donut chart showing the task category distribution in KnowU-Bench"></canvas>
-                    <div class="task-chart-center">
-                        <div class="task-chart-center-num" id="task-chart-center-num">192</div>
-                        <div class="task-chart-center-label" id="task-chart-center-label">Total Tasks</div>
-                        <div class="task-chart-center-meta" id="task-chart-center-meta">42 General · 86 Personalized ·
-                            64 Proactive</div>
-                    </div>
-                </div>
-                <div class="task-chart-legend" id="task-chart-legend"></div>
-            </div>
-        </section>
-
-        <!-- Insights -->
-        <section class="section">
-            <h2 class="title is-4">Key Insights</h2>
-
-            <div class="content has-text-justified">
-                <p>We summarize the main experimental takeaways as a set of research-question-style findings, following
-                    the presentation style of benchmark analysis pages while grounding the content in the paper results.
-                </p>
-            </div>
-
-            <div class="insights-grid">
-                <article class="insight-card insight-card-cyan">
-                    <p class="insight-rq">RQ1</p>
-                    <h3 class="insight-title">How much harder are personalized and proactive tasks?</h3>
-                        <ul class="insight-points">
-                            <li><span class="insight-highlight">General execution is no longer the bottleneck.</span>
-                                MAI-UI-8B and Seed 2.0 Pro both reach <span class="insight-metric">100.0%</span> on
-                                general tasks, confirming that following explicit instructions is a solved problem for
-                                strong models.</li>
-                            <li>Performance drops sharply once agents must infer preferences or calibrate proactive
-                                initiative. Claude Sonnet 4.6 achieves the best overall success rate at
-                                <span class="insight-metric">60.4%</span>, while all open-source models remain below
-                                <span class="insight-metric">12%</span> on the hard personalized split.</li>
-                            <li>The average score on personalized tasks is consistently much higher than strict success
-                                rate, indicating that agents can partially align with user preferences yet still fail to
-                                compose them into fully correct end-to-end behavior.</li>
-                        </ul>
-                </article>
-
-                <article class="insight-card insight-card-pink">
-                    <p class="insight-rq">RQ2</p>
-                    <h3 class="insight-title">Does asking more questions improve personalization?</h3>
-                        <ul class="insight-points">
-                            <li><span class="insight-highlight">Asking more is not the same as asking better.</span>
-                                The real bottleneck is converting user feedback into correct downstream actions,
-                                not the quantity of clarification queries.</li>
-                            <li>Claude Sonnet 4.6 reaches <span class="insight-metric">44.2%</span> success rate and
-                                <span class="insight-metric">78.9%</span> average score while asking only
-                                <span class="insight-metric">0.4</span> questions per task on average — the most
-                                efficient profile among all evaluated models.</li>
-                            <li>Seed 2.0 Pro asks roughly twice as many questions yet still trails behind.
-                                Similarly, two Qwen models with near-identical query rates achieve noticeably
-                                different scores, confirming that interaction quality dominates over quantity.</li>
-                        </ul>
-                </article>
-
-                <article class="insight-card insight-card-amber">
-                    <p class="insight-rq">RQ3</p>
-                    <h3 class="insight-title">What makes proactive service difficult?</h3>
-                        <ul class="insight-points">
-                            <li><span class="insight-highlight">Proactivity is a calibration problem, not an
-                                execution problem.</span> A deployable assistant must know when to act, when to
-                                ask, and when to stay silent — and no single model excels at all three.</li>
-                            <li>Claude Sonnet 4.6 is the most balanced, achieving the best Act score at
-                                <span class="insight-metric">70.8%</span> while remaining competitive on
-                                Silent and Stop.</li>
-                            <li>Qwen3.5-397B-A17B leads on Silent at <span class="insight-metric">73.7%</span>
-                                and Stop at <span class="insight-metric">75.0%</span>, but falls to
-                                <span class="insight-metric">31.8%</span> on Act — showing that restraint
-                                and initiative are not jointly optimized by current models.</li>
-                        </ul>
-                </article>
-
-                <article class="insight-card insight-card-purple">
-                    <p class="insight-rq">RQ4</p>
-                    <h3 class="insight-title">Where do current agents fail?</h3>
-                        <ul class="insight-points">
-                            <li><span class="insight-highlight">Personalized and proactive tasks fail for
-                                fundamentally different reasons.</span> Improving one setting does not
-                                automatically transfer to the other.</li>
-                            <li>On personalized tasks, Clarify errors dominate at
-                                <span class="insight-metric">66.7%</span> — agents commit to decisions
-                                without asking the right follow-up questions. Partial failures add another
-                                <span class="insight-metric">27.1%</span>, showing that even correct
-                                preference identification often fails at multi-constraint composition.</li>
-                            <li>On proactive tasks, Intervention errors account for
-                                <span class="insight-metric">60.0%</span> and Passive errors for
-                                <span class="insight-metric">20.0%</span> — agents are more prone to
-                                unwarranted action than to missing warranted ones, making initiative
-                                over-trigger the dominant failure mode.</li>
-                        </ul>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- System Architecture -->
-        <section class="section">
-            <h2 class="title is-4">Environment And User Modeling</h2>
-
-            <div class="content has-text-justified">
-                <p>KnowU-Bench couples a reproducible Android environment, a GUI agent, an online user
-                    simulator grounded in profiles and logs, and a hybrid evaluation pipeline.</p>
-            </div>
-
-            <figure class="image">
-                <img src="assets/knowu_bench_environment.png" alt="KnowU-Bench environment, mobile agent, and user agent overview">
-            </figure>
-        </section>
-
-        <!-- Acknowledgements -->
-        <section class="section">
-            <h2 class="title is-3">Acknowledgements</h2>
-            <div class="content has-text-justified">
-                <p>We thank <a href="https://github.com/Tongyi-MAI/MobileWorld">MobileWorld</a> for providing the
-                    original environment and benchmark foundation.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>KnowU-Bench Team</strong> &middot;
-                <a href="https://github.com/ZJU-REAL/KnowU-Bench">GitHub</a> &middot;
-                <a href="https://github.com/ZJU-REAL/KnowU-Bench/issues">Issues</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize syntax highlighting
-        hljs.highlightAll();
-
-        // Navbar burger toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const $navbarBurger = document.getElementById('navbar-burger');
-            const $navbarMenu = document.getElementById('navbar-menu');
-
-            if ($navbarBurger) {
-                $navbarBurger.addEventListener('click', () => {
-                    $navbarBurger.classList.toggle('is-active');
-                    $navbarMenu.classList.toggle('is-active');
-                });
-            }
-        });
-
-        // Copy code function
-        function copyCode(btn) {
-            const code = btn.parentElement.querySelector('code').textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<span class="icon is-small"><i class="fas fa-check"></i></span><span>Copied!</span>';
-                btn.classList.add('is-success');
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.classList.remove('is-success');
-                }, 2000);
-            });
-        }
-
-        // Copy cite button
-        document.addEventListener('DOMContentLoaded', () => {
-            const copyCiteBtn = document.getElementById('copy-cite-btn');
-            if (copyCiteBtn) {
-                copyCiteBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const bibtex = copyCiteBtn.closest('.dropdown-item').querySelector('code').textContent;
-                    navigator.clipboard.writeText(bibtex).then(() => {
-                        const originalHTML = copyCiteBtn.innerHTML;
-                        copyCiteBtn.innerHTML = '<span class="icon"><i class="fas fa-check"></i></span><span>Copied!</span>';
-                        copyCiteBtn.classList.add('is-success');
-                        setTimeout(() => {
-                            copyCiteBtn.innerHTML = originalHTML;
-                            copyCiteBtn.classList.remove('is-success');
-                        }, 2000);
-                    });
-                });
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const chartCanvas = document.getElementById('task-category-chart');
-            const legendContainer = document.getElementById('task-chart-legend');
-            const centerNum = document.getElementById('task-chart-center-num');
-            const centerLabel = document.getElementById('task-chart-center-label');
-            const centerMeta = document.getElementById('task-chart-center-meta');
-
-            if (!chartCanvas || !legendContainer || typeof Chart === 'undefined') {
-                return;
-            }
-
-            const taskCategories = [
-                {
-                    label: 'General',
-                    value: 42,
-                    color: '#06b6d4',
-                    summary: '21.9% of benchmark',
-                    description: 'Fully specified GUI tasks that measure grounded execution without preference ambiguity.'
-                },
-                {
-                    label: 'Personalized',
-                    value: 86,
-                    color: '#ec4899',
-                    summary: '44.8% of benchmark',
-                    description: 'Ambiguous tasks that require preference inference, clarification, and multi-turn interaction.'
-                },
-                {
-                    label: 'Proactive',
-                    value: 64,
-                    color: '#f59e0b',
-                    summary: '33.3% of benchmark',
-                    description: 'Tasks that test whether the agent should act, ask, or remain silent on its own.'
-                }
-            ];
-
-            const totalTasks = taskCategories.reduce((sum, item) => sum + item.value, 0);
-            let selectedIndex = null;
-
-            function updateCenter(index = null) {
-                if (index === null) {
-                    centerNum.textContent = String(totalTasks);
-                    centerLabel.textContent = 'Total Tasks';
-                    centerMeta.textContent = taskCategories.map(item => `${item.value} ${item.label}`).join(' · ');
-                } else {
-                    const item = taskCategories[index];
-                    centerNum.textContent = String(item.value);
-                    centerLabel.textContent = item.label;
-                    centerMeta.textContent = `${item.summary} · ${item.description}`;
-                }
-
-                legendContainer.querySelectorAll('.task-legend-item').forEach(button => {
-                    const isActive = Number(button.dataset.index) === index;
-                    button.classList.toggle('is-active', isActive);
-                    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                });
-            }
-
-            function toggleSelection(index) {
-                selectedIndex = selectedIndex === index ? null : index;
-                chart.update();
-                updateCenter(selectedIndex);
-            }
-
-            legendContainer.innerHTML = taskCategories.map((item, index) => `
-                <button class="task-legend-item" type="button" data-index="${index}" aria-pressed="false">
-                    <span class="task-legend-top">
-                        <span class="task-legend-badge">
-                            <span class="task-legend-dot" style="background:${item.color};"></span>
-                            <span class="task-legend-name">${item.label}</span>
-                        </span>
-                        <span class="task-legend-value">${item.value}</span>
-                    </span>
-                    <span class="task-legend-share">${item.summary}</span>
-                    <span class="task-legend-desc">${item.description}</span>
-                </button>
-            `).join('');
-
-            legendContainer.querySelectorAll('.task-legend-item').forEach(button => {
-                button.addEventListener('click', () => {
-                    toggleSelection(Number(button.dataset.index));
-                });
-
-                button.addEventListener('mouseenter', () => {
-                    if (selectedIndex === null) {
-                        updateCenter(Number(button.dataset.index));
-                    }
-                });
-
-                button.addEventListener('mouseleave', () => {
-                    if (selectedIndex === null) {
-                        updateCenter(null);
-                    }
-                });
-            });
-
-            const chart = new Chart(chartCanvas, {
-                type: 'doughnut',
-                data: {
-                    labels: taskCategories.map(item => item.label),
-                    datasets: [{
-                        data: taskCategories.map(item => item.value),
-                        backgroundColor: taskCategories.map(item => item.color),
-                        borderColor: 'transparent',
-                        borderWidth: 0,
-                        hoverBorderWidth: 0,
-                        offset(context) {
-                            return selectedIndex === context.dataIndex ? 14 : 0;
-                        }
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '64%',
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label(context) {
-                                    const value = context.parsed;
-                                    const share = ((value / totalTasks) * 100).toFixed(1);
-                                    return `${context.label}: ${value} tasks (${share}%)`;
-                                }
-                            }
-                        }
-                    },
-                    onHover(event, elements, chartInstance) {
-                        chartInstance.canvas.style.cursor = elements.length ? 'pointer' : 'default';
-                        if (selectedIndex !== null) {
-                            return;
-                        }
-                        updateCenter(elements.length ? elements[0].index : null);
-                    }
-                }
-            });
-
-            chartCanvas.addEventListener('mouseleave', () => {
-                if (selectedIndex === null) {
-                    updateCenter(null);
-                }
-            });
-
-            chartCanvas.addEventListener('click', (event) => {
-                const activePoints = chart.getElementsAtEventForMode(
-                    event,
-                    'nearest',
-                    { intersect: true },
-                    true
-                );
-
-                if (!activePoints.length) {
-                    selectedIndex = null;
-                    chart.update();
-                    updateCenter(null);
-                    return;
-                }
-
-                toggleSelection(activePoints[0].index);
-            });
-
-            updateCenter(null);
-        });
-
-        // Leaderboard functionality
-        document.addEventListener('DOMContentLoaded', async function () {
-            const tbody = document.getElementById('leaderboard-body');
-            const filterModelType = document.getElementById('filter-model-type');
-            // const filterSteps = document.getElementById('filter-steps');  // Max Steps filter hidden
-            const filterGeneral = document.getElementById('filter-general');
-            const filterPersonalized = document.getElementById('filter-personalized');
-            const filterProactive = document.getElementById('filter-proactive');
-            const clearFiltersBtn = document.getElementById('clear-filters');
-
-            let leaderboardData = [];
-            let filteredData = [];
-            let currentSort = { key: 'overall', dir: 'desc' };
-
-            // Load data from JSON
-            try {
-                const response = await fetch('leaderboard.json');
-                const data = await response.json();
-                leaderboardData = data.results;
-                filteredData = [...leaderboardData];
-                updateCheckboxStates();
-                renderTable();
-            } catch (error) {
-                tbody.innerHTML = '<tr><td colspan="7" class="has-text-centered">Failed to load leaderboard data.</td></tr>';
-                console.error('Error loading leaderboard:', error);
-            }
-
-            // Sortable header click handler
-            document.querySelectorAll('.sortable-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const sortKey = header.dataset.sort;
-                    if (currentSort.key === sortKey) {
-                        currentSort.dir = currentSort.dir === 'desc' ? 'asc' : 'desc';
-                    } else {
-                        currentSort.key = sortKey;
-                        currentSort.dir = 'desc';
-                    }
-                    updateSortIcons();
-                    renderTable();
-                });
-            });
-
-            function updateSortIcons() {
-                document.querySelectorAll('.sortable-header').forEach(header => {
-                    const icon = header.querySelector('.sort-icon');
-                    if (header.dataset.sort === currentSort.key) {
-                        icon.className = currentSort.dir === 'desc' ? 'fas fa-sort-down sort-icon active' : 'fas fa-sort-up sort-icon active';
-                    } else {
-                        icon.className = 'fas fa-sort sort-icon';
-                    }
-                });
-            }
-
-            // Filter handlers
-            filterModelType.addEventListener('change', applyFilters);
-            // filterSteps.addEventListener('change', applyFilters);  // Max Steps filter hidden
-            filterGeneral.addEventListener('change', handleCategoryChange);
-            filterPersonalized.addEventListener('change', handleCategoryChange);
-            filterProactive.addEventListener('change', handleCategoryChange);
-            clearFiltersBtn.addEventListener('click', () => {
-                filterModelType.value = 'all';
-                // filterSteps.value = 'all';  // Max Steps filter hidden
-                filterGeneral.checked = true;
-                filterPersonalized.checked = true;
-                filterProactive.checked = true;
-                currentSort = { key: 'overall', dir: 'desc' };
-                updateSortIcons();
-                updateCheckboxStates();
-                applyFilters();
-            });
-
-            // Handle category checkbox changes
-            function handleCategoryChange() {
-                updateCheckboxStates();
-                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
-
-                // Reset sort to overall if current sort column is being hidden
-                if ((currentSort.key === 'general' && !filterGeneral.checked) ||
-                    (currentSort.key === 'personalized' && !filterPersonalized.checked) ||
-                    (currentSort.key === 'proactive' && !filterProactive.checked)) {
-                    currentSort = { key: 'overall', dir: 'desc' };
-                    updateSortIcons();
-                }
-                // If only one category selected, switch to that category
-                if (checkedCount === 1) {
-                    if (filterGeneral.checked) currentSort.key = 'general';
-                    else if (filterPersonalized.checked) currentSort.key = 'personalized';
-                    else if (filterProactive.checked) currentSort.key = 'proactive';
-                    updateSortIcons();
-                }
-                // If multiple categories selected and currently sorting by a single category column, switch to overall
-                if (checkedCount > 1 && ['general', 'personalized', 'proactive'].includes(currentSort.key)) {
-                    currentSort = { key: 'overall', dir: 'desc' };
-                    updateSortIcons();
-                }
-                applyFilters();
-            }
-
-            // Update checkbox disabled states - prevent deselecting last one
-            function updateCheckboxStates() {
-                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
-
-                // If only one is checked, disable it to prevent unchecking
-                filterGeneral.disabled = checkedCount === 1 && filterGeneral.checked;
-                filterPersonalized.disabled = checkedCount === 1 && filterPersonalized.checked;
-                filterProactive.disabled = checkedCount === 1 && filterProactive.checked;
-            }
-
-            // Update column visibility in table header
-            function updateColumnVisibility() {
-                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
-                const showOverall = checkedCount > 1;
-
-                document.getElementById('th-overall').style.display = showOverall ? '' : 'none';
-                document.getElementById('th-general').style.display = filterGeneral.checked ? '' : 'none';
-                document.getElementById('th-personalized').style.display = filterPersonalized.checked ? '' : 'none';
-                document.getElementById('th-proactive').style.display = filterProactive.checked ? '' : 'none';
-            }
-
-            // Calculate filtered score based on selected task categories
-            function getFilteredScore(row) {
-                const columns = [
-                    { enabled: filterGeneral.checked, score: row.general, tasks: row.general_tasks },
-                    { enabled: filterPersonalized.checked, score: row.personalized, tasks: row.personalized_tasks },
-                    { enabled: filterProactive.checked, score: row.proactive, tasks: row.proactive_tasks }
-                ];
-
-                let weightedScore = 0;
-                let totalTasks = 0;
-                columns.forEach(({ enabled, score, tasks }) => {
-                    if (!enabled || score === null || tasks === null || tasks === 0) return;
-                    weightedScore += score * tasks;
-                    totalTasks += tasks;
-                });
-
-                if (totalTasks === 0) return null;
-                return weightedScore / totalTasks;
-            }
-
-            // Check if all category filters are selected
-            function allCategoriesSelected() {
-                return filterGeneral.checked && filterPersonalized.checked && filterProactive.checked;
-            }
-
-            function applyFilters() {
-                const includeGui = filterGeneral.checked;
-                const includeUser = filterPersonalized.checked;
-                const includeMcp = filterProactive.checked;
-
-                filteredData = leaderboardData.filter(row => {
-                    const modelTypeMatch = filterModelType.value === 'all' || row.model_type === filterModelType.value;
-                    // const stepsMatch = filterSteps.value === 'all' || row.max_steps === parseInt(filterSteps.value);  // Max Steps filter hidden
-
-                    // Filter out rows that have no data for any selected category
-                    const hasSelectedData =
-                        (includeGui && row.general !== null) ||
-                        (includeUser && row.personalized !== null) ||
-                        (includeMcp && row.proactive !== null);
-
-                    return modelTypeMatch && hasSelectedData;  // && stepsMatch
-                });
-                renderTable();
-            }
-
-            function formatDate(dateStr) {
-                const date = new Date(dateStr);
-                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-            }
-
-            function formatScore(value) {
-                return value !== null ? Number(value).toFixed(1) : '-';
-            }
-
-            function renderTable() {
-                const useFilteredScore = !allCategoriesSelected();
-                const checkedCount = [filterGeneral.checked, filterPersonalized.checked, filterProactive.checked].filter(Boolean).length;
-                const showOverall = checkedCount > 1;
-
-                // Update column visibility in header
-                updateColumnVisibility();
-
-                // Sort data
-                const sorted = [...filteredData].sort((a, b) => {
-                    let aVal, bVal;
-                    if (currentSort.key === 'date') {
-                        aVal = new Date(a.date).getTime();
-                        bVal = new Date(b.date).getTime();
-                    } else if (currentSort.key === 'overall' && useFilteredScore) {
-                        // When sorting by overall with filtered categories, use filtered score
-                        aVal = getFilteredScore(a) ?? -1;
-                        bVal = getFilteredScore(b) ?? -1;
-                    } else {
-                        // Handle numeric score columns: overall, general, personalized, proactive
-                        aVal = a[currentSort.key] ?? -1;
-                        bVal = b[currentSort.key] ?? -1;
-                    }
-                    return currentSort.dir === 'desc' ? bVal - aVal : aVal - bVal;
-                });
-
-                // Render rows
-                tbody.innerHTML = sorted.map((row, index) => {
-                    const rank = index + 1;
-                    const isFirst = rank === 1;
-                    const rowClass = isFirst ? 'first-rank-row' : '';
-                    const starIcon = isFirst ? ' ⭐' : '';
-
-                    // Create clickable model name with link
-                    let modelName = row.model;
-                    if (row.link && row.link !== '#') {
-                        let href = row.link;
-                        if (!href.startsWith('http://') && !href.startsWith('https://')) {
-                            href = 'https://' + href;
-                        }
-                        modelName = `<a href="${href}" class="model-link" target="_blank" rel="noopener noreferrer">${row.model}</a>`;
-                    }
-
-                    // Category badge class
-                    const categoryClass = row.model_type === 'Agentic Framework' ? 'tag is-info is-light' : 'tag is-link is-light';
-                    const categoryLabel = row.model_type === 'Agentic Framework' ? 'Agentic' : 'End-to-End';
-
-                    // Calculate display score for Overall column
-                    let overallDisplay;
-                    if (useFilteredScore) {
-                        const filteredScore = getFilteredScore(row);
-                        overallDisplay = formatScore(filteredScore);
-                    } else {
-                        overallDisplay = formatScore(row.overall);
-                    }
-
-                    // Build cells based on which columns are visible
-                    const overallCell = showOverall ?
-                        `<td class="has-text-centered"><strong class="overall-score">${overallDisplay}</strong></td>` : '';
-                    const generalCell = filterGeneral.checked ?
-                        `<td class="has-text-centered">${formatScore(row.general)}</td>` : '';
-                    const personalizedCell = filterPersonalized.checked ?
-                        `<td class="has-text-centered">${formatScore(row.personalized)}</td>` : '';
-                    const proactiveCell = filterProactive.checked ?
-                        `<td class="has-text-centered">${formatScore(row.proactive)}</td>` : '';
-
-                    return `
-                        <tr class="${rowClass}">
-                            <td class="has-text-centered"><strong>${rank}</strong></td>
-                            <td><span class="category-badge ${categoryClass}">${categoryLabel}</span></td>
-                            <td class="model-cell">
-                                <div class="model-name"><strong>${modelName}</strong></div>
-                                <div class="model-org">${row.organization}</div>
-                                <div class="model-date"><i class="far fa-calendar"></i> ${formatDate(row.date)}</div>
-                            </td>
-                            <!-- <td class="has-text-centered">${row.max_steps}</td> -->
-                            ${overallCell}
-                            ${generalCell}
-                            ${personalizedCell}
-                            ${proactiveCell}
-                        </tr>
-                    `;
-                }).join('');
-            }
-        });
-    </script>
+}
+
+@article{liu2026memubench,
+  title   = {MemU-Bench: Benchmarking GUI Agents on Long-Horizon User Interactions},
+  author  = {Liu, Yizhou and Lu, Zhengxi and Tang, Fei and Qiu, Yiwen and Du, Yong and Chen, Tongbo and Chen, Bofan and Jiang, Tao and Xu, Wenhao and Shu, Yunfeng and Zhang, Wenqi and Lu, Weiming and Xiao, Jun and Zhuang, Yueting and Shen, Yongliang},
+  journal = {arXiv preprint arXiv:2611.00191},
+  year    = {2026}
+}</pre>
+    </div>
+  </section>
+</main>
+
+<footer class="ku-foot">
+  <div class="ku-wrap">
+    <p>KnowU-Bench · <a href="https://github.com/ZJU-REAL">REAL Lab</a>, Zhejiang University · <a href="https://github.com/ZJU-REAL/KnowU-Bench">GitHub</a> · <a href="https://github.com/ZJU-REAL/KnowU-Bench/issues">Issues</a></p>
+    <p>Built on <a href="https://github.com/Tongyi-MAI/MobileWorld">MobileWorld</a>, which provided the original environment and benchmark foundation. Code released under Apache-2.0.</p>
+  </div>
+</footer>
+
+<script src="script.js?v=20261114j"></script>
 </body>
-
 </html>
